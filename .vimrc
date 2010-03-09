@@ -80,14 +80,5 @@ if has("statusline")
  set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
-
-" helpful mappings for using twitter.vim
-" see http://vim.sourceforge.net/scripts/script.php?script_id=1853
-let g:twitterusername='mmai'
-let g:twitterpassword='no!gl!CC'
-map <unique> <Leader>tp <Esc>:let g:twitterpassword=inputsecret('password? ')<cr>
-map <unique> <Leader>tw <Esc>:execute 'TwitterStatusUpdate ' . inputdialog('Enter a Twitter status message:')<cr>
-map <unique> <Leader>tf <Esc>:TwitterFriendsTimeline<cr> 
-
 " Couleurs pour completion (les valeurs par defaut de darkblue sont
 " illisibles) : comment faire ?
