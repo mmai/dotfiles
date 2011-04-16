@@ -40,6 +40,10 @@ set grepprg=grep\ -nH\ --exclude-dir\ .svn\ $*
 au BufNewFile,BufRead *.thtml setfiletype php
 au BufNewFile,BufRead *.ctp setfiletype php
 
+"Syntax highlighting for javascript processing templates
+au BufNewFile,BufRead *.pjs setfiletype javascript
+
+
 python << EOF
 import os
 import sys
