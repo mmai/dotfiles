@@ -1,0 +1,3 @@
+[submodule ".vim/plugin/wikilink"]
+	path = .vim/plugin/wikilink
+	url = git://github.com/mmai/wikilink.git
