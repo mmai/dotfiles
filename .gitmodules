@@ -1,3 +1,6 @@
 [submodule ".vim/plugin/wikilink"]
 	path = .vim/plugin/wikilink
 	url = git://github.com/mmai/wikilink.git
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
