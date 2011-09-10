@@ -11,3 +11,4 @@ alias mv='mv -i'
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
+export PYTHONSTARTUP=${HOME}/.pythonrc
