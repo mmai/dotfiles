@@ -7,6 +7,7 @@ PS1='[\u@\h \W]\$ '
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias ack='ack-grep'
 
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion

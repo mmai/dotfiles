@@ -1,2 +1,3 @@
-alias www='cd /var/www'
+alias www='cd /var/www;ls'
+alias ack='ack-grep'
 
