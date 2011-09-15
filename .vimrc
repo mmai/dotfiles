@@ -90,4 +90,6 @@ endif
 " Couleurs pour completion (les valeurs par defaut de darkblue sont
 " illisibles) : comment faire ?
 
-
+" pathogen : permet l'installation de plugins dans leurs propres
+" répertoires
+call pathogen#infect()
