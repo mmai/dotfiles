@@ -23,6 +23,9 @@ set smarttab        " Insert blank space at beginning of line with tab
 
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 
+" ,cd => change directory to the file being edited
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
+
 if has("autocmd")
     " Change to the directory the file in your current buffer is in
     " N'est plus pertinent avec NERDTree et la nouvelle config de tags
@@ -93,3 +96,4 @@ endif
 " pathogen : permet l'installation de plugins dans leurs propres
 " répertoires
 call pathogen#infect()
+
