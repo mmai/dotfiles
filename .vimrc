@@ -26,6 +26,9 @@ let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
 
+"Git 
+cnoreabbrev tig Extradite
+
 if has("autocmd")
     " Change to the directory the file in your current buffer is in
     " N'est plus pertinent avec NERDTree et la nouvelle config de tags
