@@ -1,11 +1,17 @@
 "colorscheme darkblue
 colorscheme desert
 
+"Place temporary files in a specified directory instead of in the current
+"directory
+set backup " tell vim to keep backup files in a 
+set backupdir=/tmp " tell vim where to put its backup files
+set dir=/tmp " tell vim where to put swap files
+
 filetype plugin indent on
 syntax on
 set number
 set hlsearch
-set mouse=a "Active la souris en mode console
+set mouse=a "Activate mouse on console mode
 set tags=./tags;/ " Recherche le fichier tags (man ctags)  dans le répertoire du fichier
                   " courant puis dans le répertoire parent, etc.
                 " Penser à exécuter `ctags -R -h ''.php''` dans le repertoire de base des
