@@ -28,6 +28,7 @@ set softtabstop=2   " Treat 2 spaces as a tab for editing purposes
 set smarttab        " Insert blank space at beginning of line with tab
 
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
+let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
 
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
@@ -54,16 +55,6 @@ au BufNewFile,BufRead *.ctp setfiletype php
 
 "Syntax highlighting for javascript processing templates
 au BufNewFile,BufRead *.pjs setfiletype javascript
-
-
-python << EOF
-import os
-import sys
-import vim
-for p in sys.path:
-    if os.path.isdir(p):
-        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-EOF
 
 " Navigation dans la librairie python
 " Penser à executer ctags -R -f ~/.vim/tags/python.ctags /usr/lib/python2.5/
@@ -105,4 +96,7 @@ endif
 " pathogen : permet l'installation de plugins dans leurs propres
 " répertoires
 call pathogen#infect()
-
+ 
+"Deactivate ruby-debugger default mappings
+"TODO : set new mappings
+let g:ruby_debugger_no_maps = 1
