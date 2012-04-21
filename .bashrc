@@ -9,7 +9,13 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ack='ack-grep'
 
+alias journal='~/travaux/ecrits/journal.sh'
+
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 export PYTHONSTARTUP=${HOME}/.pythonrc
+if [[ -a ~/.nvm/nvm.sh ]];then source ~/.nvm/nvm.sh;fi
+
+export TASKDATA=~/Dropbox/task
+export TASKRC=~/Dropbox/taskrc
