@@ -1,6 +1,10 @@
 export PYTHONSTARTUP=${HOME}/.pythonrc
 
-if [[ -a ~/.nvm/nvm.sh ]];then source ~/.nvm/nvm.sh;fi
+if [[ -a ~/.nvm/nvm.sh ]]
+then
+  source ~/.nvm/nvm.sh
+  nvm use default
+fi
 
 export TASKDATA=~/Dropbox/task
 export TASKRC=~/Dropbox/taskrc

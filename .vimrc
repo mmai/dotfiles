@@ -7,6 +7,9 @@ set backup " tell vim to keep backup files in a
 set backupdir=/tmp " tell vim where to put its backup files
 set dir=/tmp " tell vim where to put swap files
 
+set wildmenu "display completion alternatives
+set wildmode=list:longest,full
+
 filetype plugin indent on
 syntax on
 set number
