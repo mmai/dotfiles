@@ -6,12 +6,14 @@ set background=dark
 "colorscheme solarized
 colorscheme desert
 
-
 "Place temporary files in a specified directory instead of in the current
 "directory
 set backup " tell vim to keep backup files in a 
 set backupdir=/tmp " tell vim where to put its backup files
 set dir=/tmp " tell vim where to put swap files
+
+set wildmenu "display completion alternatives
+set wildmode=list:longest,full
 
 filetype plugin indent on
 syntax on
@@ -34,6 +36,7 @@ set softtabstop=2   " Treat 2 spaces as a tab for editing purposes
 set smarttab        " Insert blank space at beginning of line with tab
 
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
+let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
 
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
@@ -60,16 +63,6 @@ au BufNewFile,BufRead *.ctp setfiletype php
 
 "Syntax highlighting for javascript processing templates
 au BufNewFile,BufRead *.pjs setfiletype javascript
-
-
-python << EOF
-import os
-import sys
-import vim
-for p in sys.path:
-    if os.path.isdir(p):
-        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-EOF
 
 " Navigation dans la librairie python
 " Penser à executer ctags -R -f ~/.vim/tags/python.ctags /usr/lib/python2.5/
@@ -104,5 +97,4 @@ if has("statusline")
  "%{GitBranch()} 
  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
-
 
