@@ -1,5 +1,11 @@
-"colorscheme darkblue
+" pathogen : permet l'installation de plugins dans leurs propres
+" répertoires
+call pathogen#infect()
+
+set background=dark
+"colorscheme solarized
 colorscheme desert
+
 
 "Place temporary files in a specified directory instead of in the current
 "directory
@@ -99,10 +105,4 @@ if has("statusline")
  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
-" Couleurs pour completion (les valeurs par defaut de darkblue sont
-" illisibles) : comment faire ?
-
-" pathogen : permet l'installation de plugins dans leurs propres
-" répertoires
-call pathogen#infect()
 
