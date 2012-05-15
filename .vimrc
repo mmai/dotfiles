@@ -103,4 +103,4 @@ endif
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap kj <esc>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
