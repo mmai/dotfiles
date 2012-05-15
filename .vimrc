@@ -7,6 +7,9 @@ set background=dark
 colorscheme desert
 set guioptions-=T
 
+"No toolbar
+set guioptions-=T
+
 "Place temporary files in a specified directory instead of in the current
 "directory
 set backup " tell vim to keep backup files in a 
@@ -88,9 +91,6 @@ let g:vikiNameSuffix=".viki"
 autocmd! BufRead,BufNewFile $HOME/viki/* set filetype=viki
 let g:vikiHomePage =$HOME . "/viki/home"
 
-" Show who commited the selected lines in subversion : select text then type 'gl'
-vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-
 " Show file encoding in the status line
 if has("statusline")
  "git branch in status line
@@ -99,3 +99,8 @@ if has("statusline")
  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
+"Easy .vimrc editing 
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap kj <esc>
+inoremap <esc> <nop>
