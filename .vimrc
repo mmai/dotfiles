@@ -5,6 +5,7 @@ call pathogen#infect()
 set background=dark
 "colorscheme solarized
 colorscheme desert
+set guioptions-=T
 
 "Place temporary files in a specified directory instead of in the current
 "directory
