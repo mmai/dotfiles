@@ -5,6 +5,7 @@ call pathogen#infect()
 set background=dark
 "colorscheme solarized
 colorscheme desert
+set guioptions-=T
 
 "No toolbar
 set guioptions-=T
@@ -102,4 +103,4 @@ endif
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap kj <esc>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
