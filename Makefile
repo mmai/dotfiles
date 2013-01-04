@@ -1,4 +1,8 @@
-install: vim bash oh-my-zsh git python ruby scite
+install: vim bash zsh git python ruby scite
+
+initmodules: 
+	git submodule init
+	git submodule update
 
 vim:
 	test -e ~/.vim && mv ~/.vim ~/.vim_bak
@@ -9,9 +13,10 @@ vim:
 bash:
 	echo ". "`pwd`/.bashrc >> ~/.bashrc
 
-oh-my-zsh:
-	ln -s `pwd`/.oh-my-zsh/custom/ask_when_overwrite.zsh ~/.oh-my-zsh/custom/ask_when_overwrite.zsh
-	ln -s `pwd`/.oh-my-zsh/custom/shortcuts.zsh ~/.oh-my-zsh/custom/shortcuts.zsh
+zsh: initmodules
+	sudo apt-get install zsh
+	chsh -s /bin/zsh
+	zsh prezto_installer.zsh
 
 git:
 	test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
