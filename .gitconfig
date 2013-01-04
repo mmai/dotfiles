@@ -1,9 +1,11 @@
 [user]
   name = Henri Bourcereau
   email = henri.bourcereau@gmail.com
-
+[color]
+  ui = true
 [merge]
-  tool = splice
+  tool = meld
+  #tool = splice
 
 [mergetool "splice"]
   cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
