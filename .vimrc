@@ -45,6 +45,9 @@ let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
 
+"traite tous les nombre en décimal
+set nrformats=
+
 "Git 
 cnoreabbrev tig Extradite
 
@@ -104,3 +107,4 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap kj <esc>
 "inoremap <esc> <nop>
+nnoremap <leader>u :GundoToggle<cr>
