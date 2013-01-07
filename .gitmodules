@@ -19,3 +19,6 @@
 [submodule ".prezto"]
 	path = .prezto
 	url = git@github.com:mmai/prezto.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

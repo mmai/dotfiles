@@ -10,6 +10,12 @@ vim:
 	test -e ~/.vimrc && mv ~/.vimrc ~/.vimrc_bak
 	ln -s `pwd`/.vimrc ~/.vimrc
 
+vimdependencies:
+	sudo pear install PHP_CodeSniffer
+	sudo pear channel-discover pear.phpmd.org
+	sudo pear channel-discover pear.pdepend.org
+	sudo pear install --alldeps phpmd/PHP_PMD
+
 bash:
 	echo ". "`pwd`/.bashrc >> ~/.bashrc
 
