@@ -1,20 +1,8 @@
-install: vim bash zsh git python ruby scite
+install: vim bash zsh git javascript python ruby scite
 
 initmodules: 
 	git submodule init
 	git submodule update
-
-vim:
-	test -e ~/.vim && mv ~/.vim ~/.vim_bak
-	ln -s `pwd`/.vim ~/.vim
-	test -e ~/.vimrc && mv ~/.vimrc ~/.vimrc_bak
-	ln -s `pwd`/.vimrc ~/.vimrc
-
-vimdependencies:
-	sudo pear install PHP_CodeSniffer
-	sudo pear channel-discover pear.phpmd.org
-	sudo pear channel-discover pear.pdepend.org
-	sudo pear install --alldeps phpmd/PHP_PMD
 
 bash:
 	echo ". "`pwd`/.bashrc >> ~/.bashrc
@@ -25,8 +13,34 @@ zsh: initmodules
 	zsh prezto_installer.zsh
 
 git:
+	sudo apt-get install git
 	test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
 	ln -s `pwd`/.gitconfig ~/.gitconfig
+
+vim:
+	sudo apt-get install vim-gnome
+	test -e ~/.vim && mv ~/.vim ~/.vim_bak
+	ln -s `pwd`/.vim ~/.vim
+	test -e ~/.vimrc && mv ~/.vimrc ~/.vimrc_bak
+	ln -s `pwd`/.vimrc ~/.vimrc
+
+dpkg:
+	sudo apt-get install curl
+
+node: initmodules dpkg
+	ln -s `pwd`/.nvm ~/.nvm
+	. ~/.nvm/nvm.sh
+	nvm install 0.8.16
+	nvm alias default 0.8
+
+javascript: node
+	npm install jshint -g
+
+php:
+	sudo pear install PHP_CodeSniffer
+	sudo pear channel-discover pear.phpmd.org
+	sudo pear channel-discover pear.pdepend.org
+	sudo pear install --alldeps phpmd/PHP_PMD
 
 python:
 	test -e ~/.pythonrc && mv ~/.pythonrc ~/.pythonrc_bak
