@@ -23,6 +23,11 @@ vim:
 	ln -s `pwd`/.vim ~/.vim
 	test -e ~/.vimrc && mv ~/.vimrc ~/.vimrc_bak
 	ln -s `pwd`/.vimrc ~/.vimrc
+	#Powerline
+	sudo apt-get install python-fontforge
+	ln -s `pwd`/.fonts ~/.fonts
+	fc-cache -vf ~/.fonts
+
 
 dpkg:
 	sudo apt-get install curl

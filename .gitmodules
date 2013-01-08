@@ -25,3 +25,6 @@
 [submodule ".nvm"]
 	path = .nvm
 	url = git://github.com/creationix/nvm.git
+[submodule ".vim/powerline"]
+	path = .vim/powerline
+	url = https://github.com/Lokaltog/powerline
