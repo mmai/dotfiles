@@ -30,7 +30,7 @@ vim:
 
 
 dpkg:
-	sudo apt-get install curl
+	sudo apt-get install curl autojump
 
 node: initmodules dpkg
 	ln -s `pwd`/.nvm ~/.nvm
