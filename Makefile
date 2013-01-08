@@ -45,6 +45,7 @@ php:
 python:
 	test -e ~/.pythonrc && mv ~/.pythonrc ~/.pythonrc_bak
 	ln -s `pwd`/.pythonrc ~/.pythonrc
+	sudo pip install pep8 pyflakes flake8
 
 ruby:
 	test -e ~/.irbrc && mv ~/.irbrc ~/.irbrc_bak
