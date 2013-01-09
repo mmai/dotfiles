@@ -1,4 +1,4 @@
-install: vim bash zsh git javascript python ruby scite
+install: bash zsh git javascript python ruby vim scite
 
 initmodules: 
 	git submodule init
@@ -27,7 +27,8 @@ vim:
 	sudo apt-get install python-fontforge
 	ln -s `pwd`/.fonts ~/.fonts
 	fc-cache -vf ~/.fonts
-
+	#Command-T
+	cd .vim/bundle/Command-T/ruby/command-t;ruby extconf;make;cd ~/dotfiles
 
 dpkg:
 	sudo apt-get install curl autojump
@@ -53,6 +54,7 @@ python:
 	sudo pip install pep8 pyflakes flake8
 
 ruby:
+	sudo apt-get install ruby ruby-dev
 	test -e ~/.irbrc && mv ~/.irbrc ~/.irbrc_bak
 	ln -s `pwd`/.irbrc ~/.irbrc
 
