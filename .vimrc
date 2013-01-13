@@ -5,10 +5,9 @@ call pathogen#infect()
 set background=dark
 "colorscheme solarized
 colorscheme desert
-set guioptions-=T
 
-"No toolbar
-set guioptions-=T
+set guioptions-=T "No toolbar
+set mouse=a "Activate mouse on console mode
 
 "Place temporary files in a specified directory instead of in the current
 "directory
@@ -22,8 +21,9 @@ set wildmode=list:longest,full
 filetype plugin indent on
 syntax on
 set number
+
 set hlsearch
-set mouse=a "Activate mouse on console mode
+set incsearch
 set tags=./tags;/ " Recherche le fichier tags (man ctags)  dans le répertoire du fichier
                   " courant puis dans le répertoire parent, etc.
                 " Penser à exécuter `ctags -R -h ''.php''` dans le repertoire de base des
@@ -50,12 +50,6 @@ set nrformats=
 
 "Git 
 cnoreabbrev tig Extradite
-
-if has("autocmd")
-    " Change to the directory the file in your current buffer is in
-    " N'est plus pertinent avec NERDTree et la nouvelle config de tags
-    "autocmd BufEnter * :cd %:p:h
-endif " has("autocmd")
 
 " NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
 " nouveau root directory

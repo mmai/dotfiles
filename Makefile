@@ -28,7 +28,7 @@ vim:
 	ln -s `pwd`/.fonts ~/.fonts
 	fc-cache -vf ~/.fonts
 	#Command-T
-	cd .vim/bundle/Command-T/ruby/command-t;ruby extconf;make;cd ~/dotfiles
+	cd .vim/bundle/Command-T/ruby/command-t;ruby extconf.rb;make;cd ~/dotfiles
 
 dpkg:
 	sudo apt-get install curl autojump
