@@ -108,8 +108,3 @@ nnoremap <leader>u :GundoToggle<cr>
 "let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
 
-"Powerline
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
-let Powerline_symbols = 'fancy'
-source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
-
