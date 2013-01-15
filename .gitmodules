@@ -18,7 +18,7 @@
   url = http://github.com/astashov/vim-ruby-debugger.git
 [submodule ".prezto"]
 	path = .prezto
-	url = git@github.com:mmai/prezto.git
+	url = http://github.com/mmai/prezto.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
