@@ -1,30 +1,30 @@
 [submodule ".vim/plugin/wikilink"]
 	path = .vim/plugin/wikilink
-	url = git://github.com/mmai/wikilink.git
+	url = http://github.com/mmai/wikilink.git
 [submodule ".vim/bundle/vim-coffee-script"]
 	path = .vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule ".vim/bundle/vim-fugitive"]
   path = .vim/bundle/vim-fugitive
-  url = git://github.com/tpope/vim-fugitive.git
+  url = http://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/splice"]
   path = .vim/bundle/splice
   url = https://github.com/sjl/splice.vim.git
 [submodule ".vim/bundle/gundo.vim"]
   path = .vim/bundle/gundo.vim
-  url = git://github.com/sjl/gundo.vim.git
+  url = http://github.com/sjl/gundo.vim.git
 [submodule ".vim/bundle/vim-ruby-debugger"]
   path = .vim/bundle/vim-ruby-debugger
-  url = git://github.com/astashov/vim-ruby-debugger.git
+  url = http://github.com/astashov/vim-ruby-debugger.git
 [submodule ".prezto"]
 	path = .prezto
-	url = git@github.com:mmai/prezto.git
+	url = http://github.com/mmai/prezto.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule ".nvm"]
 	path = .nvm
-	url = git://github.com/creationix/nvm.git
+	url = http://github.com/creationix/nvm.git
 [submodule ".vim/powerline"]
 	path = .vim/powerline
 	url = https://github.com/Lokaltog/powerline
