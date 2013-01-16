@@ -57,7 +57,3 @@ ruby:
 	sudo apt-get install ruby ruby-dev
 	test -e ~/.irbrc && mv ~/.irbrc ~/.irbrc_bak
 	ln -s `pwd`/.irbrc ~/.irbrc
-
-scite:
-	test -e ~/.SciTEUser.properties && mv ~/.SciTEUser.properties ~/.SciTEUser.properties_bak
-	ln -s `pwd`/.SciTEUser.properties ~/.SciTEUser.properties
