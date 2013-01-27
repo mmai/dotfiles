@@ -17,7 +17,7 @@ git:
 	test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
 	ln -s `pwd`/.gitconfig ~/.gitconfig
 
-vim:
+vim: fonts
 	sudo apt-get install vim-gnome
 	test -e ~/.vim && mv ~/.vim ~/.vim_bak
 	ln -s `pwd`/.vim ~/.vim
@@ -25,10 +25,12 @@ vim:
 	ln -s `pwd`/.vimrc ~/.vimrc
 	#Powerline
 	sudo apt-get install python-fontforge
-	ln -s `pwd`/.fonts ~/.fonts
-	fc-cache -vf ~/.fonts
 	#Command-T
 	cd .vim/bundle/Command-T/ruby/command-t;ruby extconf.rb;make;cd ~/dotfiles
+
+fonts:
+	ln -s `pwd`/.fonts ~/.fonts
+	fc-cache -vf ~/.fonts
 
 dpkg:
 	sudo apt-get install curl autojump
