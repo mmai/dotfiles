@@ -113,7 +113,6 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
 let Powerline_symbols = 'fancy'
 source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 
-let g:fullscreen_colorscheme = "iawriter"
-let g:fullscreen_font ="Cousine 12"
-let g:normal_colorscheme= g:colors_name
-let g:normal_font=&guifont
+
+let g:zenpen_colorscheme = "iawriter"
+let g:zenpen_font ="Cousine 12"
