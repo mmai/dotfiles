@@ -114,5 +114,5 @@ let Powerline_symbols = 'fancy'
 source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 
 
-let g:zenpen_colorscheme = "iawriter"
-let g:zenpen_font ="Cousine 12"
+let g:zenmode_colorscheme = "iawriter"
+let g:zenmode_font ="Cousine 12"
