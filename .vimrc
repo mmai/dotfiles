@@ -109,10 +109,11 @@ nnoremap <leader>u :GundoToggle<cr>
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
 
 "Powerline
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
 let Powerline_symbols = 'fancy'
 source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 
-
-let g:zenmode_colorscheme = "iawriter"
+"Zenmode
+let g:zenmode_background = "light"
+let g:zenmode_colorscheme = "solarized"
 let g:zenmode_font ="Cousine 12"
