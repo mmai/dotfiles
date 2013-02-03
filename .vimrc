@@ -113,7 +113,10 @@ let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checkin
 let Powerline_symbols = 'fancy'
 source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 
+let g:languagetool_jar= '/usr/local/LanguageTool/LanguageTool.jar'
+
 "Zenmode
-let g:zenmode_background = "light"
+let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "solarized"
 let g:zenmode_font ="Cousine 12"
+let g:zenmode_spell ="fr" "correction orthographique

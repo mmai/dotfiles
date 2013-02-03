@@ -17,7 +17,7 @@ git:
 	test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
 	ln -s `pwd`/.gitconfig ~/.gitconfig
 
-vim: fonts
+vim: fonts, languagetool
 	sudo apt-get install vim-gnome
 	test -e ~/.vim && mv ~/.vim ~/.vim_bak
 	ln -s `pwd`/.vim ~/.vim
@@ -31,6 +31,11 @@ vim: fonts
 fonts:
 	ln -s `pwd`/.fonts ~/.fonts
 	fc-cache -vf ~/.fonts
+
+languagetool:
+	cd /usr/local/
+	sudo wget http://www.languagetool.org/download/LanguageTool-2.0.zip
+	sudo unzip LanguageTool-2.0.zip; rm LanguageTool-2.0.zip
 
 dpkg:
 	sudo apt-get install curl autojump
