@@ -1,6 +1,19 @@
+" Vundle config
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'nelstrom/vim-visual-star-search'
+
+"End vundle config
+
 " pathogen : permet l'installation de plugins dans leurs propres
 " répertoires
-call pathogen#infect()
+" call pathogen#infect()
 
 set background=dark
 "colorscheme solarized

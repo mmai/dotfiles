@@ -58,9 +58,6 @@
 [submodule ".vim/bundle/YankRing"]
 	path = .vim/bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim
-[submodule ".vim/bundle/zencoding"]
-	path = .vim/bundle/zencoding
-	url = https://github.com/mattn/zencoding-vim.git
 [submodule ".vim/bundle/AutoComplPop"]
 	path = .vim/bundle/AutoComplPop
 	url = https://github.com/vim-scripts/AutoComplPop.git
@@ -70,3 +67,6 @@
 [submodule ".vim/bundle/vim-zenmode"]
 	path = .vim/bundle/vim-zenmode
 	url = git@github.com:mmai/vim-zenmode.git
+[submodule ".vim/bundle/vundle"]
+	path = .vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
