@@ -8,7 +8,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'nelstrom/vim-visual-star-search'
-
+Bundle 'mattn/zencoding-vim'
+Bundle 'jceb/vim-orgmode'
 "End vundle config
 
 " pathogen : permet l'installation de plugins dans leurs propres
