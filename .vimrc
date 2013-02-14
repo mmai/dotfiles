@@ -15,11 +15,26 @@ Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'kana/vim-smartinput'
-"End vundle config
+Bundle 'mattn/webapi-vim'
+Bundle 'kana/vim-textobj-lastpat'
+Bundle 'kana/vim-textobj-user'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'Lokaltog/powerline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'sjl/gundo.vim'
+Bundle 'hynek/vim-python-pep8-indent'
 
-" pathogen : permet l'installation de plugins dans leurs propres
-" répertoires
-" call pathogen#infect()
+Bundle 'mattn/gist-vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mmai/wikilink'
+Bundle 'mmai/vim-zenmode'
+" send text to tmux
+Bundle 'xaviershay/tslime.vim'
+" three way merge
+Bundle 'sjl/splice.vim'
+"Bundle 'astashov/vim-ruby-debugger'
+"End vundle config
 
 set background=dark
 "colorscheme solarized

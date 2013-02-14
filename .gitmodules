@@ -1,60 +1,9 @@
-[submodule ".vim/plugin/wikilink"]
-	path = .vim/plugin/wikilink
-	url = http://github.com/mmai/wikilink.git
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/vim-fugitive"]
-  path = .vim/bundle/vim-fugitive
-  url = http://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/splice"]
-  path = .vim/bundle/splice
-  url = https://github.com/sjl/splice.vim.git
-[submodule ".vim/bundle/gundo.vim"]
-  path = .vim/bundle/gundo.vim
-  url = http://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/vim-ruby-debugger"]
-  path = .vim/bundle/vim-ruby-debugger
-  url = http://github.com/astashov/vim-ruby-debugger.git
 [submodule ".prezto"]
 	path = .prezto
 	url = http://github.com:mmai/prezto.git
 [submodule ".nvm"]
 	path = .nvm
 	url = http://github.com/creationix/nvm.git
-[submodule ".vim/powerline"]
-	path = .vim/powerline
-	url = https://github.com/Lokaltog/powerline
-[submodule ".vim/bundle/gist-vim"]
-	path = .vim/bundle/gist-vim
-	url = https://github.com/mattn/gist-vim.git
-[submodule ".vim/bundle/webapi-vim"]
-	path = .vim/bundle/webapi-vim
-	url = https://github.com/mattn/webapi-vim.git
-[submodule ".vim/bundle/tslime.vim"]
-	path = .vim/bundle/tslime.vim
-	url = https://github.com/xaviershay/tslime.vim.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule ".vim/bundle/vim-textobj-lastpat"]
-	path = .vim/bundle/vim-textobj-lastpat
-	url = https://github.com/kana/vim-textobj-lastpat.git
-[submodule ".vim/bundle/vim-textobj-user"]
-	path = .vim/bundle/vim-textobj-user
-	url = https://github.com/kana/vim-textobj-user.git
-[submodule ".vim/bundle/vim-visual-star-search"]
-	path = .vim/bundle/vim-visual-star-search
-	url = https://github.com/nelstrom/vim-visual-star-search.git
-[submodule ".vim/bundle/YankRing"]
-	path = .vim/bundle/YankRing
-	url = https://github.com/vim-scripts/YankRing.vim
-[submodule ".vim/bundle/python-pep8-indent"]
-	path = .vim/bundle/python-pep8-indent
-	url = https://github.com/hynek/vim-python-pep8-indent.git
-[submodule ".vim/bundle/vim-zenmode"]
-	path = .vim/bundle/vim-zenmode
-	url = git@github.com:mmai/vim-zenmode.git
 [submodule ".vim/bundle/vundle"]
 	path = .vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
