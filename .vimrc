@@ -9,7 +9,12 @@ Bundle 'gmarik/vundle'
 
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mattn/zencoding-vim'
-Bundle 'jceb/vim-orgmode'
+Bundle 'hsitz/VimOrganizer'
+Bundle 'tpope/vim-speeddating'
+Bundle 'wincent/Command-T'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/AutoComplPop'
+Bundle 'kana/vim-smartinput'
 "End vundle config
 
 " pathogen : permet l'installation de plugins dans leurs propres
@@ -123,7 +128,7 @@ nnoremap <leader>u :GundoToggle<cr>
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
 
 "Powerline
-"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
 let Powerline_symbols = 'fancy'
 source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 
