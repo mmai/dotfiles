@@ -25,6 +25,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 
+Bundle 'altercation/vim-colors-solarized'
+
 Bundle 'mattn/gist-vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmai/wikilink'
