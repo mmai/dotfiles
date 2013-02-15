@@ -150,6 +150,9 @@ source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 
 let g:languagetool_jar= '/usr/local/LanguageTool/LanguageTool.jar'
 
+" VimOrganizer
+au BufNewFile,BufRead *.org	set filetype=org
+
 "Zenmode
 let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "solarized"
