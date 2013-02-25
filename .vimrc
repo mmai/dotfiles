@@ -146,7 +146,8 @@ let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checkin
 "Powerline
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
 let Powerline_symbols = 'fancy'
-source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
+"source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
+source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
 
 let g:languagetool_jar= '/usr/local/LanguageTool/LanguageTool.jar'
 
