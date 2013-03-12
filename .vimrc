@@ -10,21 +10,24 @@ Bundle 'gmarik/vundle'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mattn/zencoding-vim'
 Bundle 'hsitz/VimOrganizer'
+Bundle 'chrisbra/NrrwRgn'
+Bundle 'utl.vim'
 Bundle 'tpope/vim-speeddating'
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
-Bundle 'vim-scripts/AutoComplPop'
+Bundle 'AutoComplPop'
 Bundle 'kana/vim-smartinput'
 Bundle 'mattn/webapi-vim'
 Bundle 'kana/vim-textobj-lastpat'
 Bundle 'kana/vim-textobj-user'
-Bundle 'vim-scripts/YankRing.vim'
+Bundle 'YankRing.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 
 Bundle 'altercation/vim-colors-solarized'
+
 
 Bundle 'mattn/gist-vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -35,6 +38,8 @@ Bundle 'xaviershay/tslime.vim'
 " three way merge
 Bundle 'sjl/splice.vim'
 "Bundle 'astashov/vim-ruby-debugger'
+
+"Bundle 'airblade/vim-gitgutter' "too slow
 "End vundle config
 
 set background=dark
@@ -69,10 +74,10 @@ runtime! macros/matchit.vim " Load matchit (% to bounce from do to end, etc.)
 
 set expandtab       " Use spaces instead of tabs
 set autoindent      " Inherit indent from previous line
-set tabstop=2       " Display \t as 2 spaces
-set shiftwidth=2    " Number of spaces to use for each indent
-set softtabstop=2   " Treat 2 spaces as a tab for editing purposes
-set smarttab        " Insert blank space at beginning of line with tab
+set tabstop=4       " Display \t as 2 spaces
+set shiftwidth=4    " Number of spaces to use for each indent
+set softtabstop=4   " Treat 2 spaces as a tab for editing purposes
+set smarttab        " Insert blank space at beginning of line with tabs
 
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
@@ -152,6 +157,7 @@ let g:languagetool_jar= '/usr/local/LanguageTool/LanguageTool.jar'
 
 " VimOrganizer
 au BufNewFile,BufRead *.org	set filetype=org
+let g:org_command_for_emacsclient='emacsclient'
 
 "Zenmode
 let g:zenmode_background = "dark"
