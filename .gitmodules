@@ -1,6 +1,6 @@
 [submodule ".prezto"]
 	path = .prezto
-	url = http://github.com:mmai/prezto.git
+	url = http://github.com/mmai/prezto.git
 [submodule ".nvm"]
 	path = .nvm
 	url = http://github.com/creationix/nvm.git
