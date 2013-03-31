@@ -17,11 +17,9 @@ git:
 	test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
 	ln -s `pwd`/.gitconfig ~/.gitconfig
 
-vim: fonts, languagetool
-	sudo apt-get install vim-gnome
-	test -e ~/.vim && mv ~/.vim ~/.vim_bak
+vim: fonts languagetool
+	sudo apt-get install vim-gnome ctags
 	ln -s `pwd`/.vim ~/.vim
-	test -e ~/.vimrc && mv ~/.vimrc ~/.vimrc_bak
 	ln -s `pwd`/.vimrc ~/.vimrc
 	#Powerline
 	sudo apt-get install python-fontforge
@@ -43,8 +41,8 @@ dpkg:
 node: initmodules dpkg
 	ln -s `pwd`/.nvm ~/.nvm
 	. ~/.nvm/nvm.sh
-	nvm install 0.8.16
-	nvm alias default 0.8
+	nvm install 0.10
+	nvm alias default 0.10
 
 javascript: node
 	npm install jshint -g
@@ -56,9 +54,10 @@ php:
 	sudo pear install --alldeps phpmd/PHP_PMD
 
 python:
-	test -e ~/.pythonrc && mv ~/.pythonrc ~/.pythonrc_bak
+	#test -e ~/.pythonrc && mv ~/.pythonrc ~/.pythonrc_bak
+	sudo apt-get install python-pip
 	ln -s `pwd`/.pythonrc ~/.pythonrc
-	sudo pip install pep8 autopep8 pyflakes flake8
+	sudo pip install virtualenv virtualenvwrapper pep8 autopep8 pyflakes flake8
 
 ruby:
 	sudo apt-get install ruby ruby-dev
