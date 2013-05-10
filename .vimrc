@@ -54,6 +54,7 @@ set mouse=a "Activate mouse on console mode
 set backup " tell vim to keep backup files in a 
 set backupdir=/tmp " tell vim where to put its backup files
 set dir=/tmp " tell vim where to put swap files
+let g:yankring_history_dir = '~/tmp' " tell yankring plugin where to put history files
 
 set wildmenu "display completion alternatives
 set wildmode=list:longest,full
