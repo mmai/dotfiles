@@ -14,9 +14,11 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'utl.vim'
 Bundle 'tpope/vim-speeddating'
 Bundle 'wincent/Command-T'
+
 Bundle 'scrooloose/syntastic'
 Bundle 'AutoComplPop'
 Bundle 'kana/vim-smartinput'
+
 Bundle 'mattn/webapi-vim'
 Bundle 'kana/vim-textobj-lastpat'
 Bundle 'kana/vim-textobj-user'
@@ -147,6 +149,7 @@ nnoremap <leader>u :GundoToggle<cr>
 " php 
 "let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
+let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []} "disable syntastic by default (call SyntasticToogleMode to enable)
 
 "Powerline
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
