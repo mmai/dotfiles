@@ -16,6 +16,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'wincent/Command-T'
 
 Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/IndentAnything'
 Bundle 'AutoComplPop'
 Bundle 'kana/vim-smartinput'
 
@@ -27,6 +28,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'plasticboy/vim-markdown'
 
 Bundle 'altercation/vim-colors-solarized'
 
@@ -61,8 +63,12 @@ let g:yankring_history_dir = '~/tmp' " tell yankring plugin where to put history
 set wildmenu "display completion alternatives
 set wildmode=list:longest,full
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 syntax on
+"set syn=auto
+set showmatch
+
 set number
 
 set hlsearch
