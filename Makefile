@@ -1,8 +1,11 @@
-install: bash zsh git javascript python ruby vim scite
+install: bash zsh ack git javascript python ruby vim scite
 
 initmodules: 
 	git submodule init
 	git submodule update
+
+ack:
+	ln -s `pwd`/.ackrc ~/.ackrc
 
 bash:
 	echo ". "`pwd`/.bashrc >> ~/.bashrc
