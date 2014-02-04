@@ -7,6 +7,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'bling/vim-airline'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mattn/zencoding-vim'
 Bundle 'hsitz/VimOrganizer'
@@ -158,11 +159,14 @@ nnoremap <leader>u :GundoToggle<cr>
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
 let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []} "disable syntastic by default (call SyntasticToogleMode to enable)
 
+" vim-airline
+let g:airline_powerline_fonts = 1
+
 "Powerline
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
-let Powerline_symbols = 'fancy'
+"let Powerline_symbols = 'fancy'
 "source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
-source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
+"source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
 
 let g:languagetool_jar= '/usr/local/LanguageTool/LanguageTool.jar'
 
