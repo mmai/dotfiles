@@ -33,7 +33,7 @@ Bundle 'plasticboy/vim-markdown'
 
 Bundle 'altercation/vim-colors-solarized'
 
-
+Bundle 'Zuckonit/vim-airline-todo'
 Bundle 'mattn/gist-vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmai/wikilink'
