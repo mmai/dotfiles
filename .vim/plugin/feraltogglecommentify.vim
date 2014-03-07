@@ -188,7 +188,7 @@ function s:FindCommentify() " {{{
 	"	txt with a few special chars)
 	"[Feral:283/02@04:14] torque-script: See: http://www.garagegames.com/
 	"[Feral:155/03@06:40] C# ('cs')
-	if fileType == 'ox' || fileType == 'cpp' || fileType == 'php' || fileType == 'java' || fileType == 'cs' || fileType == 'ftf' || fileType == 'torquescript' || fileType == 'pov' || fileType == 'javascript'
+	if fileType == 'ox' || fileType == 'cpp' || fileType == 'php' || fileType == 'java' || fileType == 'cs' || fileType == 'ftf' || fileType == 'torquescript' || fileType == 'pov' || fileType == 'javascript' || fileType == 'scss'
 		let commentSymbol_L = '//'
 		let commentSymbol_R = ''
 	" [Feral:224/03@17:08] conf (.xinitrc, etc.)
