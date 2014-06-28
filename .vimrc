@@ -9,17 +9,21 @@ Bundle 'gmarik/vundle'
 
 Bundle 'bling/vim-airline'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'hsitz/VimOrganizer'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'utl.vim'
 Bundle 'tpope/vim-speeddating'
 Bundle 'wincent/Command-T'
+Bundle 'dhruvasagar/vim-vinegar'
 
 Bundle 'scrooloose/syntastic'
+Bundle 'indenthtml.vim'
 Bundle 'vim-scripts/IndentAnything'
 Bundle 'AutoComplPop'
 Bundle 'kana/vim-smartinput'
+
+Bundle 'elixir-lang/vim-elixir'
 
 Bundle 'mattn/webapi-vim'
 Bundle 'kana/vim-textobj-lastpat'
@@ -31,9 +35,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'plasticboy/vim-markdown'
 
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'alterc/vim-colors-solarized'
 
-Bundle 'Zuckonit/vim-airline-todo'
 Bundle 'mattn/gist-vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmai/wikilink'
@@ -126,6 +129,9 @@ inoremap <C-space> <C-x><C-o>
 " this lets us put the marker in the file so that
 " it can be shared across and stored in version control.
 set foldmethod=marker
+"unfolded by default
+au BufRead * normal zR 
+
 " this is for python, put
 " # name for the folded text # {{{
 " to begin marker and
