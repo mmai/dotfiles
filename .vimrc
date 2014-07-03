@@ -23,7 +23,11 @@ Bundle 'vim-scripts/IndentAnything'
 Bundle 'AutoComplPop'
 Bundle 'kana/vim-smartinput'
 
+"Languages support
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'wavded/vim-stylus'
+Bundle 'alterc/vim-colors-solarized'
+Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'mattn/webapi-vim'
 Bundle 'kana/vim-textobj-lastpat'
@@ -35,10 +39,9 @@ Bundle 'sjl/gundo.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'plasticboy/vim-markdown'
 
-Bundle 'alterc/vim-colors-solarized'
-
+"Disable caps-lock when leaving insert mode (only on Xwindows)
+Bundle 'suxpert/vimcaps'
 Bundle 'mattn/gist-vim'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmai/wikilink'
 Bundle 'mmai/vim-zenmode'
 " send text to tmux
@@ -156,6 +159,7 @@ endif
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap kj <esc>
+inoremap KJ <esc>
 "inoremap <esc> <nop>
 nnoremap <leader>u :GundoToggle<cr>
 
