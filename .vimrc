@@ -152,6 +152,9 @@ if has("statusline")
  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
+"replace C-p to <leader>p to resolve conflict with yankring
+nnoremap <leader>p :CtrlP<cr>
+
 "show git modified files in ctrlp
 nnoremap <leader>m :CtrlPModified<cr>
 
