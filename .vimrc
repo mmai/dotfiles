@@ -7,6 +7,17 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+"Defaults everyone can agree on
+Bundle 'tpope/vim-sensible'
+
+"--------- File navigation
+"CTRL-P : fuzzy finder
+Bundle 'kien/ctrlp.vim'
+"CTRL-P : jump to functions definitions
+Bundle 'tacahiroy/ctrlp-funky'
+"CTRL-p : show git modified files
+Bundle 'jasoncodes/ctrlp-modified.vim'
+
 Bundle 'bling/vim-airline'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mattn/emmet-vim'
@@ -14,10 +25,13 @@ Bundle 'hsitz/VimOrganizer'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'utl.vim'
 Bundle 'tpope/vim-speeddating'
-Bundle 'wincent/Command-T'
 Bundle 'dhruvasagar/vim-vinegar'
 
+Bundle 'tomtom/tcomment_vim'
+
+"Check code syntax
 Bundle 'scrooloose/syntastic'
+
 Bundle 'indenthtml.vim'
 Bundle 'vim-scripts/IndentAnything'
 Bundle 'AutoComplPop'
@@ -67,42 +81,30 @@ set backupdir=/tmp " tell vim where to put its backup files
 set dir=/tmp " tell vim where to put swap files
 let g:yankring_history_dir = '~/tmp' " tell yankring plugin where to put history files
 
-set wildmenu "display completion alternatives
 set wildmode=list:longest,full
 
-filetype plugin on
-filetype indent on
 syntax on
-"set syn=auto
 set showmatch
 
 set number
 
 set hlsearch
-set incsearch
 set tags=./tags;/ " Recherche le fichier tags (man ctags)  dans le répertoire du fichier
                   " courant puis dans le répertoire parent, etc.
                 " Penser à exécuter `ctags -R -h ''.php''` dans le repertoire de base des
                 " fichiers à analyser (ajouter --exclude=*.js s'il y a des
                 " messages d'erreur liés aux fichiers javascript)
 
-runtime! macros/matchit.vim " Load matchit (% to bounce from do to end, etc.)
-
 set expandtab       " Use spaces instead of tabs
-set autoindent      " Inherit indent from previous line
 set tabstop=4       " Display \t as 2 spaces
 set shiftwidth=4    " Number of spaces to use for each indent
 set softtabstop=4   " Treat 2 spaces as a tab for editing purposes
-set smarttab        " Insert blank space at beginning of line with tabs
 
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
 
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
-
-"traite tous les nombre en décimal
-set nrformats=
 
 "Git 
 cnoreabbrev tig Extradite
@@ -142,11 +144,6 @@ au BufRead * normal zR
 " close to end it.
 set commentstring=\ #\ %s
 
-" Viki
-let g:vikiNameSuffix=".viki"
-autocmd! BufRead,BufNewFile $HOME/viki/* set filetype=viki
-let g:vikiHomePage =$HOME . "/viki/home"
-
 " Show file encoding in the status line
 if has("statusline")
  "git branch in status line
@@ -155,12 +152,27 @@ if has("statusline")
  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
+"show git modified files in ctrlp
+nnoremap <leader>m :CtrlPModified<cr>
+
+" show functions definitions
+let g:ctrlp_extensions = ['funky']
+nnoremap <leader>fu :CtrlPFunky<cr>
+" narrow the list down with a word under cursor
+nnoremap <leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<cr>
+
 "Easy .vimrc editing 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"ESC remap
 inoremap kj <esc>
 inoremap KJ <esc>
 "inoremap <esc> <nop>
+
+"Disable Ex mode
+nnoremap Q <nop>
+
 nnoremap <leader>u :GundoToggle<cr>
 
 "Syntastic
@@ -179,6 +191,11 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
 "source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
 
 let g:languagetool_jar= '/usr/local/LanguageTool/LanguageTool.jar'
+
+" Viki
+let g:vikiNameSuffix=".viki"
+autocmd! BufRead,BufNewFile $HOME/viki/* set filetype=viki
+let g:vikiHomePage =$HOME . "/viki/home"
 
 " VimOrganizer
 au BufNewFile,BufRead *.org	set filetype=org
