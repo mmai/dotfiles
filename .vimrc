@@ -96,9 +96,9 @@ set tags=./tags;/ " Recherche le fichier tags (man ctags)  dans le répertoire d
                 " messages d'erreur liés aux fichiers javascript)
 
 set expandtab       " Use spaces instead of tabs
-set tabstop=4       " Display \t as 2 spaces
-set shiftwidth=4    " Number of spaces to use for each indent
-set softtabstop=4   " Treat 2 spaces as a tab for editing purposes
+" set tabstop=4       " Display \t as 4 spaces
+" set shiftwidth=4    " Number of spaces to use for each indent
+" set softtabstop=4   " Treat 4 spaces as a tab for editing purposes
 
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
@@ -135,7 +135,8 @@ inoremap <C-space> <C-x><C-o>
 " it can be shared across and stored in version control.
 set foldmethod=marker
 "unfolded by default
-au BufRead * normal zR 
+au BufWinEnter * normal zR 
+
 
 " this is for python, put
 " # name for the folded text # {{{
