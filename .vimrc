@@ -11,7 +11,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-sensible'
 
 "--------- File navigation
-"CTRL-P : fuzzy finder
+"CTRL-P (fuzzy finder)
 Bundle 'kien/ctrlp.vim'
 "CTRL-P : jump to functions definitions
 Bundle 'tacahiroy/ctrlp-funky'
@@ -46,7 +46,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/webapi-vim'
 Bundle 'kana/vim-textobj-lastpat'
 Bundle 'kana/vim-textobj-user'
-Bundle 'YankRing.vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
@@ -73,13 +73,14 @@ colorscheme desert
 
 set guioptions-=T "No toolbar
 set mouse=a "Activate mouse on console mode
+"Disable Alt key for accessing menu (conflict with yankstack Alt+P shortcut)
+set winaltkeys=no 
 
 "Place temporary files in a specified directory instead of in the current
 "directory
 set backup " tell vim to keep backup files in a 
 set backupdir=/tmp " tell vim where to put its backup files
 set dir=/tmp " tell vim where to put swap files
-let g:yankring_history_dir = '~/tmp' " tell yankring plugin where to put history files
 
 set wildmode=list:longest,full
 
@@ -108,10 +109,6 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 "Git 
 cnoreabbrev tig Extradite
-
-" NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
-" nouveau root directory
-let NERDTreeChDirMode=2 
 
 " Recherche globale, on ne regarde pas dans les répertoires subversion
 set grepprg=grep\ -nH\ --exclude-dir\ .svn\ $*
@@ -153,8 +150,9 @@ if has("statusline")
  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
-"replace C-p to <leader>p to resolve conflict with yankring
-nnoremap <leader>p :CtrlP<cr>
+"------CTRLP
+"ignore node_modules folders
+let g:ctrlp_custom_ignore = '\v[\/]node_modules'
 
 "show git modified files in ctrlp
 nnoremap <leader>m :CtrlPModified<cr>
@@ -164,6 +162,7 @@ let g:ctrlp_extensions = ['funky']
 nnoremap <leader>fu :CtrlPFunky<cr>
 " narrow the list down with a word under cursor
 nnoremap <leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<cr>
+"------- /CTRLP
 
 "Easy .vimrc editing 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -183,7 +182,12 @@ nnoremap <leader>u :GundoToggle<cr>
 " php 
 "let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
-let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []} "disable syntastic by default (call SyntasticToogleMode to enable)
+"disable syntastic by default (call SyntasticToogleMode to enable)
+let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []}
+
+" NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
+" nouveau root directory
+let NERDTreeChDirMode=2 
 
 " vim-airline
 let g:airline_powerline_fonts = 1
