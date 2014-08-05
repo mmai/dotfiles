@@ -120,6 +120,9 @@ au BufNewFile,BufRead *.ctp setfiletype php
 "Syntax highlighting for javascript processing templates
 au BufNewFile,BufRead *.pjs setfiletype javascript
 
+"Syntax highlighting for embeded elixir templates (similar to .erb)
+au BufNewFile,BufRead *.eex setfiletype eruby
+
 " Navigation dans la librairie python
 " Penser à executer ctags -R -f ~/.vim/tags/python.ctags /usr/lib/python2.5/
 set tags+=$HOME/.vim/tags/python.ctags
