@@ -17,7 +17,7 @@ zsh: initmodules
 
 git:
 	sudo apt-get install git
-	test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
+	-test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
 	ln -s `pwd`/.gitconfig ~/.gitconfig
 
 vim: fonts languagetool
@@ -44,8 +44,8 @@ dpkg:
 node: initmodules dpkg
 	ln -s `pwd`/.nvm ~/.nvm
 	. ~/.nvm/nvm.sh
-	nvm install 0.10
-	nvm alias default 0.10
+	nvm install 0.12
+	nvm alias default 0.12
 
 javascript: node
 	npm install jshint -g
@@ -57,12 +57,12 @@ php:
 	sudo pear install --alldeps phpmd/PHP_PMD
 
 python:
-	#test -e ~/.pythonrc && mv ~/.pythonrc ~/.pythonrc_bak
+	-test -e ~/.pythonrc && mv ~/.pythonrc ~/.pythonrc_bak
 	sudo apt-get install python-pip
 	ln -s `pwd`/.pythonrc ~/.pythonrc
 	sudo pip install virtualenv virtualenvwrapper pep8 autopep8 pyflakes flake8
 
 ruby:
 	sudo apt-get install ruby ruby-dev
-	test -e ~/.irbrc && mv ~/.irbrc ~/.irbrc_bak
+	-test -e ~/.irbrc && mv ~/.irbrc ~/.irbrc_bak
 	ln -s `pwd`/.irbrc ~/.irbrc
