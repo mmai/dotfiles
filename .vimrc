@@ -2,10 +2,10 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 "Defaults everyone can agree on
 Bundle 'tpope/vim-sensible'
@@ -20,28 +20,34 @@ Bundle 'jasoncodes/ctrlp-modified.vim'
 
 Bundle 'bling/vim-airline'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'mattn/emmet-vim'
 Bundle 'hsitz/VimOrganizer'
+Bundle 'mattn/emmet-vim'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'utl.vim'
 Bundle 'tpope/vim-speeddating'
 Bundle 'dhruvasagar/vim-vinegar'
 
 Bundle 'tomtom/tcomment_vim'
+"must be before vim-markdown
+Bundle 'godlygeek/tabular'
+
+"Languages support
+Bundle 'pangloss/vim-javascript'
+Bundle 'heavenshell/vim-jsdoc'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'wavded/vim-stylus'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'plasticboy/vim-markdown'
 
 "Check code syntax
 Bundle 'scrooloose/syntastic'
 
+Bundle 'lukaszb/vim-web-indent'
 Bundle 'indenthtml.vim'
 Bundle 'vim-scripts/IndentAnything'
 Bundle 'AutoComplPop'
 Bundle 'kana/vim-smartinput'
-
-"Languages support
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'wavded/vim-stylus'
-Bundle 'alterc/vim-colors-solarized'
-Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'mattn/webapi-vim'
 Bundle 'kana/vim-textobj-lastpat'
@@ -50,13 +56,15 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'plasticboy/vim-markdown'
+Bundle 'alterc/vim-colors-solarized'
+
 
 "Disable caps-lock when leaving insert mode (only on Xwindows)
 Bundle 'suxpert/vimcaps'
 Bundle 'mattn/gist-vim'
-Bundle 'mmai/wikilink'
+"Bundle 'mmai/wikilink'
+Bundle 'mmai/vim-markdown-wiki'
+Bundle 'mmai/vim-scrum-markdown'
 Bundle 'mmai/vim-zenmode'
 " send text to tmux
 Bundle 'xaviershay/tslime.vim'
@@ -65,6 +73,9 @@ Bundle 'sjl/splice.vim'
 "Bundle 'astashov/vim-ruby-debugger'
 
 "Bundle 'airblade/vim-gitgutter' "too slow
+
+call vundle#end() "required
+filetype plugin indent on "required
 "End vundle config
 
 set background=dark
@@ -100,6 +111,10 @@ set expandtab       " Use spaces instead of tabs
 " set tabstop=4       " Display \t as 4 spaces
 " set shiftwidth=4    " Number of spaces to use for each indent
 " set softtabstop=4   " Treat 4 spaces as a tab for editing purposes
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype php setlocal ts=2 sts=2 sw=2
 
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'

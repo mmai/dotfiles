@@ -4,9 +4,6 @@
 [submodule ".nvm"]
 	path = .nvm
 	url = http://github.com/creationix/nvm.git
-[submodule ".vim/bundle/vundle"]
-	path = .vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
 [submodule ".vim/powerline"]
 	path = .vim/powerline
 	url = https://github.com/Lokaltog/powerline
