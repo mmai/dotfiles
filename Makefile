@@ -18,7 +18,8 @@ zsh: initmodules
 git:
 	sudo apt-get install git
 	-test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
-	ln -s `pwd`/.gitconfig ~/.gitconfig
+	-test -e ~/.gitignore_global && mv ~/.gitignore_global ~/.gitignore_global_bak
+	ln -s `pwd`/.gitignore_global ~/.gitignore_global
 
 vim: fonts languagetool
 	sudo apt-get install vim-gnome ctags
