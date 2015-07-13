@@ -1,82 +1,109 @@
-" Vundle config
-set nocompatible
-filetype off
+"NeoBundle Scripts-----------------------------
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-Bundle 'gmarik/Vundle.vim'
+" Required:
+call neobundle#begin(expand('~/.vim/bundle'))
 
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
 "Defaults everyone can agree on
-Bundle 'tpope/vim-sensible'
+NeoBundle 'tpope/vim-sensible'
+
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 "--------- File navigation
 "CTRL-P (fuzzy finder)
-Bundle 'kien/ctrlp.vim'
+NeoBundle 'kien/ctrlp.vim'
 "CTRL-P : jump to functions definitions
-Bundle 'tacahiroy/ctrlp-funky'
+NeoBundle 'tacahiroy/ctrlp-funky'
 "CTRL-p : show git modified files
-Bundle 'jasoncodes/ctrlp-modified.vim'
+NeoBundle 'jasoncodes/ctrlp-modified.vim'
 
-Bundle 'bling/vim-airline'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'hsitz/VimOrganizer'
-Bundle 'mattn/emmet-vim'
-Bundle 'chrisbra/NrrwRgn'
-Bundle 'utl.vim'
-Bundle 'tpope/vim-speeddating'
-Bundle 'dhruvasagar/vim-vinegar'
 
-Bundle 'tomtom/tcomment_vim'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'nelstrom/vim-visual-star-search'
+NeoBundle 'hsitz/VimOrganizer'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'chrisbra/NrrwRgn'
+NeoBundle 'utl.vim'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'dhruvasagar/vim-vinegar'
+
+NeoBundle 'tomtom/tcomment_vim'
 "must be before vim-markdown
-Bundle 'godlygeek/tabular'
+NeoBundle 'godlygeek/tabular'
 
 "Languages support
-Bundle 'pangloss/vim-javascript'
-Bundle 'heavenshell/vim-jsdoc'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'wavded/vim-stylus'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'plasticboy/vim-markdown'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'heavenshell/vim-jsdoc'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'wavded/vim-stylus'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'plasticboy/vim-markdown'
 
 "Check code syntax
-Bundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 
-Bundle 'lukaszb/vim-web-indent'
-Bundle 'indenthtml.vim'
-Bundle 'vim-scripts/IndentAnything'
-Bundle 'AutoComplPop'
-Bundle 'kana/vim-smartinput'
+NeoBundle 'lukaszb/vim-web-indent'
+NeoBundle 'indenthtml.vim'
+NeoBundle 'vim-scripts/IndentAnything'
+NeoBundle 'AutoComplPop'
+NeoBundle 'kana/vim-smartinput'
 
-Bundle 'mattn/webapi-vim'
-Bundle 'kana/vim-textobj-lastpat'
-Bundle 'kana/vim-textobj-user'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sjl/gundo.vim'
-Bundle 'alterc/vim-colors-solarized'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'kana/vim-textobj-lastpat'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'maxbrunsfeld/vim-yankstack'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'alterc/vim-colors-solarized'
 
 
 "Disable caps-lock when leaving insert mode (only on Xwindows)
-Bundle 'suxpert/vimcaps'
-Bundle 'mattn/gist-vim'
+NeoBundle 'suxpert/vimcaps'
+NeoBundle 'mattn/gist-vim'
 "Bundle 'mmai/wikilink'
-Bundle 'mmai/vim-markdown-wiki'
-Bundle 'mmai/vim-scrum-markdown'
-Bundle 'mmai/vim-zenmode'
+NeoBundle 'mmai/vim-markdown-wiki'
+NeoBundle 'mmai/vim-scrum-markdown'
+NeoBundle 'mmai/vim-zenmode'
 " send text to tmux
-Bundle 'xaviershay/tslime.vim'
+NeoBundle 'xaviershay/tslime.vim'
 " three way merge
-Bundle 'sjl/splice.vim'
+NeoBundle 'sjl/splice.vim'
 "Bundle 'astashov/vim-ruby-debugger'
 
 "Bundle 'airblade/vim-gitgutter' "too slow
 
-call vundle#end() "required
-filetype plugin indent on "required
-"End vundle config
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
 
 set background=dark
 "colorscheme solarized
@@ -202,6 +229,28 @@ nnoremap <leader>u :GundoToggle<cr>
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
 "disable syntastic by default (call SyntasticToogleMode to enable)
 let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []}
+
+" Tabulation
+"       shortcuts
+if exists(":Tabularize")
+        nmap <Leader>a= :Tabularize /=<CR>
+        vmap <Leader>a= :Tabularize /=<CR>
+        nmap <Leader>a: :Tabularize /:\zs<CR>
+        vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+"       auto tabulate |
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+"end tabulation
 
 " NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
 " nouveau root directory

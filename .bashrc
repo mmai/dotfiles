@@ -19,3 +19,16 @@ if [[ -a ~/.nvm/nvm.sh ]];then source ~/.nvm/nvm.sh;fi
 
 export TASKDATA=~/Dropbox/task
 export TASKRC=~/Dropbox/taskrc
+
+# @description Open given file with adequate rights (sudo/user)
+# @param    $@|$f  file(s) name
+# @return    void
+function e() {
+  f="$1"
+
+  if [[ -w "$f" ]]; then
+    "$EDITOR" -- "$f"
+  else
+    sudo -e -- "$f"
+  fi
+}

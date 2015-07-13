@@ -5,4 +5,4 @@
 --color
 
 # Use "less -r" as my pager
---pager=less -r
+#--pager=less -r
