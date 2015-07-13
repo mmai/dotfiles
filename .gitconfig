@@ -19,3 +19,4 @@
 	default = matching
 [core]
 	excludesfile = /home/henri/.gitignore_global
+	editor = /usr/bin/vim

@@ -29,6 +29,8 @@ vim: fonts languagetool
 	sudo apt-get install python-fontforge
 	#Command-T
 	cd .vim/bundle/Command-T/ruby/command-t;ruby extconf.rb;make;cd ~/dotfiles
+	#Haskell support
+	cd ~/.vim/haskell-vim-now/bin/;sh ./install.sh;cd -
 
 fonts:
 	ln -s `pwd`/.fonts ~/.fonts
@@ -67,3 +69,6 @@ ruby:
 	sudo apt-get install ruby ruby-dev
 	-test -e ~/.irbrc && mv ~/.irbrc ~/.irbrc_bak
 	ln -s `pwd`/.irbrc ~/.irbrc
+
+haskell:
+
