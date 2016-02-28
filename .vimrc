@@ -1,3 +1,5 @@
+"TODO ?
+"vim-snipmate, neocompletee.vim, nerdcommenter, neocomplete
 "NeoBundle Scripts-----------------------------
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let g:mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
@@ -45,11 +47,25 @@ NeoBundle 'jasoncodes/ctrlp-modified.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'hsitz/VimOrganizer'
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'utl.vim'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'dhruvasagar/vim-vinegar'
+
+NeoBundle 'mattn/emmet-vim'
+"Expand CSS selectors expression to HTML (ie div#page>div.logo+ul#navigation>li*5>a)
+"Works on multiline selections. More on documentation.
+"<C-y>,          : complete abbreviation (don't forget the ',')
+"<C-y>n / <C-y>N : go to next/previous edit point 
+"<C-y>d          : select element 
+
+NeoBundle 'terryma/vim-multiple-cursors' 
+"Like SublimeText multisection
+"<C-n> : select current word, then the next...
+"<C-p> : cancel selection 
+"<C-x> : omit current selection 
+"v : go to normal mode and edit
+"ESC : back to regular Vim
 
 NeoBundle 'tomtom/tcomment_vim'
 "must be before vim-markdown
@@ -57,6 +73,8 @@ NeoBundle 'godlygeek/tabular'
 
 "Languages support
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'Quramy/tsuquyomi' "TypeScript completion, refactoring, etc.
+NeoBundle 'leafgarland/typescript-vim' "TypeScript
 NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'wavded/vim-stylus'
@@ -164,6 +182,12 @@ hi! link SyntasticWarningSign WarningMsg
 " Use pleasant but very visible search hilighting
 hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
 hi! link Visual Search
+
+" ====== TypeScript
+set ballooneval
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+" /End TypeScript
 
 " Match wombat colors in nerd tree
 hi Directory guifg=#8ac6f2
@@ -420,6 +444,7 @@ au BufNewFile,BufRead *.eex setfiletype eruby
 set tags+=$HOME/.vim/tags/python.ctags
 " Complétion pour python
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+
 " accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
 inoremap <C-space> <C-x><C-o>
 
@@ -473,6 +498,7 @@ nnoremap <leader>u :GundoToggle<cr>
 " php 
 "let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
+let g:syntastic_javascript_checkers=['eslint'] 
 "disable syntastic by default (call SyntasticToogleMode to enable)
 let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []}
 
