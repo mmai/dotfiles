@@ -55,6 +55,7 @@ NeoBundle 'dhruvasagar/vim-vinegar'
 NeoBundle 'mattn/emmet-vim'
 "Expand CSS selectors expression to HTML (ie div#page>div.logo+ul#navigation>li*5>a)
 "Works on multiline selections. More on documentation.
+"On insert mode:
 "<C-y>,          : complete abbreviation (don't forget the ',')
 "<C-y>n / <C-y>N : go to next/previous edit point 
 "<C-y>d          : select element 
@@ -73,6 +74,7 @@ NeoBundle 'godlygeek/tabular'
 
 "Languages support
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'lambdatoast/elm.vim'
 NeoBundle 'Quramy/tsuquyomi' "TypeScript completion, refactoring, etc.
 NeoBundle 'leafgarland/typescript-vim' "TypeScript
 NeoBundle 'heavenshell/vim-jsdoc'

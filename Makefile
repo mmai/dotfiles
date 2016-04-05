@@ -1,11 +1,14 @@
 install: bash zsh ack git javascript python ruby vim scite
 
 initmodules: 
-	git submodule init
-	git submodule update
+  git submodule init
+  git submodule update
 
 ack:
-	ln -s `pwd`/.ackrc ~/.ackrc
+  ln -s `pwd`/.ackrc ~/.ackrc
+
+xmonad:
+  ln -s `pwd`/.xmonad/xmonad.hs ~/.xmonad/
 
 bash:
 	echo ". "`pwd`/.bashrc >> ~/.bashrc
