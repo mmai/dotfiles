@@ -26,6 +26,7 @@ floatingClasses =
   [ "MPlayer"
   , "Gimp"
   , "Unity"
+  , "Screenruler"
   , "Wrapper"
   , "Xfce4-xkb-plugin"
   , "Xfce4-appfinder"

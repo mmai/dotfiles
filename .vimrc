@@ -1,6 +1,5 @@
 "TODO ?
 "vim-snipmate, neocompletee.vim, nerdcommenter, neocomplete
-"NeoBundle Scripts-----------------------------
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let g:mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
@@ -9,23 +8,16 @@ if has('vim_starting')
   if &compatible
     set nocompatible               " Be iMproved
   endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin(expand('~/.vim/bundle'))
 
 " Add or remove your Bundles here:
 "Defaults everyone can agree on
-NeoBundle 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
-NeoBundle 'Shougo/vimproc.vim', {
+Plug 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
 \     'cygwin' : 'make -f make_cygwin.mak',
@@ -37,22 +29,22 @@ NeoBundle 'Shougo/vimproc.vim', {
 
 "--------- File navigation
 "CTRL-P (fuzzy finder)
-NeoBundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 "CTRL-P : jump to functions definitions
-NeoBundle 'tacahiroy/ctrlp-funky'
+Plug 'tacahiroy/ctrlp-funky'
 "CTRL-p : show git modified files
-NeoBundle 'jasoncodes/ctrlp-modified.vim'
+Plug 'jasoncodes/ctrlp-modified.vim'
 
 
-NeoBundle 'bling/vim-airline'
-NeoBundle 'nelstrom/vim-visual-star-search'
-NeoBundle 'hsitz/VimOrganizer'
-NeoBundle 'chrisbra/NrrwRgn'
-NeoBundle 'utl.vim'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'dhruvasagar/vim-vinegar'
+Plug 'bling/vim-airline'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'hsitz/VimOrganizer'
+Plug 'chrisbra/NrrwRgn'
+Plug 'utl.vim'
+Plug 'tpope/vim-speeddating'
+Plug 'dhruvasagar/vim-vinegar'
 
-NeoBundle 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 "Expand CSS selectors expression to HTML (ie div#page>div.logo+ul#navigation>li*5>a)
 "Works on multiline selections. More on documentation.
 "On insert mode:
@@ -60,7 +52,7 @@ NeoBundle 'mattn/emmet-vim'
 "<C-y>n / <C-y>N : go to next/previous edit point 
 "<C-y>d          : select element 
 
-NeoBundle 'terryma/vim-multiple-cursors' 
+Plug 'terryma/vim-multiple-cursors' 
 "Like SublimeText multisection
 "<C-n> : select current word, then the next...
 "<C-p> : cancel selection 
@@ -68,52 +60,53 @@ NeoBundle 'terryma/vim-multiple-cursors'
 "v : go to normal mode and edit
 "ESC : back to regular Vim
 
-NeoBundle 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 "must be before vim-markdown
-NeoBundle 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 "Languages support
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'lambdatoast/elm.vim'
-NeoBundle 'Quramy/tsuquyomi' "TypeScript completion, refactoring, etc.
-NeoBundle 'leafgarland/typescript-vim' "TypeScript
-NeoBundle 'heavenshell/vim-jsdoc'
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'wavded/vim-stylus'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'plasticboy/vim-markdown'
+Plug 'othree/yajs.vim',{'for':'javascript'}
+Plug 'lambdatoast/elm.vim'
+Plug 'Quramy/tsuquyomi' "TypeScript completion, refactoring, etc.
+Plug 'leafgarland/typescript-vim' "TypeScript
+Plug 'heavenshell/vim-jsdoc'
+Plug 'elixir-lang/vim-elixir'
+Plug 'wavded/vim-stylus'
+Plug 'kchmck/vim-coffee-script'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'plasticboy/vim-markdown'
 
 "Check code syntax
-NeoBundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
-NeoBundle 'lukaszb/vim-web-indent'
-NeoBundle 'indenthtml.vim'
-NeoBundle 'vim-scripts/IndentAnything'
-NeoBundle 'AutoComplPop'
-NeoBundle 'kana/vim-smartinput'
+" Plug 'jason0x43/vim-js-indent'
+Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
+Plug 'indenthtml.vim'
+Plug 'vim-scripts/IndentAnything'
+Plug 'AutoComplPop'
+Plug 'kana/vim-smartinput'
 
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'kana/vim-textobj-lastpat'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'maxbrunsfeld/vim-yankstack'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'alterc/vim-colors-solarized'
+Plug 'mattn/webapi-vim'
+Plug 'kana/vim-textobj-lastpat'
+Plug 'kana/vim-textobj-user'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+Plug 'sjl/gundo.vim'
+Plug 'alterc/vim-colors-solarized'
 
 
 "Disable caps-lock when leaving insert mode (only on Xwindows)
-NeoBundle 'suxpert/vimcaps'
-NeoBundle 'mattn/gist-vim'
+Plug 'suxpert/vimcaps'
+Plug 'mattn/gist-vim'
 "Bundle 'mmai/wikilink'
-NeoBundle 'mmai/vim-markdown-wiki'
-NeoBundle 'mmai/vim-scrum-markdown'
-NeoBundle 'mmai/vim-zenmode'
+Plug 'mmai/vim-markdown-wiki'
+Plug 'mmai/vim-scrum-markdown'
+Plug 'mmai/vim-zenmode'
 " send text to tmux
-NeoBundle 'xaviershay/tslime.vim'
+Plug 'xaviershay/tslime.vim'
 " three way merge
-NeoBundle 'sjl/splice.vim'
+Plug 'sjl/splice.vim'
 "Bundle 'astashov/vim-ruby-debugger'
 
 "Bundle 'airblade/vim-gitgutter' "too slow
@@ -121,35 +114,31 @@ NeoBundle 'sjl/splice.vim'
 " ---- From haskell-vim-now : 
 " Plugin 'int3/vim-extradite'
 " Plugin 'scrooloose/nerdtree'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'moll/vim-bbye'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'vim-scripts/gitignore'
-NeoBundle 'vim-scripts/Align'
-NeoBundle 'vim-scripts/Gundo'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'michaeljsmith/vim-indent-object'
+Plug 'ervandew/supertab'
+Plug 'moll/vim-bbye'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-scripts/gitignore'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/Gundo'
+Plug 'tpope/vim-commentary'
+Plug 'michaeljsmith/vim-indent-object'
 " Allow pane movement to jump out of vim into tmux
-NeoBundle 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 " Haskell
-NeoBundle 'raichoo/haskell-vim'
-NeoBundle 'enomsg/vim-haskellConcealPlus'
-NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'eagletmt/neco-ghc'
-NeoBundle 'Twinside/vim-hoogle'
+Plug 'raichoo/haskell-vim'
+Plug 'enomsg/vim-haskellConcealPlus'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'Twinside/vim-hoogle'
 " Colorscheme
-NeoBundle 'vim-scripts/wombat256.vim'
+Plug 'vim-scripts/wombat256.vim'
 
 " Required:
-call neobundle#end()
+call plug#end()
 
 " Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
 
 set background=dark
 "colorscheme solarized
@@ -500,8 +489,13 @@ nnoremap <leader>u :GundoToggle<cr>
 " php 
 "let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
-let g:syntastic_javascript_checkers=['eslint'] 
-"disable syntastic by default (call SyntasticToogleMode to enable)
+let g:syntastic_javascript_checkers=['standard'] 
+let g:syntastic_always_populate_loc_list=1 "populate location-list with errors : navigate with :lne :lpr
+" highlight SyntasticStyleError guibg=Red
+" highlight SyntasticStyleWarning guibg=Orange
+
+" let g:syntastic_javascript_checkers=['eslint'] 
+"disable syntastic by default (call SyntasticToggleMode to enable)
 let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []}
 
 " Tabulation
@@ -529,6 +523,9 @@ endfunction
 " NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
 " nouveau root directory
 let NERDTreeChDirMode=2 
+
+" IDE command : enable syntastic,...
+nnoremap <leader>ide :SyntasticToggleMode<cr>  
 
 " vim-airline
 let g:airline_powerline_fonts = 1
