@@ -16,6 +16,7 @@ import qualified Codec.Binary.UTF8.String as UTF8
 --
 import XMonad.Config.Xfce       -- uses the XFCE base configuration
 import XMonad.Hooks.EwmhDesktops as EWMH
+import XMonad.Hooks.ManageHelpers
 
 import qualified Data.Map as M  -- default keybindings
 import qualified XMonad.StackSet as W
@@ -35,15 +36,15 @@ floatingClasses =
 -- Note : to get the className of an app : launch app, then "xprop | grep WM_CLASS"
 
 myManageHook = composeAll [
-  className =? "Gvim" --> doShift "1:dev"
+  isFullscreen --> doFullFloat -- workaround firefox fullscreen bug (cf. https://www.reddit.com/r/xmonad/comments/4cnjhi/fullscreen_video_in_firefox/)
+  ,className =? "Gvim" --> doShift "1:dev"
   ,className =? "jetbrains-idea" --> doShift "1:dev"
 
   ,className =? "Firefox" --> doShift "2:web"
-  ,className =? "Chromium" --> doShift  "2:web"
+  ,className =? "chromium-browser" --> doShift  "2:web"
 
   -- ,className =? "Xfce4-terminal" --> doShift "3:shell"
 
-  -- XXX why can't I move thunderbird ?
   ,className =? "Mail" --> doShift "3:mail"
   ,className =? "Thunderbird" --> doShift "3:mail"
   ,resource =? "thunderbird" --> doShift  "3:mail"
@@ -67,7 +68,7 @@ main = do
     , focusedBorderColor = "black"
     , manageHook         = placeHook simpleSmart <+> myManageHook <+> manageHook xfceConfig <+> manageDocks <+> (composeAll . map (\n -> className =? n --> doFloat)) floatingClasses
     , layoutHook         = avoidStruts $ layoutHook xfceConfig
-    , handleEventHook    = handleEventHook xfceConfig <+> EWMH.ewmhDesktopsEventHook
+    , handleEventHook    = handleEventHook xfceConfig <+> EWMH.ewmhDesktopsEventHook <+> fullscreenEventHook
     , startupHook        = EWMH.ewmhDesktopsStartup <+> setWMName "LG3D"     -- java applications support
     , logHook            =  dynamicLogWithPP (prettyPrinter dbus) -- send infos to the xfce panel applet via dbus
     -- , logHook            = EWMH.ewmhDesktopsLogHook >> dynamicLogWithPP (prettyPrinter dbus) -- give ewmh hints to xprop >> send infos to the xfce panel applet via dbus

@@ -4,6 +4,9 @@ let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let g:mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
 
+"prevent the disturbing highlighting of the matched {([ ])}
+let loaded_matchparen = 1
+
 if has('vim_starting')
   if &compatible
     set nocompatible               " Be iMproved
@@ -393,7 +396,6 @@ set dir=/tmp " tell vim where to put swap files
 set wildmode=list:longest,full
 
 syntax on
-set showmatch
 
 set number
 
@@ -497,6 +499,10 @@ let g:syntastic_always_populate_loc_list=1 "populate location-list with errors :
 " let g:syntastic_javascript_checkers=['eslint'] 
 "disable syntastic by default (call SyntasticToggleMode to enable)
 let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []}
+
+" javascript automatic formatting on save
+autocmd bufwritepost *.js silent !standard-format -w %
+set autoread
 
 " Tabulation
 "       shortcuts
