@@ -25,7 +25,7 @@ import XMonad.Actions.GridSelect -- Displays a grid of open windows (~ exposé)
 
 floatingClasses =
   [ "MPlayer"
-  , "Gimp"
+  , "Gimp-2.8"
   , "Unity"
   , "Screenruler"
   , "Wrapper"
@@ -55,7 +55,7 @@ myManageHook = composeAll [
 main = do
   dbus <- D.connectSession
   getWellKnownName dbus
-  spawn $ "feh --bg-scale " ++ "~/Images/Wallpapers/lapins_figaro.jpg" --Set wallpaper
+  -- spawn $ "feh --bg-scale " ++ "~/Images/Wallpapers/lapins_figaro.jpg" --Set wallpaper
   xmonad xfceConfig
     {
       workspaces = ["1:dev", "2:web", "3:mail", "4", "5:multimedia", "6", "7", "8", "9", "0:stash"]

@@ -37,6 +37,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 "CTRL-p : show git modified files
 Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'mileszs/ack.vim'
 
 
 Plug 'bling/vim-airline'
@@ -78,6 +79,8 @@ Plug 'wavded/vim-stylus'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'plasticboy/vim-markdown'
+" PHP 
+Plug 'nelsyeung/twig.vim' "slow
 
 "Check code syntax
 Plug 'scrooloose/syntastic'
@@ -525,6 +528,10 @@ function! s:align()
   endif
 endfunction
 "end tabulation
+
+" fix E764 AutoComplPop error message when editing html files
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
 
 " NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
 " nouveau root directory

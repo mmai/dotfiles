@@ -15,6 +15,23 @@
 [alias]
     #oldest-ancestor = !zsh -c 'diff -u <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1' -
     oldest-ancestor = !zsh -c 'diff --old-line-format='' --new-line-format='' <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+    	aa = !git ls-files -d | xargs -r git rm && git ls-files -m -o --exclude-standard | xargs -r git add
+    aup = "!sh -c 'git ls-files -m | grep $1 | xargs -r git add' -"
+    ag = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs -r git add' -"
+    agp = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs -r git add -p' -"
+    cg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git checkout' -"
+    dg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff' -"
+    pg = "!sh -c 'git ls-files -m | grep $1 | xargs -r git diff --cached' -"
+    rmg = "!sh -c 'git ls-files -d | grep $1 | xargs -r git rm' -"
+    rsg = "!sh -c 'git ls-files -c | grep $1 | xargs -r git reset' -"
+    #lg = log --graph --pretty=full --abbrev-commit --decorate 
+    lg = log --graph --pretty=oneline --abbrev-commit --decorate
+    si = !git svn show-ignore > .git/info/exclude
+    sh = !git-sh
+    br = branch
+    ci = commit
+    co = checkout
+    st = status
 [push]
 	default = matching
 [core]
