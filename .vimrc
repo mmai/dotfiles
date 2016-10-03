@@ -31,6 +31,7 @@ Plug 'Shougo/vimproc.vim', {
 \ }
 
 "--------- File navigation
+" Plug 'Mizuchi/vim-ranger'
 "CTRL-P (fuzzy finder)
 Plug 'kien/ctrlp.vim'
 "CTRL-P : jump to functions definitions
@@ -80,7 +81,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'plasticboy/vim-markdown'
 " PHP 
-Plug 'nelsyeung/twig.vim' "slow
+Plug 'nelsyeung/twig.vim'
 
 "Check code syntax
 Plug 'scrooloose/syntastic'
@@ -414,7 +415,7 @@ set tabstop=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=2 sts=2 sw=2
+autocmd Filetype php setlocal ts=4 sts=4 sw=4
 
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
@@ -444,11 +445,10 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
 inoremap <C-space> <C-x><C-o>
 
-" this lets us put the marker in the file so that
-" it can be shared across and stored in version control.
-set foldmethod=marker
+set foldmethod=indent
 "unfolded by default
-au BufWinEnter * normal zR 
+"au BufWinEnter * normal zR 
+set nofoldenable
 
 
 " this is for python, put
@@ -494,14 +494,14 @@ nnoremap <leader>u :GundoToggle<cr>
 " php 
 "let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
-let g:syntastic_javascript_checkers=['standard'] 
 let g:syntastic_always_populate_loc_list=1 "populate location-list with errors : navigate with :lne :lpr
 " highlight SyntasticStyleError guibg=Red
 " highlight SyntasticStyleWarning guibg=Orange
 
-" let g:syntastic_javascript_checkers=['eslint'] 
+" let g:syntastic_javascript_checkers=['standard'] 
+let g:syntastic_javascript_checkers=['eslint'] 
 "disable syntastic by default (call SyntasticToggleMode to enable)
-let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":[], "passive_filetypes": []}
+let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":['php'], "passive_filetypes": []}
 
 " javascript automatic formatting on save
 autocmd bufwritepost *.js silent !standard-format -w %

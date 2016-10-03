@@ -25,7 +25,7 @@ import XMonad.Actions.GridSelect -- Displays a grid of open windows (~ exposé)
 
 floatingClasses =
   [ "MPlayer"
-  , "Gimp-2.8"
+  , "Gimp"
   , "Unity"
   , "Screenruler"
   , "Wrapper"
@@ -46,6 +46,7 @@ myManageHook = composeAll [
   -- ,className =? "Xfce4-terminal" --> doShift "3:shell"
 
   ,className =? "Mail" --> doShift "3:mail"
+  ,className =? "Rambox" --> doShift "3:mail"
   ,className =? "Thunderbird" --> doShift "3:mail"
   ,resource =? "thunderbird" --> doShift  "3:mail"
 
