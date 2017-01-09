@@ -32,14 +32,13 @@ Plug 'Shougo/vimproc.vim', {
 
 "--------- File navigation
 " Plug 'Mizuchi/vim-ranger'
-"CTRL-P (fuzzy finder)
-Plug 'kien/ctrlp.vim'
-"CTRL-P : jump to functions definitions
-Plug 'tacahiroy/ctrlp-funky'
-"CTRL-p : show git modified files
-Plug 'jasoncodes/ctrlp-modified.vim'
+"fzf : fuzzy finder
+"  also install zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, 
+"  or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
+"  The --all option install fzf outside of vim (ie for zsh) as well, use --bin for a vim only version
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-
 
 Plug 'bling/vim-airline'
 Plug 'nelstrom/vim-visual-star-search'
@@ -137,6 +136,7 @@ Plug 'enomsg/vim-haskellConcealPlus'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'Twinside/vim-hoogle'
+Plug 'isovector/ghci.vim' " Tight integration between ghci and vim via tmux
 " Colorscheme
 Plug 'vim-scripts/wombat256.vim'
 
@@ -180,12 +180,6 @@ hi! link SyntasticWarningSign WarningMsg
 " Use pleasant but very visible search hilighting
 hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
 hi! link Visual Search
-
-" ====== TypeScript
-set ballooneval
-autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
-" /End TypeScript
 
 " Match wombat colors in nerd tree
 hi Directory guifg=#8ac6f2

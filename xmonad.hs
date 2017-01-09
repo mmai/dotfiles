@@ -41,12 +41,11 @@ myManageHook = composeAll [
   ,className =? "jetbrains-idea" --> doShift "1:dev"
 
   ,className =? "Firefox" --> doShift "2:web"
-  ,className =? "chromium-browser" --> doShift  "2:web"
+  ,className =? "Chromium-browser" --> doShift  "2:web"
 
   -- ,className =? "Xfce4-terminal" --> doShift "3:shell"
 
   ,className =? "Mail" --> doShift "3:mail"
-  ,className =? "Rambox" --> doShift "3:mail"
   ,className =? "Thunderbird" --> doShift "3:mail"
   ,resource =? "thunderbird" --> doShift  "3:mail"
 
