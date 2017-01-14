@@ -27,7 +27,6 @@ git:
 vim: fonts languagetool
 	sudo apt-get install vim-gnome ctags
 	ln -s `pwd`/.vim ~/.vim
-	ln -s `pwd`/.vimrc ~/.vimrc
 	#Powerline
 	sudo apt-get install python-fontforge
 	#Command-T

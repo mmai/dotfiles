@@ -97,10 +97,14 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-user'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-fugitive'
 Plug 'sjl/gundo.vim'
 Plug 'alterc/vim-colors-solarized'
 
+Plug 'tpope/vim-fugitive'
+" :GV to open commit browser, :GV! only list commits for the current file
+" :GV?  fills the location list with the revisions of the current file
+" :GV or :GV? can be used in visual mode to track the changes in the selected lines.
+Plug 'junegunn/gv.vim' 
 
 "Disable caps-lock when leaving insert mode (only on Xwindows)
 Plug 'suxpert/vimcaps'
@@ -201,11 +205,25 @@ if has("gui_running")
 endif
 set t_Co=256
 
-" Fuzzy find files
-nnoremap <silent> <Leader><space> :CtrlP<CR>
-let g:ctrlp_max_files=0
-let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore = { 'dir': '\v[\/](.git|.cabal-sandbox|node_modules)$' }
+" Fuzzy-find with fzf
+map <C-p> :Files<cr>
+nmap <C-p> :Files<cr>
+" View commits in fzf
+nmap <Leader>c :Commits<cr>
+" Complete from open tmux panes (from @junegunn)
+inoremap <expr> <C-x><C-t> fzf#complete( 'tmuxwords.rb -all-but-current --scroll 499 --min 5')
+inoremap <expr> <C-x><C-k> fzf#complete ('cat /usr/share/dict/words')
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+" Advanced customization using autoload functions
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " Pretty unicode haskell symbols
 let g:haskell_conceal_wide = 1
@@ -470,9 +488,9 @@ nnoremap <leader>fu :CtrlPFunky<cr>
 nnoremap <leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<cr>
 "------- /CTRLP
 
-"Easy .vimrc editing 
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+"Easy vimrc editing 
+nnoremap <leader>ev :vsplit $HOME/.vim/vimrc<cr>
+nnoremap <leader>sv :source $HOME/.vim/vimrc<cr>
 
 "ESC remap
 inoremap kj <esc>
