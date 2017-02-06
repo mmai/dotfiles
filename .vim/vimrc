@@ -68,6 +68,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'godlygeek/tabular'
 
 "Languages support
+Plug 'LnL7/vim-nix'
 Plug 'othree/yajs.vim',{'for':'javascript'}
 Plug 'lambdatoast/elm.vim'
 Plug 'Quramy/tsuquyomi' "TypeScript completion, refactoring, etc.
@@ -88,7 +89,7 @@ Plug 'scrooloose/syntastic'
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
 Plug 'indenthtml.vim'
 Plug 'vim-scripts/IndentAnything'
-Plug 'AutoComplPop'
+Plug 'AutoComplPop' " Open completion popup automatically
 Plug 'kana/vim-smartinput'
 
 Plug 'mattn/webapi-vim'
@@ -96,8 +97,10 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-user'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'majutsushi/tagbar'
-Plug 'sjl/gundo.vim'
 Plug 'alterc/vim-colors-solarized'
+
+Plug 'mbbill/undotree'
+" :UndotreeToggle
 
 Plug 'tpope/vim-fugitive'
 " :GV to open commit browser, :GV! only list commits for the current file
@@ -206,6 +209,8 @@ endif
 set t_Co=256
 
 " Fuzzy-find with fzf
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let g:fzf_layout = { 'down': '~40%' }
 map <C-p> :Files<cr>
 nmap <C-p> :Files<cr>
 " View commits in fzf

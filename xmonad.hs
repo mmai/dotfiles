@@ -110,14 +110,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --     | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
     --     , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
-    --
-    -- mod-{w,e,r}, Switch to physical/Xinerama screens 1 or 2
-    -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
+    -- mod-{a,z,e} (underneath 1,2,3), Switch to physical/Xinerama screens 1, 2 or 3
+    -- mod-shift-{a,z,e}, Move client to screen 1, 2, or 3
     -- reordered
-    -- ++
-    -- [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-    --     | (key, sc) <- zip [xK_w, xK_e] [0..]
-    --     , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    ++
+    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
+        | (key, sc) <- zip [xK_a, xK_z, xK_e] [0..]
+        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 prettyPrinter :: D.Client -> PP
 prettyPrinter dbus = defaultPP
