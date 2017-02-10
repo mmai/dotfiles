@@ -27,6 +27,10 @@
 *.sql
 *.sqlite
 
+# Cache #
+#########
+.sass-cache
+
 # OS generated files #
 ######################
 .DS_Store

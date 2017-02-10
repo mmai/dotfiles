@@ -49,7 +49,6 @@ myManageHook = composeAll [
   ,className =? "Thunderbird" --> doShift "3:mail"
   ,resource =? "thunderbird" --> doShift  "3:mail"
 
-  ,className =? "Vlc" --> doShift "5:multimedia"
   ]
 
 main = do
@@ -105,10 +104,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-[1..9], Switch to workspace
     -- mod-shift-[1..9], Move client to workspace N
     -- --
-    -- ++
-    -- [((m .|. modm, k), windows $ f i)
-    --     | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-    --     , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+    ++
+    [((m .|. modm, k), windows $ f i)
+        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
     -- mod-{a,z,e} (underneath 1,2,3), Switch to physical/Xinerama screens 1, 2 or 3
     -- mod-shift-{a,z,e}, Move client to screen 1, 2, or 3

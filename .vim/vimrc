@@ -39,7 +39,8 @@ Plug 'Shougo/vimproc.vim', {
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
 
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'hsitz/VimOrganizer'
 Plug 'chrisbra/NrrwRgn'
@@ -559,10 +560,12 @@ nnoremap <leader>ide :SyntasticToggleMode<cr>
 
 " vim-airline
 let g:airline_powerline_fonts = 1
+set noshowmode "because insert/normal modes are already shown by vim-airline
 
 "Powerline
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+" Don't forget to config this same font on the terminal emulator to get it
+" working with console vim
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10 
 " let Powerline_symbols = 'fancy'
 "source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 "source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
