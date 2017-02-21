@@ -109,18 +109,21 @@ Plug 'tpope/vim-fugitive'
 " :GV or :GV? can be used in visual mode to track the changes in the selected lines.
 Plug 'junegunn/gv.vim' 
 
-"Disable caps-lock when leaving insert mode (only on Xwindows)
-Plug 'suxpert/vimcaps'
 Plug 'mattn/gist-vim'
+"Bundle 'airblade/vim-gitgutter' "too slow
+
 "Bundle 'mmai/wikilink'
 Plug 'mmai/vim-zenmode'
+
 " send text to tmux
 Plug 'xaviershay/tslime.vim'
 " three way merge
 Plug 'sjl/splice.vim'
 "Bundle 'astashov/vim-ruby-debugger'
 
-"Bundle 'airblade/vim-gitgutter' "too slow
+"Disable caps-lock when leaving insert mode (only on Xwindows)
+Plug 'suxpert/vimcaps'
+
 
 " ---- From haskell-vim-now : 
 " Plugin 'int3/vim-extradite'

@@ -1,9 +1,12 @@
-[submodule ".prezto"]
-	path = .prezto
-	url = http://github.com/mmai/prezto.git
 [submodule ".nvm"]
 	path = .nvm
 	url = http://github.com/creationix/nvm.git
 [submodule ".vim/powerline"]
 	path = .vim/powerline
 	url = https://github.com/Lokaltog/powerline
+[submodule ".zsh/zgen"]
+	path = .zsh/zgen
+	url = https://github.com/tarjoilija/zgen.git
+[submodule ".zsh/zplug"]
+	path = .zsh/zplug
+	url = https://github.com/zplug/zplug
