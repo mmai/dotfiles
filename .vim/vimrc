@@ -31,7 +31,7 @@ Plug 'Shougo/vimproc.vim', {
 \ }
 
 "--------- File navigation
-" Plug 'Mizuchi/vim-ranger'
+" Plug 'francoiscabrol/vim-ranger'
 "fzf : fuzzy finder
 "  also install zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, 
 "  or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
@@ -412,6 +412,8 @@ set mouse=a "Activate mouse on console mode
 "Disable Alt key for accessing menu (conflict with yankstack Alt+P shortcut)
 set winaltkeys=no 
 
+set clipboard^=unnamed,unnamedplus "sync the last copy register with the system clipboard 
+
 "Place temporary files in a specified directory instead of in the current
 "directory
 set backup " tell vim to keep backup files in a 
@@ -564,6 +566,9 @@ nnoremap <leader>ide :SyntasticToggleMode<cr>
 " vim-airline
 let g:airline_powerline_fonts = 1
 set noshowmode "because insert/normal modes are already shown by vim-airline
+let g:airline_left_sep='' " default : >
+let g:airline_right_sep='' " default : <
+
 
 "Powerline
 " Don't forget to config this same font on the terminal emulator to get it

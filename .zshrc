@@ -1,4 +1,16 @@
+# termnal utilities
+#  * z : go to recent /frequent directories
+# some terminal programs : 
+#  * vifm, ranger, mc : file managers
+#  * ncdu : ncurses disk usage
+#  * tldr : Simplified and community-driven man pages  
+#  * neofetch : system config infos 
+#  * cal : calendrier
+#  * meteo
+
 export TERM="xterm-256color"
+# themes couleurs 'base16' pour xfce4-terminal : https://github.com/afg984/base16-xfce4-terminal (config depuis Edit > Preferences > Colors > Presets)
+# summerfruit dark est pas mal
 
 ########################
 # ZPlug plugins manager 
@@ -18,15 +30,22 @@ zplug "modules/completion", from:prezto
 zplug "modules/command-not-found", from:prezto
 zplug "modules/node", from:prezto
 zplug "modules/git", from:prezto
-zplug "modules/prompt", from:prezto
+# zplug "modules/prompt", from:prezto
 zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:editor' keymap 'vi'
-zstyle ':prezto:module:prompt' theme 'steeef'
+# zstyle ':prezto:module:prompt' theme 'steeef'
 
 # Other plugins
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "rupa/z", use:z.sh # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
 zplug "k4rthik/git-cal", as:command # display a github like contribution calendar wall
 
-# Prompt theme
+##### Prompts 
+# pure prompt
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
+
+# POWERLEVEL9K prompt
 # POWERLEVEL9K_MODE='awesome-fontconfig' # need special fonts (see powerlevel9k install doc)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
@@ -43,32 +62,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# source ~/.zsh/zgen/zgen.zsh
-# if ! zgen saved; then
-#
-#   # prezto options
-#   zgen prezto editor key-bindings 'vi'
-#   zgen prezto prompt theme 'steeef'
-#
-#   # specify plugins here
-#   zgen prezto
-#   zgen prezto environment
-#   zgen prezto terminal
-#   zgen prezto editor
-#   zgen prezto history
-#   zgen prezto directory
-#   zgen prezto spectrum
-#   zgen prezto utility
-#   zgen prezto completion
-#   zgen prezto command-not-found
-#   zgen prezto node
-#   zgen prezto git
-#   zgen prezto prompt
-#
-#   # generate the init script from plugins above
-#   zgen save
-# fi
 
 ########################
 # custom aliases
