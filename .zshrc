@@ -8,7 +8,13 @@
 #  * cal : calendrier
 #  * meteo
 
-export TERM="xterm-256color"
+# enable the ctrl-shift-t command in termite to open a new terminal window in the current directory (cf. https://github.com/thestinger/termite)
+if [[ $TERM == xterm-termite ]]; then
+  source /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
+# export TERM="xterm-256color"
 # themes couleurs 'base16' pour xfce4-terminal : https://github.com/afg984/base16-xfce4-terminal (config depuis Edit > Preferences > Colors > Presets)
 # summerfruit dark est pas mal
 

@@ -77,7 +77,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_b     ), sendMessage ToggleStruts) -- Toggle status bar gap
     , ((modm .|. shiftMask, xK_F4    ), spawn "xfce4-session-logout") -- Log out
     , ((modm .|. shiftMask, xK_q     ), spawn "xmonad --recompile; xmonad --restart") -- Change configuration
-    , ((modm .|. shiftMask, xK_Return), spawn "xfce4-terminal") -- launch a terminal
+    --, ((modm .|. shiftMask, xK_Return), spawn "xfce4-terminal") -- launch a terminal
+    , ((modm .|. shiftMask, xK_Return), spawn "termite") -- launch a terminal
     , ((modm,               xK_p     ), spawn "xfce4-appfinder") -- launch appfinder
     , ((modm,               xK_o     ), spawn "thunar") -- launch file explorer
     , ((modm .|. shiftMask, xK_c     ), kill) -- close focused window

@@ -506,6 +506,8 @@ nnoremap <leader>sv :source $HOME/.vim/vimrc<cr>
 "ESC remap
 inoremap kj <esc>
 inoremap KJ <esc>
+inoremap jk <esc>
+inoremap JK <esc>
 "inoremap <esc> <nop>
 
 "Disable Ex mode
@@ -594,3 +596,4 @@ let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "solarized"
 let g:zenmode_font ="Cousine 12"
 let g:zenmode_spell ="fr" "correction orthographique
+
