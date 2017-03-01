@@ -31,13 +31,13 @@ Plug 'Shougo/vimproc.vim', {
 \ }
 
 "--------- File navigation
-" Plug 'francoiscabrol/vim-ranger'
 "fzf : fuzzy finder
 "  also install zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, 
 "  or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
 "  The --all option install fzf outside of vim (ie for zsh) as well, use --bin for a vim only version
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
+
 
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
@@ -513,7 +513,10 @@ inoremap JK <esc>
 "Disable Ex mode
 nnoremap Q <nop>
 
-nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>u :UndotreeToggle<cr>
+
+noremap <silent> <F2> :TagbarToggle<CR>   " F2 : class / functions / variables explorer
+noremap <silent> <F3> :NERDTreeToggle<CR> " F3 : File explorer
 
 "Syntastic
 " php 

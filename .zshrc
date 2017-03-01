@@ -64,12 +64,24 @@ zplug load
 # use vim keys to edit command line
   # must be after 'zplug load'
 bindkey -v
-  # change prompt if in edit mode (cf. https://github.com/sindresorhus/pure/wiki#a-generic-way-of-showing-current-mode-in-vi-mode for a non prezto solution)
-# function prompt_pure_setup { 
-#   zstyle ':prezto:module:editor:info:keymap:primary'   format "❯%f"
-#   zstyle ':prezto:module:editor:info:keymap:alternate' format "❮%f"
-# }
-# PROMPT='%(?.%F{magenta}.%F{red})${editor_info[keymap]} '
+  # change prompt if in edit mode (cf. https://github.com/sindresorhus/pure/wiki#a-generic-way-of-showing-current-mode-in-vi-mode)
+VIM_PROMPT="❯"
+PROMPT='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
+prompt_pure_update_vim_prompt() {
+    zle || {
+        print "error: pure_update_vim_prompt must be called when zle is active"
+        return 1
+    }
+    VIM_PROMPT=${${KEYMAP/vicmd/❮}/(main|viins)/❯}
+    zle .reset-prompt
+}
+
+function zle-line-init zle-keymap-select { 
+    prompt_pure_update_vim_prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+# / End vim prompt
 
 ########################
 # custom aliases
@@ -164,5 +176,13 @@ function e() {
   fi
 }
 
+##################
+# FZF fuzzy finder
+##################
+# Ctrl-R : historique
+# vim ./src/**<TAB>  completion sur le répertoire...
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# Use ag instead of the default find command for listing candidates.
+_fzf_compgen_path() {
+  ag -g "" "$1"
+}
