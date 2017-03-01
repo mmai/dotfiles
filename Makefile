@@ -44,7 +44,7 @@ languagetool:
 	sudo unzip LanguageTool-2.0.zip; rm LanguageTool-2.0.zip
 
 dpkg:
-	sudo apt-get install curl autojump
+	sudo apt-get install curl
 
 node: initmodules dpkg
 	ln -s `pwd`/.nvm ~/.nvm

@@ -30,6 +30,7 @@
 # Cache #
 #########
 .sass-cache
+.phpcomplete_extended
 
 # OS generated files #
 ######################

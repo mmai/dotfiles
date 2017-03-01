@@ -7,6 +7,7 @@
 #  * neofetch : system config infos 
 #  * cal : calendrier
 #  * meteo
+#  * git cal : show github like commits wall
 
 # enable the ctrl-shift-t command in termite to open a new terminal window in the current directory (cf. https://github.com/thestinger/termite)
 if [[ $TERM == xterm-termite ]]; then
@@ -17,6 +18,7 @@ fi
 # export TERM="xterm-256color"
 # themes couleurs 'base16' pour xfce4-terminal : https://github.com/afg984/base16-xfce4-terminal (config depuis Edit > Preferences > Colors > Presets)
 # summerfruit dark est pas mal
+
 
 ########################
 # ZPlug plugins manager 
@@ -36,27 +38,17 @@ zplug "modules/completion", from:prezto
 zplug "modules/command-not-found", from:prezto
 zplug "modules/node", from:prezto
 zplug "modules/git", from:prezto
-# zplug "modules/prompt", from:prezto
 zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:editor' keymap 'vi'
-# zstyle ':prezto:module:prompt' theme 'steeef'
 
-# Other plugins
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "rupa/z", use:z.sh # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
-zplug "k4rthik/git-cal", as:command # display a github like contribution calendar wall
-
-##### Prompts 
 # pure prompt
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 
-# POWERLEVEL9K prompt
-# POWERLEVEL9K_MODE='awesome-fontconfig' # need special fonts (see powerlevel9k install doc)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-# POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX=" "
-# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+# Other plugins
+zplug "rupa/z", use:z.sh # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
+zplug "k4rthik/git-cal", as:command # display a github like contribution calendar wall
+zplug "zsh-users/zsh-syntax-highlighting"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -68,6 +60,16 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+# use vim keys to edit command line
+  # must be after 'zplug load'
+bindkey -v
+  # change prompt if in edit mode (cf. https://github.com/sindresorhus/pure/wiki#a-generic-way-of-showing-current-mode-in-vi-mode for a non prezto solution)
+# function prompt_pure_setup { 
+#   zstyle ':prezto:module:editor:info:keymap:primary'   format "❯%f"
+#   zstyle ':prezto:module:editor:info:keymap:alternate' format "❮%f"
+# }
+# PROMPT='%(?.%F{magenta}.%F{red})${editor_info[keymap]} '
 
 ########################
 # custom aliases
@@ -93,8 +95,6 @@ fi
 
 export TASKDATA=~/Dropbox/task
 export TASKRC=~/Dropbox/taskrc
-
-. /usr/share/autojump/autojump.zsh
 
 #Desactive la completion git beaucoup trop lente
 #compdef -d git
@@ -165,3 +165,4 @@ function e() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
