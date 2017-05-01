@@ -38,6 +38,8 @@ Plug 'Shougo/vimproc.vim', {
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
 
+" task manager"
+Plug 'blindFS/vim-taskwarrior'
 
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
@@ -517,6 +519,7 @@ nnoremap <leader>u :UndotreeToggle<cr>
 
 noremap <silent> <F2> :TagbarToggle<CR>   " F2 : class / functions / variables explorer
 noremap <silent> <F3> :NERDTreeToggle<CR> " F3 : File explorer
+noremap <silent> <F4> :UndotreeToggle<CR> " F4 : undo tree
 
 "Syntastic
 " php 
@@ -532,8 +535,9 @@ let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":['php'], "passive_filetypes": []}
 
 " javascript automatic formatting on save
-autocmd bufwritepost *.js silent !standard-format -w %
-set autoread
+" npm install standard --global
+" autocmd bufwritepost *.js silent !standard --fix %
+" set autoread
 
 " Tabulation
 "       shortcuts

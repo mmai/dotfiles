@@ -61,7 +61,7 @@ main = do
     , keys = azertyKeys <+> myKeys
     , modMask            = mod4Mask -- use Window key as "mod" key
     , terminal           = "xfce4-terminal"
-    , focusFollowsMouse  = True
+    , focusFollowsMouse  = False
     , clickJustFocuses   = False
     , normalBorderColor  = "#dddddd"
     , focusedBorderColor = "black"
@@ -80,7 +80,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --, ((modm .|. shiftMask, xK_Return), spawn "xfce4-terminal") -- launch a terminal
     , ((modm .|. shiftMask, xK_Return), spawn "termite") -- launch a terminal
     , ((modm,               xK_p     ), spawn "xfce4-appfinder") -- launch appfinder
-    , ((modm,               xK_o     ), spawn "thunar") -- launch file explorer
+    , ((modm,               xK_o     ), spawn "nautilus") -- launch file explorer
     , ((modm .|. shiftMask, xK_c     ), kill) -- close focused window
     , ((mod1Mask,           xK_F4    ), kill) -- ALT + F4 close focused window
     , ((modm,               xK_space ), sendMessage NextLayout) -- Rotate through the available layout algorithms

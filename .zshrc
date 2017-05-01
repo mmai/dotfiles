@@ -1,8 +1,10 @@
-# termnal utilities
+# terminal utilities
 #  * z : go to recent /frequent directories
 # some terminal programs : 
 #  * vifm, ranger, mc : file managers
+#  * taskwarrior
 #  * ncdu : ncurses disk usage
+#  * htop
 #  * tldr : Simplified and community-driven man pages  
 #  * neofetch : system config infos 
 #  * cal : calendrier
@@ -79,6 +81,8 @@ alias serve="python -m SimpleHTTPServer"
 alias prettyjson="python -m json.tool"
 alias meteo="curl -4 wttr.in/Bordeaux?lang=fr"
 alias think="cd ~/think/;tree"
+alias tax="task +Atixnet"
+alias vpn="~/softs_/vpn.sh"
 
 if [[ -a ~/.nvm/nvm.sh ]]
 then
@@ -87,8 +91,8 @@ then
   NODE_PATH=$HOME/.nvm/`nvm ls | awk '$1 == "current:" {print $2}'`
 fi
 
-export TASKDATA=~/Dropbox/task
-export TASKRC=~/Dropbox/taskrc
+# export TASKDATA=~/Dropbox/task
+# export TASKRC=~/Dropbox/taskrc
 
 #Desactive la completion git beaucoup trop lente
 #compdef -d git
@@ -168,3 +172,39 @@ function e() {
 _fzf_compgen_path() {
   ag -g "" "$1"
 }
+
+##
+# tiny care terminal
+#
+export TTC_APIKEYS=false
+export TTC_WEATHER='Bordeaux'
+export TTC_REPOS='/var/www,/home/henri/travaux'
+
+##################
+# Taskwarrior utils
+##################
+# inbox
+alias in='task add +in'
+# tickle 
+tickle () {
+    deadline=$1
+    shift
+    in +tickle wait:$deadline $@
+}
+alias tick=tickle
+#alias think='tickle +1d'
+#    Show projects without next actions
+projects=$(~/softs_/projects_without_next_action.sh)
+if [ "$projects" != "" ]
+then
+  echo $fg[red] "Attention: The following projects don't currently have a next action:\n"
+  echo $projects
+  echo
+fi
+#    Show waiting-for items
+waiting=$(task +waiting +PENDING count)
+if [ "$waiting" != "0" ]
+then
+  echo "Any progress on these waiting-fors?"
+  task +waiting +PENDING ls
+fi
