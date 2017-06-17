@@ -51,6 +51,7 @@ zplug "sindresorhus/pure"
 zplug "rupa/z", use:z.sh # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
 zplug "k4rthik/git-cal", as:command # display a github like contribution calendar wall
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "spwhitt/nix-zsh-completions"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -91,6 +92,10 @@ then
   NODE_PATH=$HOME/.nvm/`nvm ls | awk '$1 == "current:" {print $2}'`
 fi
 
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/ # java (pour IntelliJIdea)
+export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre 
+export ANDROID_HOME=/opt/android-sdk-linux/
+
 # export TASKDATA=~/Dropbox/task
 # export TASKRC=~/Dropbox/taskrc
 
@@ -105,6 +110,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt/elixir/bin # Elixir
 PATH=$PATH:/opt/psysh/ # Psych : PHP REPL
 PATH=$PATH:/opt/drush/ # Drupal drush
+PATH=$PATH:$ANDROID_HOME/tools/
+PATH=$PATH:$ANDROID_HOME/platform-tools/
+PATH=$PATH:/opt/android-studio/bin/ # Android STudio
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc # phpbrew : php version manager
 
 # PATH=$PATH:/opt/rust/bin # Rust
@@ -125,8 +133,6 @@ fi
 alias cblconf='cabal configure --package-db=clear --package-db=global --package-db=$(stack path --snapshot-pkg-db) --package-db=$(stack path --local-pkg-db)'
 # use stack binaries 
 #PATH=/home/henri/.stack/snapshots/x86_64-linux/lts-3.4/7.10.2/bin:/home/henri/.stack/programs/x86_64-linux/ghc-7.10.2/bin:$PATH
-
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle/ # java (pour IntelliJIdea)
 
 SCALA_HOME=/opt/scala # scalac & scala 
 PATH=$PATH:$SCALA_HOME/bin:$OPENNLP_HOME/bin 

@@ -31,3 +31,5 @@ uda.brainpower.label=Brainpower
 uda.brainpower.values=H,M,L
 uda.brainpower.default=M
 context.office=-@home
+context.home=-@office
+context=home
