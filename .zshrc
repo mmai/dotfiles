@@ -214,3 +214,4 @@ then
   echo "Any progress on these waiting-fors?"
   task +waiting +PENDING ls
 fi
+source /opt/git-subrepo/.rc
