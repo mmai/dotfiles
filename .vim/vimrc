@@ -1,5 +1,5 @@
 "TODO ?
-"vim-snipmate, neocompletee.vim, nerdcommenter, neocomplete
+"vim-snipmate, nerdcommenter
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let g:mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
@@ -82,12 +82,9 @@ Plug 'nelsyeung/twig.vim'
 "Check code syntax
 Plug 'scrooloose/syntastic'
 
-
-" Plug 'jason0x43/vim-js-indent'
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
 Plug 'vim-scripts/indenthtml.vim'
 Plug 'vim-scripts/IndentAnything'
-Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
 Plug 'kana/vim-smartinput'
 
 Plug 'mattn/webapi-vim'
@@ -95,6 +92,19 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-user'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'majutsushi/tagbar'
+
+"Completion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "nécessite support python
+  " Use deoplete.
+  let g:deoplete#enable_at_startup = 1
+  " javascript completion
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+else 
+  Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
+endif
+" completion Php (cf. projet github pour les prérequis PHP)
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 Plug 'mbbill/undotree'
 " :UndotreeToggle
@@ -135,7 +145,7 @@ Plug 'michaeljsmith/vim-indent-object'
 " Allow pane movement to jump out of vim into tmux
 Plug 'christoomey/vim-tmux-navigator'
 " Haskell
-Plug 'raichoo/haskell-vim'
+Plug 'raichoo/haskell-vim' "syntax and indentation
 Plug 'enomsg/vim-haskellConcealPlus'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
@@ -235,6 +245,8 @@ let g:haskell_conceal_wide = 1
 let g:haskell_conceal_enumerations = 1
 let hscoptions="𝐒𝐓𝐄𝐌xRtB𝔻"
 
+"Disable haskell-vim omnifunc
+let g:haskellmode_completion_ghc = 0
 augroup haskell
   autocmd!
   autocmd FileType haskell map <silent> <leader><cr> :noh<cr>:GhcModTypeClear<cr>:SyntasticReset<cr>
@@ -365,7 +377,7 @@ nmap <silent> <leader>ht :GhcModType<CR>
 " Insert type of expression under cursor
 nmap <silent> <leader>hT :GhcModTypeInsert<CR>
 " GHC errors and warnings
-nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>
+nmap <silent> <leader>hc :SyntasticCheck hdevtools<CR>
 " Haskell Lint
 nmap <silent> <leader>hl :SyntasticCheck hlint<CR>
 
