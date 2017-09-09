@@ -59,7 +59,7 @@ main = do
     {
       workspaces = ["1:dev", "2:web", "3:mail", "4", "5:multimedia", "6", "7", "8", "9", "0:stash"]
     , keys = azertyKeys <+> myKeys
-    , modMask            = mod4Mask -- use Window key as "mod" key
+    -- , modMask            = mod4Mask -- use Window key as "mod" key
     , terminal           = "xfce4-terminal"
     , focusFollowsMouse  = False
     , clickJustFocuses   = False

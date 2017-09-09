@@ -20,15 +20,7 @@ call plug#begin(expand('~/.vim/bundle'))
 "Defaults everyone can agree on
 Plug 'tpope/vim-sensible'
 
-Plug 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
+Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 "--------- File navigation
 "fzf : fuzzy finder
@@ -46,7 +38,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'hsitz/VimOrganizer'
 Plug 'chrisbra/NrrwRgn'
-Plug 'utl.vim'
+Plug 'vim-scripts/utl.vim'
 Plug 'tpope/vim-speeddating'
 Plug 'dhruvasagar/vim-vinegar'
 
@@ -74,6 +66,8 @@ Plug 'godlygeek/tabular'
 Plug 'LnL7/vim-nix'
 Plug 'othree/yajs.vim',{'for':'javascript'}
 Plug 'lambdatoast/elm.vim'
+Plug 'raichoo/purescript-vim' "purescript syntax color
+Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'Quramy/tsuquyomi' "TypeScript completion, refactoring, etc.
 Plug 'leafgarland/typescript-vim' "TypeScript
 Plug 'heavenshell/vim-jsdoc'
@@ -88,11 +82,12 @@ Plug 'nelsyeung/twig.vim'
 "Check code syntax
 Plug 'scrooloose/syntastic'
 
+
 " Plug 'jason0x43/vim-js-indent'
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
-Plug 'indenthtml.vim'
+Plug 'vim-scripts/indenthtml.vim'
 Plug 'vim-scripts/IndentAnything'
-Plug 'AutoComplPop' " Open completion popup automatically
+Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
 Plug 'kana/vim-smartinput'
 
 Plug 'mattn/webapi-vim'
@@ -100,7 +95,6 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-user'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'majutsushi/tagbar'
-Plug 'alterc/vim-colors-solarized'
 
 Plug 'mbbill/undotree'
 " :UndotreeToggle
@@ -373,7 +367,6 @@ nmap <silent> <leader>hT :GhcModTypeInsert<CR>
 " GHC errors and warnings
 nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>
 " Haskell Lint
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['haskell'] }
 nmap <silent> <leader>hl :SyntasticCheck hlint<CR>
 
 " Hoogle the word under the cursor
@@ -531,8 +524,8 @@ let g:syntastic_always_populate_loc_list=1 "populate location-list with errors :
 
 " let g:syntastic_javascript_checkers=['standard'] 
 let g:syntastic_javascript_checkers=['eslint'] 
-"disable syntastic by default (call SyntasticToggleMode to enable)
-let g:syntastic_mode_map= {"mode": "passive", "active_filetypes":['php'], "passive_filetypes": []}
+"enable syntastic by default (call SyntasticToggleMode to disable)
+let g:syntastic_mode_map= {"mode": "active", "active_filetypes":[], "passive_filetypes": []}
 
 " javascript automatic formatting on save
 " npm install standard --global
@@ -564,6 +557,10 @@ endfunction
 " fix E764 AutoComplPop error message when editing html files
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+
+" choose correct case on autocompletion
+set ignorecase
+set infercase
 
 " NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
 " nouveau root directory
@@ -600,7 +597,6 @@ let g:org_command_for_emacsclient='emacsclient'
 
 "Zenmode
 let g:zenmode_background = "dark"
-let g:zenmode_colorscheme = "solarized"
+let g:zenmode_colorscheme = "desert"
 let g:zenmode_font ="Cousine 12"
 let g:zenmode_spell ="fr" "correction orthographique
-

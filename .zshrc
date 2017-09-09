@@ -13,7 +13,7 @@
 
 # enable the ctrl-shift-t command in termite to open a new terminal window in the current directory (cf. https://github.com/thestinger/termite)
 if [[ $TERM == xterm-termite ]]; then
-  source /etc/profile.d/vte.sh
+  source /usr/local/etc/profile.d/vte.sh
   __vte_osc7
 fi
 
@@ -95,9 +95,6 @@ fi
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/ # java (pour IntelliJIdea)
 export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre 
 export ANDROID_HOME=/opt/android-sdk-linux/
-
-# export TASKDATA=~/Dropbox/task
-# export TASKRC=~/Dropbox/taskrc
 
 #Desactive la completion git beaucoup trop lente
 #compdef -d git
@@ -191,6 +188,10 @@ export TTC_REPOS='/var/www,/home/henri/travaux'
 ##################
 # inbox
 alias in='task add +in'
+tp () {
+  task project:$1
+}
+
 # tickle 
 tickle () {
     deadline=$1
@@ -215,3 +216,4 @@ then
   task +waiting +PENDING ls
 fi
 source /opt/git-subrepo/.rc
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -73,4 +73,5 @@ ruby:
 	ln -s `pwd`/.irbrc ~/.irbrc
 
 haskell:
+	curl -sSL https://get.haskellstack.org/ | sh
 
