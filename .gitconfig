@@ -37,3 +37,5 @@
 [core]
 	excludesfile = /home/henri/.gitignore_global
 	editor = /usr/bin/vim
+[diff]
+	tool = meld
