@@ -116,7 +116,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim' 
 
 Plug 'mattn/gist-vim'
-"Bundle 'airblade/vim-gitgutter' "too slow
+Plug 'airblade/vim-gitgutter' 
+
+" go to the root of the project (git, etc.) when opening a new file
+Plug 'airblade/vim-rooter'
 
 "Bundle 'mmai/wikilink'
 Plug 'mmai/vim-zenmode'
@@ -517,14 +520,27 @@ inoremap jk <esc>
 inoremap JK <esc>
 "inoremap <esc> <nop>
 
+"move one single row on the screen 
+nnoremap j gj
+nnoremap k gk
+
 "Disable Ex mode
 nnoremap Q <nop>
 
 nnoremap <leader>u :UndotreeToggle<cr>
 
-noremap <silent> <F2> :TagbarToggle<CR>   " F2 : class / functions / variables explorer
-noremap <silent> <F3> :NERDTreeToggle<CR> " F3 : File explorer
-noremap <silent> <F4> :UndotreeToggle<CR> " F4 : undo tree
+" F2 : class / functions / variables explorer
+noremap <silent> <F2> :TagbarToggle<CR>
+" F3 : File explorer
+noremap <silent> <F3> :NERDTreeToggle<CR>
+" F4 : buffers
+noremap <silent> <F4> :Buffers<CR>
+" F5 : undo tree
+noremap <silent> <F5> :UndotreeToggle<CR>
+" F6 : copy registers
+noremap <silent> <F6> :reg<CR>
+" F7 : git blame
+noremap <silent> <F7> :Gblame<CR>
 
 "Syntastic
 " php 
