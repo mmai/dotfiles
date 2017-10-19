@@ -380,7 +380,8 @@ nmap <silent> <leader>ht :GhcModType<CR>
 " Insert type of expression under cursor
 nmap <silent> <leader>hT :GhcModTypeInsert<CR>
 " GHC errors and warnings
-nmap <silent> <leader>hc :SyntasticCheck hdevtools<CR>
+"nmap <silent> <leader>hc :SyntasticCheck hdevtools<CR>
+nmap <silent> <leader>hc :GhcModCheck<CR>
 " Haskell Lint
 nmap <silent> <leader>hl :SyntasticCheck hlint<CR>
 
@@ -418,7 +419,6 @@ vnoremap <silent> <leader>h> :call Pointful()<CR>
 
 " }}} From haskell-vim-now
 
-set mouse=a "Activate mouse on console mode
 "Disable Alt key for accessing menu (conflict with yankstack Alt+P shortcut)
 set winaltkeys=no 
 
@@ -628,3 +628,5 @@ let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "desert"
 let g:zenmode_font ="Cousine 12"
 let g:zenmode_spell ="fr" "correction orthographique
+
+set mouse=a "Activate mouse on console mode
