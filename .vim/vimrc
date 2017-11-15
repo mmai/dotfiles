@@ -119,7 +119,7 @@ Plug 'mattn/gist-vim'
 Plug 'airblade/vim-gitgutter' 
 
 " go to the root of the project (git, etc.) when opening a new file
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 
 "Bundle 'mmai/wikilink'
 Plug 'mmai/vim-zenmode'
@@ -586,9 +586,12 @@ endfunction
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
 
-" choose correct case on autocompletion
+" ignore case when searching
 set ignorecase
+" choose correct case on autocompletion
 set infercase
+" if there is a capital in the search term, don't ignore case
+set smartcase
 
 " NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
 " nouveau root directory
