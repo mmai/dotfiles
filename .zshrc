@@ -81,6 +81,7 @@ alias idea=/opt/`ls /opt | grep idea`/bin/idea.sh # Intellij Idea
 alias serve="python -m SimpleHTTPServer"
 alias prettyjson="python -m json.tool"
 alias meteo="curl -4 wttr.in/Bordeaux?lang=fr"
+alias coin="coinmon -c eur -f btc,miota,eth,ltc,xrp,xtz,nlg,plbt"
 alias think="cd ~/think/;tree"
 alias tax="task +Atixnet"
 alias vpn="~/softs_/vpn.sh"
