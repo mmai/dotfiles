@@ -44,6 +44,7 @@ Thumbs.db
 
 # Other
 ###################
+.tern-port
 .idea
 *.iml
 *~
