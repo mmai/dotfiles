@@ -20,9 +20,13 @@ call plug#begin(expand('~/.vim/bundle'))
 "Defaults everyone can agree on
 Plug 'tpope/vim-sensible'
 
+Plug 'tpope/vim-surround'
+
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 "--------- File navigation
+Plug 'scrooloose/nerdtree'
+
 "fzf : fuzzy finder
 "  also install zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, 
 "  or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
@@ -157,8 +161,11 @@ Plug 'isovector/ghci.vim' " Tight integration between ghci and vim via tmux
 
 Plug 'mmai/vim-markdown-wiki'
 Plug 'mmai/vim-scrum-markdown'
-" Colorscheme
-Plug 'vim-scripts/wombat256.vim'
+
+Plug 'vim-scripts/wombat256.vim' " Colorscheme
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree
+Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
+Plug 'mhinz/vim-startify' " Fancy start screen
 
 " Required:
 call plug#end()
@@ -495,8 +502,8 @@ set commentstring=\ #\ %s
 if has("statusline")
  "git branch in status line
  set laststatus=2
- "%{GitBranch()} 
- set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+ set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+"  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
 
 "show git modified files in ctrlp
@@ -541,6 +548,8 @@ noremap <silent> <F5> :UndotreeToggle<CR>
 noremap <silent> <F6> :reg<CR>
 " F7 : git blame
 noremap <silent> <F7> :Gblame<CR>
+" F8 : git history for current file 
+noremap <silent> <F8> :GV?<CR>
 
 "Syntastic
 " php 
@@ -610,7 +619,8 @@ let g:airline_right_sep='' " default : <
 "Powerline
 " Don't forget to config this same font on the terminal emulator to get it
 " working with console vim
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10 
+set guifont=DejaVuSansMono\ Nerd\ Font\ 10 
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10 
 " let Powerline_symbols = 'fancy'
 "source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 "source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
@@ -629,7 +639,8 @@ let g:org_command_for_emacsclient='emacsclient'
 "Zenmode
 let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "desert"
-let g:zenmode_font ="Cousine 12"
+" let g:zenmode_font ="Cousine 12"
+let g:zenmode_font ="Cousine Nerd Font 12"
 let g:zenmode_spell ="fr" "correction orthographique
 
 set mouse=a "Activate mouse on console mode

@@ -35,8 +35,12 @@ vim: fonts languagetool
 	cd ~/.vim/haskell-vim-now/bin/;sh ./install.sh;cd -
 
 fonts:
-	ln -s `pwd`/.fonts ~/.fonts
-	fc-cache -vf ~/.fonts
+	# ln -s `pwd`/.fonts ~/.fonts
+	# fc-cache -vf ~/.fonts
+	git clone https://github.com/ryanoasis/nerd-fonts /tmp/nerd-fonts
+	cd /tmp/nerd-fonts
+	./install.sh Cousine
+	./install.sh DejaVuSansMono
 
 languagetool:
 	cd /usr/local/

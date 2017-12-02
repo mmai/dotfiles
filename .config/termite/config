@@ -1,5 +1,6 @@
 [options]
-font = DejaVu Sans Mono for Powerline Book 10
+font = DejaVuSansMono Nerd Font 10
+#font = DejaVu Sans Mono for Powerline Book 10
 
 [colors]
 
