@@ -536,22 +536,24 @@ nnoremap Q <nop>
 
 nnoremap <leader>u :UndotreeToggle<cr>
 
-" F2 : class / functions / variables explorer
-noremap <silent> <F2> :TagbarToggle<CR>
-" F3 : File explorer
-noremap <silent> <F3> :NERDTreeToggle<CR>
-" F4 : buffers
-noremap <silent> <F4> :Buffers<CR>
+" F2 : File explorer
+noremap <silent> <F2> :NERDTreeToggle<CR>
+" F3 : buffers
+noremap <silent> <F3> :Buffers<CR>
+" F4 : copy registers
+noremap <silent> <F4> :reg<CR>
 " F5 : undo tree
 noremap <silent> <F5> :UndotreeToggle<CR>
-" F6 : copy registers
-noremap <silent> <F6> :reg<CR>
-" F7 : git blame
-noremap <silent> <F7> :Gblame<CR>
-" F8 : git history for current file 
-noremap <silent> <F8> :GV?<CR>
+" F6 : git blame
+noremap <silent> <F6> :Gblame<CR>
+" F7 : git history for current file 
+noremap <silent> <F7> :GV?<CR>
+" F9 : class / functions / variables explorer
+noremap <silent> <F9> :TagbarToggle<CR>
 
 "Syntastic
+" IDE command : enable syntastic,...
+nnoremap <leader>ide :SyntasticToggleMode<cr>  
 " php 
 "let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
 let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
@@ -605,9 +607,6 @@ set smartcase
 " NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
 " nouveau root directory
 let NERDTreeChDirMode=2 
-
-" IDE command : enable syntastic,...
-nnoremap <leader>ide :SyntasticToggleMode<cr>  
 
 " vim-airline
 let g:airline_powerline_fonts = 1
