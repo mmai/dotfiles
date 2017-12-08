@@ -1,14 +1,14 @@
 install: bash zsh ack git javascript python ruby vim scite
 
 initmodules: 
-  git submodule init
-  git submodule update
+	git submodule init
+	git submodule update
 
 ack:
-  ln -s `pwd`/.ackrc ~/.ackrc
+	ln -s `pwd`/.ackrc ~/.ackrc
 
 xmonad:
-  ln -s `pwd`/.xmonad/xmonad.hs ~/.xmonad/
+	ln -s `pwd`/.xmonad/xmonad.hs ~/.xmonad/
 
 bash:
 	echo ". "`pwd`/.bashrc >> ~/.bashrc
@@ -16,7 +16,8 @@ bash:
 zsh: initmodules
 	sudo apt-get install zsh
 	chsh -s /bin/zsh
-	zsh prezto_installer.zsh
+	ln -s `pwd`/.zsh ~/.zsh
+	ln -s `pwd`/.zshrc ~/.zshrc
 
 git:
 	sudo apt-get install git

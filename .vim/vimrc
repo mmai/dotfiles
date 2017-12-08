@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 "--------- File navigation
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 
 "fzf : fuzzy finder
 "  also install zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, 
@@ -33,6 +33,9 @@ Plug 'scrooloose/nerdtree'
 "  The --all option install fzf outside of vim (ie for zsh) as well, use --bin for a vim only version
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
+
+Plug 'tpope/vim-vinegar' " netrw shortcuts : - to jump from a buffer to its directory, etc.
+" Plug 'dhruvasagar/vim-vinegar' "vinegar NERDTree version, too slow on
 
 " task manager"
 Plug 'blindFS/vim-taskwarrior'
@@ -44,7 +47,7 @@ Plug 'hsitz/VimOrganizer'
 Plug 'chrisbra/NrrwRgn'
 Plug 'vim-scripts/utl.vim'
 Plug 'tpope/vim-speeddating'
-Plug 'dhruvasagar/vim-vinegar'
+
 
 Plug 'mattn/emmet-vim'
 "Expand CSS selectors expression to HTML (ie div#page>div.logo+ul#navigation>li*5>a)
