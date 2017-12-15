@@ -83,11 +83,15 @@ Plug 'wavded/vim-stylus'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'plasticboy/vim-markdown'
-" PHP 
 Plug 'nelsyeung/twig.vim'
 
 "Check code syntax
 Plug 'scrooloose/syntastic'
+
+"Debugger (:help vdebug)
+" nécessite python2 (pip2 install neovim)
+" F10 : point d'arrêt, F5: start listening 
+Plug 'joonty/vdebug' " XXX Ne marche pas ?
 
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
 Plug 'vim-scripts/indenthtml.vim'
@@ -539,20 +543,22 @@ nnoremap Q <nop>
 
 nnoremap <leader>u :UndotreeToggle<cr>
 
+"XXX F2-F11 : vdebug
+" à réattribuer : 
 " F2 : File explorer
-noremap <silent> <F2> :NERDTreeToggle<CR>
+" noremap <silent> <F2> :NERDTreeToggle<CR>
 " F3 : buffers
-noremap <silent> <F3> :Buffers<CR>
+" noremap <silent> <F3> :Buffers<CR>
 " F4 : copy registers
-noremap <silent> <F4> :reg<CR>
+" noremap <silent> <F4> :reg<CR>
 " F5 : undo tree
-noremap <silent> <F5> :UndotreeToggle<CR>
+" noremap <silent> <F5> :UndotreeToggle<CR>
 " F6 : git blame
-noremap <silent> <F6> :Gblame<CR>
+" noremap <silent> <F6> :Gblame<CR>
 " F7 : git history for current file 
-noremap <silent> <F7> :GV?<CR>
+" noremap <silent> <F7> :GV?<CR>
 " F9 : class / functions / variables explorer
-noremap <silent> <F9> :TagbarToggle<CR>
+" noremap <silent> <F9> :TagbarToggle<CR>
 
 "Syntastic
 " IDE command : enable syntastic,...
@@ -646,3 +652,4 @@ let g:zenmode_font ="Cousine Nerd Font 12"
 let g:zenmode_spell ="fr" "correction orthographique
 
 set mouse=a "Activate mouse on console mode
+
