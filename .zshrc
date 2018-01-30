@@ -111,7 +111,6 @@ PATH=$PATH:/opt/drush/ # Drupal drush
 PATH=$PATH:$ANDROID_HOME/tools/
 PATH=$PATH:$ANDROID_HOME/platform-tools/
 PATH=$PATH:/opt/android-studio/bin/ # Android STudio
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc # phpbrew : php version manager
 
 # PATH=$PATH:/opt/rust/bin # Rust
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rust/lib # Rust
