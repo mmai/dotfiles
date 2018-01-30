@@ -111,7 +111,7 @@ PATH=$PATH:/opt/drush/ # Drupal drush
 PATH=$PATH:$ANDROID_HOME/tools/
 PATH=$PATH:$ANDROID_HOME/platform-tools/
 PATH=$PATH:/opt/android-studio/bin/ # Android STudio
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc # phpbrew : php version manager
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc # phpbrew : php version manager
 
 # PATH=$PATH:/opt/rust/bin # Rust
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rust/lib # Rust
@@ -218,3 +218,5 @@ then
 fi
 source /opt/git-subrepo/.rc
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=/home/henri/.local/bin/luna-studio:$PATH

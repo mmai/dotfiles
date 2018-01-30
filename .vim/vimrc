@@ -236,7 +236,8 @@ endif
 set t_Co=256
 
 " Fuzzy-find with fzf
-let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'fd --type f'
+let $FZF_CTRL_T_COMMAND  = 'fd --type f'
 let g:fzf_layout = { 'down': '~40%' }
 map <C-p> :Files<cr>
 nmap <C-p> :Files<cr>
@@ -477,6 +478,10 @@ set grepprg=grep\ -nH\ --exclude-dir\ .svn\ $*
 au BufNewFile,BufRead *.thtml setfiletype php
 au BufNewFile,BufRead *.ctp setfiletype php
 
+" Use phpcd with deoplete
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+
 "Syntax highlighting for javascript processing templates
 au BufNewFile,BufRead *.pjs setfiletype javascript
 
@@ -512,16 +517,6 @@ if has("statusline")
  set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 "  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
-
-"show git modified files in ctrlp
-nnoremap <leader>m :CtrlPModified<cr>
-
-" show functions definitions
-let g:ctrlp_extensions = ['funky']
-nnoremap <leader>fu :CtrlPFunky<cr>
-" narrow the list down with a word under cursor
-nnoremap <leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<cr>
-"------- /CTRLP
 
 "Easy vimrc editing 
 nnoremap <leader>ev :vsplit $HOME/.vim/vimrc<cr>
