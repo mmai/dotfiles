@@ -1,5 +1,9 @@
 "TODO ?
-"vim-snipmate, nerdcommenter
+"haskell (from https://haskell-at-work.com/about.html#faq):
+"   neoformat + hindent (or brittany) + stylish-haskell
+"   intero-neovim
+"autres:
+"   vim-snipmate, nerdcommenter
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let g:mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
@@ -160,7 +164,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'christoomey/vim-tmux-navigator'
 " Haskell
 Plug 'raichoo/haskell-vim' "syntax and indentation
-Plug 'enomsg/vim-haskellConcealPlus'
+" Plug 'enomsg/vim-haskellConcealPlus'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'Twinside/vim-hoogle'
@@ -169,7 +173,10 @@ Plug 'isovector/ghci.vim' " Tight integration between ghci and vim via tmux
 Plug 'mmai/vim-markdown-wiki'
 Plug 'mmai/vim-scrum-markdown'
 
-Plug 'vim-scripts/wombat256.vim' " Colorscheme
+" Some Color schemes
+Plug 'vim-scripts/wombat256.vim'
+" Plug 'rakr/vim-one'
+
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree
 Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
 Plug 'mhinz/vim-startify' " Fancy start screen
@@ -179,7 +186,6 @@ call plug#end()
 
 " Required:
 filetype plugin indent on
-
 
 set background=dark
 "colorscheme solarized
@@ -203,6 +209,7 @@ if &term =~ '256color'
 endif
 try
   colorscheme wombat256mod
+  " colorscheme one
 catch
 endtry
 
@@ -617,7 +624,7 @@ let g:airline_powerline_fonts = 1
 set noshowmode "because insert/normal modes are already shown by vim-airline
 let g:airline_left_sep='' " default : >
 let g:airline_right_sep='' " default : <
-
+" let g:airline_theme='one'
 
 "Powerline
 " Don't forget to config this same font on the terminal emulator to get it
