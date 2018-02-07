@@ -119,6 +119,8 @@ else
   Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
 endif
 " completion Php (cf. projet github pour les prérequis PHP)
+" CTRL-] : jump to function definition
+" CTRL-t : jump back
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 Plug 'mbbill/undotree'
