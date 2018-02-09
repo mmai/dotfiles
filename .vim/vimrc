@@ -30,6 +30,11 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 "--------- File navigation
 " Plug 'scrooloose/nerdtree'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree => too slow
+let NERDTreeChDirMode=2 " change current directory when setting new root directory
+
+Plug 'dhruvasagar/vim-vinegar' "vinegar NERDTree version
+" Plug 'tpope/vim-vinegar' " netrw shortcuts : - to jump from a buffer to its directory, etc.
 
 "fzf : fuzzy finder
 "  also install zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, 
@@ -37,9 +42,6 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 "  The --all option install fzf outside of vim (ie for zsh) as well, use --bin for a vim only version
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
-
-Plug 'tpope/vim-vinegar' " netrw shortcuts : - to jump from a buffer to its directory, etc.
-" Plug 'dhruvasagar/vim-vinegar' "vinegar NERDTree version, too slow on
 
 " task manager"
 Plug 'blindFS/vim-taskwarrior'
@@ -153,7 +155,6 @@ Plug 'suxpert/vimcaps'
 
 " ---- From haskell-vim-now : 
 " Plugin 'int3/vim-extradite'
-" Plugin 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 Plug 'moll/vim-bbye'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -179,7 +180,6 @@ Plug 'mmai/vim-scrum-markdown'
 Plug 'vim-scripts/wombat256.vim'
 " Plug 'rakr/vim-one'
 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree
 Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
 Plug 'mhinz/vim-startify' " Fancy start screen
 
@@ -616,10 +616,6 @@ set ignorecase
 set infercase
 " if there is a capital in the search term, don't ignore case
 set smartcase
-
-" NERDTree change le répertoire courant (CWD) quand on lui spécifie un 
-" nouveau root directory
-let NERDTreeChDirMode=2 
 
 " vim-airline
 let g:airline_powerline_fonts = 1
