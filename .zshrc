@@ -186,6 +186,12 @@ export TTC_APIKEYS=false
 export TTC_WEATHER='Bordeaux'
 export TTC_REPOS='/var/www,/home/henri/travaux'
 
+#################
+# Notes
+#################
+# Préparation : cd ~ ; git clone rhumbs.fr:~henri/repositories/notes.git notes
+source ~/notes/notes.sh
+
 ##################
 # Taskwarrior utils
 ##################

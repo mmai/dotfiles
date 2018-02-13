@@ -633,6 +633,9 @@ set guifont=DejaVuSansMono\ Nerd\ Font\ 10
 "source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
 "source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
 
+" Snippets
+nnoremap <leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+
 let g:languagetool_jar= '/usr/local/LanguageTool/LanguageTool.jar'
 
 " Viki
