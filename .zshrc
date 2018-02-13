@@ -43,6 +43,9 @@ zplug "modules/git", from:prezto
 zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:editor' keymap 'vi'
 
+# nix-shell compatibility 
+zplug "chisui/zsh-nix-shell"
+
 # pure prompt
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
