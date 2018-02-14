@@ -44,7 +44,7 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:editor' keymap 'vi'
 
 # nix-shell compatibility 
-zplug "chisui/zsh-nix-shell"
+# zplug "chisui/zsh-nix-shell" #Pb : les variables définies dans shellHook de defautl.nix ne sont plus reconnues
 
 # pure prompt
 zplug "mafredri/zsh-async"
