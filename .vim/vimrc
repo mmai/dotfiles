@@ -2,8 +2,14 @@
 "haskell (from https://haskell-at-work.com/about.html#faq):
 "   neoformat + hindent (or brittany) + stylish-haskell
 "   intero-neovim
+"php
+"   tobyS/pdv (php documentor for vim)
 "autres:
-"   vim-snipmate, nerdcommenter
+"   vim-snipmate (ou ultiSnips ?), nerdcommenter
+"   youcompleteme + ultisnips (with supertabs already installed) Or keep and configure deoplete ?
+"   neomake (avec ou à la place de Syntastic ?)
+"s'inspirer de
+"  https://github.com/rafi/vim-config
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let g:mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
@@ -29,10 +35,9 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 "--------- File navigation
-" Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree' "disabled because it overrides netrw when using '-' and don't go upper the initial directory
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree => too slow
 let NERDTreeChDirMode=2 " change current directory when setting new root directory
-
 Plug 'dhruvasagar/vim-vinegar' "vinegar NERDTree version
 " Plug 'tpope/vim-vinegar' " netrw shortcuts : - to jump from a buffer to its directory, etc.
 
@@ -45,6 +50,9 @@ Plug 'junegunn/fzf.vim'
 
 " task manager"
 "Plug 'blindFS/vim-taskwarrior'
+
+"--------- Layout
+Plug 'wesQ3/vim-windowswap' "swap windows: <leader>ww (1st time on 1st window, 2nd time on 2nd window)
 
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
@@ -74,6 +82,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 "must be before vim-markdown
 Plug 'godlygeek/tabular'
+
+"General coding support
+Plug 'gilsondev/searchtasks.vim' "Search for XXX, FIXME, TODO :SearchTasks . ,:SearchTasks app/*.py
 
 "Languages support
 Plug 'LnL7/vim-nix'
@@ -142,7 +153,13 @@ let g:gitgutter_max_signs=999
 " Plug 'airblade/vim-rooter'
 
 "Bundle 'mmai/wikilink'
-Plug 'mmai/vim-zenmode'
+" Plug 'mmai/vim-zenmode'
+Plug 'mikewest/vimroom'
+let g:zenmode_background = "dark"
+let g:zenmode_colorscheme = "desert"
+" let g:zenmode_font ="Cousine 12"
+let g:zenmode_font ="Cousine Nerd Font 12"
+let g:zenmode_spell ="fr" "correction orthographique
 
 " send text to tmux
 Plug 'xaviershay/tslime.vim'
@@ -180,6 +197,9 @@ Plug 'vim-scripts/wombat256.vim'
 
 Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
 Plug 'mhinz/vim-startify' " Fancy start screen
+
+" En test
+Plug 'reedes/vim-pencil' "vim for writers (TooglePencil) : line wrap, undo/redo by sentences, hide markdown formating chars..
 
 " Required:
 call plug#end()
@@ -645,12 +665,13 @@ let g:vikiHomePage =$HOME . "/viki/home"
 au BufNewFile,BufRead *.org	set filetype=org
 let g:org_command_for_emacsclient='emacsclient'
 
-"Zenmode
-let g:zenmode_background = "dark"
-let g:zenmode_colorscheme = "desert"
-" let g:zenmode_font ="Cousine 12"
-let g:zenmode_font ="Cousine Nerd Font 12"
-let g:zenmode_spell ="fr" "correction orthographique
-
 set mouse=a "Activate mouse on console mode
 
+" Disable arrow movement, resize splits instead.
+let g:elite_mode=1
+if get(g:, 'elite_mode')
+	nnoremap <Up>    :resize +2<CR>
+	nnoremap <Down>  :resize -2<CR>
+	nnoremap <Left>  :vertical resize +2<CR>
+	nnoremap <Right> :vertical resize -2<CR>
+endif
