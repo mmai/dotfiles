@@ -136,6 +136,7 @@ Plug 'junegunn/gv.vim'
 
 Plug 'mattn/gist-vim'
 Plug 'airblade/vim-gitgutter' 
+let g:gitgutter_max_signs=999
 
 " go to the root of the project (git, etc.) when opening a new file
 " Plug 'airblade/vim-rooter'
