@@ -6,6 +6,7 @@ initmodules:
 
 termite:
 	sh termite.sh
+	ln -s `pwd`/.config/termite ~/.config
 
 xmonad:
 	ln -s `pwd`/.xmonad/xmonad.hs ~/.xmonad/
