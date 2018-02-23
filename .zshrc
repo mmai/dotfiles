@@ -190,7 +190,7 @@ export TTC_REPOS='/var/www,/home/henri/travaux'
 # Notes
 #################
 # Préparation : cd ~ ; git clone rhumbs.fr:~henri/repositories/notes.git notes
-source ~/notes/notes.sh
+#source ~/notes/notes.sh
 
 ##################
 # Taskwarrior utils
@@ -210,21 +210,21 @@ tickle () {
 alias tick=tickle
 #alias think='tickle +1d'
 #    Show projects without next actions
-projects=$(~/softs_/projects_without_next_action.sh)
-if [ "$projects" != "" ]
-then
-  echo $fg[red] "Attention: The following projects don't currently have a next action:\n"
-  echo $projects
-  echo
-fi
+# projects=$(~/softs_/projects_without_next_action.sh)
+# if [ "$projects" != "" ]
+# then
+#   echo $fg[red] "Attention: The following projects don't currently have a next action:\n"
+#   echo $projects
+#   echo
+# fi
 #    Show waiting-for items
-waiting=$(task +waiting +PENDING count)
-if [ "$waiting" != "0" ]
-then
-  echo "Any progress on these waiting-fors?"
-  task +waiting +PENDING ls
-fi
+# waiting=$(task +waiting +PENDING count)
+# if [ "$waiting" != "0" ]
+# then
+#   echo "Any progress on these waiting-fors?"
+#   task +waiting +PENDING ls
+# fi
 source /opt/git-subrepo/.rc
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=/home/henri/.local/bin/luna-studio:$PATH

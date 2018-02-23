@@ -1,11 +1,11 @@
-install: bash zsh ack git javascript python ruby vim scite
+install: bash zsh git python ruby vim
 
 initmodules: 
 	git submodule init
 	git submodule update
 
-ack:
-	ln -s `pwd`/.ackrc ~/.ackrc
+termite:
+	sh termite.sh
 
 xmonad:
 	ln -s `pwd`/.xmonad/xmonad.hs ~/.xmonad/
@@ -49,13 +49,7 @@ languagetool:
 	sudo unzip LanguageTool-2.0.zip; rm LanguageTool-2.0.zip
 
 dpkg:
-	sudo apt-get install curl
-
-node: initmodules dpkg
-	ln -s `pwd`/.nvm ~/.nvm
-	. ~/.nvm/nvm.sh
-	nvm install 0.12
-	nvm alias default 0.12
+	sudo apt install curl silversearcher-ag aptitude tig tree taskwarrior ncdu
 
 javascript: node
 	npm install jshint -g
@@ -80,3 +74,6 @@ ruby:
 haskell:
 	curl -sSL https://get.haskellstack.org/ | sh
 
+gnome:
+	echo "ALT TAB change windows on current workspace only"
+	gsettings set org.gnome.shell.app-switcher current-workspace-only true
