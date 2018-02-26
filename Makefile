@@ -92,3 +92,10 @@ haskell:
 gnome:
 	echo "ALT TAB change windows on current workspace only"
 	gsettings set org.gnome.shell.app-switcher current-workspace-only true
+	echo "Replace Nautilus by Nemo (for the sidebar directory tree view)"
+	sudo apt install nemo
+	gsettings set org.gnome.desktop.background show-desktop-icons true
+	xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+	echo "window management"
+	sudo apt install wmctrl
+	echo "ajouter raccourci pour envoyer fenêtre sur workspace 1 = wmctrl -r :ACTIVE: -t 0"
