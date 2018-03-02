@@ -136,6 +136,9 @@ endif
 " CTRL-t : jump back
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
+" Plug 'Shougo/neosnippet'
+" Plug 'Shougo/neosnippet-snippets'
+
 Plug 'mbbill/undotree'
 " :UndotreeToggle
 
@@ -596,6 +599,29 @@ let g:syntastic_always_populate_loc_list=1 "populate location-list with errors :
 let g:syntastic_javascript_checkers=['eslint'] 
 "enable syntastic by default (call SyntasticToggleMode to disable)
 let g:syntastic_mode_map= {"mode": "active", "active_filetypes":[], "passive_filetypes": []}
+
+" ----------- Snippets
+" let g:phpcd_disable_modifier=0 "pour utilisation avec neosnippet
+"
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
+"
+" " SuperTab like snippets behavior.
+" " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+" "imap <expr><TAB>
+" " \ pumvisible() ? "\<C-n>" :
+" " \ neosnippet#expandable_or_jumpable() ?
+" " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+" " For conceal markers.
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
+" ----------- / end Snippets
+
 
 " javascript automatic formatting on save
 " npm install standard --global

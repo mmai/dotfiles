@@ -27,7 +27,7 @@ git:
 	ln -s `pwd`/.gitignore_global ~/.gitignore_global
 
 vim: fonts languagetool
-	sudo apt-get install vim-gnome ctags
+	sudo apt-get install vim-gnome exuberant-ctags
 	ln -s `pwd`/.vim ~/.vim
 	#Powerline
 	sudo apt-get install python-fontforge
