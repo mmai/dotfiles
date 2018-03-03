@@ -33,8 +33,6 @@ vim: fonts languagetool
 	sudo apt-get install python-fontforge
 	#Command-T
 	cd .vim/bundle/Command-T/ruby/command-t;ruby extconf.rb;make;cd ~/dotfiles
-	#Haskell support
-	cd ~/.vim/haskell-vim-now/bin/;sh ./install.sh;cd -
 
 neovim: vim
 	sudo apt-get install software-properties-common
