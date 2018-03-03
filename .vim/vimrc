@@ -1,4 +1,6 @@
 "TODO ?
+"sheerun/vimrc instead of vim-sensible
+"'Shougo/vimfiler.vim' and see https://gitlab.com/snippets/25691 for config
 "viki, vim outliner
 "haskell (from https://haskell-at-work.com/about.html#faq):
 "   neoformat + hindent (or brittany) + stylish-haskell
@@ -9,15 +11,11 @@
 "   vim-snipmate (ou ultiSnips ?), nerdcommenter
 "   youcompleteme + ultisnips (with supertabs already installed) Or keep and configure deoplete ?
 "   neomake (avec ou à la place de Syntastic ?)
-"s'inspirer de
-"  https://github.com/rafi/vim-config
+"s'inspirer de https://github.com/rafi/vim-config
 let mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let g:mapleader = "," " Redéfinit la touche <Leader> à ',' au lieu de '\'
 let maplocalleader = "_" " Redéfinit la touche <LocalLeader> à '_'
-
-"prevent the disturbing highlighting of the matched {([ ])}
-let loaded_matchparen = 1
-
+let loaded_matchparen = 1 "prevent the disturbing highlighting of the matched {([ ])}
 if has('vim_starting')
   if &compatible
     set nocompatible               " Be iMproved
@@ -28,135 +26,107 @@ endif
 call plug#begin(expand('~/.vim/bundle'))
 
 " Add or remove your Bundles here:
-"Defaults everyone can agree on
-Plug 'tpope/vim-sensible'
-
-Plug 'tpope/vim-surround'
-
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+Plug 'tpope/vim-sensible' "Defaults everyone can agree on
 
 "--------- File navigation
+Plug 'mhinz/vim-startify' " Fancy start screen with links to recent files
 " Plug 'scrooloose/nerdtree' "disabled because it overrides netrw when using '-' and don't go upper the initial directory
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree => too slow
 let NERDTreeChDirMode=2 " change current directory when setting new root directory
 Plug 'dhruvasagar/vim-vinegar' "vinegar NERDTree version
 " Plug 'tpope/vim-vinegar' " netrw shortcuts : - to jump from a buffer to its directory, etc.
 
-"fzf : fuzzy finder
-"  also install zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, 
-"  or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
-"  The --all option install fzf outside of vim (ie for zsh) as well, use --bin for a vim only version
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'
 
-" task manager"
-"Plug 'blindFS/vim-taskwarrior'
-
-"--------- Layout
+"--------- Layout and style
 Plug 'wesQ3/vim-windowswap' "swap windows: <leader>ww (1st time on 1st window, 2nd time on 2nd window)
-
+Plug 'moll/vim-bbye' " :Bdelete and :Bwipeout quit buffers nicely without destroying windows
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
+Plug 'vim-scripts/wombat256.vim' " Wombat Color scheme
+" Plug 'rakr/vim-one' " Vim-one Color scheme
+Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
+
+"--------- Text navigation
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'hsitz/VimOrganizer'
-Plug 'chrisbra/NrrwRgn'
-Plug 'vim-scripts/utl.vim'
-Plug 'tpope/vim-speeddating'
+Plug 'vim-scripts/utl.vim' "add clickable links on urls / images
+Plug 'haya14busa/incsearch.vim' " enhanced incremental searching 
 
+"--------- Text manipulation
+Plug 'brooth/far.vim' " Find and replace in multiple files
+Plug 'tpope/vim-surround' "easily delete, change and add such surroundings in pairs
+Plug 'chrisbra/NrrwRgn' " :NR focus on a selected region while making the rest inaccessible
+Plug 'terryma/vim-multiple-cursors' "Like SublimeText multisection 
+Plug 'maxbrunsfeld/vim-yankstack' "Navigate the history of yanks with <alt-p> and <alt-shift-p>
+Plug 'mbbill/undotree' " :UndotreeToggle
+Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown)
+Plug 'mattn/emmet-vim' "Expand CSS selectors expression to HTML (ie div#page>div.logo+ul#navigation>li*5>a)
+Plug 'michaeljsmith/vim-indent-object' " Text object based on indentation : ai, ii, aI, iI
+Plug 'kana/vim-textobj-user' " custom text objects (required by ghci.vim)
 
-Plug 'mattn/emmet-vim'
-"Expand CSS selectors expression to HTML (ie div#page>div.logo+ul#navigation>li*5>a)
-"Works on multiline selections. More on documentation.
-"On insert mode:
-"<C-y>,          : complete abbreviation (don't forget the ',')
-"<C-y>n / <C-y>N : go to next/previous edit point 
-"<C-y>d          : select element 
-
-Plug 'terryma/vim-multiple-cursors' 
-"Like SublimeText multisection
-"<C-n> : select current word, then the next...
-"<C-p> : cancel selection 
-"<C-x> : omit current selection 
-"v : go to normal mode and edit
-"ESC : back to regular Vim
-
+"--------- General coding support
 Plug 'tomtom/tcomment_vim'
-"must be before vim-markdown
-Plug 'godlygeek/tabular'
-
-"General coding support
-Plug 'gilsondev/searchtasks.vim' "Search for XXX, FIXME, TODO :SearchTasks . ,:SearchTasks app/*.py
-
-"Languages support
-Plug 'LnL7/vim-nix'
-Plug 'othree/yajs.vim',{'for':'javascript'}
-Plug 'lambdatoast/elm.vim'
-Plug 'raichoo/purescript-vim' "purescript syntax color
-Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
-Plug 'Quramy/tsuquyomi' "TypeScript completion, refactoring, etc.
-Plug 'leafgarland/typescript-vim' "TypeScript
-Plug 'heavenshell/vim-jsdoc'
-Plug 'elixir-lang/vim-elixir'
-Plug 'wavded/vim-stylus'
-Plug 'kchmck/vim-coffee-script'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'plasticboy/vim-markdown'
-Plug 'nelsyeung/twig.vim'
-
-"Check code syntax
-Plug 'scrooloose/syntastic'
-
-"Debugger (:help vdebug)
-" nécessite python2 (pip2 install neovim)
-" F10 : point d'arrêt, F5: start listening 
-Plug 'joonty/vdebug' " XXX Ne marche pas ?
-
-Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
-Plug 'vim-scripts/indenthtml.vim'
+Plug 'scrooloose/syntastic' "Check code syntax
+Plug 'joonty/vdebug' " Debugger (:help vdebug) XXX Ne marche pas ?  
+Plug 'majutsushi/tagbar' " functions and variables list
 Plug 'vim-scripts/IndentAnything'
-Plug 'kana/vim-smartinput'
+Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
 
-Plug 'mattn/webapi-vim'
-Plug 'kana/vim-textobj-lastpat'
-Plug 'kana/vim-textobj-user'
-Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'majutsushi/tagbar'
+"Git 
+Plug 'vim-scripts/gitignore'
+Plug 'mattn/gist-vim' "Post to gist :Gist 
+Plug 'tpope/vim-fugitive' " required by gv
+Plug 'junegunn/gv.vim' "commit browser :GV, :GV! (current file), :GV? (fills location list), visual mode (current lines)
+Plug 'airblade/vim-gitgutter' " Add signs on the gutter for lines modified
+let g:gitgutter_max_signs=999
 
 "Completion
+Plug 'jiangmiao/auto-pairs' " deals intelligently with pairs of punctuation () [] '' {} ... 
+" Plug 'kana/vim-smartinput' " deals intelligently with pairs of punctuation () [] '' {} ... 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "nécessite support python
-  " Use deoplete.
-  let g:deoplete#enable_at_startup = 1
-  " javascript completion
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  let g:deoplete#enable_at_startup = 1 " Use deoplete.
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript completion
+  Plug 'Shougo/neco-vim', { 'for': 'vim' }
+  Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+  Plug 'sebastianmarkow/deoplete-rust', {'for': ' rust '}
 else 
   Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
 endif
-" completion Php (cf. projet github pour les prérequis PHP)
-" CTRL-] : jump to function definition
-" CTRL-t : jump back
+Plug 'metalelf0/supertab' " completion with tab (fork of ervandew/supertab to fix 'Invalid argument: pumvisible')
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
-" Plug 'Shougo/neosnippet'
-" Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
-Plug 'mbbill/undotree'
-" :UndotreeToggle
+Plug 'sjl/splice.vim' " three way merge
 
-Plug 'tpope/vim-fugitive'
-" :GV to open commit browser, :GV! only list commits for the current file
-" :GV?  fills the location list with the revisions of the current file
-" :GV or :GV? can be used in visual mode to track the changes in the selected lines.
-Plug 'junegunn/gv.vim' 
+Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collection of languages
 
-Plug 'mattn/gist-vim'
-Plug 'airblade/vim-gitgutter' 
-let g:gitgutter_max_signs=999
+"Specific languages support not already in vim-polyglot
+Plug 'heavenshell/vim-jsdoc'
+Plug 'othree/yajs.vim',{'for':'javascript'}
+Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
+Plug 'vim-scripts/indenthtml.vim'
+Plug 'Quramy/tsuquyomi', {'for': 'typescript' } "TypeScript
+Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
+Plug 'timonv/vim-cargo', { 'for': 'rust' }
+Plug 'mmai/vim-markdown-wiki'
+" Haskell
+Plug 'eagletmt/ghcmod-vim' " required by neco-ghc
+Plug 'eagletmt/neco-ghc' " haskell completion 
+Plug 'Twinside/vim-hoogle' " Access hoogle search 
+Plug 'isovector/ghci.vim' " Tight integration between ghci and vim via tmux
 
-" go to the root of the project (git, etc.) when opening a new file
-" Plug 'airblade/vim-rooter'
-
-"Bundle 'mmai/wikilink'
+"--------- Applications
+"Plug 'blindFS/vim-taskwarrior' "task manager
+Plug 'hsitz/VimOrganizer'
+Plug 'tpope/vim-speeddating'
+Plug 'mattn/webapi-vim' " interface to web APIs
+Plug 'mmai/vim-scrum-markdown'
+" Plug 'mmai/wikilink'
 " Plug 'mmai/vim-zenmode'
 Plug 'mikewest/vimroom'
 let g:zenmode_background = "dark"
@@ -165,42 +135,9 @@ let g:zenmode_colorscheme = "desert"
 let g:zenmode_font ="Cousine Nerd Font 12"
 let g:zenmode_spell ="fr" "correction orthographique
 
-" send text to tmux
-Plug 'xaviershay/tslime.vim'
-" three way merge
-Plug 'sjl/splice.vim'
-"
-"Bundle 'astashov/vim-ruby-debugger'
-
-" ---- From haskell-vim-now : 
-" Plugin 'int3/vim-extradite'
-Plug 'ervandew/supertab'
-Plug 'moll/vim-bbye'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vim-scripts/gitignore'
-Plug 'vim-scripts/Align'
-Plug 'vim-scripts/Gundo'
-Plug 'tpope/vim-commentary'
-Plug 'michaeljsmith/vim-indent-object'
-" Allow pane movement to jump out of vim into tmux
-Plug 'christoomey/vim-tmux-navigator'
-" Haskell
-Plug 'raichoo/haskell-vim' "syntax and indentation
-" Plug 'enomsg/vim-haskellConcealPlus'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
-Plug 'Twinside/vim-hoogle'
-Plug 'isovector/ghci.vim' " Tight integration between ghci and vim via tmux
-
-Plug 'mmai/vim-markdown-wiki'
-Plug 'mmai/vim-scrum-markdown'
-
-" Some Color schemes
-Plug 'vim-scripts/wombat256.vim'
-" Plug 'rakr/vim-one'
-
-Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
-Plug 'mhinz/vim-startify' " Fancy start screen
+" Tmux
+Plug 'xaviershay/tslime.vim' " send text to tmux
+Plug 'christoomey/vim-tmux-navigator' " Allow pane movement to jump out of vim into tmux
 
 " En test
 Plug 'reedes/vim-pencil' "vim for writers (TooglePencil) : line wrap, undo/redo by sentences, hide markdown formating chars..
@@ -215,15 +152,18 @@ set background=dark
 "colorscheme solarized
 colorscheme desert
 
+" indent guides colors (colorize indentations)
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+
 " {{{ From haskell-vim-now
 " Use par for prettier line formatting
 set formatprg="PARINIT='rTbgqR B=.,?_A_a Q=_s>|' par\ -w72"
 
 " Use stylish haskell instead of par for haskell buffers
 autocmd FileType haskell let &formatprg="stylish-haskell"
-
-" Find custom built ghc-mod, codex etc
-let $PATH = $PATH . ':' . expand("~/.vim/haskell-vim-now/bin")
 
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
@@ -242,9 +182,16 @@ hi! link SignColumn LineNr
 hi! link SyntasticErrorSign ErrorMsg
 hi! link SyntasticWarningSign WarningMsg
 
-" Use pleasant but very visible search hilighting
+" Search 
+"   Use pleasant but very visible search hilighting 
 hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
 hi! link Visual Search
+let g:incsearch#auto_nohlsearch = 1
+"   Config incsearch plugin shortcuts
+set hlsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " Match wombat colors in nerd tree
 hi Directory guifg=#8ac6f2
@@ -289,7 +236,46 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" Pretty unicode haskell symbols
+" ------------ Coding config
+
+map <leader>tt :TagbarToggle<CR>
+set tags=./tags;tags;/,codex.tags;/ " Recherche le fichier tags (man ctags)  dans le répertoire du fichier
+                  " courant puis dans le répertoire parent, etc.
+                " Penser à exécuter `ctags -R -h ''.php''` dans le repertoire de base des
+                " fichiers à analyser (ajouter --exclude=*.js s'il y a des
+                " messages d'erreur liés aux fichiers javascript)
+
+" conceal markers
+" if has('conceal')
+"   set conceallevel=2
+" endif
+
+" deoplete + neosnippet + autopairs changes
+let g:AutoPairsMapCR=0
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+
+let g:neosnippet#enable_completed_snippet = 1
+
+let g:phpcd_disable_modifier=0 "PHP (phpcd) utilisation avec neosnippet
+
+"Syntastic
+" IDE command : enable syntastic,...
+nnoremap <leader>ide :SyntasticToggleMode<cr>  
+let g:syntastic_always_populate_loc_list=1 "populate location-list with errors : navigate with :lne :lpr
+let g:syntastic_mode_map= {"mode": "active", "active_filetypes":[], "passive_filetypes": []} " enable syntastic by default (call SyntasticToggleMode to disable)
+"         PHP 
+"let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
+let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
+
+
+let g:syntastic_javascript_checkers=['eslint'] 
+
+"         Haskell > Pretty unicode haskell symbols
 let g:haskell_conceal_wide = 1
 let g:haskell_conceal_enumerations = 1
 let hscoptions="𝐒𝐓𝐄𝐌xRtB𝔻"
@@ -302,52 +288,7 @@ augroup haskell
   autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 augroup END
 
-" Return to last edit position when opening files (You want this!)
-augroup last_edit
-  autocmd!
-  autocmd BufReadPost *
-       \ if line("'\"") > 0 && line("'\"") <= line("$") |
-       \   exe "normal! g`\"" |
-       \ endif
-augroup END
-" Remember info about open buffers on close
-set viminfo^=%
-
-" Delete trailing white space on save
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-
-augroup whitespace
-  autocmd!
-  autocmd BufWrite *.hs :call DeleteTrailingWS()
-augroup END
-
-" Alignment {{{
-
-" Stop Align plugin from forcing its mappings on us
-let g:loaded_AlignMapsPlugin=1
-" Align on equal signs
-map <Leader>a= :Align =<CR>
-" Align on commas
-map <Leader>a, :Align ,<CR>
-" Align on pipes
-map <Leader>a<bar> :Align <bar><CR>
-" Prompt for align character
-map <leader>ap :Align
-
-" Enable some tabular presets for Haskell
-let g:haskell_tabular = 1
-
-" }}}
-"
-set tags=./tags;tags;/,codex.tags;/ " Recherche le fichier tags (man ctags)  dans le répertoire du fichier
-                  " courant puis dans le répertoire parent, etc.
-                " Penser à exécuter `ctags -R -h ''.php''` dans le repertoire de base des
-                " fichiers à analyser (ajouter --exclude=*.js s'il y a des
-                " messages d'erreur liés aux fichiers javascript)
+"         Haskell > tagbar
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
     \ 'ctagsargs' : '-x -c -o-',
@@ -379,11 +320,23 @@ let g:tagbar_type_haskell = {
         \ 'type'   : 't'
     \ }
 \ }
-
 " Generate haskell tags with codex and hscope
 map <leader>tg :!codex update --force<CR>:call system("git hscope -X TemplateHaskell")<CR><CR>:call LoadHscope()<CR>
 
-map <leader>tt :TagbarToggle<CR>
+" Delete trailing white space on save
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+augroup whitespace
+  autocmd!
+  autocmd BufWrite *.hs :call DeleteTrailingWS()
+augroup END
+
+" Enable some tabular presets for Haskell
+let g:haskell_tabular = 1
 
 set csprg=~/.vim/haskell-vim-now/bin/hscope
 set csto=1 " search codex tags first
@@ -401,8 +354,6 @@ function! LoadHscope()
   endif
 endfunction
 au BufEnter /*.hs call LoadHscope()
-
-" Haskell Interrogation {{{
 
 set completeopt+=longest
 
@@ -430,26 +381,18 @@ nmap <silent> <leader>hT :GhcModTypeInsert<CR>
 nmap <silent> <leader>hc :GhcModCheck<CR>
 " Haskell Lint
 nmap <silent> <leader>hl :SyntasticCheck hlint<CR>
-
 " Hoogle the word under the cursor
 nnoremap <silent> <leader>hh :Hoogle<CR>
-
 " Hoogle and prompt for input
 nnoremap <leader>hH :Hoogle 
-
 " Hoogle for detailed documentation (e.g. "Functor")
 nnoremap <silent> <leader>hi :HoogleInfo<CR>
-
 " Hoogle for detailed documentation and prompt for input
 nnoremap <leader>hI :HoogleInfo 
-
 " Hoogle, close the Hoogle window
 nnoremap <silent> <leader>hz :HoogleClose<CR>
 
-" }}}
-
-" Conversion {{{
-
+" Haskell conversions
 function! Pointfree()
   call setline('.', split(system('pointfree '.shellescape(join(getline(a:firstline, a:lastline), "\n"))), "\n"))
 endfunction
@@ -460,62 +403,15 @@ function! Pointful()
 endfunction
 vnoremap <silent> <leader>h> :call Pointful()<CR>
 
-" }}}
-
-
-" }}} From haskell-vim-now
-
-"Disable Alt key for accessing menu (conflict with yankstack Alt+P shortcut)
-set winaltkeys=no 
-
-set clipboard^=unnamed,unnamedplus "sync the last copy register with the system clipboard 
-
-"Place temporary files in a specified directory instead of in the current
-"directory
-set backup " tell vim to keep backup files in a 
-set backupdir=/tmp " tell vim where to put its backup files
-set dir=/tmp " tell vim where to put swap files
-
-set wildmode=list:longest,full
-
-syntax on
-
-set number
-
-set hlsearch
-
-set expandtab       " Use spaces instead of tabs
-set smarttab
-set shiftwidth=2
-set tabstop=2
-" set tabstop=4       " Display \t as 4 spaces
-" set shiftwidth=4    " Number of spaces to use for each indent
-" set softtabstop=4   " Treat 4 spaces as a tab for editing purposes
-autocmd Filetype python setlocal ts=4 sts=4 sw=4
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=4 sts=4 sw=4
-
-" ,cd => change directory to the file being edited
-nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
-
-"Git 
-cnoreabbrev tig Extradite
-
-" Recherche globale, on ne regarde pas dans les répertoires subversion
-set grepprg=grep\ -nH\ --exclude-dir\ .svn\ $*
+" Use phpcd with deoplete
+" let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+" let g:deoplete#ignore_sources.php = ['omni']
 
 "Syntax highlighting for CakePHP thtml and ctp files
 au BufNewFile,BufRead *.thtml setfiletype php
 au BufNewFile,BufRead *.ctp setfiletype php
-
-" Use phpcd with deoplete
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
-
 "Syntax highlighting for javascript processing templates
 au BufNewFile,BufRead *.pjs setfiletype javascript
-
 "Syntax highlighting for embeded elixir templates (similar to .erb)
 au BufNewFile,BufRead *.eex setfiletype eruby
 
@@ -525,111 +421,30 @@ set tags+=$HOME/.vim/tags/python.ctags
 " Complétion pour python
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
-" accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
-inoremap <C-space> <C-x><C-o>
+" Return to last edit position when opening files (You want this!)
+augroup last_edit
+  autocmd!
+  autocmd BufReadPost *
+       \ if line("'\"") > 0 && line("'\"") <= line("$") |
+       \   exe "normal! g`\"" |
+       \ endif
+augroup END
+set viminfo^=% " Remember info about open buffers on close
 
-set foldmethod=indent
-"unfolded by default
-"au BufWinEnter * normal zR 
-set nofoldenable
-
-
-" this is for python, put
-" # name for the folded text # {{{
-" to begin marker and
-" # }}}
-" close to end it.
-set commentstring=\ #\ %s
-
-" Show file encoding in the status line
-if has("statusline")
- "git branch in status line
- set laststatus=2
- set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
-"  set statusline=%<%f\ [%{GitBranch()}]\ wc:%{WordCount()}\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
-endif
-
-"Easy vimrc editing 
-nnoremap <leader>ev :vsplit $HOME/.vim/vimrc<cr>
-nnoremap <leader>sv :source $HOME/.vim/vimrc<cr>
-
-"ESC remap
-inoremap kj <esc>
-inoremap KJ <esc>
-inoremap jk <esc>
-inoremap JK <esc>
-"inoremap <esc> <nop>
-
-"move one single row on the screen 
-nnoremap j gj
-nnoremap k gk
-
-"Disable Ex mode
-nnoremap Q <nop>
-
-nnoremap <leader>u :UndotreeToggle<cr>
-
-"XXX F2-F11 : vdebug
-" à réattribuer : 
-" F2 : File explorer
-" noremap <silent> <F2> :NERDTreeToggle<CR>
-" F3 : buffers
-" noremap <silent> <F3> :Buffers<CR>
-" F4 : copy registers
-" noremap <silent> <F4> :reg<CR>
-" F5 : undo tree
-" noremap <silent> <F5> :UndotreeToggle<CR>
-" F6 : git blame
-" noremap <silent> <F6> :Gblame<CR>
-" F7 : git history for current file 
-" noremap <silent> <F7> :GV?<CR>
-" F9 : class / functions / variables explorer
-" noremap <silent> <F9> :TagbarToggle<CR>
-
-"Syntastic
-" IDE command : enable syntastic,...
-nnoremap <leader>ide :SyntasticToggleMode<cr>  
-" php 
-"let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
-let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
-let g:syntastic_always_populate_loc_list=1 "populate location-list with errors : navigate with :lne :lpr
-" highlight SyntasticStyleError guibg=Red
-" highlight SyntasticStyleWarning guibg=Orange
-
-" let g:syntastic_javascript_checkers=['standard'] 
-let g:syntastic_javascript_checkers=['eslint'] 
-"enable syntastic by default (call SyntasticToggleMode to disable)
-let g:syntastic_mode_map= {"mode": "active", "active_filetypes":[], "passive_filetypes": []}
-
-" ----------- Snippets
-" let g:phpcd_disable_modifier=0 "pour utilisation avec neosnippet
-"
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
-"
-" " SuperTab like snippets behavior.
-" " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-" "imap <expr><TAB>
-" " \ pumvisible() ? "\<C-n>" :
-" " \ neosnippet#expandable_or_jumpable() ?
-" " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-" " For conceal markers.
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
-" ----------- / end Snippets
-
-
-" javascript automatic formatting on save
-" npm install standard --global
-" autocmd bufwritepost *.js silent !standard --fix %
-" set autoread
+" Stop Align plugin from forcing its mappings on us
+let g:loaded_AlignMapsPlugin=1
 
 " Tabulation
+set expandtab       " Use spaces instead of tabs
+set shiftwidth=2
+set tabstop=2
+" set tabstop=4       " Display \t as 4 spaces
+" set shiftwidth=4    " Number of spaces to use for each indent
+" set softtabstop=4   " Treat 4 spaces as a tab for editing purposes
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype php setlocal ts=4 sts=4 sw=4
 "       shortcuts
 if exists(":Tabularize")
         nmap <Leader>a= :Tabularize /=<CR>
@@ -654,6 +469,85 @@ endfunction
 " fix E764 AutoComplPop error message when editing html files
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+" accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
+inoremap <C-space> <C-x><C-o>
+
+set foldmethod=indent
+"unfolded by default
+"au BufWinEnter * normal zR 
+set nofoldenable
+
+" this is for python, put
+" # name for the folded text # {{{
+" to begin marker and
+" # }}}
+" close to end it.
+set commentstring=\ #\ %s
+
+"Disable Alt key for accessing menu (conflict with yankstack Alt+P shortcut)
+set winaltkeys=no 
+
+set clipboard^=unnamed,unnamedplus "sync the last copy register with the system clipboard 
+
+"Place temporary files in a specified directory instead of in the current
+"directory
+set backup " tell vim to keep backup files
+set backupdir=/tmp " tell vim where to put its backup files
+set dir=/tmp " tell vim where to put swap files
+
+set wildmode=list:longest,full
+syntax on
+set number
+
+" Show file encoding in the status line
+if has("statusline")
+ "git branch in status line
+ set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+endif
+
+"Easy vimrc editing 
+nnoremap <leader>ev :vsplit $HOME/.vim/vimrc<cr>
+nnoremap <leader>sv :source $HOME/.vim/vimrc<cr>
+
+"ESC remap
+inoremap kj <esc>
+inoremap KJ <esc>
+inoremap jk <esc>
+inoremap JK <esc>
+"inoremap <esc> <nop>
+
+"move one single row on the screen 
+nnoremap j gj
+nnoremap k gk
+
+"Disable Ex mode
+nnoremap Q <nop>
+
+" ,cd => change directory to the file being edited
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
+
+nnoremap <leader>u :UndotreeToggle<cr>
+
+" exit neovim terminal
+tnoremap <Esc> <C-\><C-n>
+
+"XXX F2-F11 : vdebug
+" à réattribuer : 
+" F2 : File explorer
+" noremap <silent> <F2> :NERDTreeToggle<CR>
+" F3 : buffers
+" noremap <silent> <F3> :Buffers<CR>
+" F4 : copy registers
+" noremap <silent> <F4> :reg<CR>
+" F5 : undo tree
+" noremap <silent> <F5> :UndotreeToggle<CR>
+" F6 : git blame
+" noremap <silent> <F6> :Gblame<CR>
+" F7 : git history for current file 
+" noremap <silent> <F7> :GV?<CR>
+" F9 : class / functions / variables explorer
+" noremap <silent> <F9> :TagbarToggle<CR>
+
 
 " ignore case when searching
 set ignorecase
@@ -673,10 +567,6 @@ let g:airline_right_sep='' " default : <
 " Don't forget to config this same font on the terminal emulator to get it
 " working with console vim
 set guifont=DejaVuSansMono\ Nerd\ Font\ 10 
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10 
-" let Powerline_symbols = 'fancy'
-"source $HOME/.vim/powerline/powerline/ext/vim/source_plugin.vim
-"source $HOME/.vim/powerline/powerline/bindings/vim/plugin/powerline.vim
 
 " Snippets
 nnoremap <leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
