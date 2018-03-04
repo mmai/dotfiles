@@ -2,19 +2,33 @@
 
 ## Notes on installation
 
-*FZF plugin* also installs the zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
+
+Don't forget to config the font defined by _guifont_  param(ie _DejaVuSansMono\ Nerd\ Font\ 10_ ) on the terminal emulator to get it working with console vim.
+
+_FZF plugin_ also installs the zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
 The `--all` option in _vimrc_ installs fzf outside of vim (ie for zsh) as well, use `--bin` for a vim only version
 
-*Vdebug* needs python2 `pip2 install neovim`
+_Vdebug_ needs python2 `pip2 install neovim`
 
-*lvht/phpcd* (php completing) : see github page for php requirements
+_lvht/phpcd_ (php completing) : see github page for php requirements
+
+For haskell, installs the following tools 
+`stack install stylish-haskell hindent neco-ghc hlint pointfree cabal_install `
+(and hscope ?) possibly with `--resolver lts-..` option ?
 
 ## Commands and shortcuts
+
+_Open side menu_ `,m`
+
+### Command mode
+
+_Expand to current buffer dir_ `:%%`
 
 ### File navigation
 
 _Global search_ `:Ag <search string>`
 _Jump from current file to its directory_ `-` 
+_Set current directory to the the current file one_ `,cd`
 
 ### Windows
 
