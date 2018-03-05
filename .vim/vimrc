@@ -4,9 +4,8 @@
 "- vim outliner, vim-wordy(faire trad. français)
 "haskell (from https://haskell-at-work.com/about.html#faq):
 "   neoformat (pourquoi ?)
-"   neomake => car assynchrone, regarder les languages supportés (vs syntastic) 
 "   regarder aussi config haskell-vim-now
-"   utilité de vim2hs ?
+"   regarder vim2hs ?
 "s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
 
 " Required:
@@ -55,9 +54,10 @@ Plug 'kana/vim-textobj-user' " custom text objects (required by ghci.vim)
 
 "--------- General coding support
 Plug 'tomtom/tcomment_vim'
-Plug 'scrooloose/syntastic' "Check code syntax
+Plug 'w0rp/ale' "Check code syntax asynchronously (replaces neomake or syntastic)
 Plug 'joonty/vdebug' " Debugger (:help vdebug) XXX Ne marche pas ?  
 Plug 'majutsushi/tagbar' " functions and variables list
+Plug 'ludovicchabant/vim-gutentags' " generate tags for the tagbar 
 Plug 'vim-scripts/IndentAnything'
 Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
 
@@ -70,6 +70,7 @@ Plug 'airblade/vim-gitgutter' " Add signs on the gutter for lines modified
 let g:gitgutter_max_signs=999
 
 "Completion
+Plug 'alvan/vim-closetag' " Close html / xml tags
 Plug 'jiangmiao/auto-pairs' " deals intelligently with pairs of punctuation () [] '' {} ... 
 " Plug 'kana/vim-smartinput' " deals intelligently with pairs of punctuation () [] '' {} ... 
 if has('nvim')
@@ -102,13 +103,16 @@ Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'timonv/vim-cargo', { 'for': 'rust' }
 Plug 'mmai/vim-markdown-wiki'
 " Haskell
-Plug 'pbrisbin/vim-syntax-shakespeare'
-Plug 'parsonsmatt/vim2hs' "A collection of vimscripts for Haskell development
+"   Syntax highlighting and indentation : done by haskell-vim (in vim-polyglot)
+"   Quickfix & Sign Columns : done by ale
+Plug 'alx741/vim-hindent' " Autoformating & indentation
 Plug 'parsonsmatt/intero-neovim'
+
+Plug 'Twinside/vim-hoogle' " Access hoogle search 
+Plug 'pbrisbin/vim-syntax-shakespeare' " Syntaxe for shakespeare templating
 Plug 'eagletmt/ghcmod-vim' " required by neco-ghc
 Plug 'eagletmt/neco-ghc' " haskell completion 
-Plug 'Twinside/vim-hoogle' " Access hoogle search 
-Plug 'isovector/ghci.vim' " Tight integration between ghci and vim via tmux
+" Plug 'parsonsmatt/vim2hs' "A collection of vimscripts for Haskell development
 
 "--------- Applications
 "Plug 'blindFS/vim-taskwarrior' "task manager

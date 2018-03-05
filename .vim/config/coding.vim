@@ -1,11 +1,29 @@
-" ----------------------- Coding config
+" -------------------------------------
+"              Coding config
+" -------------------------------------
 
-map <leader>tt :TagbarToggle<CR>
+" ----------- Syntax checking & fixing
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+
+let g:ale_linters = {} " Init empty (for use in other config files)
+
+" ----------- Tags bar
 set tags=./tags;tags;/,codex.tags;/ " Recherche le fichier tags (man ctags)  dans le répertoire du fichier
                   " courant puis dans le répertoire parent, etc.
                 " Penser à exécuter `ctags -R -h ''.php''` dans le repertoire de base des
                 " fichiers à analyser (ajouter --exclude=*.js s'il y a des
                 " messages d'erreur liés aux fichiers javascript)
+
+" Navigation dans la librairie python
+" Penser à executer ctags -R -f ~/.vim/tags/python.ctags /usr/lib/python2.5/
+set tags+=$HOME/.vim/tags/python.ctags
+" Complétion pour python
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+" ----------- Autocompleting
+set completeopt+=longest
 
 " conceal markers
 if has('conceal')
@@ -23,22 +41,14 @@ imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>Au
 
 let g:neosnippet#enable_completed_snippet = 1
 
-let g:phpcd_disable_modifier=0 "PHP (phpcd) utilisation avec neosnippet
+" fix E764 AutoComplPop error message when editing html files
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+" accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
+inoremap <C-space> <C-x><C-o>
 
-"Syntastic
-" IDE command : enable syntastic,...
-nnoremap <leader>ide :SyntasticToggleMode<cr>  
-let g:syntastic_always_populate_loc_list=1 "populate location-list with errors : navigate with :lne :lpr
-let g:syntastic_mode_map= {"mode": "active", "active_filetypes":[], "passive_filetypes": []} " enable syntastic by default (call SyntasticToggleMode to disable)
-"         PHP 
-"let g:syntastic_phpmd_disable=1 "disable phpmd (php mess detector) syntax checking
-let g:syntastic_phpcs_disable=1 "disable phpcs (coding standards) syntax checking
-
-
-let g:syntastic_javascript_checkers=['eslint'] 
-
-
-set completeopt+=longest
+"PHP (phpcd) utilisation avec neosnippet
+let g:phpcd_disable_modifier=0 
 
 " Use buffer words as default tab completion
 let g:SuperTabDefaultCompletionType = '<c-x><c-p>'
@@ -52,30 +62,10 @@ else " no gui
   endif
 endif
 
-"Syntax highlighting for CakePHP thtml and ctp files
-au BufNewFile,BufRead *.thtml setfiletype php
-au BufNewFile,BufRead *.ctp setfiletype php
-"Syntax highlighting for javascript processing templates
-au BufNewFile,BufRead *.pjs setfiletype javascript
-"Syntax highlighting for embeded elixir templates (similar to .erb)
-au BufNewFile,BufRead *.eex setfiletype eruby
+" Autopair for vim type : don't close the comment string '"'
+au Filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'}
 
-" Navigation dans la librairie python
-" Penser à executer ctags -R -f ~/.vim/tags/python.ctags /usr/lib/python2.5/
-set tags+=$HOME/.vim/tags/python.ctags
-" Complétion pour python
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-" Return to last edit position when opening files (You want this!)
-augroup last_edit
-  autocmd!
-  autocmd BufReadPost *
-       \ if line("'\"") > 0 && line("'\"") <= line("$") |
-       \   exe "normal! g`\"" |
-       \ endif
-augroup END
-set viminfo^=% " Remember info about open buffers on close
-
+" --------------- Formating
 " Stop Align plugin from forcing its mappings on us
 let g:loaded_AlignMapsPlugin=1
 
@@ -84,6 +74,7 @@ autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
+
 "       auto tabulate '|' sign (<Bar>)
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
@@ -97,12 +88,6 @@ function! s:align()
   endif
 endfunction
 "end tabulation
-
-" fix E764 AutoComplPop error message when editing html files
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
-" accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
-inoremap <C-space> <C-x><C-o>
 
 " this is for python, put
 " # name for the folded text # {{{

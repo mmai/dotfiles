@@ -1,15 +1,16 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+# Aliases (shared with zsh)
+.  $HOME/.zsh/aliases.sh
+
+# specific bash aliases
+alias ls='ls --color=auto'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ack='ack-grep'
-
-alias journal='~/travaux/ecrits/journal.sh'
 
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion

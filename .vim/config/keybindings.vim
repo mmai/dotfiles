@@ -18,6 +18,7 @@ nnoremap <leader>sv :source $HOME/.vim/vimrc<cr>
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
 
 nnoremap <leader>u :UndotreeToggle<cr>
+nnoremap <leader>t :TagbarToggle<CR>
 
 " Snippets
 nnoremap <leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>P

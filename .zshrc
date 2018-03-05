@@ -71,23 +71,8 @@ zplug load
   # must be after 'zplug load'
 bindkey -v
 
-########################
-# custom aliases
-########################
-
-alias ack=ack-grep
-alias grep="nocorrect grep $GREP_OPTIONS"
-unset GREP_OPTIONS
-
-alias gvim="UBUNTU_MENUPROXY= gvim"
-alias idea=/opt/`ls /opt | grep idea`/bin/idea.sh # Intellij Idea
-alias serve="python -m SimpleHTTPServer"
-alias prettyjson="python -m json.tool"
-alias meteo="curl -4 wttr.in/Bordeaux?lang=fr"
-alias coin="coinmon -c eur -f btc,miota,eth,ltc,xrp,xtz,nlg,plbt"
-alias think="cd ~/think/;tree"
-alias tax="task +Atixnet"
-alias vpn="~/softs_/vpn.sh"
+# Aliases (shared with bash)
+. $HOME/.zsh/aliases.sh
 
 if [[ -a ~/.nvm/nvm.sh ]]
 then
@@ -128,11 +113,6 @@ fi
 if [ -f "/home/henri/.drush/drush.complete.sh" ] ; then
   source /home/henri/.drush/drush.complete.sh
 fi
-
-# haskell (see https://www.reddit.com/r/haskell/comments/3bw95a/using_cabal_and_stack_together/csqdbe2)
-alias cblconf='cabal configure --package-db=clear --package-db=global --package-db=$(stack path --snapshot-pkg-db) --package-db=$(stack path --local-pkg-db)'
-# use stack binaries 
-#PATH=/home/henri/.stack/snapshots/x86_64-linux/lts-3.4/7.10.2/bin:/home/henri/.stack/programs/x86_64-linux/ghc-7.10.2/bin:$PATH
 
 SCALA_HOME=/opt/scala # scalac & scala 
 PATH=$PATH:$SCALA_HOME/bin:$OPENNLP_HOME/bin 
@@ -179,51 +159,12 @@ _fzf_compgen_path() {
   ag -g "" "$1"
 }
 
-##
-# tiny care terminal
-#
-export TTC_APIKEYS=false
-export TTC_WEATHER='Bordeaux'
-export TTC_REPOS='/var/www,/home/henri/travaux'
-
 #################
 # Notes
 #################
 # Préparation : cd ~ ; git clone rhumbs.fr:~henri/repositories/notes.git notes
 #source ~/notes/notes.sh
 
-##################
-# Taskwarrior utils
-##################
-# inbox
-alias in='task add +in'
-tp () {
-  task project:$1
-}
-
-# tickle 
-tickle () {
-    deadline=$1
-    shift
-    in +tickle wait:$deadline $@
-}
-alias tick=tickle
-#alias think='tickle +1d'
-#    Show projects without next actions
-# projects=$(~/softs_/projects_without_next_action.sh)
-# if [ "$projects" != "" ]
-# then
-#   echo $fg[red] "Attention: The following projects don't currently have a next action:\n"
-#   echo $projects
-#   echo
-# fi
-#    Show waiting-for items
-# waiting=$(task +waiting +PENDING count)
-# if [ "$waiting" != "0" ]
-# then
-#   echo "Any progress on these waiting-fors?"
-#   task +waiting +PENDING ls
-# fi
 source /opt/git-subrepo/.rc
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

@@ -117,6 +117,18 @@ set tabpagemax=50
 " Always save upper case variables to viminfo file.
 set viminfo^=!
 
+" Return to last edit position when opening files
+augroup last_edit
+  autocmd!
+  autocmd BufReadPost *
+       \ if line("'\"") > 0 && line("'\"") <= line("$") |
+       \   exe "normal! g`\"" |
+       \ endif
+augroup END
+
+" Remember info about open buffers on close
+set viminfo^=% 
+
 " Enable backup and undo files by default.
 let s:dir = has('win32') ? '$APPDATA/Vim' : isdirectory($HOME.'/Library') ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
 let &backupdir = expand(s:dir) . '/backup//'
