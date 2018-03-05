@@ -84,7 +84,6 @@ else
   Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
 endif
 Plug 'metalelf0/supertab' " completion with tab (fork of ervandew/supertab to fix 'Invalid argument: pumvisible')
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -102,12 +101,14 @@ Plug 'Quramy/tsuquyomi', {'for': 'typescript' } "TypeScript
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'timonv/vim-cargo', { 'for': 'rust' }
 Plug 'mmai/vim-markdown-wiki'
+" PHP
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion
+Plug 'arnaud-lb/vim-php-namespace' " automatically insert 'use' statements
 " Haskell
 "   Syntax highlighting and indentation : done by haskell-vim (in vim-polyglot)
 "   Quickfix & Sign Columns : done by ale
 Plug 'alx741/vim-hindent' " Autoformating & indentation
 Plug 'parsonsmatt/intero-neovim'
-
 Plug 'Twinside/vim-hoogle' " Access hoogle search 
 Plug 'pbrisbin/vim-syntax-shakespeare' " Syntaxe for shakespeare templating
 Plug 'eagletmt/ghcmod-vim' " required by neco-ghc

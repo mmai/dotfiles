@@ -67,6 +67,8 @@ _Current date time_ `<leader>dt`
 _Toggle indentation colorizing_ `<leader>ig`
 _Toggle tagbar_ `<leader>t`
 
+_Go to definition_ `<leader>d`
+
 * _Open / close issues and error lists_ `:lop` / `:lcl`, `:cop` / `:ccl`
 * _Navigate issues list_ `:lnext` / `:lprev`
 * _Try to fix syntax issue_ `:ALEFix`
@@ -84,9 +86,12 @@ Debugger:
 * _Add break point_ `<F10>`
 * _Start listening_ `<F5>`
 
-PHP completion (phpcd)
-* _PHP completion : jump to function definition_ <C-]> 
-* _PHP completion : jump back_ <C-t>
+PHP completion (phpcd), needs a project with an autoload.php file
+* _PHP completion : jump to function definition_ <leader>pd 
+* _PHP completion : jump back_  ???
+
+* _Insert use statement_ `<leader>pnu`
+* _Expand class_  `<leader>pne`
 
 Haskell
 * indent `<leader>hi`
@@ -102,7 +107,7 @@ Haskell
 * _Generic type (Intero)_ `<leader>t`
 * _Type (Intero)_ `<leader>T`
 * _Highlight uses of identifier_ `<leader>iu`
-* _Go to definition (Intero)_ `<leader>jd`
+* _Go to definition (Intero)_ `<leader>d`
 
 * _Hoogle the word under cursor_ `<leader>hh`
 * _Hoogle detail documentation_ `<leader>hd`

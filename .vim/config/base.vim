@@ -30,26 +30,13 @@ set winaltkeys=no
 " Sync the last copy register with the system clipboard 
 set clipboard^=unnamed,unnamedplus 
 
-" Choose correct case on autocompletion
-set infercase 
-
 if has('nvim')
   " exit neovim terminal
   tnoremap <Esc> <C-\><C-n>
 endif
 
-" Autoindent when starting new line, or using `o` or `O`.
-set autoindent
-
 " Allow backspace in insert mode.
 set backspace=indent,eol,start
-
-" Don't scan included files. The .tags file is more performant.
-set complete-=i
-
-" Use 'shiftwidth' when using `<Tab>` in front of a line.
-" By default it's used only for shift commands (`<`, `>`).
-set smarttab
 
 " Disable octal format for number processing.
 set nrformats-=octal
@@ -61,11 +48,6 @@ set ttimeoutlen=100
 
 " Enable highlighted case-insensitive incremential search.
 set incsearch
-
-" Indent using two spaces.
-set tabstop=2
-set shiftwidth=2
-set expandtab
 
 " Use `Ctrl-L` to clear the highlighting of :set hlsearch.
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -79,9 +61,24 @@ set ruler
 " Show the size of block one selected in visual mode.
 set showcmd
 
+" Autoindent when starting new line, or using `o` or `O`.
+set autoindent
+
+" Use 'shiftwidth' when using `<Tab>` in front of a line.
+" By default it's used only for shift commands (`<`, `>`).
+set smarttab
+
+" Indent using two spaces.
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 " Autocomplete commands using nice menu in place of window status.
 " Enable `Ctrl-N` and `Ctrl-P` to scroll through matches.
 set wildmenu
+set wildmode=longest,full " For autocompletion, complete as much as you can.
+set infercase " Choose correct case on autocompletion
+set complete-=i " Don't scan included files. The .tags file already does it
 
 " When 'wrap' is on, display last line even if it doesn't fit.
 set display+=lastline
@@ -202,9 +199,6 @@ vmap j gj
 vmap k gk
 nmap j gj
 nmap k gk
-
-" For autocompletion, complete as much as you can.
-set wildmode=longest,full
 
 " Show line numbers on the sidebar.
 set number

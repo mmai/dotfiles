@@ -31,3 +31,7 @@ xmap <Leader>m <Plug>(sidemenu-visual)
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+" accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
+inoremap <C-space> <C-x><C-o>
+

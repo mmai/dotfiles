@@ -55,7 +55,7 @@ augroup interoMaps
   au FileType haskell map <leader>T <Plug>InteroType
   au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
 
-  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
+  au FileType haskell nnoremap <silent> <leader>d :InteroGoToDef<CR>
   au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
   au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
 augroup END

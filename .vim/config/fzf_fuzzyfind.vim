@@ -1,4 +1,5 @@
 " FZF Fuzzy-find plugin shortcuts
+"  see also the jump to tag alias in coding.vim 
 
 let $FZF_DEFAULT_COMMAND = 'fd --type f'
 let $FZF_CTRL_T_COMMAND  = 'fd --type f'
@@ -6,7 +7,7 @@ let g:fzf_layout = { 'down': '~40%' }
 
 map <C-p> :Files<cr>
 nmap <C-p> :Files<cr>
-
+ 
 " View commits in fzf
 nmap <Leader>c :Commits<cr>
 
