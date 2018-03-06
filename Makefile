@@ -21,7 +21,7 @@ zsh: initmodules
 	ln -s `pwd`/.zshrc ~/.zshrc
 
 git:
-	sudo apt-get install git
+	sudo apt-get install git git-flow
 	-test -e ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_bak
 	-test -e ~/.gitignore_global && mv ~/.gitignore_global ~/.gitignore_global_bak
 	ln -s `pwd`/.gitignore_global ~/.gitignore_global
@@ -88,6 +88,8 @@ haskell:
 	curl -sSL https://get.haskellstack.org/ | sh
 
 gnome:
+	echo "gui dev tools : meld, gitg"
+	sudo apt install meld gitg
 	echo "ALT TAB change windows on current workspace only"
 	gsettings set org.gnome.shell.app-switcher current-workspace-only true
 	echo "Replace Nautilus by Nemo (for the sidebar directory tree view)"

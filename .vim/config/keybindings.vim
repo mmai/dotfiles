@@ -1,5 +1,16 @@
 "--------------------------- keybindings / shortcuts
 
+" To show all mappings, including those defined by plugins, and where they are defined : 
+" :Verbose map
+" or replace map with one of the following:
+"   nmap - Display normal mode maps
+"   imap - Display insert mode maps
+"   vmap - Display visual and select mode maps
+"   smap - Display select mode maps
+"   xmap - Display visual mode maps
+"   cmap - Display command-line mode maps
+"   omap - Display operator pending mode maps
+
 let mapleader = "," "      Set <Leader> key to ',' instead of '\'
 let g:mapleader = "," "    Set <Leader> key to ',' instead of '\'
 let maplocalleader = "_" " Set <LocalLeader> to '_'
@@ -35,3 +46,18 @@ map g/ <Plug>(incsearch-stay)
 " accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
 inoremap <C-space> <C-x><C-o>
 
+"--------------- PHP ----------------------
+" PHP :: namespaces shortcuts
+autocmd FileType php inoremap <Leader>pnu <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>pnu :call PhpInsertUse()<CR>
+autocmd FileType php inoremap <Leader>pne <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>pne :call PhpExpandClass()<CR>
+ 
+" PHP :: phpcd shortcuts
+silent! nnoremap <silent> <unique> <buffer> <leader>pdr 
+			\ :<C-u>call phpcd#JumpToDefinition('normal')<CR>
+silent! nnoremap <silent> <unique> <buffer> <leader>pd
+			\ :<C-u>call phpcd#JumpToDefinition('split')<CR>
+silent! nnoremap <silent> <unique> <buffer> <leader>pdv
+			\ :<C-u>call phpcd#JumpToDefinition('vsplit')<CR>
+silent! nnoremap <silent> <unique> <buffer> <leader>pb :call phpcd#JumpBack()<CR>

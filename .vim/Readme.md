@@ -7,6 +7,7 @@ Don't forget to config the font defined by _guifont_  param(ie _DejaVuSansMono\ 
 
 _FZF plugin_ also installs the zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
 The `--all` option in _vimrc_ installs fzf outside of vim (ie for zsh) as well, use `--bin` for a vim only version
+FZF is configured to use _sharkdp/fd_ instead of _find_ (see _config/fzf_fuzzyfind.vim_), install it from https://github.com/sharkdp/fd/releases
 
 _Vdebug_ needs python2 `pip2 install neovim`
 
@@ -14,7 +15,7 @@ See at https://github.com/w0rp/ale the tools to install for linting, completion.
 
 _lvht/phpcd_ (php completing) : see github page for php requirements
 
-For haskell, installs the following tools 
+For haskell, install the following tools 
 `stack install hindent stylish-haskell neco-ghc hlint pointfree cabal_install `
 (and hscope ?) possibly with `--resolver lts-..` option ?
 

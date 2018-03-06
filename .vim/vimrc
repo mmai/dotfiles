@@ -13,6 +13,7 @@ call plug#begin(expand('~/.vim/bundle'))
 
 " Add or remove your Bundles here:
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+Plug 'tpope/vim-scriptease' " vim scripts debug tool (:Verbose, ...)
 
 "--------- File navigation
 Plug 'mhinz/vim-startify' " Fancy start screen with links to recent files

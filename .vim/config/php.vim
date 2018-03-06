@@ -1,5 +1,8 @@
 "-----------        PHP       ----------
 
+" associate .feature files with behat (vim default is cucumber) 
+let g:feature_filetype='behat'
+
 " phpcd with neosnippet
 let g:phpcd_disable_modifier=0 
 
@@ -22,8 +25,6 @@ function! IPhpInsertUse()
     call PhpInsertUse()
     call feedkeys('a',  'n')
 endfunction
-autocmd FileType php inoremap <Leader>pnu <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>pnu :call PhpInsertUse()<CR>
 
 " automatically sort namespaces after inserting
 let g:php_namespace_sort_after_insert=1
@@ -33,15 +34,3 @@ function! IPhpExpandClass()
     call PhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
-autocmd FileType php inoremap <Leader>pne <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php noremap <Leader>pne :call PhpExpandClass()<CR>
- 
-silent! nnoremap <silent> <unique> <buffer> <leader>pd 
-			\ :<C-u>call phpcd#JumpToDefinition('normal')<CR>
-silent! nnoremap <silent> <unique> <buffer> <leader>pds
-			\ :<C-u>call phpcd#JumpToDefinition('split')<CR>
-silent! nnoremap <silent> <unique> <buffer> <leader>pdv
-			\ :<C-u>call phpcd#JumpToDefinition('vsplit')<CR>
-" does not work ???
-silent! nnoremap <silent> <unique> <buffer> <leader>pb
-\ :<C-u>call phpcd#JumpBack()<CR>
