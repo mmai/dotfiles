@@ -10,3 +10,7 @@ if has("statusline")
  "git branch in status line
  set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
+
+" Show buffers in tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#excludes = []
