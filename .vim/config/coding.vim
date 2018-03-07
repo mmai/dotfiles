@@ -24,10 +24,12 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
 
 " ----------- Autocompleting
 set completeopt+=longest
+" Don't open split window with preview
+set completeopt-=preview 
 
 " conceal markers
 if has('conceal')
-  set conceallevel=2
+  set conceallevel=2 concealcursor=niv
 endif
 
 " deoplete + neosnippet + autopairs changes
@@ -39,6 +41,7 @@ imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() 
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
+" Expand function prototype
 let g:neosnippet#enable_completed_snippet = 1
 
 " fix E764 AutoComplPop error message when editing html files

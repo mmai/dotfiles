@@ -1,12 +1,15 @@
 "TODO ?
-"- file explorer : 'Shougo/defx.nvim' when ready + denite
-"- viki
-"- vim outliner, vim-wordy(faire trad. français)
-"haskell (from https://haskell-at-work.com/about.html#faq):
-"   neoformat (pourquoi ?)
-"   regarder aussi config haskell-vim-now
-"   regarder vim2hs ?
-"s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
+" - file explorer : 'Shougo/defx.nvim' when ready + denite
+" - viki
+" - vim outliner, vim-wordy(faire trad. français)
+" - haskell (from https://haskell-at-work.com/about.html#faq):
+"     neoformat (pourquoi ?)
+"     regarder aussi config haskell-vim-now
+"     regarder vim2hs ?
+" - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
+" - php behat : debugger le plugin : show quickfix, configure base path ?
+" - phpcd + deoplete + neosnippet : debugger completion montrant marqueurs et
+" sans navigation
 
 " Required:
 call plug#begin(expand('~/.vim/bundle'))
@@ -97,7 +100,6 @@ Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collec
 Plug 'heavenshell/vim-jsdoc'
 Plug 'othree/yajs.vim',{'for':'javascript'}
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
-Plug 'vim-scripts/indenthtml.vim'
 Plug 'Quramy/tsuquyomi', {'for': 'typescript' } "TypeScript
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'timonv/vim-cargo', { 'for': 'rust' }

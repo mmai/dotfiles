@@ -46,12 +46,6 @@ set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
 
-" Enable highlighted case-insensitive incremential search.
-set incsearch
-
-" Use `Ctrl-L` to clear the highlighting of :set hlsearch.
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-
 " Always show window statuses, even if there's only one.
 set laststatus=2
 
@@ -132,11 +126,16 @@ let &backupdir = expand(s:dir) . '/backup//'
 let &undodir = expand(s:dir) . '/undo//'
 set undofile
 
+" Automatically create directories for backup and undo files.
+if !isdirectory(expand(s:dir))
+  call system("mkdir -p " . expand(s:dir) . "/{backup,undo}")
+end
+
+
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
   set t_Co=16
 endif
-
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -166,11 +165,6 @@ xnoremap & :&&<CR>
 
 " Y yanks from the cursor to the end of line as expected. See :help Y.
 nnoremap Y y$
-
-" Automatically create directories for backup and undo files.
-if !isdirectory(expand(s:dir))
-  call system("mkdir -p " . expand(s:dir) . "/{backup,undo}")
-end
 
 " Keep 8 lines above or below the cursor when scrolling.
 set scrolloff=8
@@ -224,18 +218,19 @@ set noswapfile
 " Save up to 100 marks, enable capital marks.
 set viminfo='100,f1
 
+" ----- Searching 
 " Enable search highlighting.
 set hlsearch
-
+" Enable highlighted case-insensitive incremential search.
+set incsearch
 " Ignore case when searching.
 set ignorecase
-
-" Show mode in statusbar, not separately.
-set noshowmode
-
 " Don't ignore case when search has capital letter
 " (although also don't ignore case by default).
 set smartcase
+
+" Show mode in statusbar, not separately.
+set noshowmode
 
 " Use dash as word separator.
 set iskeyword+=-
@@ -248,10 +243,6 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
-
-" Auto center on matched string.
-noremap n nzz
-noremap N Nzz
 
 " Visually select the text that was last edited/pasted (Vimcast#26).
 noremap gV `[v`]

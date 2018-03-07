@@ -1,4 +1,5 @@
 "--------------------------- keybindings / shortcuts
+"TODO shortcut yankring (conflict with autopairs <M-p> ie alt p ?)
 
 " To show all mappings, including those defined by plugins, and where they are defined : 
 " :Verbose map
@@ -14,6 +15,9 @@
 let mapleader = "," "      Set <Leader> key to ',' instead of '\'
 let g:mapleader = "," "    Set <Leader> key to ',' instead of '\'
 let maplocalleader = "_" " Set <LocalLeader> to '_'
+
+" Use `Ctrl-L` to clear the highlighting of :set hlsearch.
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 "ESC remap
 inoremap kj <esc>
