@@ -1,3 +1,4 @@
+let g:ttt = "hoho"
 let g:sidemenu = [
 	\   { 'title': 'General & Plugins',
 	\     'children': [
@@ -19,12 +20,10 @@ let g:sidemenu = [
 	\   { 'title': 'Files',
 	\     'children': [
 	\       ['fe', 'NERDTreeToggle', 'File explorer'],
-	\       ['fg', 'Denite grep', 'Find in files…'],
-	\       ['ff', 'Denite file_rec', 'Find files'],
-	\       ['fb', 'Denite buffer -default-action=switch', 'Buffers'],
-	\       ['fo', 'Denite file_old', 'MRU'],
-	\       ['fl', 'Denite line', 'Lines'],
-	\       ['fr', 'Denite -resume -refresh', 'Re-open window'],
+	\       ['fg', 'Ag', 'Find in files…'],
+	\       ['ff', 'Files', 'Find files'],
+	\       ['fr', 'Far', 'Find and replace'],
+	\       ['fb', 'Buffers', 'Buffers'],
 	\   ]},
 	\   { 'title': 'Tools',
 	\     'children': [
@@ -46,3 +45,4 @@ let g:sidemenu = [
 	\       ['3', 'echo dein#get_log()', 'View dein log'],
 	\   ]},
 	\ ]
+

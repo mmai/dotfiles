@@ -20,7 +20,7 @@ Plug 'tpope/vim-scriptease' " vim scripts debug tool (:Verbose, ...)
 
 "--------- File navigation
 Plug 'mhinz/vim-startify' " Fancy start screen with links to recent files
-" Plug 'scrooloose/nerdtree' "disabled because it overrides netrw when using '-' and don't go upper the initial directory
+Plug 'scrooloose/nerdtree' "disabled because it overrides netrw when using '-' and don't go upper the initial directory
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree => too slow
 let NERDTreeChDirMode=2 " change current directory when setting new root directory
 Plug 'dhruvasagar/vim-vinegar' "vinegar NERDTree version
@@ -32,7 +32,7 @@ Plug 'junegunn/fzf.vim'
 "--------- Layout and style
 Plug 'wesQ3/vim-windowswap' "swap windows: <leader>ww (1st time on 1st window, 2nd time on 2nd window)
 Plug 'moll/vim-bbye' " :Bdelete and :Bwipeout quit buffers nicely without destroying windows
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' " Status bar & buffers in tab bar
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-scripts/wombat256.vim' " Wombat Color scheme
 " Plug 'rakr/vim-one' " Vim-one Color scheme
