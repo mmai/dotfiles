@@ -35,9 +35,6 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>u :UndotreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<CR>
 
-" Snippets
-nnoremap <leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
-
 " Sidemenu shortcuts
 nmap <Leader>m <Plug>(sidemenu)
 xmap <Leader>m <Plug>(sidemenu-visual)
@@ -47,8 +44,26 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" accès à la complétion par CTRL+Space au lieu de CTRL+X,CTRL+O
+" ----------- Snippets
+nnoremap <leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" ----------- AutoCompletion
+" complete with CTRL+Space instead of CTRL+X,CTRL+O
 inoremap <C-space> <C-x><C-o>
+
+" Complete with tab key
+imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+" imap <expr><CR> pumvisible() ? "\<C-e>" : "\<CR>\<Plug>AutoPairsReturn"
+
+"--------------- Language server client ----------------------
+nnoremap <silent> <Leader>lsh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <Leader>lsd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Leader>lsr :call LanguageClient_textDocument_rename()<CR>
 
 "--------------- PHP ----------------------
 " PHP :: namespaces shortcuts

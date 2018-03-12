@@ -1,5 +1,7 @@
 "-----------        PHP       ----------
 
+" autocmd FileType php LanguageClientStart " probably not needed ?
+
 " associate .feature files with behat (vim default is cucumber) 
 let g:feature_filetype='behat'
 

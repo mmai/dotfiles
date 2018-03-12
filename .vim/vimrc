@@ -7,9 +7,12 @@
 "     regarder aussi config haskell-vim-now
 "     regarder vim2hs ?
 " - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
+" PHP
+" - s'inspirer de http://kushellig.de/neovim-php-ide/
 " - php behat : debugger le plugin : show quickfix, configure base path ?
-" - phpcd + deoplete + neosnippet : debugger completion montrant marqueurs et
-" sans navigation
+" - Language server : configurer pour js, haskell :
+"   - https://github.com/sourcegraph/javascript-typescript-langserver
+"   - https://github.com/haskell/haskell-ide-engine
 
 " Required:
 call plug#begin(expand('~/.vim/bundle'))
@@ -64,6 +67,8 @@ Plug 'majutsushi/tagbar' " functions and variables list
 Plug 'ludovicchabant/vim-gutentags' " generate tags for the tagbar 
 Plug 'vim-scripts/IndentAnything'
 Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
+" Language Server Protocol support ()
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 
 "Git 
 Plug 'vim-scripts/gitignore'
@@ -78,10 +83,12 @@ Plug 'alvan/vim-closetag' " Close html / xml tags
 Plug 'jiangmiao/auto-pairs' " deals intelligently with pairs of punctuation () [] '' {} ... 
 " Plug 'kana/vim-smartinput' " deals intelligently with pairs of punctuation () [] '' {} ... 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "nécessite support python
+  " Plug 'roxma/nvim-completion-manager' " needs python support, XXX doesn't
+  " work with phpcd
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " needs python support
+  Plug 'Shougo/neco-vim', { 'for': 'vim' }
   let g:deoplete#enable_at_startup = 1 " Use deoplete.
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript completion
-  Plug 'Shougo/neco-vim', { 'for': 'vim' }
   Plug 'zchee/deoplete-jedi', { 'for': 'python' }
   Plug 'sebastianmarkow/deoplete-rust', {'for': ' rust '}
 else 
@@ -97,16 +104,21 @@ Plug 'sjl/splice.vim' " three way merge
 Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collection of languages
 
 "Specific languages support not already in vim-polyglot
+Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
+Plug 'timonv/vim-cargo', { 'for': 'rust' }
+Plug 'mmai/vim-markdown-wiki'
+" Javascript
 Plug 'heavenshell/vim-jsdoc'
 Plug 'othree/yajs.vim',{'for':'javascript'}
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
 Plug 'Quramy/tsuquyomi', {'for': 'typescript' } "TypeScript
-Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
-Plug 'timonv/vim-cargo', { 'for': 'rust' }
-Plug 'mmai/vim-markdown-wiki'
 " PHP
+Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+" Plug 'phpactor/phpactor' ,  {'do': 'composer install'} " required by ncm-phpactor
+" Plug 'roxma/ncm-phpactor' " Completion and inspection, XXX completion
+" arguments hasardeuse
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion
-Plug 'arnaud-lb/vim-php-namespace' " automatically insert 'use' statements
+Plug 'arnaud-lb/vim-php-namespace' " automatically insert 'use' statements XXX Ne marche pas ?
 " Haskell
 "   Syntax highlighting and indentation : done by haskell-vim (in vim-polyglot)
 "   Quickfix & Sign Columns : done by ale

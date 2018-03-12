@@ -15,6 +15,11 @@ See at https://github.com/w0rp/ale the tools to install for linting, completion.
 
 _lvht/phpcd_ (php completing) : see github page for php requirements
 
+Pour _nvim-completion-manager_:
+`pip3 install --user neovim jedi psutil setproctitle`
+
+Pour phpactor `sudo apt install php-mbstring`
+
 For haskell, install the following tools 
 `stack install hindent stylish-haskell neco-ghc hlint pointfree cabal_install `
 (and hscope ?) possibly with `--resolver lts-..` option ?
@@ -62,6 +67,8 @@ _Emmet : expand CSS selectors expression to HTML_ (ie div#page>div.logo+ul#navig
 ### Snippets
 
 _Current date time_ `<leader>dt`
+
+_Expand / Jump to next placeholder_ `<C-k>`
 
 ### IDE related
 

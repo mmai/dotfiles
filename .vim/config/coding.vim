@@ -22,14 +22,28 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
 " Jump to definition with fzf & tags 
 " nnoremap <leader>d :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
 
+" -----------  Language server protocol
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ }
+
 " ----------- Autocompleting
 set completeopt+=longest
 " Don't open split window with preview
 set completeopt-=preview 
 
+" Supress the annoying completion messages
+set shortmess+=c
+
 " conceal markers
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+  set conceallevel=2
+  " set concealcursor=niv " conceal also on current line on n, i, v modes
 endif
 
 " deoplete + neosnippet + autopairs changes
@@ -37,9 +51,6 @@ let g:AutoPairsMapCR=0
 let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
 " Expand function prototype
 let g:neosnippet#enable_completed_snippet = 1
