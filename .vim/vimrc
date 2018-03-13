@@ -13,6 +13,8 @@
 " - Language server : configurer pour js, haskell :
 "   - https://github.com/sourcegraph/javascript-typescript-langserver
 "   - https://github.com/haskell/haskell-ide-engine
+" - config couleurs tab bar dans vim-airline
+" - colorer le n°de la ligne courante
 
 " Required:
 call plug#begin(expand('~/.vim/bundle'))
@@ -40,7 +42,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'vim-scripts/wombat256.vim' " Wombat Color scheme
 " Plug 'rakr/vim-one' " Vim-one Color scheme
 Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
-Plug 'rafi/vim-sidemenu' " Add a customizable side menu 
+Plug 'mmai/vim-sidemenu' " Add a customizable side menu 
 
 "--------- Text navigation
 Plug 'nelstrom/vim-visual-star-search'

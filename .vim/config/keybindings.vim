@@ -32,8 +32,10 @@ nnoremap <leader>sv :source $HOME/.vim/vimrc<cr>
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
 
-nnoremap <leader>u :UndotreeToggle<cr>
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>u  :UndotreeToggle<cr>
+nnoremap <leader>t  :TagbarToggle<CR>
+" Toggle file explorer
+nnoremap <leader>f :NERDTreeToggle<cr>
 
 " Sidemenu shortcuts
 nmap <Leader>m <Plug>(sidemenu)

@@ -1,4 +1,3 @@
-let g:ttt = "hoho"
 let g:sidemenu = [
 	\   { 'title': 'General & Plugins',
 	\     'children': [
