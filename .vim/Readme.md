@@ -13,11 +13,18 @@ _Vdebug_ needs python2 `pip2 install neovim`
 
 See at https://github.com/w0rp/ale the tools to install for linting, completion... for each language
 
-_lvht/phpcd_ (php completing) : see github page for php requirements
 
 Pour _nvim-completion-manager_:
 `pip3 install --user neovim jedi psutil setproctitle`
 
+### PHP
+
+```
+composer global require phpmd/phpmd
+composer global require squizlabs/php_codesniffer
+```
+
+_lvht/phpcd_ (php completing) : see github page for php requirements
 Pour phpactor `sudo apt install php-mbstring`
 
 For haskell, install the following tools 

@@ -8,7 +8,9 @@
 "     regarder vim2hs ?
 " - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
 " PHP
-" - s'inspirer de http://kushellig.de/neovim-php-ide/
+" - s'inspirer de http://kushellig.de/neovim-php-ide/ -> depuis
+"   refactoring
+" - s'inspirer de http://kushellig.de/vim-switch-tests-files/
 " - php behat : debugger le plugin : show quickfix, configure base path ?
 " - Language server : configurer pour js, haskell :
 "   - https://github.com/sourcegraph/javascript-typescript-langserver

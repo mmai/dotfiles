@@ -65,6 +65,7 @@ imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>Au
 "--------------- Language server client ----------------------
 nnoremap <silent> <Leader>lsh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <Leader>lsd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Leader>lsf :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> <Leader>lsr :call LanguageClient_textDocument_rename()<CR>
 
 "--------------- PHP ----------------------
