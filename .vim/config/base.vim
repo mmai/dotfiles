@@ -232,9 +232,6 @@ set smartcase
 " Show mode in statusbar, not separately.
 set noshowmode
 
-" Use dash as word separator.
-set iskeyword+=-
-
 " Add gems.tags to files searched for tags.
 set tags+=gems.tags
 

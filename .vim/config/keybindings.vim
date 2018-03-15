@@ -35,7 +35,7 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>u  :UndotreeToggle<cr>
 nnoremap <leader>t  :TagbarToggle<CR>
 " Toggle file explorer
-nnoremap <leader>f :NERDTreeToggle<cr>
+nnoremap <leader>fe :NERDTreeToggle<cr>
 
 " Sidemenu shortcuts
 nmap <Leader>m <Plug>(sidemenu)
@@ -45,6 +45,11 @@ xmap <Leader>m <Plug>(sidemenu-visual)
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+" Global replace
+nnoremap <leader>fr :Far search replace **/*files.hs
+" Global search for word under cursor
+nnoremap <leader>fa :Ag <C-r><C-w>
 
 " ----------- Snippets
 nnoremap <leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>P

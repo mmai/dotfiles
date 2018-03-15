@@ -19,9 +19,10 @@ let g:sidemenu = [
 	\   { 'title': 'Files',
 	\     'children': [
 	\       ['fe', 'NERDTreeToggle', 'File explorer'],
-	\       ['fg', 'Ag', 'Find in files…'],
 	\       ['ff', 'Files', 'Find files'],
-	\       ['fr', 'Far', 'Find and replace'],
+	\       ['fg', 'Ag', 'Find in files…'],
+	\       ['fa', 'call feedkeys(",fa")', 'Find word under cursor in files'],
+	\       ['fr', 'call feedkeys(",fr")', 'Find and replace'],
 	\       ['fb', 'Buffers', 'Buffers'],
 	\   ]},
 	\   { 'title': 'Tools',

@@ -14,8 +14,14 @@ _Vdebug_ needs python2 `pip2 install neovim`
 See at https://github.com/w0rp/ale the tools to install for linting, completion... for each language
 
 
-Pour _nvim-completion-manager_:
+Pour _nvim-completion-manager_ (obsolete):
 `pip3 install --user neovim jedi psutil setproctitle`
+
+### Javascript
+
+```
+sudo npm install -g javascript-typescript-langserver
+```
 
 ### PHP
 

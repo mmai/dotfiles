@@ -1,22 +1,23 @@
 "TODO ?
-" - file explorer : 'Shougo/defx.nvim' when ready + denite
+" GENERAL
 " - viki
 " - vim outliner, vim-wordy(faire trad. français)
-" - haskell (from https://haskell-at-work.com/about.html#faq):
+" - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
+" - config couleurs tab bar dans vim-airline
+" - colorer le n°de la ligne courante
+" - Language server : configurer pour js, haskell :
+"   - https://github.com/sourcegraph/javascript-typescript-langserver
+"   - https://github.com/haskell/haskell-ide-engine
+" - file explorer : 'Shougo/defx.nvim' when ready + denite
+" HASKELL (from https://haskell-at-work.com/about.html#faq):
 "     neoformat (pourquoi ?)
 "     regarder aussi config haskell-vim-now
 "     regarder vim2hs ?
-" - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
 " PHP
 " - s'inspirer de http://kushellig.de/neovim-php-ide/ -> depuis
 "   refactoring
 " - s'inspirer de http://kushellig.de/vim-switch-tests-files/
 " - php behat : debugger le plugin : show quickfix, configure base path ?
-" - Language server : configurer pour js, haskell :
-"   - https://github.com/sourcegraph/javascript-typescript-langserver
-"   - https://github.com/haskell/haskell-ide-engine
-" - config couleurs tab bar dans vim-airline
-" - colorer le n°de la ligne courante
 
 " Required:
 call plug#begin(expand('~/.vim/bundle'))
