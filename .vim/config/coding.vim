@@ -27,11 +27,11 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'haskell': ['hie', '--lsp'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
-
 " ----------- Autocompleting
 set completeopt+=longest
 " Don't open split window with preview

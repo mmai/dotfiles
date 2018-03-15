@@ -33,9 +33,19 @@ composer global require squizlabs/php_codesniffer
 _lvht/phpcd_ (php completing) : see github page for php requirements
 Pour phpactor `sudo apt install php-mbstring`
 
+### Haskell
+
 For haskell, install the following tools 
 `stack install hindent stylish-haskell neco-ghc hlint pointfree cabal_install `
 (and hscope ?) possibly with `--resolver lts-..` option ?
+
+For language client (of language server protocol)
+
+```
+git clone https://github.com/haskell/haskell-ide-engine
+cd haskell-ide-engine
+stack install 
+```
 
 ## Commands and shortcuts
 

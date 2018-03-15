@@ -5,11 +5,10 @@
 " - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
 " - config couleurs tab bar dans vim-airline
 " - colorer le n°de la ligne courante
-" - Language server : configurer pour js, haskell :
-"   - https://github.com/sourcegraph/javascript-typescript-langserver
-"   - https://github.com/haskell/haskell-ide-engine
 " - file explorer : 'Shougo/defx.nvim' when ready + denite
-" HASKELL (from https://haskell-at-work.com/about.html#faq):
+" HASKELL 
+" - Supprimer ghc-mod (remplacé par haskell-ide-engine + language client) ?
+" - (from https://haskell-at-work.com/about.html#faq):
 "     neoformat (pourquoi ?)
 "     regarder aussi config haskell-vim-now
 "     regarder vim2hs ?
