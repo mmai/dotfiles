@@ -21,6 +21,11 @@ endtry
 " Match wombat colors in nerd tree
 hi Directory guifg=#8ac6f2
 
+" Colorize current line number
+" set cursorline
+" hi! LineNr ctermbg=NONE
+" hi! CursorLine ctermbg=NONE
+
 " Adjust signscolumn and syntastic to match wombat
 hi! link SignColumn LineNr
 hi! link SyntasticErrorSign ErrorMsg

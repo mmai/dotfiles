@@ -1,10 +1,8 @@
 "TODO ?
 " GENERAL
-" - viki
-" - vim outliner, vim-wordy(faire trad. français)
 " - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
-" - config couleurs tab bar dans vim-airline
-" - colorer le n°de la ligne courante
+" - vim outliner, vim-wordy(faire trad. français)
+" - viki
 " - file explorer : 'Shougo/defx.nvim' when ready + denite
 " HASKELL 
 " - Supprimer ghc-mod (remplacé par haskell-ide-engine + language client) ?
@@ -13,9 +11,8 @@
 "     regarder aussi config haskell-vim-now
 "     regarder vim2hs ?
 " PHP
-" - s'inspirer de http://kushellig.de/neovim-php-ide/ -> depuis
-"   refactoring
-" - s'inspirer de http://kushellig.de/vim-switch-tests-files/
+" - configurer tests ? bascule auto, etc.
+" - (si besoin) phpactor & php-refactoring-browser (cf. http://kushellig.de/neovim-php-ide/)
 " - php behat : debugger le plugin : show quickfix, configure base path ?
 
 " Required:
@@ -73,6 +70,8 @@ Plug 'vim-scripts/IndentAnything'
 Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
 " Language Server Protocol support ()
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
+" Launch tests and see reports easily
+Plug 'janko-m/vim-test'
 
 "Git 
 Plug 'vim-scripts/gitignore'
@@ -121,8 +120,11 @@ Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer ru
 " Plug 'phpactor/phpactor' ,  {'do': 'composer install'} " required by ncm-phpactor
 " Plug 'roxma/ncm-phpactor' " Completion and inspection, XXX completion
 " arguments hasardeuse
+" Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'} " automatically insert 'use' statements XXX seems to conflict with ale...
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion
-Plug 'arnaud-lb/vim-php-namespace' " automatically insert 'use' statements XXX Ne marche pas ?
+Plug 'adoy/vim-php-refactoring-toolbox', {'for': 'php'} " refactoring
+Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
+Plug 'Rican7/php-doc-modded', {'for': 'php'}  " Generate documentation
 " Haskell
 "   Syntax highlighting and indentation : done by haskell-vim (in vim-polyglot)
 "   Quickfix & Sign Columns : done by ale

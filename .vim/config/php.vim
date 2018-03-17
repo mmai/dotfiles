@@ -21,7 +21,7 @@ let g:tagbar_type_php  = {
     \ ]
 \ }
 
-" -------- arnaud-lb/vim-php-namespace plugin
+" -------- vim-php-namespace plugin
 " Automatically insert use statements 
 function! IPhpInsertUse()
     call PhpInsertUse()
@@ -36,3 +36,15 @@ function! IPhpExpandClass()
     call PhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
+
+" ------------ adoy/vim-php-refactoring-toolbox plugin
+let g:vim_php_refactoring_default_property_visibility = 'private'
+let g:vim_php_refactoring_default_method_visibility = 'private'
+let g:vim_php_refactoring_auto_validate_visibility = 1
+let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
+
+
+" ----------- Testing (vim-test plugin)
+let test#php#phpunit#options = { 'file': '--testdox' }
+" let test#php#phpunit#options = '--testdox'
+let test#php#phpspec#options = '--format=pretty'

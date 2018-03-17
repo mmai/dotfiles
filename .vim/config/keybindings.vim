@@ -33,7 +33,7 @@ nnoremap <leader>sv :source $HOME/.vim/vimrc<cr>
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR> 
 
 nnoremap <leader>u  :UndotreeToggle<cr>
-nnoremap <leader>t  :TagbarToggle<CR>
+nnoremap <leader>tt  :TagbarToggle<CR>
 " Toggle file explorer
 nnoremap <leader>fe :NERDTreeToggle<cr>
 
@@ -73,7 +73,18 @@ nnoremap <silent> <Leader>lsd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <Leader>lsf :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> <Leader>lsr :call LanguageClient_textDocument_rename()<CR>
 
+
+"--------------- Testing ----------------------
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>tl :TestLast<CR>
+nnoremap <Leader>tn :TestNearest<CR>
+nnoremap <Leader>ts :TestSuite<CR>
+nnoremap <Leader>tv :TestVisit<CR>
+
 "--------------- PHP ----------------------
+" PHP :: alvan/vim-php-manual shortcut
+let g:php_manual_online_search_shortcut = '<leader>?'
+
 " PHP :: namespaces shortcuts
 autocmd FileType php inoremap <Leader>pnu <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>pnu :call PhpInsertUse()<CR>
@@ -88,3 +99,20 @@ silent! nnoremap <silent> <unique> <buffer> <leader>pd
 silent! nnoremap <silent> <unique> <buffer> <leader>pdv
 			\ :<C-u>call phpcd#JumpToDefinition('vsplit')<CR>
 silent! nnoremap <silent> <unique> <buffer> <leader>pb :call phpcd#JumpBack()<CR>
+
+"PHP :: refactoring shortcuts
+let g:vim_php_refactoring_use_default_mapping = 0
+nnoremap <leader>rlv :call PhpRenameLocalVariable()<CR>
+nnoremap <leader>rcv :call PhpRenameClassVariable()<CR>
+nnoremap <leader>rrm :call PhpRenameMethod()<CR>
+nnoremap <leader>reu :call PhpExtractUse()<CR>
+vnoremap <leader>rec :call PhpExtractConst()<CR>
+nnoremap <leader>rep :call PhpExtractClassProperty()<CR>
+vnoremap <leader>rem :call PhpExtractMethod()<CR>
+nnoremap <leader>rnp :call PhpCreateProperty()<CR>
+nnoremap <leader>rdu :call PhpDetectUnusedUseStatements()<CR>
+vnoremap <leader>r== :call PhpAlignAssigns()<CR>
+nnoremap <leader>rsg :call PhpCreateSettersAndGetters()<CR>
+
+" PHP :: Rican7/php-doc-modded shortcut
+nnoremap <leader>h :call PhpDocSingle()<CR>
