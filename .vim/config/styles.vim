@@ -23,8 +23,8 @@ hi Directory guifg=#8ac6f2
 
 " Colorize current line number
 " set cursorline
-" hi! LineNr ctermbg=NONE
-" hi! CursorLine ctermbg=NONE
+" hi LineNr ctermbg=NONE
+" hi CursorLine ctermbg=NONE
 
 " Adjust signscolumn and syntastic to match wombat
 hi! link SignColumn LineNr
@@ -33,8 +33,10 @@ hi! link SyntasticWarningSign WarningMsg
 
 " indent guides colors (colorize indentations)
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+augroup indent_guides
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+augroup END
 
 "   Use pleasant but very visible search hilighting 
 hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none

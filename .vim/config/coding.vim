@@ -56,8 +56,10 @@ let g:deoplete#enable_smart_case = 1
 let g:neosnippet#enable_completed_snippet = 1
 
 " fix E764 AutoComplPop error message when editing html files
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+augroup autocompl_error
+  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
+  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+augroup END
 
 " " Use buffer words as default tab completion
 " let g:SuperTabDefaultCompletionType = '<c-x><c-p>'
@@ -72,14 +74,18 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
 " endif
 
 " Autopair for vim type : don't close the comment string '"'
-au Filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'}
+augroup autopair
+  au Filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'}
+augroup END
 
 " --------------- Formating
 " Stop Align plugin from forcing its mappings on us
 let g:loaded_AlignMapsPlugin=1
 
 " Tabulation (defaults from base.vim : 2 spaces)
-autocmd Filetype python setlocal ts=4 sts=4 sw=4
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=4 sts=4 sw=4
+augroup tabulation_languages
+  autocmd Filetype python setlocal ts=4 sts=4 sw=4
+  autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+  autocmd Filetype html setlocal ts=2 sts=2 sw=2
+  autocmd Filetype php setlocal ts=4 sts=4 sw=4
+augroup END

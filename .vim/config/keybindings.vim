@@ -81,15 +81,48 @@ nnoremap <Leader>tn :TestNearest<CR>
 nnoremap <Leader>ts :TestSuite<CR>
 nnoremap <Leader>tv :TestVisit<CR>
 
+" -------------- Haskell -----------------
+" stylish
+augroup haskellStylish
+  au!
+  " Just hindent
+  au FileType haskell nnoremap <leader>hi :Hindent<CR>
+  " Just stylish-haskell
+  au FileType haskell nnoremap <leader>hs :call HaskellFormat('stylish')<CR>
+  " First hindent, then stylish-haskell
+  au FileType haskell nnoremap <leader>hf :call HaskellFormat('both')<CR>
+augroup END
+
+augroup interoMaps
+  au!
+  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR>
+  au FileType haskell nnoremap <silent> <leader>iov :InteroOpen<CR><C-W>H
+  au FileType haskell nnoremap <silent> <leader>ih :InteroHide<CR>
+  au FileType haskell nnoremap <silent> <leader>is :InteroStart<CR>
+  au FileType haskell nnoremap <silent> <leader>ik :InteroKill<CR>
+  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
+  au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
+  au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
+  au FileType haskell map <leader>t <Plug>InteroGenericType
+  au FileType haskell map <leader>T <Plug>InteroType
+  au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
+  au FileType haskell nnoremap <silent> <leader>d :InteroGoToDef<CR>
+  au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
+  au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
+augroup END
+
+
 "--------------- PHP ----------------------
 " PHP :: alvan/vim-php-manual shortcut
 let g:php_manual_online_search_shortcut = '<leader>?'
 
 " PHP :: namespaces shortcuts
-autocmd FileType php inoremap <Leader>pnu <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>pnu :call PhpInsertUse()<CR>
-autocmd FileType php inoremap <Leader>pne <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php noremap <Leader>pne :call PhpExpandClass()<CR>
+augroup php_namespaces
+  autocmd FileType php inoremap <Leader>pnu <Esc>:call IPhpInsertUse()<CR>
+  autocmd FileType php noremap <Leader>pnu :call PhpInsertUse()<CR>
+  autocmd FileType php inoremap <Leader>pne <Esc>:call IPhpExpandClass()<CR>
+  autocmd FileType php noremap <Leader>pne :call PhpExpandClass()<CR>
+augroup END
  
 " PHP :: phpcd shortcuts
 silent! nnoremap <silent> <unique> <buffer> <leader>pdr 
