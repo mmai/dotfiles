@@ -1,6 +1,6 @@
 " Haskell
 
-" ----- hindent & stylish-haskell -----
+let g:LanguageClient_serverCommands.haskell = ['hie', '--lsp']
 
 " Indenting on save is too aggressive for me
 let g:hindent_on_save = 0

@@ -16,6 +16,11 @@ let mapleader = "," "      Set <Leader> key to ',' instead of '\'
 let g:mapleader = "," "    Set <Leader> key to ',' instead of '\'
 let maplocalleader = "_" " Set <LocalLeader> to '_'
 
+" Toggle fold
+nnoremap <CR> za
+" Focus the current fold by closing all others
+nnoremap <S-Return> zMza
+
 " Use `Ctrl-L` to clear the highlighting of :set hlsearch.
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
@@ -36,6 +41,9 @@ nnoremap <leader>u  :UndotreeToggle<cr>
 nnoremap <leader>tt  :TagbarToggle<CR>
 " Toggle file explorer
 nnoremap <leader>fe :NERDTreeToggle<cr>
+
+" Save with sudo
+cmap W!! w !sudo tee % >/dev/null
 
 " Sidemenu shortcuts
 nmap <Leader>m <Plug>(sidemenu)

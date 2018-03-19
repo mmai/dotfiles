@@ -1,15 +1,14 @@
 "TODO ?
 " GENERAL
-" - s'inspirer de https://github.com/rafi/vim-config (pour les shortcuts en particulier)
 " - vim outliner, vim-wordy(faire trad. français)
 " - viki
 " - file explorer : 'Shougo/defx.nvim' when ready + denite
 " HASKELL 
-" - Supprimer ghc-mod (remplacé par haskell-ide-engine + language client) ?
+" - delete ghc-mod (replaced by haskell-ide-engine + language client) ?
 " - (from https://haskell-at-work.com/about.html#faq):
-"     neoformat (pourquoi ?)
-"     regarder aussi config haskell-vim-now
-"     regarder vim2hs ?
+"     neoformat (why ?)
+"     look at haskell-vim-now config 
+"     look at vim2hs ?
 " PHP
 " - configurer tests ? bascule auto, etc.
 " - (si besoin) phpactor & php-refactoring-browser (cf. http://kushellig.de/neovim-php-ide/)
