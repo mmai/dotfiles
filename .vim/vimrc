@@ -1,18 +1,23 @@
 "TODO ?
-" GENERAL
-" - vim outliner, vim-wordy(faire trad. français)
-" - viki
-" - file explorer : 'Shougo/defx.nvim' when ready + denite
 " HASKELL 
 " - delete ghc-mod (replaced by haskell-ide-engine + language client) ?
 " - (from https://haskell-at-work.com/about.html#faq):
 "     neoformat (why ?)
 "     look at haskell-vim-now config 
 "     look at vim2hs ?
+" WRITING
+" - vim outliner, vim-wordy(faire trad. français)
 " PHP
 " - configurer tests ? bascule auto, etc.
+"- php behat : debugger le plugin : show quickfix, configure base path ?
 " - (si besoin) phpactor & php-refactoring-browser (cf. http://kushellig.de/neovim-php-ide/)
-" - php behat : debugger le plugin : show quickfix, configure base path ?
+" GENERAL
+" - file explorer : 'Shougo/defx.nvim' when ready + denite
+
+" /!\ ------------ Conflicts resolution
+let g:AutoPairsShortcutToggle = '' " Disable shortcut <M-p> (conflict with yankstack)
+" Keep plugins in this order :
+" - yankstack before vim-surround ( 'S' conflict in visual mode )
 
 " Required:
 call plug#begin(expand('~/.vim/bundle'))
@@ -49,12 +54,12 @@ Plug 'haya14busa/incsearch.vim' " enhanced incremental searching
 
 "--------- Text manipulation
 Plug 'brooth/far.vim' " Find and replace in multiple files
-Plug 'tpope/vim-surround' "easily delete, change and add such surroundings in pairs
 Plug 'chrisbra/NrrwRgn' " :NR focus on a selected region while making the rest inaccessible
 Plug 'terryma/vim-multiple-cursors' "Like SublimeText multisection 
 Plug 'maxbrunsfeld/vim-yankstack' "Navigate the history of yanks with <alt-p> and <alt-shift-p>
 Plug 'mbbill/undotree' " :UndotreeToggle
 Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown)
+Plug 'tpope/vim-surround' "easily delete, change and add such surroundings in pairs
 Plug 'mattn/emmet-vim' "Expand CSS selectors expression to HTML (ie div#page>div.logo+ul#navigation>li*5>a)
 Plug 'michaeljsmith/vim-indent-object' " Text object based on indentation : ai, ii, aI, iI
 Plug 'kana/vim-textobj-user' " custom text objects (required by ghci.vim)
@@ -108,6 +113,7 @@ Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collec
 "Specific languages support not already in vim-polyglot
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'timonv/vim-cargo', { 'for': 'rust' }
+Plug 'plasticboy/vim-markdown'
 Plug 'mmai/vim-markdown-wiki'
 " Javascript
 Plug 'heavenshell/vim-jsdoc'
@@ -142,8 +148,10 @@ Plug 'tpope/vim-speeddating'
 Plug 'mattn/webapi-vim' " interface to web APIs
 Plug 'mmai/vim-scrum-markdown'
 " Plug 'mmai/wikilink'
-" Plug 'mmai/vim-zenmode'
-Plug 'mikewest/vimroom'
+Plug 'junegunn/goyo.vim' " writeroom like
+Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs
+Plug 'shime/vim-livedown', {'for': 'markdown', 'do': 'npm install -g livedown'} " preview markdown (:LivedownPreview)
+
 let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "desert"
 " let g:zenmode_font ="Cousine 12"
@@ -164,3 +172,8 @@ call plug#end()
 for fpath in split(globpath('~/.vim/config', '*.vim'), '\n')
   exe 'source' fpath
 endfor
+
+" ---------- Plugins already tested:
+"  vim-pandoc (for markdown) : bad syntax highlighting
+"  vim-writeroom (Goyo is better)
+

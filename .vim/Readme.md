@@ -2,7 +2,6 @@
 
 ## Notes on installation
 
-
 Don't forget to config the font defined by _guifont_  param(ie _DejaVuSansMono\ Nerd\ Font\ 10_ ) on the terminal emulator to get it working with console vim.
 
 _FZF plugin_ also installs the zsh command : CTRL-R for history, CTRL-T for files, ALT-C to cd in directories, or completion with : COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
@@ -17,9 +16,10 @@ See at https://github.com/w0rp/ale the tools to install for linting, completion.
 Pour _nvim-completion-manager_ (obsolete):
 `pip3 install --user neovim jedi psutil setproctitle`
 
+
 ### Javascript
 
-```
+```sh
 sudo npm install -g javascript-typescript-langserver
 ```
 
@@ -86,6 +86,9 @@ _Emmet : expand CSS selectors expression to HTML_ (ie div#page>div.logo+ul#navig
 * _Complete abbreviation_ `<C-y>,`(don't forget the ',')
 * _Go to next/previous edit point_ `<C-y>n` / `<C-y>N` 
 * _Select element_ `<C-y>d`
+
+### Markdown editing
+
 
 ### Snippets
 

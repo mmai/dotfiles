@@ -1,4 +1,6 @@
-" base.vim - inspired by sheerun/vimrc (and vim-sensible)
+
+" default spelling languages
+set spelllang=fr,en_us
 
 if exists("g:loaded_vimrc") || &cp
   finish
@@ -73,9 +75,6 @@ set wildmenu
 set wildmode=longest,full " For autocompletion, complete as much as you can.
 set infercase " Choose correct case on autocompletion
 set complete-=i " Don't scan included files. The .tags file already does it
-
-" When 'wrap' is on, display last line even if it doesn't fit.
-set display+=lastline
 
 " Force utf-8 encoding
 set encoding=utf-8
@@ -187,6 +186,9 @@ set hidden
 " Wrap lines by default
 set wrap linebreak
 set showbreak=" "
+
+" When 'wrap' is on, display last line even if it doesn't fit.
+set display+=lastline
 
 " Allow easy navigation between wrapped lines.
 vmap j gj

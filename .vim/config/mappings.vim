@@ -1,5 +1,4 @@
 "--------------------------- keybindings / shortcuts
-"TODO shortcut yankring (conflict with autopairs <M-p> ie alt p ?)
 
 " To show all mappings, including those defined by plugins, and where they are defined : 
 " :Verbose map
