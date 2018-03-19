@@ -85,7 +85,5 @@ let g:loaded_AlignMapsPlugin=1
 " Tabulation (defaults from base.vim : 2 spaces)
 augroup tabulation_languages
   autocmd Filetype python setlocal ts=4 sts=4 sw=4
-  autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
   autocmd Filetype html setlocal ts=2 sts=2 sw=2
-  autocmd Filetype php setlocal ts=4 sts=4 sw=4
 augroup END

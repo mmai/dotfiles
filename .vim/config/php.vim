@@ -1,6 +1,7 @@
 "-----------        PHP       ----------
 
-" autocmd FileType php LanguageClientStart " probably not needed ?
+let g:php_manual_online_search_shortcut = '<leader>?' " from alvan/vim-php-manual 
+let g:vim_php_refactoring_use_default_mapping = 0 " see new mappings in ftplugin/php.vim
 
 " associate .feature files with behat (vim default is cucumber) 
 let g:feature_filetype='behat'
@@ -42,7 +43,6 @@ let g:vim_php_refactoring_default_property_visibility = 'private'
 let g:vim_php_refactoring_default_method_visibility = 'private'
 let g:vim_php_refactoring_auto_validate_visibility = 1
 let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
-
 
 " ----------- Testing (vim-test plugin)
 let test#php#phpunit#options = { 'file': '--testdox' }

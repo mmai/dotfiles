@@ -5,11 +5,6 @@
 " Indenting on save is too aggressive for me
 let g:hindent_on_save = 0
 
-augroup hindent
-  " setlocal formatprg=hindent " from parsonsmatt
-  autocmd FileType haskell let &formatprg="hindent"
-augroup END
-
 " Helper function, called below with mappings
 function! HaskellFormat(which) abort
   if a:which ==# 'hindent' || a:which ==# 'both'
@@ -22,7 +17,6 @@ function! HaskellFormat(which) abort
 endfunction
 
 " ----- Linter w0rp/ale -----
-
 let g:ale_linters.haskell = ['stack-ghc-mod', 'hlint']
 
 " ----- parsonsmatt/intero-neovim -----
@@ -50,24 +44,8 @@ let g:neomake_haskell_enabled_makers = [] " 'hlint']
 let g:haskell_conceal_wide = 1
 let g:haskell_conceal_bad = 1
 
-setlocal keywordprg=":stack hoogle"
-
-" Hoogle the word under the cursor
-nnoremap <silent> <leader>hh :Hoogle<CR>
-" Hoogle for detailed documentation (e.g. "Functor")
-nnoremap <silent> <leader>hd :HoogleInfo<CR>
-" Hoogle, close the Hoogle window
-nnoremap <silent> <leader>hz :HoogleClose<CR>
-
-" ---- Completion 
 " Show types in completion suggestions
 let g:necoghc_enable_detailed_browse = 1
-
-augroup haskell
-  autocmd!
-  autocmd FileType haskell map <silent> <leader><cr> :noh<cr>:GhcModTypeClear<cr>:SyntasticReset<cr>
-  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-augroup END
 
 " -------- Tagbar
 let g:tagbar_type_haskell = {
