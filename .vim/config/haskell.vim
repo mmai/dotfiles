@@ -5,17 +5,6 @@ let g:LanguageClient_serverCommands.haskell = ['hie', '--lsp']
 " Indenting on save is too aggressive for me
 let g:hindent_on_save = 0
 
-" Helper function, called below with mappings
-function! HaskellFormat(which) abort
-  if a:which ==# 'hindent' || a:which ==# 'both'
-    :Hindent
-  endif
-  if a:which ==# 'stylish' || a:which ==# 'both'
-    silent! exe 'undojoin'
-    silent! exe 'keepjumps %!stylish-haskell'
-  endif
-endfunction
-
 " ----- Linter w0rp/ale -----
 let g:ale_linters.haskell = ['stack-ghc-mod', 'hlint']
 

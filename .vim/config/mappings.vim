@@ -79,6 +79,7 @@ nnoremap <silent> <Leader>lsh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <Leader>lsd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <Leader>lsf :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> <Leader>lsr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <Leader>lsw :call LanguageClient_textDocument_formatting()<CR>
 
 "--------------- Testing ----------------------
 nnoremap <Leader>tf :TestFile<CR>

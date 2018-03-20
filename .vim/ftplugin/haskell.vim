@@ -3,7 +3,8 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1
 
-setlocal formatprg=hindent
+setlocal formatexpr=LanguageClient_textDocument_rangeFormatting()
+setlocal formatprg=hindent " is superceded by formatexpr
 setlocal keywordprg=":stack hoogle"
 setlocal omnifunc=necoghc#omnifunc
 
@@ -15,14 +16,6 @@ nnoremap <buffer> <silent> <leader>hh :Hoogle<CR>
 nnoremap <buffer> <silent> <leader>hd :HoogleInfo<CR>
 " Hoogle, close the Hoogle window
 nnoremap <buffer> <silent> <leader>hz :HoogleClose<CR>
-
-" --- Haskell stylish & hindent
-" Just hindent
-nnoremap <buffer> <leader>hi :Hindent<CR>
-" Just stylish-haskell
-nnoremap <buffer> <leader>hs :call HaskellFormat('stylish')<CR>
-" First hindent, then stylish-haskell
-nnoremap <buffer> <leader>hf :call HaskellFormat('both')<CR>
 
 " --- Intero
 nnoremap <buffer> <silent> <leader>io :InteroOpen<CR>

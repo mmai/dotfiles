@@ -270,9 +270,6 @@ function! CloseWindowOrKillBuffer()
 endfunction
 nnoremap <silent> Q :call CloseWindowOrKillBuffer()<CR>
 
-"Disable Ex mode
-"nnoremap Q <nop>
-
 " Set window title by default.
 set title
 

@@ -11,9 +11,11 @@ let g:sidemenu = [
 	\   { 'title': 'Project',
 	\     'children': [
 	\       ['po', 'TagbarToggle', 'Tag Outline'],
+	\       ['pe', 'copen', 'Open quickfix'],
+	\       ['pi', 'lopen', 'Open location list'],
+	\       ['pf', ':call LanguageClient_textDocument_formatting()', 'Reformat code (Language client)'],
 	\       ['ps', 'Denite gitstatus', '*Git status'],
-	\       ['pb', 'call feedkeys("ma")', 'Bookmarks'],
-	\       ['pu', 'UndotreeToggle', 'Undo tree'],
+	\       ['pb', 'call feedkeys("ma")', '*Bookmarks'],
 	\   ]},
 	\   { 'title': 'Files',
 	\     'children': [
@@ -25,11 +27,15 @@ let g:sidemenu = [
 	\       ['fs', 'w !sudo tee % >/dev/null', 'Save with sudo'],
 	\       ['fb', 'Buffers', 'Buffers'],
 	\   ]},
-	\   { 'title': 'Tools',
+	\   { 'title': 'Writing',
 	\     'children': [
 	\       ['tf', 'Goyo', 'Distraction free writing'],
 	\       ['tp', 'LivedownToggle', 'Preview markdown'],
 	\       ['ts', ':setlocal spell! spelllang=fr,en_us', 'Toggle spelling'],
+	\   ]},
+	\   { 'title': 'Tools',
+	\     'children': [
+	\       ['pu', 'UndotreeToggle', 'Undo tree'],
 	\       ['a', 'Denite gitlog:all', '*Git log'],
 	\       ['b', 'Denite gitstatus', '*Git status'],
 	\       ['c', 'Denite gitchanged:', '*Git changed'],

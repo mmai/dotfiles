@@ -6,6 +6,9 @@ let b:did_ftplugin = 1
 " Tabulation
 setlocal ts=4 sts=4 sw=4
 
+" Formating
+setlocal formatexpr=LanguageClient_textDocument_rangeFormatting()
+
 " namespaces mappings
 inoremap <unique> <buffer> <Leader>pnu <Esc>:call IPhpInsertUse()<CR>
 noremap  <unique> <buffer> <Leader>pnu :call PhpInsertUse()<CR>

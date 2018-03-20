@@ -1,10 +1,7 @@
 "TODO ?
 " HASKELL 
 " - delete ghc-mod (replaced by haskell-ide-engine + language client) ?
-" - (from https://haskell-at-work.com/about.html#faq):
 "     neoformat (why ?)
-"     look at haskell-vim-now config 
-"     look at vim2hs ?
 " WRITING
 " - vim outliner, vim-wordy(faire trad. français)
 " PHP
@@ -13,6 +10,8 @@
 " - (si besoin) phpactor & php-refactoring-browser (cf. http://kushellig.de/neovim-php-ide/)
 " GENERAL
 " - file explorer : 'Shougo/defx.nvim' when ready + denite
+" - si besoin : neoformat (pas besoin pour haskell: brittany dans hid +
+"   LanguageServer client)
 
 " /!\ ------------ Conflicts resolution
 let g:AutoPairsShortcutToggle = '' " Disable shortcut <M-p> (conflict with yankstack)
