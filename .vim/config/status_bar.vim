@@ -14,3 +14,6 @@ endif
 " Show buffers in tabline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#excludes = []
+" let g:airline#extensions#tabline#switch_buffers_and_tabs = 1 " Exchange tabs
+" and buffers positions. Only works
+" with ctrlspace plugin...

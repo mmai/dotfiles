@@ -153,18 +153,6 @@ endif
 
 "" Extras
 
-" Set monako font if using macvim
-if has("gui_macvim")
-  set guifont=Monaco:h13
-endif
-
-" Keep flags when repeating last substitute command.
-nnoremap & :&&<CR>
-xnoremap & :&&<CR>
-
-" Y yanks from the cursor to the end of line as expected. See :help Y.
-nnoremap Y y$
-
 " Keep 8 lines above or below the cursor when scrolling.
 set scrolloff=8
 
@@ -195,6 +183,13 @@ vmap j gj
 vmap k gk
 nmap j gj
 nmap k gk
+
+" Keep flags when repeating last substitute command.
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
+
+" Y yanks from the cursor to the end of line as expected. See :help Y.
+nnoremap Y y$
 
 " Show line numbers on the sidebar.
 set number

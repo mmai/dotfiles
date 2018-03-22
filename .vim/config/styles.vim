@@ -6,6 +6,11 @@ colorscheme desert
 
 set guifont=DejaVuSansMono\ Nerd\ Font\ 10 
 
+" Set monaco font if using macvim
+if has("gui_macvim")
+  set guifont=Monaco:h13
+endif
+
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
   " render properly when inside 256-color tmux and GNU screen.
