@@ -53,6 +53,10 @@ Leader key is set to `,`
 
 _Open side menu_ `<leader>m`
 
+### Common
+
+Folding : close `zc`, open `zo`, toggle `za`, more `zm`, less `zr`
+
 ### Command mode
 
 _Expand to current buffer dir_ `:%%`
