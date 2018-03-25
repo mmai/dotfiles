@@ -1,5 +1,8 @@
 "TODO ?
 " HASKELL 
+" - get usages of word under cursor don't work in language client and intero,
+"   test solution of haskell-vim-now (custom script using hscope) ?
+" - coloration linter (info) white on lightblue is not readable
 " - delete ghc-mod (replaced by haskell-ide-engine + language client) ?
 "     neoformat (why ?)
 " WRITING
@@ -112,7 +115,7 @@ Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collec
 "Specific languages support not already in vim-polyglot
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'timonv/vim-cargo', { 'for': 'rust' }
-Plug 'plasticboy/vim-markdown'
+Plug 'gabrielelana/vim-markdown' " 'plasticboy/vim-markdown' " has bad lists newline handling
 Plug 'mmai/vim-markdown-wiki'
 " Javascript
 Plug 'heavenshell/vim-jsdoc'

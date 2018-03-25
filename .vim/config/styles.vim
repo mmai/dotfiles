@@ -30,6 +30,10 @@ hi Directory guifg=#8ac6f2
 " set cursorline
 " hi LineNr ctermbg=NONE
 " hi CursorLine ctermbg=NONE
+" " but keep whole line highlight in relevant buffers 
+" augroup whole_line_highlight_exceptions
+"   autocmd FileType nerdtree highlight CursorLine ctermbg=236 " XXX can't set it locally
+" augroup END
 
 " Adjust signscolumn and syntastic to match wombat
 hi! link SignColumn LineNr
@@ -46,7 +50,6 @@ augroup END
 "   Use pleasant but very visible search hilighting 
 hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
 hi! link Visual Search
-let g:incsearch#auto_nohlsearch = 1
 
 " Searing red very visible cursor
 hi Cursor guibg=red
