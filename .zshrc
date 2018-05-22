@@ -148,6 +148,13 @@ function e() {
   fi
 }
 
+# needed for nix-shell ?? (sinon erreur "perl: warning: Setting locale failed.")
+export LANGUAGE=fr_FR.UTF-8
+export LANG=fr_FR.UTF-8
+export LC_ALL=fr_FR.UTF-8
+# executer: nix-env -iA nixpkgs.glibcLocales
+export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
+
 ##################
 # FZF fuzzy finder
 ##################

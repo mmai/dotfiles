@@ -1,9 +1,5 @@
 alias journal='~/travaux/ecrits/journal.sh'
 
-alias ack='ack-grep'
-alias grep="nocorrect grep $GREP_OPTIONS"
-unset GREP_OPTIONS
-
 alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
 
 # Dev tools
@@ -12,7 +8,7 @@ alias prettyjson="python -m json.tool"
 alias ip="curl curlmyip.com" # print my IP
 
 # Fun scripts
-alias meteo="curl -4 wttr.in/Bordeaux?lang=fr"
+alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
 alias coin="coinmon -c eur -f btc,miota,eth,ltc,xrp,xtz,nlg,plbt"
 alias think="cd ~/think/;tree"
 

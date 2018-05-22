@@ -36,7 +36,7 @@ Pour phpactor `sudo apt install php-mbstring`
 ### Haskell
 
 For haskell, install the following tools 
-`stack install hindent stylish-haskell neco-ghc hlint pointfree cabal_install `
+`stack install hindent stylish-haskell neco-ghc hlint pointfree cabal_install hasktags`
 (and hscope ?) possibly with `--resolver lts-..` option ?
 
 For language client (of language server protocol)

@@ -16,7 +16,7 @@ let g:mapleader = "," "    Set <Leader> key to ',' instead of '\'
 let maplocalleader = "_" " Set <LocalLeader> to '_'
 
 " Use `Ctrl-L` to clear the highlighting of :set hlsearch.
-nnoremap <silent> <C-l> :nohlsearch<CR>
+nnoremap <C-l> :nohlsearch<CR>
 
 "ESC remap
 inoremap kj <esc>
