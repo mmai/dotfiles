@@ -5,6 +5,7 @@
 #  * taskwarrior
 #  * ncdu : ncurses disk usage
 #  * htop
+#  * asciinema, ttystudio: terminal recorders (web, gif)
 #  * tldr : Simplified and community-driven man pages  
 #  * neofetch : system config infos 
 #  * cal : calendrier
