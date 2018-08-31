@@ -16,6 +16,7 @@ alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
 alias coin="coinmon -c eur -f btc,miota,eth,ltc,xrp,xtz,nlg,plbt"
 alias think="cd ~/think/;tree"
 alias mthink="cd ~/mthink/;tree"
+alias dlmusic="~/softs_/dlmusic.sh"
 
 # Softs
 alias idea=/opt/`ls /opt | grep idea`/bin/idea.sh # Intellij Idea
