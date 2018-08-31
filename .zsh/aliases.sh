@@ -2,6 +2,10 @@ alias journal='~/travaux/ecrits/journal.sh'
 
 alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
 
+# better alternatives
+alias cat="bat"
+alias ping="prettyping --nolegend"
+
 # Dev tools
 alias serve="python -m SimpleHTTPServer"
 alias prettyjson="python -m json.tool"
@@ -11,6 +15,7 @@ alias ip="curl curlmyip.com" # print my IP
 alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
 alias coin="coinmon -c eur -f btc,miota,eth,ltc,xrp,xtz,nlg,plbt"
 alias think="cd ~/think/;tree"
+alias mthink="cd ~/mthink/;tree"
 
 # Softs
 alias idea=/opt/`ls /opt | grep idea`/bin/idea.sh # Intellij Idea

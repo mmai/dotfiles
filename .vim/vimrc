@@ -110,6 +110,7 @@ Plug 'Shougo/neosnippet-snippets'
 
 Plug 'sjl/splice.vim' " three way merge
 
+Plug 'dbeniamine/cheat.sh-vim' " interface vers cht.sh (cheatsheet)  <leader>KB sur ligne ou selection
 Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collection of languages
 
 "Specific languages support not already in vim-polyglot
