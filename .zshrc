@@ -5,6 +5,7 @@
 #  * taskwarrior
 #  * ncdu : ncurses disk usage
 #  * htop
+#  * lnav : log files navigator
 #  * asciinema, ttystudio: terminal recorders (web, gif)
 #  * tldr : Simplified and community-driven man pages  
 #  * neofetch : system config infos 
