@@ -92,6 +92,11 @@ export ANDROID_HOME=/opt/android-sdk-linux/
 
 PATH=/usr/local/heroku/bin:$PATH
 
+# add Cabal's bin directory to the executable search PATH if it exists
+if [ -d "$HOME/.cabal/bin" ] ; then
+    PATH="$HOME/.cabal/bin:$PATH"
+fi
+
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$NODE_PATH/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -135,7 +140,14 @@ source /usr/local/bin/virtualenvwrapper.sh
 if [ -d "/home/henri/.nix-profile/" ];
 then
   . /home/henri/.nix-profile/etc/profile.d/nix.sh
+# executer: nix-env -iA nixpkgs.glibcLocales
+  export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
 fi
+
+# needed for nix-shell ?? (sinon erreur "perl: warning: Setting locale failed.")
+export LANGUAGE=fr_FR.UTF-8
+export LANG=fr_FR.UTF-8
+export LC_ALL=fr_FR.UTF-8
 
 # @description Open given file with adequate rights (sudo/user)
 # @param    $@|$f  file(s) name
@@ -149,13 +161,6 @@ function e() {
     sudo -e -- "$f"
   fi
 }
-
-# needed for nix-shell ?? (sinon erreur "perl: warning: Setting locale failed.")
-export LANGUAGE=fr_FR.UTF-8
-export LANG=fr_FR.UTF-8
-export LC_ALL=fr_FR.UTF-8
-# executer: nix-env -iA nixpkgs.glibcLocales
-export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
 
 ##################
 # FZF fuzzy finder
