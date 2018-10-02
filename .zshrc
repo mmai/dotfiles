@@ -102,13 +102,12 @@ PATH=$PATH:$NODE_PATH/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt/elixir/bin # Elixir
 PATH=$PATH:$HOME/.config/composer/vendor/bin/ # Binaries installed from (ie Psych : PHP REPL)
+PATH=$PATH:$HOME/.cargo/bin # Rust
 PATH=$PATH:/opt/drush/ # Drupal drush
 PATH=$PATH:$ANDROID_HOME/tools/
 PATH=$PATH:$ANDROID_HOME/platform-tools/
 PATH=$PATH:/opt/android-studio/bin/ # Android STudio
 
-# PATH=$PATH:/opt/rust/bin # Rust
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rust/lib # Rust
 
 # Include Drush bash customizations.
 autoload bashcompinit
