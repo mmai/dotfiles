@@ -2,6 +2,13 @@ alias journal='~/travaux/ecrits/journal.sh'
 
 alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
 
+# Tools
+#    Copy screenshot to file
+#       Take screenshot whith <ctrl><shift><printScreen>, then  `pngpaste > screenshot.png`
+alias pngpaste="xclip -sel clipboard -t image/png -o" 
+alias pasteocr="pngpaste | convert -resize 400% /dev/stdin /dev/stdout | tesseract stdin stdout"
+alias pasteshow="pngpaste > screenshot.png && eog screenshot.png" 
+
 # better alternatives
 alias cat="bat"
 alias ping="prettyping --nolegend"

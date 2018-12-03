@@ -8,6 +8,7 @@
 #  * lnav : log files navigator
 #  * asciinema, ttystudio: terminal recorders (web, gif)
 #  * tldr : Simplified and community-driven man pages  
+#  * howdoi : Google for tech question from the command line
 #  * neofetch : system config infos 
 #  * cal : calendrier
 #  * meteo
