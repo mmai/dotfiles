@@ -1,5 +1,6 @@
 # terminal utilities
 #  * z : go to recent /frequent directories
+#  * entr : run arbitrary commands when files change (example: ls *.hs | entr make build)
 # some terminal programs : 
 #  * vifm, ranger, mc : file managers
 #  * taskwarrior

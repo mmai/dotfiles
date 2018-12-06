@@ -37,3 +37,4 @@ function e() {
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export PATH=$PATH:$HOME/.config/composer/vendor/bin/ # Binaries installed from (ie Psych : PHP REPL)
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

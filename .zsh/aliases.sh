@@ -1,4 +1,5 @@
 alias journal='~/travaux/ecrits/journal.sh'
+alias scaffold='~/Travaux/programmes/scaffold/scaffold'
 
 alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
 
