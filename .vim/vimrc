@@ -123,6 +123,7 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'othree/yajs.vim',{'for':'javascript'}
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
 Plug 'Quramy/tsuquyomi', {'for': 'typescript' } "TypeScript
+Plug 'posva/vim-vue'
 " PHP
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 " Plug 'phpactor/phpactor' ,  {'do': 'composer install'} " required by ncm-phpactor
