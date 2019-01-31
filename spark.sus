@@ -1,0 +1,27 @@
+card sus {
+  spark card bash
+  spark card vim
+  spark card git
+}
+
+card bash {
+  into ~
+
+  .bashrc
+  .zshrc
+  .zsh
+}
+
+card vim {
+  into ~
+  
+  .vim
+}
+
+card git {
+  into ~
+
+  .gitignore_global
+  .gitconfig
+}
+
