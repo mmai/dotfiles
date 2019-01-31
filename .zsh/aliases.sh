@@ -13,6 +13,7 @@ alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 # better alternatives
 alias cat="bat"
 alias ping="prettyping --nolegend"
+alias vim="nvim"
 
 # Dev tools
 alias serve="python -m SimpleHTTPServer"
@@ -25,10 +26,6 @@ alias coin="coinmon -c eur -f btc,miota,eth,ltc,xrp,xtz,nlg,plbt"
 alias think="cd ~/think/;tree"
 alias mthink="cd ~/mthink/;tree"
 alias dlmusic="~/softs_/dlmusic.sh"
-
-# Softs
-alias idea=/opt/`ls /opt | grep idea`/bin/idea.sh # Intellij Idea
-alias gvim="UBUNTU_MENUPROXY= gvim"
 
 # haskell (see https://www.reddit.com/r/haskell/comments/3bw95a/using_cabal_and_stack_together/csqdbe2)
 alias cblconf='cabal configure --package-db=clear --package-db=global --package-db=$(stack path --snapshot-pkg-db) --package-db=$(stack path --local-pkg-db)'

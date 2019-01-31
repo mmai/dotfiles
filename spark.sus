@@ -16,6 +16,7 @@ card vim {
   into ~
   
   .vim
+  .vim -> .config/nvim
 }
 
 card git {

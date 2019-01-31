@@ -1,6 +1,3 @@
-[submodule ".nvm"]
-	path = .nvm
-	url = http://github.com/creationix/nvm.git
 [submodule ".zsh/zplug"]
 	path = .zsh/zplug
 	url = https://github.com/zplug/zplug
