@@ -137,13 +137,13 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/travaux
 source /usr/local/bin/virtualenvwrapper.sh
 
-#NIX
-if [ -d "/home/henri/.nix-profile/" ];
-then
-  . /home/henri/.nix-profile/etc/profile.d/nix.sh
-# executer: nix-env -iA nixpkgs.glibcLocales
-  export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
-fi
+#NIX : uncomment on non NixOS systems
+# if [ -d "/home/henri/.nix-profile/" ];
+# then
+#   . /home/henri/.nix-profile/etc/profile.d/nix.sh
+# # executer: nix-env -iA nixpkgs.glibcLocales
+#   export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
+# fi
 
 # needed for nix-shell ?? (sinon erreur "perl: warning: Setting locale failed.")
 export LANGUAGE=fr_FR.UTF-8
@@ -173,14 +173,5 @@ function e() {
 _fzf_compgen_path() {
   ag -g "" "$1"
 }
-
-#################
-# Notes
-#################
-# Préparation : cd ~ ; git clone rhumbs.fr:~henri/repositories/notes.git notes
-#source ~/notes/notes.sh
-
-source /opt/git-subrepo/.rc
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=/home/henri/.local/bin/luna-studio:$PATH
