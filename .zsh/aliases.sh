@@ -12,7 +12,7 @@ alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 
 # better alternatives
 alias cat="bat"
-alias ping="prettyping --nolegend"
+# alias ping="prettyping --nolegend"
 alias vim="nvim"
 
 # Dev tools

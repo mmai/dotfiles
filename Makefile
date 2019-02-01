@@ -4,5 +4,5 @@ initmodules:
 	git submodule update
 
 install: initmodules
-	stark deploy stark.sus
+	spark deploy spark.sus
 	dconf load dconf-henri.ini

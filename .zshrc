@@ -41,7 +41,7 @@ zplug "modules/directory", from:prezto
 zplug "modules/spectrum", from:prezto
 zplug "modules/utility", from:prezto
 zplug "modules/completion", from:prezto
-zplug "modules/command-not-found", from:prezto
+# zplug "modules/command-not-found", from:prezto # already active on NixOS
 zplug "modules/node", from:prezto
 zplug "modules/git", from:prezto
 zstyle ':prezto:*:*' color 'yes'
@@ -131,11 +131,6 @@ OPENNLP_HOME=/opt/apache-opennlp-1.5.3 #openNLP
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 #source ~/.local/bin/tmuxinator.zsh
-
-#python virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs 
-export PROJECT_HOME=$HOME/travaux
-source /usr/local/bin/virtualenvwrapper.sh
 
 #NIX : uncomment on non NixOS systems
 # if [ -d "/home/henri/.nix-profile/" ];
