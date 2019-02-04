@@ -5,4 +5,4 @@ initmodules:
 
 install: initmodules
 	spark deploy spark.sus
-	dconf load dconf-henri.ini
+	cat dconf-henri.ini | dconf load /
