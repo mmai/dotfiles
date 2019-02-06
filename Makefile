@@ -6,3 +6,6 @@ initmodules:
 install: initmodules
 	spark deploy spark.sus
 	cat dconf-henri.ini | dconf load /
+
+dumpconf:
+	dconf dump / 
