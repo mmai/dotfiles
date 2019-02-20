@@ -53,8 +53,7 @@ let g:sidemenu = [
 	\   { 'title': 'System',
 	\     'children': [
 	\       ['1', 'CheckHealth', 'Check health'],
-	\       ['2', 'echo dein#get_updates_log()', '*View updates log'],
-	\       ['3', 'echo dein#get_log()', '*View dein log'],
+	\       ['2', 'messages', 'View all error messages'],
 	\   ]},
 	\ ]
 

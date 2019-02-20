@@ -1,7 +1,7 @@
 "-----------        PHP       ----------
+"  see also ftplugin/php.vim
 
 let g:php_manual_online_search_shortcut = '<leader>?' " from alvan/vim-php-manual 
-let g:vim_php_refactoring_use_default_mapping = 0 " see new mappings in ftplugin/php.vim
 
 " associate .feature files with behat (vim default is cucumber) 
 let g:feature_filetype='behat'
@@ -22,6 +22,17 @@ let g:tagbar_type_php  = {
     \ ]
 \ }
 
+" ----- Linter / Fixer w0rp/ale -----
+"  install phpcs (phpCodeSniffer) & drupal standards with :
+"     composer global require drupal/coder 
+"     composer global require dealerdirect/phpcodesniffer-composer-installer
+let g:ale_fixers.php = ['phpcbf']
+" let g:ale_linters.php = [] " Disable linting, comment to re-enable (if phpcs is installed)
+" list available standards with `phpcs -i`
+" let g:ale_php_phpcs_standard = 'Drupal' " (work sometimes...) if not set => PEAR Standard
+let g:ale_php_phpcs_standard = 'PSR1' " if not set => PEAR Standard
+" let g:ale_php_phpcs_options = '--show_warnings 0'
+
 " -------- vim-php-namespace plugin
 " Automatically insert use statements 
 function! IPhpInsertUse()
@@ -39,6 +50,7 @@ function! IPhpExpandClass()
 endfunction
 
 " ------------ adoy/vim-php-refactoring-toolbox plugin
+let g:vim_php_refactoring_use_default_mapping = 0 " see new mappings in ftplugin/php.vim
 let g:vim_php_refactoring_default_property_visibility = 'private'
 let g:vim_php_refactoring_default_method_visibility = 'private'
 let g:vim_php_refactoring_auto_validate_visibility = 1

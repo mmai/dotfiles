@@ -70,7 +70,7 @@ Plug 'kana/vim-textobj-user' " custom text objects (required by ghci.vim)
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale' "Check code syntax asynchronously (replaces neomake or syntastic)
 Plug 'joonty/vdebug' " Debugger (:help vdebug) XXX Ne marche pas ?  
-Plug 'majutsushi/tagbar' " functions and variables list
+" Plug 'majutsushi/tagbar' " functions and variables list // XXX disabled Nixos
 Plug 'ludovicchabant/vim-gutentags' " generate tags for the tagbar 
 Plug 'vim-scripts/IndentAnything'
 Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
@@ -130,7 +130,7 @@ Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer ru
 " Plug 'roxma/ncm-phpactor' " Completion and inspection, XXX completion
 " arguments hasardeuse
 " Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'} " automatically insert 'use' statements XXX seems to conflict with ale...
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion
+" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion // XXX disabled Nixos
 Plug 'adoy/vim-php-refactoring-toolbox', {'for': 'php'} " refactoring
 Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
 Plug 'Rican7/php-doc-modded', {'for': 'php'}  " Generate documentation

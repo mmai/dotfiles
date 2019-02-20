@@ -9,6 +9,8 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_linters = {} " Init empty (for use in other config files)
 let g:ale_fixers = {}
 
+" let g:ale_echo_msg_format = '[%linter%] %s'
+
 " ----------- Tags bar
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
                             \ '*.phar', '*.ini', '*.rst', '*.md',
