@@ -16,6 +16,18 @@ See at https://github.com/w0rp/ale the tools to install for linting, completion.
 Pour _nvim-completion-manager_ (obsolete):
 `pip3 install --user neovim jedi psutil setproctitle`
 
+### Rust
+
+prérequis pour rust language server :
+```
+# get nightly compiler
+rustup update nightly
+
+# after nightly installed
+rustup component add rls-preview --toolchain nightly
+rustup component add rust-analysis --toolchain nightly
+rustup component add rust-src --toolchain nightly
+```
 
 ### Javascript
 

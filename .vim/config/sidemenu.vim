@@ -40,6 +40,7 @@ let g:sidemenu = [
 	\   { 'title': 'Tools',
 	\     'children': [
 	\       ['pu', 'UndotreeToggle', 'Undo tree'],
+	\       ['pz', 'VTerm', 'Terminal'],
 	\       ['a', 'Denite gitlog:all', '*Git log'],
 	\       ['b', 'Denite gitstatus', '*Git status'],
 	\       ['c', 'Denite gitchanged:', '*Git changed'],

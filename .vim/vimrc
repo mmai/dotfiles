@@ -70,7 +70,7 @@ Plug 'kana/vim-textobj-user' " custom text objects (required by ghci.vim)
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale' "Check code syntax asynchronously (replaces neomake or syntastic)
 Plug 'joonty/vdebug' " Debugger (:help vdebug) XXX Ne marche pas ?  
-" Plug 'majutsushi/tagbar' " functions and variables list // XXX disabled Nixos
+Plug 'majutsushi/tagbar' " functions and variables list 
 Plug 'ludovicchabant/vim-gutentags' " generate tags for the tagbar 
 Plug 'vim-scripts/IndentAnything'
 Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
@@ -99,7 +99,7 @@ if has('nvim')
   let g:deoplete#enable_at_startup = 1 " Use deoplete.
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript completion
   Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-  Plug 'sebastianmarkow/deoplete-rust', {'for': ' rust '}
+  " Plug 'sebastianmarkow/deoplete-rust', {'for': ' rust '} " replaced by rls (rust language server)
 else 
   Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
 endif
@@ -115,9 +115,10 @@ Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collec
 
 "Specific languages support not already in vim-polyglot
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
-Plug 'timonv/vim-cargo', { 'for': 'rust' }
 Plug 'gabrielelana/vim-markdown' " 'plasticboy/vim-markdown' " has bad lists newline handling
 Plug 'mmai/vim-markdown-wiki'
+" Rust
+Plug 'timonv/vim-cargo', { 'for': 'rust' } " Simple vim command bindings to quickly run cargo stuff from vim
 " Javascript
 Plug 'heavenshell/vim-jsdoc'
 Plug 'othree/yajs.vim',{'for':'javascript'}
@@ -130,7 +131,7 @@ Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer ru
 " Plug 'roxma/ncm-phpactor' " Completion and inspection, XXX completion
 " arguments hasardeuse
 " Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'} " automatically insert 'use' statements XXX seems to conflict with ale...
-" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion // XXX disabled Nixos
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion 
 Plug 'adoy/vim-php-refactoring-toolbox', {'for': 'php'} " refactoring
 Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
 Plug 'Rican7/php-doc-modded', {'for': 'php'}  " Generate documentation
