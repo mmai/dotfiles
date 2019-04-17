@@ -26,6 +26,9 @@ endtry
 " Match wombat colors in nerd tree
 hi Directory guifg=#8ac6f2
 
+" black line when folded (wombat default is light grey, too visible)
+highlight Folded ctermbg=016
+
 " Colorize current line number
 " set cursorline
 " hi LineNr ctermbg=NONE
