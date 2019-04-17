@@ -101,6 +101,7 @@ fi
 
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$NODE_PATH/bin
+PATH=$PATH:$HOME/.yarn/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt/elixir/bin # Elixir
 PATH=$PATH:$HOME/.config/composer/vendor/bin/ # Binaries installed from composer (ie Psych : PHP REPL, phpcs...)

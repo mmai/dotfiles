@@ -205,6 +205,7 @@ set nomodeline
 set foldmethod=indent
 set foldnestmax=3
 set nofoldenable
+set foldcolumn=2 " show fold info and enable mouse folding
 
 " Enable mouse for scrolling and window resizing.
 set mouse=a
