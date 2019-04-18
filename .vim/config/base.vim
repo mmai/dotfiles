@@ -205,8 +205,25 @@ set nomodeline
 set foldmethod=indent
 set foldnestmax=3
 set nofoldenable
-set foldcolumn=2 " show fold info and enable mouse folding
+" set foldcolumn=2 " show fold info (add a gutter) and enable mouse folding
 " See ./styles.vim for colors overriding wombat
+" Overrides folded lines text :
+function! MyFoldText() " {{{
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+set foldtext=MyFoldText()
 
 " Enable mouse for scrolling and window resizing.
 set mouse=a
