@@ -16,7 +16,7 @@ alias cat="bat"
 alias vim="nvim"
 
 # Dev tools
-alias serve="python -m SimpleHTTPServer"
+alias serve="python -m http.server"
 alias prettyjson="python -m json.tool"
 alias ip="curl curlmyip.com" # print my IP
 
