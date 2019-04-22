@@ -25,9 +25,9 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
+let g:LanguageClient_useVirtualText = 0 " Don't show messages in window, only in status bar
+let g:LanguageClient_serverCommands = {} " Init empty (for use in other config files)
+"
 " ----------- Autocompleting
 set completeopt+=longest
 " Don't open split window with preview

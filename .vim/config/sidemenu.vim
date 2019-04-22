@@ -23,6 +23,7 @@ let g:sidemenu = [
 	\   ]},
 	\   { 'title': 'Files',
 	\     'children': [
+	\       ['fl', 'call feedkeys("gx")', 'Open link in browser'],
 	\       ['fe', 'NERDTreeToggle', 'File explorer'],
 	\       ['ff', 'Files', 'Find files'],
 	\       ['fg', 'Ag', 'Find in files…'],

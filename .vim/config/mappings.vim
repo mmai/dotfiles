@@ -72,9 +72,12 @@ imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>Au
 "--------------- Language server client ----------------------
 nnoremap <silent> <Leader>lsh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <Leader>lsd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Leader>lst :call LanguageClient_textDocument_typeDefinition()<CR>
+nnoremap <silent> <Leader>lsi :call LanguageClient_textDocument_implementation()<CR>
 nnoremap <silent> <Leader>lsf :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> <Leader>lsr :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> <Leader>lsw :call LanguageClient_textDocument_formatting()<CR>
+nnoremap <silent> <Leader>lsc :call LanguageClient_contextMenu()<CR>
 
 "--------------- Testing ----------------------
 nnoremap <Leader>tf :TestFile<CR>

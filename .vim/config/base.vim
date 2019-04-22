@@ -194,6 +194,9 @@ nnoremap Y y$
 " Show line numbers on the sidebar.
 set number
 
+" ...but not on terminal buffers
+au TermOpen * setlocal nonumber norelativenumber
+
 " Disable any annoying beeps on errors.
 set noerrorbells
 set visualbell

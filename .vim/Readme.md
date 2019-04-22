@@ -29,6 +29,11 @@ rustup component add rust-analysis --toolchain nightly
 rustup component add rust-src --toolchain nightly
 ```
 
+Tags :
+```
+cargo install rusty-tags
+```
+
 ### Javascript
 
 ```sh
