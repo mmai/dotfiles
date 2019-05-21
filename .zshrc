@@ -47,12 +47,12 @@ zplug "modules/git", from:prezto
 zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:editor' keymap 'vi'
 
-# nix-shell compatibility 
-# zplug "chisui/zsh-nix-shell" #Pb : les variables définies dans shellHook de defautl.nix ne sont plus reconnues
-
 # pure prompt
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
+
+# nix-shell compatibility 
+zplug "chisui/zsh-nix-shell" #Pb : les alias définis dans shellHook de defautl.nix ne sont plus reconnus
 
 # Other plugins
 zplug "rupa/z", use:z.sh # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
