@@ -167,3 +167,44 @@ Haskell
 * _Hoogle the word under cursor_ `<leader>hh`
 * _Hoogle detail documentation_ `<leader>hd`
 * _Hoogle close_ `<leader>hz`
+
+
+
+
+
+
+
+
+# Todo
+
+## erreur tag php 
+
+```
+
+Erreur détectée en traitant function phpcd#UpdateIndex : 
+ligne    8 :
+E121: Undefined variable: class 
+E15: Expression invalide : !nsuse.class 
+ligne  12 :
+E121: Undefined variable: namespace 
+E15: Expression invalide : nsuse.namespace . '\' . nsuse.class                              
+ligne   13 :   
+E121: Undefined variable: classname      
+E116: Arguments invalides pour la fonction rpc#notify 
+E15: Expression invalide : rpc#notify(g:phpid_channel_id, 'update', classname)
+
+
+================================================
+
+Erreur détectée en traitant function <SNR>249_AutoUpdate[63]..<SNR>249_ProcessFile[84]..<SNR>249_ParseTagline[76]..<SNR>249_ProcessTag[74]..<SNR>249_add_tag_recursive[156]..<SNR>249_add_tag_recursive[156]..<SNR>249_add_tag_recursive[96]..
+<SNR>249_create_pseudotag[32]..<SNR>255_initFoldState :  
+
+ligne   13 :       
+E716: La clé n n'existe pas dans le Dictionnaire 
+
+Erreur détectée en traitant function <SNR>249_AutoUpdate[63]..<SNR>249_ProcessFile[84]..<SNR>249_ParseTagline[76]..<SNR>249_ProcessTag[74]..<SNR>249_add_tag_recursive[156]..<SNR>249_add_tag_recursive[156]..<SNR>249_add_tag_recursive[96]..
+<SNR>249_create_pseudotag[32]..<SNR>255_initFoldState :                                                 
+
+ligne   13 :  
+E15: Expression invalide : fileinfo.kindfolds[self.fields.kind]
+```

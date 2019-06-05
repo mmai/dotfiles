@@ -158,6 +158,9 @@ Plug 'eagletmt/ghcmod-vim' " required by neco-ghc
 Plug 'eagletmt/neco-ghc' " haskell completion 
 " Plug 'parsonsmatt/vim2hs' "A collection of vimscripts for Haskell development
 
+"--------- Terminal
+Plug 'kassio/neoterm' " :T {command} => start command in opened terminal (create if not exists); :Tnew => create new terminal 
+
 "--------- Applications
 "Plug 'blindFS/vim-taskwarrior' "task manager
 Plug 'hsitz/VimOrganizer'

@@ -49,11 +49,10 @@ zstyle ':prezto:module:editor' keymap 'vi'
 
 # pure prompt
 zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure"
+zplug "mmai/pure" # forked from sindresorhus/pure (added nix-shell info)
 
 # nix-shell compatibility 
-zplug "chisui/zsh-nix-shell" #Pb : les alias définis dans shellHook de defautl.nix ne sont plus reconnus
-
+zplug "chisui/zsh-nix-shell" #Pb : alias defined in the default.nix shellHook are not recognized anymore 
 # Other plugins
 zplug "rupa/z", use:z.sh # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
 zplug "k4rthik/git-cal", as:command # display a github like contribution calendar wall
