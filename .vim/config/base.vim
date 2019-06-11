@@ -335,3 +335,13 @@ map q: :q
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
+
+" NERDTree config (cf. https://github.com/ryanoasis/vim-devicons/issues/248#issuecomment-447057991)
+let NERDTreeChDirMode=2 " change current directory when setting new root directory
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+" Disable arrow icons at the left side of folders for NERDTree.
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
+highlight! link NERDTreeFlags NERDTreeDir
+
