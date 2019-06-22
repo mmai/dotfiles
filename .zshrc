@@ -100,6 +100,7 @@ fi
 
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$NODE_PATH/bin
+PATH=$PATH:$HOME/.npm-global # set global npm directory with `npm set prefix ~/.npm-global` (needed on nixos system because node install path is not writable)
 PATH=$PATH:$HOME/.yarn/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt/elixir/bin # Elixir
