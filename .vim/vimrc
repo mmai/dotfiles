@@ -81,7 +81,7 @@ Plug 'kana/vim-textobj-user' " custom text objects (required by ghci.vim)
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale' "Check code syntax asynchronously (replaces neomake or syntastic)
 Plug 'joonty/vdebug' " Debugger (:help vdebug) XXX Ne marche pas ?  
-Plug 'majutsushi/tagbar' " functions and variables list 
+Plug 'majutsushi/tagbar' " functions and variables list XXX pb avec Php (autoupdate kindfold...)
 Plug 'ludovicchabant/vim-gutentags' " generate tags for the tagbar 
 Plug 'vim-scripts/IndentAnything'
 Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
@@ -128,6 +128,7 @@ Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collec
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'gabrielelana/vim-markdown' " 'plasticboy/vim-markdown' " has bad lists newline handling
 Plug 'mmai/vim-markdown-wiki'
+Plug 'scrooloose/vim-slumlord' " Inline previews for Plantuml sequence diagrams
 " Rust
 Plug 'timonv/vim-cargo', { 'for': 'rust' } " Simple vim command bindings to quickly run cargo stuff from vim
 " Plug 'rust-lang/rust.vim' " tags -> not good, error checking -> already done by langage client
@@ -170,7 +171,7 @@ Plug 'mmai/vim-scrum-markdown'
 " Plug 'mmai/wikilink'
 Plug 'junegunn/goyo.vim' " writeroom like
 Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs
-Plug 'shime/vim-livedown', {'for': 'markdown', 'do': 'npm install -g livedown'} " preview markdown (:LivedownPreview)
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown)
 
 let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "desert"

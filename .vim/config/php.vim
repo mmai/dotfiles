@@ -10,17 +10,17 @@ let g:feature_filetype='behat'
 let g:phpcd_disable_modifier=0 
 
 " Exlude variables from the tag bar 
-let g:tagbar_type_php  = {
-    \ 'ctagstype' : 'php',
-    \ 'kinds'     : [
-        \ 'i:interfaces',
-        \ 'c:classes',
-        \ 'd:constant definitions',
-        \ 'f:functions',
-        \ 't:traits',
-        \ 'j:javascript functions:1'
-    \ ]
-\ }
+" let g:tagbar_type_php  = {
+"     \ 'ctagstype' : 'php',
+"     \ 'kinds'     : [
+"         \ 'i:interfaces',
+"         \ 'c:classes',
+"         \ 'd:constant definitions',
+"         \ 'f:functions',
+"         \ 't:traits',
+"         \ 'j:javascript functions:1'
+"     \ ]
+" \ }
 
 " ----- Linter / Fixer w0rp/ale -----
 "  install phpcs (phpCodeSniffer) & drupal standards with :
