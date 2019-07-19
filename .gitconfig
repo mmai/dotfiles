@@ -37,5 +37,6 @@
 [core]
 	excludesfile = /home/henri/.gitignore_global
 	editor = nvim
+	autocrlf = input
 [diff]
 	tool = meld

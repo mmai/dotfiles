@@ -1,8 +1,6 @@
 alias journal='~/travaux/ecrits/journal.sh'
 alias scaffold='~/Travaux/programmes/scaffold/scaffold'
 
-alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
-
 # Tools
 #    Copy screenshot to file
 #       Take screenshot whith <ctrl><shift><printScreen>, then  `pngpaste > screenshot.png`
@@ -30,6 +28,9 @@ alias dlmusic="~/softs_/dlmusic.sh"
 # haskell (see https://www.reddit.com/r/haskell/comments/3bw95a/using_cabal_and_stack_together/csqdbe2)
 alias cblconf='cabal configure --package-db=clear --package-db=global --package-db=$(stack path --snapshot-pkg-db) --package-db=$(stack path --local-pkg-db)'
 
+# Fix command launch
+alias android-studio='unset GDK_PIXBUF_MODULE_FILE && android-studio' # cf. https://github.com/NixOS/nixpkgs/issues/52302#issuecomment-477818365
+
 # Atixnet
 alias tax="task +Atixnet"
 alias vpn="~/softs_/vpn.sh"
@@ -45,6 +46,8 @@ GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Crese
 alias gl="git log --graph $GIT_PRETTY_FORMAT"
 # pretty Git log, all references
 alias gll='gl --all'
+# alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
+
 # pretty Git log, show authors
 alias gla="git log --graph $GIT_PRETTY_FORMAT_AUTHOR"
 # pretty Git log, all references, show authors

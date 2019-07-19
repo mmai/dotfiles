@@ -84,9 +84,9 @@ then
   NODE_PATH=$HOME/.nvm/`nvm ls | awk '$1 == "current:" {print $2}'`
 fi
 
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle/ # java (pour IntelliJIdea)
-export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre 
-export ANDROID_HOME=/opt/android-sdk-linux/
+# export JAVA_HOME=$HOME/softs_/jdk 
+# export JRE_HOME=$JAVA_HOME/jre
+# export ANDROID_HOME=$HOME/softs_/android-studio-sdk
 
 #Desactive la completion git beaucoup trop lente
 #compdef -d git
@@ -100,17 +100,18 @@ fi
 
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$NODE_PATH/bin
-PATH=$PATH:$HOME/.npm-global # set global npm directory with `npm set prefix ~/.npm-global` (needed on nixos system because node install path is not writable)
+PATH=$PATH:$HOME/.npm-global/bin # set global npm directory with `npm set prefix ~/.npm-global` (needed on nixos system because node install path is not writable)
 PATH=$PATH:$HOME/.yarn/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt/elixir/bin # Elixir
 PATH=$PATH:$HOME/.config/composer/vendor/bin/ # Binaries installed from composer (ie Psych : PHP REPL, phpcs...)
 PATH=$PATH:$HOME/.cargo/bin # Rust
 PATH=$PATH:/opt/drush/ # Drupal drush
-PATH=$PATH:$ANDROID_HOME/tools/
-PATH=$PATH:$ANDROID_HOME/platform-tools/
-PATH=$PATH:/opt/android-studio/bin/ # Android STudio
-
+# PATH=$PATH:$JAVA_HOME/bin
+# PATH=$PATH:$ANDROID_HOME/tools/
+# PATH=$PATH:$ANDROID_HOME/platform-tools/
+# PATH=$PATH:/softs_/android-studio/bin
+# PATH=$PATH:$HOME/softs_/android-studio/gradle/gradle-5.1.1/bin
 
 # Include Drush bash customizations.
 autoload bashcompinit

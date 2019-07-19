@@ -172,6 +172,8 @@ Plug 'mmai/vim-scrum-markdown'
 Plug 'junegunn/goyo.vim' " writeroom like
 Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown)
+Plug 'aklt/plantuml-syntax'    " PlantUML syntax
+Plug 'scrooloose/vim-slumlord' " PlantUML preview
 
 let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "desert"
