@@ -5,6 +5,7 @@
 " ----------- Syntax checking & fixing
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+let g:ale_fix_on_save = 1
 
 let g:ale_linters = {} " Init empty (for use in other config files)
 let g:ale_fixers = {}
