@@ -33,6 +33,13 @@ let g:ale_fixers.php = ['phpcbf']
 let g:ale_php_phpcs_standard = 'PSR1' " if not set => PEAR Standard
 " let g:ale_php_phpcs_options = '--show_warnings 0'
 
+"     cf. https://github.com/dense-analysis/ale/issues/2427
+" If I don't do this, phpcbf fails on any file in the exclude-pattern :/
+let g:ale_php_phpcbf_executable = $HOME.'/.vim/support/phpcbf-helper.sh'
+" in order to get the alternate executable working you have to declare it as
+" use global, even though it's not 'global' :/
+let g:ale_php_phpcbf_use_global = 1
+
 " -------- vim-php-namespace plugin
 " Automatically insert use statements 
 function! IPhpInsertUse()

@@ -6,4 +6,5 @@ let g:LanguageClient_serverCommands["vue"] = ['vls']
 " Install _vls_ whith : npm install vue-language-server --save
 
 let g:ale_fixers.javascript = ['eslint']
+let g:ale_fixers.typescript = ['prettier']
 let g:ale_fixers.vue = ['prettier']
