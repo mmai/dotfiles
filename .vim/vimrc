@@ -129,6 +129,7 @@ Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'gabrielelana/vim-markdown' " 'plasticboy/vim-markdown' " has bad lists newline handling
 Plug 'mmai/vim-markdown-wiki'
 Plug 'scrooloose/vim-slumlord' " Inline previews for Plantuml sequence diagrams
+Plug 'LnL7/vim-nix' " nix 
 " Rust
 Plug 'timonv/vim-cargo', { 'for': 'rust' } " Simple vim command bindings to quickly run cargo stuff from vim
 " Plug 'rust-lang/rust.vim' " tags -> not good, error checking -> already done by langage client
