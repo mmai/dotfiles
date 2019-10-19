@@ -197,6 +197,9 @@ set number
 " ...but not on terminal buffers
 au TermOpen * setlocal nonumber norelativenumber
 
+" prevent Tnew to replace current buffer
+let g:neoterm_default_mod='belowright'
+
 " Disable any annoying beeps on errors.
 set noerrorbells
 set visualbell
@@ -230,6 +233,16 @@ set foldtext=MyFoldText()
 
 " Enable mouse for scrolling and window resizing.
 set mouse=a
+
+" Enable right click -> popup
+set mousemodel=popup_setpos " do not work ?
+
+" F4 -> menu
+source $VIMRUNTIME/menu.vim
+set cpo-=<
+set wcm=<C-Z>
+map <F4> :emenu <C-Z>
+
 
 " Disable swap to prevent annoying messages.
 set noswapfile
