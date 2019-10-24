@@ -58,7 +58,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'vim-scripts/wombat256.vim' " Wombat Color scheme
 " Plug 'rakr/vim-one' " Vim-one Color scheme
 Plug 'ryanoasis/vim-devicons' " Dev fonts (icons for status bars and file explorers)
-Plug 'mmai/vim-sidemenu' " Add a customizable side menu 
+" Plug 'mmai/vim-sidemenu' " side menu XXX replaced by config/menu.vim
 
 "--------- Text navigation
 Plug 'nelstrom/vim-visual-star-search'

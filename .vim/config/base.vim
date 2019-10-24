@@ -237,13 +237,6 @@ set mouse=a
 " Enable right click -> popup
 set mousemodel=popup_setpos " do not work ?
 
-" F4 -> menu
-source $VIMRUNTIME/menu.vim
-set cpo-=<
-set wcm=<C-Z>
-map <F4> :emenu <C-Z>
-
-
 " Disable swap to prevent annoying messages.
 set noswapfile
 

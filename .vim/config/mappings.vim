@@ -40,8 +40,11 @@ nnoremap <leader>fe :NERDTreeToggle<cr>
 cmap W!! w !sudo tee % >/dev/null
 
 " Sidemenu shortcuts
-nmap <Leader>m <Plug>(sidemenu)
-xmap <Leader>m <Plug>(sidemenu-visual)
+" nmap <Leader>m <Plug>(sidemenu)
+" xmap <Leader>m <Plug>(sidemenu-visual)
+
+nmap <Leader>m :emenu <C-Z>
+
 
 " incsearch plugin shortcuts
 map /  <Plug>(incsearch-forward)
