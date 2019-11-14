@@ -173,11 +173,11 @@ _fzf_compgen_path() {
 }
 
 # Hide the gnome-terminal header bar
-if [ "$TERM" = "xterm-256color" ]; then
-  xprop \
-    -id $(xdotool getactivewindow) \
-    -f _MOTIF_WM_HINTS 32c \
-    -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"
-fi
+# if [ "$TERM" = "xterm-256color" ]; then
+#   xprop \
+#     -id $(xdotool getactivewindow) \
+#     -f _MOTIF_WM_HINTS 32c \
+#     -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"
+# fi
 
 export PATH=/home/henri/.local/bin/luna-studio:$PATH
