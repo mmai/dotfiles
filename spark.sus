@@ -2,7 +2,7 @@ card sus {
   spark card bash
   spark card vim
   spark card git
-  spark card nixos
+  spark card configs
 }
 
 card bash {
@@ -33,3 +33,8 @@ card nixos {
   .config/nixpkgs
 }
 
+card configs {
+  into ~/.config
+
+  alacritty.yml -> alacritty/alacritty.yml
+}

@@ -107,6 +107,7 @@ PATH=$PATH:/opt/elixir/bin # Elixir
 PATH=$PATH:$HOME/.config/composer/vendor/bin/ # Binaries installed from composer (ie Psych : PHP REPL, phpcs...)
 PATH=$PATH:$HOME/.cargo/bin # Rust
 PATH=$PATH:/opt/drush/ # Drupal drush
+PATH=$HOME/.symfony/bin:$PATH # Symfony
 # PATH=$PATH:$JAVA_HOME/bin
 # PATH=$PATH:$ANDROID_HOME/tools/
 # PATH=$PATH:$ANDROID_HOME/platform-tools/
