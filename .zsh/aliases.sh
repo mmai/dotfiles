@@ -11,7 +11,8 @@ alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 # better alternatives
 alias cat="bat"
 alias ls="exa --git"
-alias l="exa --git -l"
+alias l="exa -l"
+alias lt="exa -l -snew"
 # alias ping="prettyping --nolegend"
 alias vim="nvim"
 

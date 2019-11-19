@@ -136,7 +136,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 11.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -173,43 +173,82 @@ draw_bold_text_with_bright_colors: true
 
 
 # cf. color schemes at https://github.com/jwilm/alacritty/wiki/Color-schemes
-
-# Colors (Tango)
+# Colors (Taerminal)
 # colors:
+#   # Default colors
 #   primary:
-#     background: '0x000000'
-#     foreground: '0x00ff00'
+#     background: '0x26282a'
+#     foreground: '0xf0f0f0'
+#   cursor:
+#     background: '0xf0f0f0'
+#     foreground: '0x26282a'
 #
 #   # Normal colors
 #   normal:
-#       black:   '0x2e3436'
-#       red:     '0xcc0000'
-#       green:   '0x73d216'
-#       yellow:  '0xedd400'
-#       blue:    '0x3465a4'
-#       magenta: '0x75507b'
-#       cyan:    '0x06989a'
-#       white:   '0xd3d7cf'
+#     black:   '0x26282a'
+#     red:     '0xff8878'
+#     green:   '0xb4fb73'
+#     yellow:  '0xfffcb7'
+#     blue:    '0x8bbce5'
+#     magenta: '0xffb2fe'
+#     cyan:    '0xa2e1f8'
+#     white:   '0xf1f1f1'
 #
 #   # Bright colors
 #   bright:
-#       black:   '0x2e3436'
-#       red:     '0xef2929'
-#       green:   '0x8ae234'
-#       yellow:  '0xfce94f'
-#       blue:    '0x729fcf'
-#       magenta: '0xad7fa8'
-#       cyan:    '0x34e2e2'
-#       white:   '0xeeeeec'
+#     black:   '0x6f6f6f'
+#     red:     '0xfe978b'
+#     green:   '0xd6fcba'
+#     yellow:  '0xfffed5'
+#     blue:    '0xc2e3ff'
+#     magenta: '0xffc6ff'
+#     cyan:    '0xc0e9f8'
+#     white:   '0xffffff'
 
-
-
+# # Colors (Solarized Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x002b36' # base03
+#     foreground: '0x839496' # base0
+#
+#   # Cursor colors
+#   cursor:
+#     text:   '0x002b36' # base03
+#     cursor: '0x839496' # base0
+#
+#   # Normal colors
+#   normal:
+#     black:   '0x073642' # base02
+#     red:     '0xdc322f' # red
+#     green:   '0x859900' # green
+#     yellow:  '0xb58900' # yellow
+#     blue:    '0x268bd2' # blue
+#     magenta: '0xd33682' # magenta
+#     cyan:    '0x2aa198' # cyan
+#     white:   '0xeee8d5' # base2
+#
+#   # Bright colors
+#   bright:
+#     black:   '0x002b36' # base03
+#     red:     '0xcb4b16' # orange
+#     green:   '0x586e75' # base01
+#     yellow:  '0x657b83' # base00
+#     blue:    '0x839496' # base0
+#     magenta: '0x6c71c4' # violet
+#     cyan:    '0x93a1a1' # base1
+#     white:   '0xfdf6e3' # base3
+ 
 # Colors (Tomorrow Night Bright)
 colors:
   # Default colors
+  # primary:
+  #   background: '0x000000'
+  #   foreground: '0xeaeaea'
+  # XXX primary from Taerminal scheme
   primary:
-    background: '0x000000'
-    foreground: '0xeaeaea'
+    background: '0x26282a'
+    foreground: '0xf0f0f0'
 
     # Bright and dim foreground colors
     #
