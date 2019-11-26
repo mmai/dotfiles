@@ -247,8 +247,8 @@ colors:
   #   foreground: '0xeaeaea'
   # XXX primary from Taerminal scheme
   primary:
-    background: '0x26282a'
     foreground: '0xf0f0f0'
+    background: '0x252525'
 
     # Bright and dim foreground colors
     #
