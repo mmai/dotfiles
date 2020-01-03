@@ -51,7 +51,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'
 
 "--------- Layout and style
-Plug 'wesQ3/vim-windowswap' "swap windows: <leader>ww (1st time on 1st window, 2nd time on 2nd window)
+Plug 'wesQ3/vim-windowswap' "swap windows: <leader>ww (1st time on 1st window, 2nd time on 2nd window => the two windows are then swaped)
 Plug 'moll/vim-bbye' " :Bdelete and :Bwipeout quit buffers nicely without destroying windows
 Plug 'vim-airline/vim-airline' " Status bar & buffers in tab bar
 Plug 'edkolev/tmuxline.vim'
@@ -126,7 +126,9 @@ Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collec
 
 "Specific languages support not already in vim-polyglot
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
-Plug 'gabrielelana/vim-markdown' " 'plasticboy/vim-markdown' " has bad lists newline handling
+Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
+" Plug 'gabrielelana/vim-markdown' " 'plasticboy/vim-markdown' " has bad lists newline handling
+Plug 'plasticboy/vim-markdown'
 Plug 'mmai/vim-markdown-wiki'
 Plug 'scrooloose/vim-slumlord' " Inline previews for Plantuml sequence diagrams
 Plug 'LnL7/vim-nix' " nix 
@@ -174,7 +176,7 @@ Plug 'mmai/vim-scrum-markdown'
 " Plug 'mmai/wikilink'
 Plug 'junegunn/goyo.vim' " writeroom like
 Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown)
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown) :MarkdownPreview / :MarkdownPreviewStop
 Plug 'aklt/plantuml-syntax'    " PlantUML syntax
 Plug 'scrooloose/vim-slumlord' " PlantUML preview
 

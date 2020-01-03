@@ -110,6 +110,12 @@ _Emmet : expand CSS selectors expression to HTML_ (ie div#page>div.logo+ul#navig
 
 ### Markdown editing
 
+Open personal wiki `,kk`
+
+Press `<Return>` on a link to automatically create / edit the linked file.
+`<leader><Return>` to return to the previous file
+
+
 
 ### Snippets
 

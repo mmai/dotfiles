@@ -72,6 +72,10 @@ imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 " imap <expr><CR> pumvisible() ? "\<C-e>" : "\<CR>\<Plug>AutoPairsReturn"
 
+"--------------- Personal wiki ----------------
+" open ~/think/index.md
+nnoremap <leader>kk :e ~/think/index.md<cr>
+
 "--------------- Language server client ----------------------
 nnoremap <silent> <Leader>lsh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <Leader>lsd :call LanguageClient_textDocument_definition()<CR>
@@ -88,3 +92,4 @@ nnoremap <Leader>tl :TestLast<CR>
 nnoremap <Leader>tn :TestNearest<CR>
 nnoremap <Leader>ts :TestSuite<CR>
 nnoremap <Leader>tv :TestVisit<CR>
+

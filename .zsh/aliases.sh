@@ -1,4 +1,5 @@
 alias journal='~/travaux/ecrits/journal.sh'
+alias kk='vim "+normal ,kk ,cd"'
 alias scaffold='~/Travaux/programmes/scaffold/scaffold'
 
 # Tools
