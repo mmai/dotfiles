@@ -1,6 +1,7 @@
 alias journal='~/travaux/ecrits/journal.sh'
-alias kk='vim "+normal ,kk ,cd"'
+alias kk='vim "+normal ,kk"'
 alias scaffold='~/Travaux/programmes/scaffold/scaffold'
+alias popcorntime='cd ~/softs_/popcorn-desktop && yarn gulp run'
 
 # Tools
 #    Copy screenshot to file

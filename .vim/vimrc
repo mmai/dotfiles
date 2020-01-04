@@ -127,8 +127,8 @@ Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collec
 "Specific languages support not already in vim-polyglot
 Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
-" Plug 'gabrielelana/vim-markdown' " 'plasticboy/vim-markdown' " has bad lists newline handling
-Plug 'plasticboy/vim-markdown'
+Plug 'gabrielelana/vim-markdown' " better list indentation handling than plasticboy, toggle checkboxes
+" Plug 'plasticboy/vim-markdown' 
 Plug 'mmai/vim-markdown-wiki'
 Plug 'scrooloose/vim-slumlord' " Inline previews for Plantuml sequence diagrams
 Plug 'LnL7/vim-nix' " nix 

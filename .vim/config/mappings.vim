@@ -74,7 +74,7 @@ imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>Au
 
 "--------------- Personal wiki ----------------
 " open ~/think/index.md
-nnoremap <leader>kk :e ~/think/index.md<cr>
+nnoremap <leader>kk :e ~/think/index.md<cr>:cd %:p:h<CR>:pwd<CR> 
 
 "--------------- Language server client ----------------------
 nnoremap <silent> <Leader>lsh :call LanguageClient_textDocument_hover()<CR>
