@@ -114,6 +114,7 @@ Open personal wiki `,kk`
 
 Press `<Return>` on a link to automatically create / edit the linked file.
 `<leader><Return>` to return to the previous file
+<Space><Return> open links in a new split
 
 
 
