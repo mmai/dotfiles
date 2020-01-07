@@ -122,7 +122,10 @@ Press `<Return>` on a link to automatically create / edit the linked file.
 
 _Current date time_ `<leader>dt`
 
-_Expand / Jump to next placeholder_ `<C-k>`
+Define new snippets in `snippets/` directory.
+
+* _Navigate in options_ `<C-n>`
+* _Expand / Jump to next placeholder_ `<C-k>`
 
 ### IDE related
 

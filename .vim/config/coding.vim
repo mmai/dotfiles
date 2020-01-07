@@ -52,6 +52,9 @@ let g:deoplete#enable_smart_case = 1
 " Expand function prototype
 let g:neosnippet#enable_completed_snippet = 1
 
+" custom snippets path
+let g:neosnippet#snippets_directory='~/.vim/snippets/'
+
 " fix E764 AutoComplPop error message when editing html files
 augroup autocompl_error
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
