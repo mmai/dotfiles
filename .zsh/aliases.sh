@@ -12,6 +12,7 @@ alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 
 # better alternatives
 alias cat="bat"
+alias tree="broot"
 alias ls="exa --git"
 alias l="exa -l"
 alias lt="exa -l -snew"

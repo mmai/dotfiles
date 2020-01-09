@@ -84,6 +84,8 @@ then
   NODE_PATH=$HOME/.nvm/`nvm ls | awk '$1 == "current:" {print $2}'`
 fi
 
+export EDITOR=nvim
+
 # export JAVA_HOME=$HOME/softs_/jdk 
 # export JRE_HOME=$JAVA_HOME/jre
 # export ANDROID_HOME=$HOME/softs_/android-studio-sdk
@@ -181,3 +183,5 @@ _fzf_compgen_path() {
 # fi
 
 export PATH=/home/henri/.local/bin/luna-studio:$PATH
+
+source /home/henri/.config/broot/launcher/bash/br

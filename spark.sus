@@ -37,4 +37,5 @@ card configs {
   into ~/.config
 
   alacritty.yml -> alacritty/alacritty.yml
+  broot.toml -> broot/conf.toml
 }

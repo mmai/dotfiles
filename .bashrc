@@ -38,3 +38,5 @@ function e() {
 
 export PATH=$PATH:$HOME/.config/composer/vendor/bin/ # Binaries installed from (ie Psych : PHP REPL)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /home/henri/.config/broot/launcher/bash/br
