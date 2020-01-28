@@ -342,7 +342,7 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
 
-" NERDTree config (cf. https://github.com/ryanoasis/vim-devicons/issues/248#issuecomment-447057991)
+" ------ NERDTree config (cf. https://github.com/ryanoasis/vim-devicons/issues/248#issuecomment-447057991)
 let NERDTreeChDirMode=2 " change current directory when setting new root directory
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
 let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
@@ -351,3 +351,20 @@ let g:NERDTreeDirArrowExpandable = "\u00a0"
 let g:NERDTreeDirArrowCollapsible = "\u00a0"
 highlight! link NERDTreeFlags NERDTreeDir
 
+" Automatically close vim if only NERDTree left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" " returns true iff is NERDTree open/active
+" function! IsNTOpen()        
+"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
+"
+" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+" function! SyncNTTree()
+"   if &modifiable && IsNTOpen() && strlen(expand('%')) > 0 && !&diff
+"     NERDTreeFind
+"     wincmd p
+"   endif
+" endfunction
+"
+" autocmd BufEnter * call SyncNTTree()
