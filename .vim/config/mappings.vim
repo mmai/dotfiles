@@ -35,6 +35,7 @@ nnoremap <leader>u  :UndotreeToggle<cr>
 nnoremap <leader>tt  :TagbarToggle<CR>
 " Toggle file explorer
 nnoremap <leader>fe :NERDTreeToggle<cr>
+nnoremap <leader>ff :NERDTreeFind<cr>
 
 " Save with sudo
 cmap W!! w !sudo tee % >/dev/null

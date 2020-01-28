@@ -1,7 +1,4 @@
 
-" default spelling languages
-set spelllang=fr,en_us
-
 if exists("g:loaded_vimrc") || &cp
   finish
 else

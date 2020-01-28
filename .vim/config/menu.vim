@@ -21,7 +21,7 @@ an 20.420	Files.Find\ and\ replace\ [,fr] ,fr
 
 " Writing
 an 30.110 &Writing.&Distraction\ free\ writing :Goyo<CR>
-an 30.310 &Writing.Preview\ &markdown	:LivedownToggle<CR>
+an 30.310 &Writing.Preview\ &markdown	:MarkdownPreview<CR>
 an 30.320 &Writing.Toggle\ &spelling	:setlocal spell! spelllang=fr,en_us<CR>
 
 " System
