@@ -92,3 +92,5 @@ alias tick=tickle
 #   task +waiting +PENDING ls
 # fi
 
+VIMCONFIG=~/.vim
+

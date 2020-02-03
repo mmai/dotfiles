@@ -2,6 +2,13 @@
 "              Coding config
 " -------------------------------------
 
+" see Readme for dependencies installation of coc-rust-analyzer
+let g:coc_global_extensions = ['coc-snippets',
+      \ 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-vetur', 
+      \ 'coc-rust-analyzer', 
+      \ 'coc-phpls' ]
+" See mappings.vim for Coc keymappings
+
 " ----------- Syntax checking & fixing
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0

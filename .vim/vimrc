@@ -77,19 +77,6 @@ Plug 'mattn/emmet-vim' "Expand CSS selectors expression to HTML (ie div#page>div
 Plug 'michaeljsmith/vim-indent-object' " Text object based on indentation : ai, ii, aI, iI
 Plug 'kana/vim-textobj-user' " custom text objects (required by ghci.vim)
 
-"--------- General coding support
-Plug 'tomtom/tcomment_vim'
-Plug 'w0rp/ale' "Check code syntax asynchronously (replaces neomake or syntastic)
-Plug 'joonty/vdebug' " Debugger (:help vdebug) XXX Ne marche pas ?  
-Plug 'majutsushi/tagbar' " functions and variables list XXX pb avec Php (autoupdate kindfold...)
-Plug 'ludovicchabant/vim-gutentags' " generate tags for the tagbar 
-Plug 'vim-scripts/IndentAnything'
-Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
-" Language Server Protocol support ()
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
-" Launch tests and see reports easily
-Plug 'janko-m/vim-test'
-
 "Git 
 Plug 'vim-scripts/gitignore'
 Plug 'mattn/gist-vim' "Post to gist :Gist 
@@ -97,72 +84,49 @@ Plug 'tpope/vim-fugitive' " required by gv
 Plug 'junegunn/gv.vim' "commit browser :GV, :GV! (current file), :GV? (fills location list), visual mode (current lines)
 Plug 'airblade/vim-gitgutter' " Add signs on the gutter for lines modified
 let g:gitgutter_max_signs=999
-
-"Completion
-Plug 'alvan/vim-closetag' " Close html / xml tags
-Plug 'jiangmiao/auto-pairs' " deals intelligently with pairs of punctuation () [] '' {} ... 
-" Plug 'kana/vim-smartinput' " deals intelligently with pairs of punctuation () [] '' {} ... 
-if has('nvim')
-  " Plug 'roxma/nvim-completion-manager' " needs python support, XXX doesn't
-  " work with phpcd
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " needs python support
-  Plug 'Shougo/neco-vim', { 'for': 'vim' }
-  let g:deoplete#enable_at_startup = 1 " Use deoplete.
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript completion
-  Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-  " Plug 'sebastianmarkow/deoplete-rust', {'for': ' rust '} " replaced by rls (rust language server, see Readme for installation)
-else 
-  Plug 'vim-scripts/AutoComplPop' " Open completion popup automatically
-endif
-Plug 'metalelf0/supertab' " completion with tab (fork of ervandew/supertab to fix 'Invalid argument: pumvisible')
-
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-
 Plug 'sjl/splice.vim' " three way merge
 
+"--------- General coding support
+Plug 'tomtom/tcomment_vim'
+Plug 'joonty/vdebug' " Debugger (:help vdebug) XXX Ne marche pas ?  
+Plug 'majutsushi/tagbar' " functions and variables list XXX pb avec Php (autoupdate kindfold...)
+Plug 'ludovicchabant/vim-gutentags' " generate tags for the tagbar 
+Plug 'vim-scripts/IndentAnything'
+Plug 'nathanaelkane/vim-indent-guides' " <leader>ig : colorize indentation
+Plug 'janko-m/vim-test' " Launch tests and see reports easily
 Plug 'dbeniamine/cheat.sh-vim' " interface vers cht.sh (cheatsheet)  <leader>KB sur ligne ou selection
 Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collection of languages
+Plug 'alvan/vim-closetag' " Close html / xml tags
+Plug 'jiangmiao/auto-pairs' " deals intelligently with pairs of punctuation () [] '' {} ... (better than kana/vim-smartinput)
+"Completion
+
+" Plug 'metalelf0/supertab' " completion with tab (fork of ervandew/supertab to fix 'Invalid argument: pumvisible')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion / language server client ...
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} " Completion / language server client ...
 
 "Specific languages support not already in vim-polyglot
-Plug 'FrigoEU/psc-ide-vim' " interface to purescript IDE
+Plug 'LnL7/vim-nix' " nix 
+Plug 'ollykel/v-vim' " V language
+" Markdown
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
-Plug 'gabrielelana/vim-markdown' " better list indentation handling than plasticboy, toggle checkboxes
-" Plug 'plasticboy/vim-markdown' 
+Plug 'gabrielelana/vim-markdown' " better list indentation handling than plasticboy/vim-markdown, toggle checkboxes
 Plug 'mmai/vim-markdown-wiki'
 Plug 'scrooloose/vim-slumlord' " Inline previews for Plantuml sequence diagrams
-Plug 'LnL7/vim-nix' " nix 
-" V language
-Plug 'ollykel/v-vim'
 " Rust
 Plug 'timonv/vim-cargo', { 'for': 'rust' } " Simple vim command bindings to quickly run cargo stuff from vim
-" Plug 'rust-lang/rust.vim' " tags -> not good, error checking -> already done by langage client
 " Javascript
-Plug 'heavenshell/vim-jsdoc'
-Plug 'othree/yajs.vim',{'for':'javascript'}
+Plug 'heavenshell/vim-jsdoc' " Generate jsdoc code. Type :JsDoc when cursor is on 'function' keyword
+Plug 'othree/yajs.vim',{'for':'javascript'} " Syntax highlighting
 Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
-Plug 'Quramy/tsuquyomi', {'for': 'typescript' } "TypeScript
-Plug 'posva/vim-vue'
+Plug 'posva/vim-vue' " Vuejs syntax highlighting
 " PHP
-Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
-" Plug 'phpactor/phpactor' ,  {'do': 'composer install'} " required by ncm-phpactor
-" Plug 'roxma/ncm-phpactor' " Completion and inspection, XXX completion
-" arguments hasardeuse
-" Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'} " automatically insert 'use' statements XXX seems to conflict with ale...
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' } " Completion 
-Plug 'adoy/vim-php-refactoring-toolbox', {'for': 'php'} " refactoring
 Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
 Plug 'Rican7/php-doc-modded', {'for': 'php'}  " Generate documentation
 " Haskell
-"   Syntax highlighting and indentation : done by haskell-vim (in vim-polyglot)
-"   Quickfix & Sign Columns : done by ale
-Plug 'alx741/vim-hindent' " Autoformating & indentation
 Plug 'parsonsmatt/intero-neovim'
 Plug 'Twinside/vim-hoogle' " Access hoogle search 
 Plug 'pbrisbin/vim-syntax-shakespeare' " Syntaxe for shakespeare templating
-Plug 'eagletmt/ghcmod-vim' " required by neco-ghc
-Plug 'eagletmt/neco-ghc' " haskell completion 
-" Plug 'parsonsmatt/vim2hs' "A collection of vimscripts for Haskell development
 
 "--------- Terminal
 Plug 'kassio/neoterm' " :T {command} => start command in opened terminal (create if not exists); :Tnew => create new terminal 

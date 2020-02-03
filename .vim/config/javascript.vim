@@ -1,5 +1,8 @@
 "  Javascript
 
+" support of comments on jsonc files
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands["javascript.jsx"] = ['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands["vue"] = ['vls']

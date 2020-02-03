@@ -10,23 +10,18 @@ FZF is configured to use _sharkdp/fd_ instead of _find_ (see _config/fzf_fuzzyfi
 
 _Vdebug_ needs python2 `pip2 install neovim`
 
-See at https://github.com/w0rp/ale the tools to install for linting, completion... for each language
-
-
-Pour _nvim-completion-manager_ (obsolete):
-`pip3 install --user neovim jedi psutil setproctitle`
-
 ### Rust
 
-prérequis pour rust language server :
+prérequis pour coc-rust-analyzer :
 ```
 # get nightly compiler
 rustup update nightly
 
 # after nightly installed
-rustup component add rls-preview --toolchain nightly
-rustup component add rust-analysis --toolchain nightly
+git clone https://github.com/rust-analyzer/rust-analyzer && cd rust-analyzer
+
 rustup component add rust-src --toolchain nightly
+cargo +nightly xtask install --server
 ```
 
 Tags :
@@ -128,6 +123,8 @@ Define new snippets in `snippets/` directory.
 * _Expand / Jump to next placeholder_ `<C-k>`
 
 ### IDE related
+
+_Open CoC configuration file_ `,C` 
 
 _Toggle indentation colorizing_ `<leader>ig`
 _Toggle tagbar_ `<leader>t`
