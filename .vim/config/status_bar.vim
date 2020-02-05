@@ -17,3 +17,31 @@ let g:airline#extensions#tabline#excludes = []
 " let g:airline#extensions#tabline#switch_buffers_and_tabs = 1 " Exchange tabs
 " and buffers positions. Only works
 " with ctrlspace plugin...
+
+"----------------- Welcome screen (startify)
+function! s:center(lines) abort
+  let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
+  let centered_lines = map(copy(a:lines),
+        \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+  return centered_lines
+endfunction
+
+" let g:startify_custom_header = s:center(g:ascii)
+let g:startify_fortune_use_unicode = 1
+
+
+let s:startify_ascii_header = [
+ \ '                                        ▟▙            ',
+ \ '                                        ▝▘            ',
+ \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+ \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+ \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+ \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+ \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '',
+ \]
+
+
+" let g:startify_custom_header = s:center(map(s:startify_ascii_header +
+        " \ startify#fortune#quote(), '"   ".v:val'))
+let g:startify_custom_header = ''

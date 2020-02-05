@@ -27,6 +27,12 @@ card git {
   .gitconfig
 }
 
+card node {
+  into ~
+
+  .npmrc
+}
+
 card nixos {
   into ~
 

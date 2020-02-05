@@ -31,8 +31,8 @@ cargo install rusty-tags
 
 ### Javascript
 
-```sh
-sudo npm install -g javascript-typescript-langserver
+```
+npm install -g vue-language-server
 ```
 
 ### PHP
