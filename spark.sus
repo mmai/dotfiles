@@ -17,6 +17,7 @@ card vim {
   into ~
   
   .vim
+  .thinkvim.d
   .vim -> .config/nvim
 }
 
