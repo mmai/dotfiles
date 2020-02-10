@@ -18,8 +18,8 @@ set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 " Disable Highlight symbol under cursor on CursorHold (defined in config.vim)
 autocmd! CursorHold
 
-" Disable Highlight or current line
-set nocursorline
+" Disable Highlight off current line & other unecessary autocmd (core/filetype.vim)
+autocmd! user_plugin_filetype
 
 " --------------------------------------------------
 " --------------------- Plugins config--------------
@@ -38,6 +38,9 @@ inoremap kj <esc>
 inoremap KJ <esc>
 inoremap jk <esc>
 inoremap JK <esc>
+
+" ,cd => change directory to the file being edited
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Expand %% to path of current buffer in command mode.
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
