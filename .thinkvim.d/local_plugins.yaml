@@ -1,1 +1,5 @@
-- repo: LnL7/vim-nix
+#Specific languages support
+# Overrides of ~/.config/nvim/core/dein/plugins.yaml
+#   to disable a plugin : - { repo: tryu/caw.vim, if: 0 }
+
+- repo: LnL7/vim-nix # nix syntax
