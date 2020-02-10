@@ -1,5 +1,21 @@
-#Specific languages support
 # Overrides of ~/.config/nvim/core/dein/plugins.yaml
 #   to disable a plugin : - { repo: tryu/caw.vim, if: 0 }
 
+- repo: maxbrunsfeld/vim-yankstack # Navigate the history of yanks with <alt-p> and <alt-shift-p>
+
+# ---- Specific languages support
 - repo: LnL7/vim-nix # nix syntax
+- repo: aklt/plantuml-syntax    # PlantUML syntax
+
+- repo: mmai/vim-markdown-wiki
+- repo: pbrisbin/vim-mkdir # Automatically create any non-existent directories before writing the buffer
+- repo: kassio/neoterm # :T {command} => start command in opened terminal (create if not exists); :Tnew => create new terminal
+
+# Plug 'posva/vim-vue' " Vuejs syntax highlighting
+# Plug 'brooth/far.vim' " Find and replace in multiple files
+# Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown)
+# Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collection of languages
+# Plug 'dbeniamine/cheat.sh-vim' " interface vers cht.sh (cheatsheet)  <leader>KB sur ligne ou selection
+# Plug 'gabrielelana/vim-markdown' " better list indentation handling than plasticboy/vim-markdown, toggle checkboxes
+# Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown) :MarkdownPreview / :MarkdownPreviewStop
+# Plug 'reedes/vim-pencil' "vim for writers (TooglePencil) : line wrap, undo/redo by sentences, hide markdown formating chars..
