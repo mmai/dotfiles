@@ -1,5 +1,6 @@
 .vim/.netrwhist
 .vim/bundle
+.vim/sessions
 .vim/spell/en.utf-8.spl
 .vim/spell/en.utf-8.sug
 .vim/gutentags
