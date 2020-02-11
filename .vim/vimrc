@@ -82,7 +82,7 @@ Plug 'vim-scripts/gitignore'
 Plug 'mattn/gist-vim' "Post to gist :Gist 
 Plug 'tpope/vim-fugitive' " required by gv
 Plug 'junegunn/gv.vim' "commit browser :GV, :GV! (current file), :GV? (fills location list), visual mode (current lines)
-Plug 'airblade/vim-gitgutter' " Add signs on the gutter for lines modified
+" Plug 'airblade/vim-gitgutter' " Add signs on the gutter for lines modified
 let g:gitgutter_max_signs=999
 Plug 'sjl/splice.vim' " three way merge
 
@@ -142,7 +142,7 @@ Plug 'junegunn/goyo.vim' " writeroom like
 Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown) :MarkdownPreview / :MarkdownPreviewStop
 Plug 'aklt/plantuml-syntax'    " PlantUML syntax
-Plug 'scrooloose/vim-slumlord' " PlantUML preview
+Plug 'scrooloose/vim-slumlord' " PlantUML ascii preview
 
 let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "desert"

@@ -3,7 +3,7 @@
 " -------------------------------------
 
 " see Readme for dependencies installation of coc-rust-analyzer
-let g:coc_global_extensions = ['coc-snippets',
+let g:coc_global_extensions = ['coc-snippets', 'coc-git',
       \ 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-vetur', 
       \ 'coc-rust-analyzer', 
       \ 'coc-phpls' ]
