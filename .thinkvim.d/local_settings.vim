@@ -33,6 +33,16 @@ let g:neoterm_default_mod='belowright'
 " Prevent common mistake of pressing q: instead :q
 map q: :q
 
+" overrides layers/+thinkvim/config.vim
+if dein#tap('vim-choosewin')
+	nmap ù         <Plug>(choosewin)
+	nmap <Leader>ù :<C-u>ChooseWinSwapStay<CR>
+endif
+
+if dein#tap('vim-vinegar')
+    nmap - <Plug>VinegarUp
+endif
+
 "ESC remap
 inoremap kj <esc>
 inoremap KJ <esc>

@@ -3,6 +3,8 @@
 
 - repo: maxbrunsfeld/vim-yankstack # Navigate the history of yanks with <alt-p> and <alt-shift-p>
 
+- repo: tpope/vim-vinegar # netrw shortcuts : - to jump from a buffer to its directory, etc.
+
 # ---- Specific languages support
 - repo: LnL7/vim-nix # nix syntax
 - repo: aklt/plantuml-syntax    # PlantUML syntax
