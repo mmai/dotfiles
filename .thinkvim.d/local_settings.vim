@@ -62,5 +62,6 @@ nnoremap <leader>sv :source $HOME/.config/nvim/init.vim<cr>
 "--------------- Personal wiki ----------------
 " open ~/think/index.md
 nnoremap ,kk :e ~/think/index.md<cr>:cd %:p:h<CR>:pwd<CR> 
-" Space + Enter : open markdown wiki links in a new split
-nnoremap <Space><CR> <C-w>v:MdwiGotoLink<CR>
+" , + Enter : open markdown wiki links in a new split
+nnoremap ,<CR> <C-w>v:MdwiGotoLink<CR>
+nnoremap ,, :MdwiReturn<CR>
