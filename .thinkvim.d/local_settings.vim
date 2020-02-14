@@ -14,6 +14,15 @@ set sidescrolloff=15
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 
+" Return to last edit position when opening files
+augroup last_edit
+  autocmd!
+  autocmd BufReadPost *
+       \ if line("'\"") > 0 && line("'\"") <= line("$") |
+       \   exe "normal! g`\"" |
+       \ endif
+augroup END
+
 " --------------------- Settings overrides ---
 " Disable Highlight symbol under cursor on CursorHold (defined in config.vim)
 autocmd! CursorHold
