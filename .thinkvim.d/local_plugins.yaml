@@ -5,6 +5,8 @@
 
 - repo: tpope/vim-vinegar # netrw shortcuts : - to jump from a buffer to its directory, etc.
 
+- repo: kassio/neoterm # :T {command} => start command in opened terminal (create if not exists); :Tnew => create new terminal
+
 # ---- Specific languages support
 - repo: LnL7/vim-nix # nix syntax
 - repo: aklt/plantuml-syntax    # PlantUML syntax
@@ -20,7 +22,6 @@
 - repo: jkramer/vim-checkbox
   on_ft: markdown
 - repo: pbrisbin/vim-mkdir # Automatically create any non-existent directories before writing the buffer
-- repo: kassio/neoterm # :T {command} => start command in opened terminal (create if not exists); :Tnew => create new terminal
 
 # Plug 'posva/vim-vue' " Vuejs syntax highlighting
 # Plug 'brooth/far.vim' " Find and replace in multiple files

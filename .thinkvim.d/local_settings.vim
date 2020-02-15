@@ -4,6 +4,10 @@
 " Enable mouse for scrolling and window resizing.
 set mouse=a
 
+" Always focus on splited window.
+set splitright
+set splitbelow
+
 " Keep 8 lines above or below the cursor when scrolling.
 set scrolloff=8
 
