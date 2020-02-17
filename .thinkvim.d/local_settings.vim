@@ -28,6 +28,9 @@ augroup last_edit
 augroup END
 
 " --------------------- Settings overrides ---
+" keep absolute line numbers
+set norelativenumber
+
 " Disable Highlight symbol under cursor on CursorHold (defined in config.vim)
 autocmd! CursorHold
 
@@ -78,3 +81,5 @@ nnoremap ,kk :e ~/think/index.md<cr>:cd %:p:h<CR>:pwd<CR>
 " , + Enter : open markdown wiki links in a new split
 nnoremap ,<CR> <C-w>v:MdwiGotoLink<CR>
 nnoremap ,, :MdwiReturn<CR>
+
+nnoremap ,x :read !cd ~/travaux/programmes/vim-dashboard/markdown-dashboard/ && make 2>/dev/null<CR>
