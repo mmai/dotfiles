@@ -34,8 +34,11 @@ set norelativenumber
 " Disable Highlight symbol under cursor on CursorHold (defined in config.vim)
 autocmd! CursorHold
 
-" Disable Highlight off current line & other unecessary autocmd (core/filetype.vim)
+" Disable Highlight of current line & other unecessary autocmd (core/filetype.vim)
 autocmd! user_plugin_filetype
+
+" Disable line numbers in markdown
+autocmd FileType markdown setlocal nonumber
 
 " --------------------------------------------------
 " --------------------- Plugins config--------------
@@ -75,11 +78,12 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap <leader>ev :vsplit $HOME/.thinkvim.d/local_settings.vim<cr>
 nnoremap <leader>sv :source $HOME/.config/nvim/init.vim<cr>
 
+" Open tig in status mode in the current file directory
+nnoremap <leader>gg :T cd %:h && tig status<cr><C-w>ji
+
 "--------------- Personal wiki ----------------
 " open ~/think/index.md
 nnoremap ,kk :e ~/think/index.md<cr>:cd %:p:h<CR>:pwd<CR> 
 " , + Enter : open markdown wiki links in a new split
 nnoremap ,<CR> <C-w>v:MdwiGotoLink<CR>
 nnoremap ,, :MdwiReturn<CR>
-
-nnoremap ,x :read !cd ~/travaux/programmes/vim-dashboard/markdown-dashboard/ && make 2>/dev/null<CR>

@@ -22,6 +22,8 @@
   on_ft: markdown
 - repo: jkramer/vim-checkbox
   on_ft: markdown
+- repo: mmai/vim-markdownizer
+  on_ft: markdown
 - repo: pbrisbin/vim-mkdir # Automatically create any non-existent directories before writing the buffer
 
 # Plug 'posva/vim-vue' " Vuejs syntax highlighting
