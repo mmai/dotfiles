@@ -48,6 +48,9 @@ alias vpn="~/softs_/vpn.sh"
 GIT_PRETTY_FORMAT="--pretty=\"%C(bold green)%h%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
 
+unalias gs
+
+
 # pretty Git log
 alias gl="git log --graph $GIT_PRETTY_FORMAT"
 # pretty Git log, all references
