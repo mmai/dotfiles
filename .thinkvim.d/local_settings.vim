@@ -31,6 +31,10 @@ augroup END
 " keep absolute line numbers
 set norelativenumber
 
+" Do not fold by default. But if, do it up to 3 levels.
+set foldnestmax=3
+set nofoldenable
+
 " Disable Highlight symbol under cursor on CursorHold (defined in config.vim)
 autocmd! CursorHold
 
@@ -81,9 +85,12 @@ nnoremap <leader>sv :source $HOME/.config/nvim/init.vim<cr>
 " Open tig in status mode in the current file directory
 nnoremap <leader>gg :T cd %:h && tig status<cr><C-w>ji
 
-"--------------- Personal wiki ----------------
+"--------------- Personal wiki shortcuts ----------------
 " open ~/think/index.md
 nnoremap ,kk :e ~/think/index.md<cr>:cd %:p:h<CR>:pwd<CR> 
 " , + Enter : open markdown wiki links in a new split
 nnoremap ,<CR> <C-w>v:MdwiGotoLink<CR>
-nnoremap ,, :MdwiReturn<CR>
+" Go back in history
+nnoremap ,, :BufSurfBack<CR>
+" Go forward in history
+nnoremap ,; :BufSurfForward<CR>

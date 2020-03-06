@@ -11,6 +11,10 @@
 - repo: LnL7/vim-nix # nix syntax
 - repo: aklt/plantuml-syntax    # PlantUML syntax
 
+- repo: mmai/neovim-calculator
+  rev: develop
+  build: 'cargo build'
+
 # override markdown-preview build script and disable autostart
 - repo: iamcco/markdown-preview.nvim # :MarkdownPreview / :MarkdownPreviewStop
   on_ft: [markdown,pandoc.markdown,rmd]
@@ -26,6 +30,7 @@
   build: 'sh install.sh"'
   on_ft: markdown
 - repo: pbrisbin/vim-mkdir # Automatically create any non-existent directories before writing the buffer
+- repo: ton/vim-bufsurf # keep history of buffers navigation: allow to navigate back and forth in history
 
 # Plug 'posva/vim-vue' " Vuejs syntax highlighting
 # Plug 'brooth/far.vim' " Find and replace in multiple files
