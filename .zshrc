@@ -1,11 +1,13 @@
 # terminal utilities
 #  * z : go to recent /frequent directories
+#  * fzf : fuzzy finder / navigator `fd --extension md | fzf | xargs bat`
 #  * entr : run arbitrary commands when files change (example: ls *.hs | entr make build)
 # some terminal programs : 
 #  * vifm, ranger, mc : file managers
 #  * taskwarrior
 #  * ncdu : ncurses disk usage
 #  * htop
+#  * iotop
 #  * lnav : log files navigator
 #  * asciinema, ttystudio: terminal recorders (web, gif)
 #  * tldr : Simplified and community-driven man pages  
@@ -14,6 +16,7 @@
 #  * cal : calendrier
 #  * meteo
 #  * git cal : show github like commits wall
+#  * xdotool : X11 automation (click on key, on mouse buttons, manipulate windows, ...)
 
 # enable the ctrl-shift-t command in termite to open a new terminal window in the current directory (cf. https://github.com/thestinger/termite)
 if [[ $TERM == xterm-termite ]]; then
@@ -169,10 +172,13 @@ function e() {
 # Ctrl-R : historique
 # vim ./src/**<TAB>  completion sur le répertoire...
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# Use ag instead of the default find command for listing candidates.
+# Use rg instead of the default find command for listing candidates.
 _fzf_compgen_path() {
-  ag -g "" "$1"
+  rg -g "" "$1"
 }
+
+# Tmuxp
+eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 
 # Hide the gnome-terminal header bar
 # if [ "$TERM" = "xterm-256color" ]; then

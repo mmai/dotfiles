@@ -22,7 +22,7 @@ alias vim="nvim"
 # Dev tools
 alias serve="python -m http.server"
 alias prettyjson="python -m json.tool"
-alias ip="curl curlmyip.com" # print my IP
+alias myip="curl curlmyip.com" # print my IP
 
 # Fun scripts
 alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"

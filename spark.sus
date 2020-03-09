@@ -1,5 +1,6 @@
 card sus {
   spark card bash
+  spark card tmux
   spark card vim
   spark card git
   spark card configs
@@ -11,6 +12,12 @@ card bash {
   .bashrc
   .zshrc
   .zsh
+}
+
+card tmux {
+  into ~
+  
+  .tmux.conf
 }
 
 card vim {

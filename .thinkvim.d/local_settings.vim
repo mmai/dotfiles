@@ -28,8 +28,8 @@ augroup last_edit
 augroup END
 
 " --------------------- Settings overrides ---
-" keep absolute line numbers
-set norelativenumber
+set norelativenumber " keep absolute line numbers
+set cmdheight=1      " Height of the command line (why did they set it at 2 ?)
 
 " Do not fold by default. But if, do it up to 3 levels.
 set foldnestmax=3
@@ -84,6 +84,14 @@ nnoremap <leader>sv :source $HOME/.config/nvim/init.vim<cr>
 
 " Open tig in status mode in the current file directory
 nnoremap <leader>gg :T cd %:h && tig status<cr><C-w>ji
+
+" Prompt for a command to run (on tmux)
+map <Leader>tg :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand (on tmux)
+map <Leader>tr :VimuxRunLastCommand<CR>
+" Zoom the tmux runner pane
+map <Leader>tz :VimuxZoomRunner<CR>
+" lancer tests rust dans vimux ? https://github.com/jtdowney/vimux-cargo
 
 "--------------- Personal wiki shortcuts ----------------
 " open ~/think/index.md

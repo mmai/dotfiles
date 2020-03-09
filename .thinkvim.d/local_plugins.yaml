@@ -6,6 +6,8 @@
 - repo: tpope/vim-vinegar # netrw shortcuts : - to jump from a buffer to its directory, etc.
 
 - repo: kassio/neoterm # :T {command} => start command in opened terminal (create if not exists); :Tnew => create new terminal
+- repo: christoomey/vim-tmux-navigator # Seamless navigation between tmux panes and vim splits (Ctrl-j k, h, l)
+- repo: benmills/vimux
 
 # ---- Specific languages support
 - repo: LnL7/vim-nix # nix syntax
@@ -31,6 +33,8 @@
   on_ft: markdown
 - repo: pbrisbin/vim-mkdir # Automatically create any non-existent directories before writing the buffer
 - repo: ton/vim-bufsurf # keep history of buffers navigation: allow to navigate back and forth in history
+
+# mappings sur plusieurs touches à la fois : https://github.com/kana/vim-arpeggio
 
 # Plug 'posva/vim-vue' " Vuejs syntax highlighting
 # Plug 'brooth/far.vim' " Find and replace in multiple files
