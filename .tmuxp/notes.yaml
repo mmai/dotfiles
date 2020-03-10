@@ -1,0 +1,12 @@
+session_name: notes
+windows:
+- window_name: perso
+  shell_command_before:
+    - cd ~/think/todo/
+  panes:
+    - nvim planner.md
+- window_name: atixnet
+  shell_command_before:
+    - cd ~/think/atixnet/
+  panes:
+    - nvim index.md
