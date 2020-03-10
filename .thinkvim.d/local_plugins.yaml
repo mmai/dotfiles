@@ -33,6 +33,7 @@
   on_ft: markdown
 - repo: pbrisbin/vim-mkdir # Automatically create any non-existent directories before writing the buffer
 - repo: ton/vim-bufsurf # keep history of buffers navigation: allow to navigate back and forth in history
+- repo: sheerun/vim-polyglot  # syntax highlighting, indentation for a wide collection of languages (needed for at least twig)
 
 # mappings sur plusieurs touches à la fois : https://github.com/kana/vim-arpeggio
 
