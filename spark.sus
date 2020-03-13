@@ -25,7 +25,6 @@ card vim {
   
   .vim
   .thinkvim.d
-  .vim -> .config/nvim
 }
 
 card git {

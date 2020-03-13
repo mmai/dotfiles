@@ -36,7 +36,7 @@ set foldnestmax=3
 set nofoldenable
 
 " Disable Highlight symbol under cursor on CursorHold (defined in config.vim)
-autocmd! CursorHold
+"autocmd! CursorHold
 
 " Disable Highlight of current line & other unecessary autocmd (core/filetype.vim)
 autocmd! user_plugin_filetype

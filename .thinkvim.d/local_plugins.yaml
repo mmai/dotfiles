@@ -13,10 +13,6 @@
 - repo: LnL7/vim-nix # nix syntax
 - repo: aklt/plantuml-syntax    # PlantUML syntax
 
-- repo: mmai/neovim-calculator
-  rev: develop
-  build: 'cargo build'
-
 # override markdown-preview build script and disable autostart
 - repo: iamcco/markdown-preview.nvim # :MarkdownPreview / :MarkdownPreviewStop
   on_ft: [markdown,pandoc.markdown,rmd]

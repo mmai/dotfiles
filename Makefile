@@ -5,6 +5,8 @@ initmodules:
 
 install: initmodules
 	spark deploy spark.sus
+	git clone git@github.com:mmai/ThinkVim.git ~/.config/ThinkVim
+	ln -s ~/.config/ThinkVim ~/.config/nvim
 	cat dconf-henri.ini | dconf load /
 
 dumpconf:

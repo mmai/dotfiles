@@ -191,3 +191,6 @@ eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 export PATH=/home/henri/.local/bin/luna-studio:$PATH
 
 source /home/henri/.config/broot/launcher/bash/br
+
+# Direnv (enable overrides of env variables in directories with a .envrc file)
+eval "$(direnv hook zsh)"
