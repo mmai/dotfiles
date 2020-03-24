@@ -1,6 +1,9 @@
 # Overrides of ~/.config/nvim/core/dein/plugins.yaml
 #   to disable a plugin : - { repo: tryu/caw.vim, if: 0 }
 
+# disable echodoc because it sets cmdheight to 2 (and we already have function signature display with coc-vim
+- { repo: Shougo/echodoc.vim, if: 0 }
+
 - repo: maxbrunsfeld/vim-yankstack # Navigate the history of yanks with <alt-p> and <alt-shift-p>
 
 - repo: tpope/vim-vinegar # netrw shortcuts : - to jump from a buffer to its directory, etc.

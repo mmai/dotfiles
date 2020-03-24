@@ -138,7 +138,6 @@ alias sbt="/opt/sbt"
 OPENNLP_HOME=/opt/apache-opennlp-1.5.3 #openNLP 
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
-#source ~/.local/bin/tmuxinator.zsh
 
 #NIX : uncomment on non NixOS systems
 # if [ -d "/home/henri/.nix-profile/" ];
@@ -179,6 +178,15 @@ _fzf_compgen_path() {
 
 # Tmuxp
 eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
+
+fzf-tmuxp-sessions() {
+  CMD=$(find ~/.tmuxp -type f | fzf)
+  # tmuxp load -y $CMD # XXX strange behavior : start session but not on current terminal
+  zle -U "tmuxp load -y $CMD"
+  zle accept-line
+}
+zle -N fzf-tmuxp-sessions
+bindkey '^S' fzf-tmuxp-sessions
 
 # Hide the gnome-terminal header bar
 # if [ "$TERM" = "xterm-256color" ]; then

@@ -32,8 +32,7 @@ Plug 'tpope/vim-scriptease' " vim scripts debug tool (:Verbose, ...)
 
 "--------- File navigation
 Plug 'mhinz/vim-startify' " Fancy start screen with links to recent files
-Plug 'scrooloose/nerdtree' "disabled because it overrides netrw when using '-' and don't go upper the initial directory
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Colors for NERDTree => too slow
+" Plug 'scrooloose/nerdtree' " XXX plante nvim dans les dernières versions!! 
 
 Plug 'dhruvasagar/vim-vinegar' "vinegar NERDTree version
 " Plug 'tpope/vim-vinegar' " netrw shortcuts : - to jump from a buffer to its directory, etc.

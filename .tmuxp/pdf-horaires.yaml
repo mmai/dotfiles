@@ -1,0 +1,30 @@
+session_name: pdf-horaires
+windows:
+- focus: 'true'
+  layout: c7a3,240x66,0,0,6
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: ls 
+  start_directory: /home/henri/travaux/www/sitesFiliales/annemasse-tac/web/modules/dev/atix_pth
+  window_name: code
+- layout: 160d,240x66,0,0{120x66,0,0,4,119x66,121,0,5}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - shell_command:
+    - cd /home/henri/travaux/www/calixx
+    - nix-shell
+  - focus: 'true'
+    shell_command:
+    - cd /home/henri/travaux/www/sitesFiliales
+    - nix-shell
+  window_name: services
+- layout: c7a4,240x66,0,0,7
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: ls
+  start_directory: /home/henri/travaux/www/calixx/network/calixx-gtfs
+  window_name: GTFS

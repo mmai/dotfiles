@@ -36,7 +36,7 @@ let loaded_matchparen = 1
 set winaltkeys=no 
 
 " Sync the last copy register with the system clipboard 
-set clipboard^=unnamed,unnamedplus 
+" set clipboard^=unnamed,unnamedplus " XXX plante vim dans les dernières versions !!!
 
 if has('nvim')
   " exit neovim terminal

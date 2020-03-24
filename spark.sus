@@ -18,6 +18,7 @@ card tmux {
   into ~
   
   .tmux.conf
+  .tmuxp
 }
 
 card vim {

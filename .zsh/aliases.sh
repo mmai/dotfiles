@@ -95,5 +95,5 @@ alias tick=tickle
 #   task +waiting +PENDING ls
 # fi
 
-export VIMPATH=~/.config/nvim
+# export VIMPATH=~/.config/nvim
 

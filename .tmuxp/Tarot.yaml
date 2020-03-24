@@ -1,0 +1,9 @@
+session_name: Tarot
+windows:
+- focus: 'true'
+  options:
+    automatic-rename: 'off'
+  panes:
+  - nvim src/Jeu.ts
+  start_directory: /home/henri/travaux/programmes/Tarot
+  window_name: code
