@@ -12,12 +12,13 @@ alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 
 # better alternatives
 alias cat="bat"
-alias tree="broot"
+# alias tree="broot" # don't know how to scroll / navigate page down
 alias ls="exa --git"
 alias l="exa -l"
 alias lt="exa -l -snew"
 # alias ping="prettyping --nolegend"
 alias vim="nvim"
+alias mutt="neomutt"
 
 # Dev tools
 alias serve="python -m http.server"

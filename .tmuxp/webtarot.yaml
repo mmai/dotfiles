@@ -1,9 +1,12 @@
-session_name: Tarot
+session_name: webtarot
+start_directory: /home/henri/travaux/programmes/webtarot
 windows:
-- focus: 'true'
-  options:
-    automatic-rename: 'off'
+- window_name: code
+  focus: 'true'
   panes:
-  - nvim src/Jeu.ts
-  start_directory: /home/henri/travaux/programmes/Tarot
-  window_name: code
+  - lt
+- window_name: services
+  layout: even-horizontal
+  panes:
+  - make server
+  - make client
