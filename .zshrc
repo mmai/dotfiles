@@ -180,13 +180,25 @@ _fzf_compgen_path() {
 eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 
 fzf-tmuxp-sessions() {
-  CMD=$(find ~/.tmuxp -type f | fzf)
+  CMD=$(find ~/.tmuxp/ -type f | fzf)
   # tmuxp load -y $CMD # XXX strange behavior : start session but not on current terminal
   zle -U "tmuxp load -y $CMD"
   zle accept-line
 }
 zle -N fzf-tmuxp-sessions
 bindkey '^S' fzf-tmuxp-sessions
+
+# pass
+fzf-pass() {
+    CMD=$(find ~/.password-store/ -name "*.gpg"        | \
+        sed -r 's,(.*)\.password-store/(.*)\.gpg,\2,' | fzf)
+
+    pass -c $CMD
+  # zle -U "pass -c $CMD"
+  # zle accept-line
+}
+zle -N fzf-pass
+bindkey '^P' fzf-pass
 
 # Hide the gnome-terminal header bar
 # if [ "$TERM" = "xterm-256color" ]; then
