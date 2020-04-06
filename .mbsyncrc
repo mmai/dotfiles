@@ -1,0 +1,255 @@
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+#############  Gmail #################################################
+IMAPAccount gmail
+Host imap.gmail.com
+User henri.bourcereau@gmail.com
+PassCmd "pass mails/Gmail-mbsync"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Remote storage
+IMAPStore gmail-remote
+Account gmail
+
+# Local storage
+MaildirStore gmail-local
+Subfolders Verbatim
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/Inbox
+
+# Channel gmail
+# Master :gmail-remote:
+# Slave :gmail-local:
+# Patterns *
+# Create Both
+# Expunge Both
+
+Channel gmail-inbox
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX"
+Create Slave
+
+Channel gmail-archives
+Master :gmail-remote:"[Gmail]/Tous les messages"
+Slave :gmail-local:archives
+Create Both
+
+Channel gmail-draft
+Master :gmail-remote:"[Gmail]/Brouillons"
+Slave :gmail-local:draft
+Create Both
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Messages envoy&AOk-s"
+Slave :gmail-local:sent
+Create Slave
+
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/Corbeille"
+Slave :gmail-local:trash
+Create Slave
+Expunge Slave
+
+# Get all the channels together into a group.
+Group gmail.fr
+Channel gmail-trash
+Channel gmail-inbox
+Channel gmail-archives
+Channel gmail-draft
+Channel gmail-sent
+
+#############  bourcereau.fr #################################################
+IMAPAccount bourcereau.fr
+Host imap.gmail.com
+User henri@bourcereau.fr
+PassCmd "pass mails/@bourcereau.fr-mbsync"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Remote storage
+IMAPStore bourcereau-remote
+Account bourcereau.fr
+
+# Local storage
+MaildirStore bourcereau-local
+Subfolders Verbatim
+Path ~/.mail/bourcereau.fr/
+Inbox ~/.mail/bourcereau.fr/Inbox
+
+# Channel bourcereau.fr
+# Master :bourcereau-remote:
+# Slave :bourcereau-local:
+# Patterns *
+# Create Both
+# Expunge Both
+
+Channel bourcereau-inbox
+Master :bourcereau-remote:
+Slave :bourcereau-local:
+Patterns "INBOX"
+Create Slave
+
+Channel bourcereau-archives
+Master :bourcereau-remote:"[Gmail]/Tous les messages"
+Slave :bourcereau-local:archives
+Create Both
+
+Channel bourcereau-draft
+Master :bourcereau-remote:"[Gmail]/Brouillons"
+Slave :bourcereau-local:draft
+Create Both
+
+Channel bourcereau-sent
+Master :bourcereau-remote:"[Gmail]/Messages envoy&AOk-s"
+Slave :bourcereau-local:sent
+Create Slave
+
+Channel bourcereau-trash
+Master :bourcereau-remote:"[Gmail]/Corbeille"
+Slave :bourcereau-local:trash
+Create Slave
+Expunge Slave
+
+# Get all the channels together into a group.
+Group bourcereau.fr
+Channel bourcereau-trash
+Channel bourcereau-inbox
+Channel bourcereau-archives
+Channel bourcereau-draft
+Channel bourcereau-sent
+
+# 36K     bourcereau.fr/[Gmail]/Brouillons
+# 196K    bourcereau.fr/[Gmail]/Corbeille
+# 63M     bourcereau.fr/[Gmail]/Messages envoy&AOk-s
+# 244K    bourcereau.fr/[Gmail]/Spam
+# 44K     bourcereau.fr/[Gmail]/Suivis
+# 201M    bourcereau.fr/[Gmail]/Tous les messages
+
+#############  rhumbs.fr #################################################
+IMAPAccount rhumbs.fr
+Host imap.gmail.com
+User admin@rhumbs.fr
+PassCmd "pass mails/@rhumbs.fr-mbsync"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Remote storage
+IMAPStore rhumbs-remote
+Account rhumbs.fr
+
+# Local storage
+MaildirStore rhumbs-local
+Subfolders Verbatim
+Path ~/.mail/rhumbs.fr/
+Inbox ~/.mail/rhumbs.fr/Inbox
+
+Channel rhumbs-inbox
+Master :rhumbs-remote:
+Slave :rhumbs-local:
+Patterns "INBOX"
+Create Slave
+
+Channel rhumbs-archives
+Master :rhumbs-remote:"[Gmail]/Tous les messages"
+Slave :rhumbs-local:archives
+Create Both
+
+Channel rhumbs-draft
+Master :rhumbs-remote:"[Gmail]/Brouillons"
+Slave :rhumbs-local:draft
+Create Both
+
+Channel rhumbs-sent
+Master :rhumbs-remote:"[Gmail]/Messages envoy&AOk-s"
+Slave :rhumbs-local:sent
+Create Slave
+
+Channel rhumbs-trash
+Master :rhumbs-remote:"[Gmail]/Corbeille"
+Slave :rhumbs-local:trash
+Create Slave
+Expunge Slave
+
+# Get all the channels together into a group.
+Group rhumbs.fr
+Channel rhumbs-trash
+Channel rhumbs-inbox
+Channel rhumbs-archives
+Channel rhumbs-draft
+Channel rhumbs-sent
+
+
+#############  atixnet.fr (office 365) #################################################
+IMAPAccount atixnet.fr
+Host imap-mail.outlook.com
+User hbourcereau@atixnet.fr
+PassCmd "pass mails/@atixnet.fr-mbsync"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Remote storage
+IMAPStore atixnet-remote
+Account atixnet.fr
+
+# Local storage
+MaildirStore atixnet-local
+Subfolders Verbatim
+Path ~/.mail/atixnet.fr/
+Inbox ~/.mail/atixnet.fr/Inbox
+
+# Channel atixnet.fr
+# Master :atixnet-remote:
+# Slave :atixnet-local:
+# Patterns *
+# Create Both
+# Expunge Both
+
+Channel atixnet-inbox
+Master :atixnet-remote:
+Slave :atixnet-local:
+Patterns "INBOX"
+Create Slave
+
+Channel atixnet-archives
+Master :atixnet-remote:"Archive"
+Slave :atixnet-local:archives
+Create Both
+
+Channel atixnet-draft
+Master :atixnet-remote:"Brouillons"
+Slave :atixnet-local:draft
+Create Both
+
+Channel atixnet-sent
+Master :atixnet-remote:"&AMk-l&AOk-ments envoy&AOk-s"
+Slave :atixnet-local:sent
+Create Slave
+
+Channel atixnet-trash
+Master :atixnet-remote:"&AMk-l&AOk-ments supprim&AOk-s"
+Slave :atixnet-local:trash
+Create Slave
+Expunge Slave
+
+Channel atixnet-refs
+Master :atixnet-remote:"Refs - doc"
+Slave :atixnet-local:refs
+Create Both
+
+Channel atixnet-projets
+Master :atixnet-remote:"projets"
+Slave :atixnet-local:projets
+Create Both
+
+# Get all the channels together into a group.
+Group atixnet.fr
+Channel atixnet-trash
+Channel atixnet-inbox
+Channel atixnet-archives
+Channel atixnet-draft
+Channel atixnet-sent
+Channel atixnet-refs
+Channel atixnet-projets
