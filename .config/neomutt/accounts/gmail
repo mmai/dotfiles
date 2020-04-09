@@ -1,0 +1,14 @@
+set from = "henri.bourcereau@gmail.com"
+set sendmail = "/bin/msmtp -a gmail"
+
+# Set folders
+set spoolfile = "+gmail/Inbox" # This has the shortcut '!'
+set mbox = "+gmail/archives"
+set postponed = "+gmail/draft"
+# set record = "+gmail/sent"
+# set trash = "+gmail/trash"
+
+# custom signature
+set signature = ~/.config/neomutt/signatures/perso
+
+color status red default

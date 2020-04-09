@@ -1,0 +1,14 @@
+set from = "hbourcereau@atixnet.fr"
+set sendmail = "/bin/msmtp -a atixnet.fr"
+
+# Set folders
+set spoolfile = "+atixnet.fr/Inbox" # This has the shortcut '!'
+set postponed = "+atixnet.fr/draft"
+set mbox = "+atixnet.fr/archives"
+# set record = "+atixnet.fr/sent" # managed by office365
+# set trash = "+atixnet.fr/trash" # managed by office365
+
+# custom signaure
+set signature = ~/.mutt/signatures/atixnet
+
+color status blue default

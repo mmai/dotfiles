@@ -1,0 +1,18 @@
+set from = "henri@bourcereau.fr"
+set sendmail = "/bin/msmtp -a bourcereau.fr"
+
+# can use all domain
+alternates "@bourcereau\.fr$"
+set reverse_name
+
+# Set folders
+set spoolfile = "+bourcereau.fr/Inbox" # This has the shortcut '!'
+set postponed = "+bourcereau.fr/draft"
+set mbox = "+bourcereau.fr/archives"
+# set record = "+bourcereau.fr/sent" # managed by gmail
+# set trash = "+bourcereau.fr/trash" # managed by gmail
+
+# custom signaure
+set signature = ~/.mutt/signatures/bourcereau
+
+color status indigo default

@@ -1,0 +1,169 @@
+##############
+# paths and basic options
+set folder = ~/.mail           # This has the shortcut '+' or '='
+set mailcap_path	= ~/.config/neomutt/mailcap
+# Remember to `mkdir -p ~/.neomutt/hcache` first:
+set header_cache= ~/.neomutt/hcache
+set message_cachedir = ~/.neomutt/bcache
+
+###############
+# Pager settings
+#
+ignore *
+unignore From Message-ID Date To Cc Bcc Subject
+
+set pager_stop
+unset markers
+
+# Prefer plain text to html.
+# However, for brain dead clients that bundle attachments inside a
+# multipart/alternative, prefer that alternative.
+alternative_order multipart/mixed multipart/related text/plain
+
+# Consult mime.types for determining types of these attachments
+mime_lookup application/octet-stream
+
+# This requires a ~/.mailcap entry with the copiousoutput flag, such as:
+# text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
+auto_view text/html
+
+###############
+# Index settings
+#
+set quit = ask-yes
+set sort = threads
+
+###############
+# Message composition settings
+#
+set edit_headers
+
+# set editor = "emacsclient -a emacs -t"
+# set editor = "vim"
+
+set mime_type_query_command = "xdg-mime query filetype"
+
+# lbdb is a versatile contact query tool.
+# Invoke via ctrl-t in an address prompt
+# set query_command = "/usr/bin/lbdbq"
+
+###############
+# GnuPG
+#
+# unset crypt_use_gpgme
+# source /usr/local/share/doc/neomutt/samples/gpg.rc
+# set pgp_default_key = "0x1234567890ABCDEF"
+# set crypt_opportunistic_encrypt
+# set postpone_encrypt
+
+
+
+
+# # paths
+# # set certificate_file = ~/dotfiles/office/certificates.crt
+# # set tmpdir = ~/.mutt/tmp
+#
+# # basic options
+set wait_key = no
+# set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+set delete
+set quit
+set thorough_search
+set mail_check_stats
+unset confirmappend
+unset move
+unset mark_old
+# unset beep_new
+
+# compose View Options
+set envelope_from                    # which from?
+set edit_headers                     # show headers when composing
+set fast_reply                       # skip to compose when replying
+set askcc                            # ask for CC:
+set fcc_attach                       # save attachments with the body
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set attribution = "Le %d, %n a écrit:" # format of quoting header
+set reply_to                         # reply to Reply to: field
+set reverse_name                     # reply as whomever it was to
+set include                          # include message in replies
+set forward_quote                    # include message in forwards
+set editor = "nvim"
+set text_flowed
+# unset sig_dashes                     # no dashes before sig
+# unset mime_forward                   # forward attachments as part of body
+
+# status bar, date format, finding stuff etc.
+set status_chars = " *%A"
+set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set date_format = "%d/%m/%Y %H:%M"
+set index_format = "[%Z] %?X?A&-? %D  %-20.20F  %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set send_charset = "utf-8:iso-8859-1:us-ascii"
+set charset = "utf-8"
+
+# Pager View Options
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+
+# email headers and attachments
+ignore *
+unignore from: to: cc: bcc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: bcc: date: subject:
+alternative_order text/plain text/enriched text/html
+auto_view text/html
+
+# when composing emails, use this command to get addresses from
+# the addressbook with khard first, and everything else from mu index
+set query_command = "( khard email --parsable '%s' | sed -n '1!p'; mu cfind --format=mutt-ab '%s' )"
+
+# sidebar patch config
+set sidebar_visible
+set sidebar_short_path
+set sidebar_folder_indent
+set sidebar_width = 25
+set sidebar_divider_char = ' | '
+set sidebar_indent_string = '  ''
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+
+# Mailboxes to show in the sidebar.
+mailboxes =ALL-INBOXES
+mailboxes =gmail/Inbox =atixnet.fr/Inbox =rhumbs.fr/Inbox =bourcereau.fr/Inbox
+mailboxes ="==================="
+mailboxes =gmail
+mailboxes =gmail/archives =gmail/sent =gmail/draft
+mailboxes =rhumbs
+mailboxes =rhumbs.fr/archives =rhumbs.fr/sent =rhumbs.fr/draft
+mailboxes =bourcereau
+mailboxes =bourcereau.fr/archives =bourcereau.fr/sent =bourcereau.fr/draft
+mailboxes =atixnet
+mailboxes =atixnet.fr/archives =atixnet.fr/sent =atixnet.fr/draft
+
+# source colors and keybindings
+# source ~/.config/neomutt/colors
+source ~/.config/neomutt/bindings
+
+###############
+# Identity
+#
+# by default, use gmail
+set realname = "Henri Bourcereau"
+set spoolfile = "+gmail/Inbox"
+source ~/.config/neomutt/accounts/gmail
+
+# when changing into other mailboxes, use different adresses etc.
+folder-hook gmail/* source ~/.config/neomutt/accounts/gmail
+folder-hook rhumbs.fr/* source ~/.config/neomutt/accounts/rhumbs.fr
+folder-hook bourcereau.fr/* source ~/.config/neomutt/accounts/bourcereau.fr
+folder-hook atixnet.fr/* source ~/.config/neomutt/accounts/atixnet.fr
