@@ -1,5 +1,5 @@
 set from = "henri@bourcereau.fr"
-set sendmail = "/bin/msmtp -a bourcereau.fr"
+set sendmail = "/run/current-system/sw/bin/msmtp -a bourcereau.fr"
 
 # can use all domain
 alternates "@bourcereau\.fr$"

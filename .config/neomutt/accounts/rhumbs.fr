@@ -1,5 +1,5 @@
 set from = "admin@rhumbs.fr"
-set sendmail = "/bin/msmtp -a rhumbs.fr"
+set sendmail = "/run/current-system/sw/bin/msmtp -a rhumbs.fr"
 
 # can use all domain
 alternates "@rhumbs\.fr$"
@@ -9,7 +9,7 @@ set reverse_name
 set spoolfile = "+rhumbs.fr/Inbox" # This has the shortcut '!'
 set postponed = "+rhumbs.fr/draft"
 set mbox = "+rhumbs.fr/archives"
-# set record = "+rhumbs.fr/sent" # managed by gmail
-# set trash = "+rhumbs.fr/trash" # managed by gmail
+set record = "+rhumbs.fr/sent" # doublons gmail ?
+set trash = "+rhumbs.fr/trash" # doublons gmail ?
 
 color status green default

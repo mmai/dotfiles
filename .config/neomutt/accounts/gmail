@@ -1,5 +1,5 @@
 set from = "henri.bourcereau@gmail.com"
-set sendmail = "/bin/msmtp -a gmail"
+set sendmail = "/run/current-system/sw/bin/msmtp -a gmail"
 
 # Set folders
 set spoolfile = "+gmail/Inbox" # This has the shortcut '!'

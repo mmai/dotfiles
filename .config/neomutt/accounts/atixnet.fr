@@ -1,5 +1,5 @@
 set from = "hbourcereau@atixnet.fr"
-set sendmail = "/bin/msmtp -a atixnet.fr"
+set sendmail = "/run/current-system/sw/bin/msmtp -a atixnet.fr"
 
 # Set folders
 set spoolfile = "+atixnet.fr/Inbox" # This has the shortcut '!'

@@ -2,17 +2,15 @@
 bind index,pager k previous-entry
 bind index,pager j next-entry
 bind index,pager g noop
-bind index,pager \Cu half-up
-bind index,pager \Cd half-down
 bind pager gg top
-bind index gg first-entry
 bind pager G bottom
+bind index gg first-entry
 bind index G last-entry
 
 # Sidebar Navigation
-bind index,pager \Cj sidebar-next
-bind index,pager \Ck sidebar-prev
-bind index,pager \Cl sidebar-open
+bind index,pager J sidebar-next
+bind index,pager K sidebar-prev
+bind index,pager L sidebar-open
 
 # index and pager shortcuts
 bind index,pager @ compose-to-sender

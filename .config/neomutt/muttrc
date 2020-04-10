@@ -130,28 +130,31 @@ set query_command = "( khard email --parsable '%s' | sed -n '1!p'; mu cfind --fo
 
 # sidebar patch config
 set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
 set sidebar_short_path
-set sidebar_folder_indent
+# set sidebar_folder_indent
 set sidebar_width = 25
 set sidebar_divider_char = ' | '
-set sidebar_indent_string = '  ''
-set sidebar_format = "%B %* [%?N?%N / ?%S]"
+# set sidebar_indent_string = '  ''
+# set sidebar_format = "%B %* [%?N?%N / ?%S]"
 
 # Mailboxes to show in the sidebar.
-mailboxes =ALL-INBOXES
-mailboxes =gmail/Inbox =atixnet.fr/Inbox =rhumbs.fr/Inbox =bourcereau.fr/Inbox
-mailboxes ="==================="
-mailboxes =gmail
-mailboxes =gmail/archives =gmail/sent =gmail/draft
-mailboxes =rhumbs
-mailboxes =rhumbs.fr/archives =rhumbs.fr/sent =rhumbs.fr/draft
-mailboxes =bourcereau
-mailboxes =bourcereau.fr/archives =bourcereau.fr/sent =bourcereau.fr/draft
-mailboxes =atixnet
-mailboxes =atixnet.fr/archives =atixnet.fr/sent =atixnet.fr/draft
+# mailboxes =ALL-INBOXES
+# mailboxes =atixnet.fr/Inbox =rhumbs.fr/Inbox =bourcereau.fr/Inbox
+# mailboxes ="==================="
+mailboxes =----Gmail--------
+mailboxes =gmail/Inbox =gmail/archives =gmail/sent =gmail/draft
+mailboxes =----Rhumbs-------
+mailboxes =rhumbs.fr/Inbox =rhumbs.fr/archives =rhumbs.fr/sent =rhumbs.fr/draft
+mailboxes =---Bourcereau----
+mailboxes =bourcereau.fr/Inbox =bourcereau.fr/archives =bourcereau.fr/sent =bourcereau.fr/draft
+mailboxes =---Atixnet-------
+mailboxes =atixnet.fr/Inbox =atixnet.fr/archives =atixnet.fr/sent =atixnet.fr/draft
 
 # source colors and keybindings
-# source ~/.config/neomutt/colors
+source ~/.config/neomutt/colors
 source ~/.config/neomutt/bindings
 
 ###############

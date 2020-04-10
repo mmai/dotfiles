@@ -30,28 +30,32 @@ Channel gmail-inbox
 Master :gmail-remote:
 Slave :gmail-local:
 Patterns "INBOX"
-Create Slave
+Create Both
+Expunge Both
 
 Channel gmail-archives
 Master :gmail-remote:"[Gmail]/Tous les messages"
 Slave :gmail-local:archives
 Create Both
+Expunge Both
 
 Channel gmail-draft
 Master :gmail-remote:"[Gmail]/Brouillons"
 Slave :gmail-local:draft
 Create Both
+Expunge Both
 
 Channel gmail-sent
 Master :gmail-remote:"[Gmail]/Messages envoy&AOk-s"
 Slave :gmail-local:sent
-Create Slave
+Create Both
+Expunge Both
 
 Channel gmail-trash
 Master :gmail-remote:"[Gmail]/Corbeille"
 Slave :gmail-local:trash
-Create Slave
-Expunge Slave
+Create Both
+Expunge Both
 
 # Get all the channels together into a group.
 Group gmail.fr
@@ -90,28 +94,32 @@ Channel bourcereau-inbox
 Master :bourcereau-remote:
 Slave :bourcereau-local:
 Patterns "INBOX"
-Create Slave
+Create Both
+Expunge Both
 
 Channel bourcereau-archives
 Master :bourcereau-remote:"[Gmail]/Tous les messages"
 Slave :bourcereau-local:archives
 Create Both
+Expunge Both
 
 Channel bourcereau-draft
 Master :bourcereau-remote:"[Gmail]/Brouillons"
 Slave :bourcereau-local:draft
 Create Both
+Expunge Both
 
 Channel bourcereau-sent
 Master :bourcereau-remote:"[Gmail]/Messages envoy&AOk-s"
 Slave :bourcereau-local:sent
-Create Slave
+Create Both
+Expunge Both
 
 Channel bourcereau-trash
 Master :bourcereau-remote:"[Gmail]/Corbeille"
 Slave :bourcereau-local:trash
-Create Slave
-Expunge Slave
+Create Both
+Expunge Both
 
 # Get all the channels together into a group.
 Group bourcereau.fr
@@ -150,28 +158,33 @@ Channel rhumbs-inbox
 Master :rhumbs-remote:
 Slave :rhumbs-local:
 Patterns "INBOX"
-Create Slave
+Create Both
+Expunge Both
 
 Channel rhumbs-archives
 Master :rhumbs-remote:"[Gmail]/Tous les messages"
 Slave :rhumbs-local:archives
 Create Both
+Expunge Both
 
 Channel rhumbs-draft
 Master :rhumbs-remote:"[Gmail]/Brouillons"
 Slave :rhumbs-local:draft
 Create Both
+Expunge Both
 
 Channel rhumbs-sent
 Master :rhumbs-remote:"[Gmail]/Messages envoy&AOk-s"
 Slave :rhumbs-local:sent
-Create Slave
+# Create Slave
+Create Both
+Expunge Both
 
 Channel rhumbs-trash
 Master :rhumbs-remote:"[Gmail]/Corbeille"
 Slave :rhumbs-local:trash
-Create Slave
-Expunge Slave
+Create Both
+Expunge Both
 
 # Get all the channels together into a group.
 Group rhumbs.fr
@@ -211,38 +224,44 @@ Channel atixnet-inbox
 Master :atixnet-remote:
 Slave :atixnet-local:
 Patterns "INBOX"
-Create Slave
+Create Both
+Expunge Both
 
 Channel atixnet-archives
 Master :atixnet-remote:"Archive"
 Slave :atixnet-local:archives
 Create Both
+Expunge Both
 
 Channel atixnet-draft
 Master :atixnet-remote:"Brouillons"
 Slave :atixnet-local:draft
 Create Both
+Expunge Both
 
 Channel atixnet-sent
 Master :atixnet-remote:"&AMk-l&AOk-ments envoy&AOk-s"
 Slave :atixnet-local:sent
-Create Slave
+Create Both
+Expunge Both
 
 Channel atixnet-trash
 Master :atixnet-remote:"&AMk-l&AOk-ments supprim&AOk-s"
 Slave :atixnet-local:trash
-Create Slave
-Expunge Slave
+Create Both
+Expunge Both
 
 Channel atixnet-refs
 Master :atixnet-remote:"Refs - doc"
 Slave :atixnet-local:refs
 Create Both
+Expunge Both
 
 Channel atixnet-projets
 Master :atixnet-remote:"projets"
 Slave :atixnet-local:projets
 Create Both
+Expunge Both
 
 # Get all the channels together into a group.
 Group atixnet.fr
