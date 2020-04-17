@@ -1,3 +1,7 @@
 # HTML
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
-text/plain; nvim %s
+text/html      ; w3m -I %{charset} -T text/html; copiousoutput;
+text/plain     ; nvim %s
+application/pdf; { set -m \; mv -T %s %s.mv \; ( evince %s.mv \; rm -f %s.mv \; ) & } \; disown -a
+image/gif      ; eog %s &> /dev/null ; description="GIF Image"   ; test=test "$DISPLAY"
+image/jpeg     ; eog %s &> /dev/null ; description="JPEG Image"  ; test=test "$DISPLAY"
+image/pjpeg    ; eog %s &> /dev/null ; description="JPEG Image"  ; test=test "$DISPLAY"

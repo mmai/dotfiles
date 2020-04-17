@@ -1,0 +1,10 @@
+[calendars]
+
+  [[perso]]
+    path = ~/.calendars/perso/perso/
+    color = dark green
+    priority = 20
+
+  [[work]]
+    path = ~/.calendars/work/
+    readonly = True

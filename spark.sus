@@ -54,6 +54,9 @@ card mails {
   .mbsyncrc
   .msmtprc
   .config/neomutt
+  .config/khard
+  .config/khal
+  vdirsyncer -> .vdirsyncer/config
 }
 
 card configs {

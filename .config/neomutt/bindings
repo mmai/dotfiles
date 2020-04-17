@@ -19,8 +19,12 @@ bind index <tab> sync-mailbox
 bind index <space> collapse-thread
 # Save all attachments
 macro index,pager S "<pipe-message>ripmime -i - -d ~/Downloads && rm ~/Downloads/textfile*" "Save all non-text attachments using ripmime"
+
 # opening urls with urlscan
-macro index,pager \cb "<pipe-message>urlscan<enter>" "call urlscan to extract URLs out of a message"
+macro index,pager gx "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+bind attach g noop
+macro attach,compose gx "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
 # Sync all email
 macro index,pager O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
 
@@ -33,10 +37,10 @@ bind index p recall-message
 
 # Mu - search messages
 bind editor <tab> complete-query
+# first macro does the search according to user query, second macro jumps to result list
 macro index F "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mu/results " "mu find"
 macro index \cf "<change-folder-readonly>~/.mu/results<enter>" "mu find results"
 
-# first macro does the search according to user query, second macro jumps to result list
 # macro index <F8> "<shell-escape>rm -rf ~/.mu/results; mu-find -o l -l ~/.mu/results " "mu-find"
 # macro index <F9> "<change-folder-readonly>~/.mu/results\n" "display mu-find results"
 

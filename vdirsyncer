@@ -1,0 +1,47 @@
+[general]
+status_path = "~/.vdirsyncer/status/"
+
+[pair my_contacts]
+a = "my_contacts_local"
+b = "my_contacts_remote"
+collections = ["from a", "from b"]
+
+[storage my_contacts_local]
+type = "filesystem"
+path = "~/.contacts/"
+fileext = ".vcf"
+
+[storage my_contacts_remote]
+type = "carddav"
+url = "https://caldav.rhumbs.fr/"
+username = "henri"
+password.fetch = ["command", "/run/current-system/sw/bin/pass", "rhumbs.fr/radicale"]
+
+
+[pair calendar_perso]
+a = "calendar_perso_remote"
+b = "calendar_perso_local"
+collections = ["from a", "from b"]
+metadata = ["color"]
+
+[storage calendar_perso_remote]
+type = "caldav"
+url = "https://caldav.rhumbs.fr/henri/perso/"
+username = "henri"
+password.fetch = ["command", "/run/current-system/sw/bin/pass", "rhumbs.fr/radicale"]
+
+[storage calendar_perso_local]
+type = "filesystem"
+path = "~/.calendars/perso/"
+fileext = ".ics"
+
+[storage calendar_work_local]
+type = "filesystem"
+path = "~/.calendars/work/"
+fileext = ".ics"
+
+[storage calendar_perso_google]
+type = "google_calendar"
+token_file = "~/.vdirsyncer/google_token"
+client_id = "CLIENT_ID"
+client_secret = "CLIENT_SECRET"

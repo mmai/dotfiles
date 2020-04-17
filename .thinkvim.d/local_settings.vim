@@ -93,6 +93,11 @@ map <Leader>tr :VimuxRunLastCommand<CR>
 map <Leader>tz :VimuxZoomRunner<CR>
 " lancer tests rust dans vimux ? https://github.com/jtdowney/vimux-cargo
 
+
+let g:vista_executive_for = {
+  \ 'rust': 'coc',
+  \ }
+
 "--------------- Personal wiki shortcuts ----------------
 " open ~/think/index.md
 nnoremap ,kk :e ~/think/index.md<cr>:cd %:p:h<CR>:pwd<CR> 
@@ -102,3 +107,5 @@ nnoremap ,<CR> <C-w>v:MdwiGotoLink<CR>
 nnoremap ,, :BufSurfBack<CR>
 " Go forward in history
 nnoremap ,; :BufSurfForward<CR>
+" When cursor is on a command between backtics, execute it (ex: `tmuxp load -y myproject`)
+nnoremap gt yi`:!<C-r>"<CR>

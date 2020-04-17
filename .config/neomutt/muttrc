@@ -66,7 +66,8 @@ set mime_type_query_command = "xdg-mime query filetype"
 # # basic options
 set wait_key = no
 # set mbox_type = Maildir
-set timeout = 3
+set timeout = 600 # 10mn
+timeout-hook 'echo `mbsync -a`' # because I can't make the cron task work
 set mail_check = 0
 set delete
 set quit
@@ -141,17 +142,15 @@ set sidebar_divider_char = ' | '
 # set sidebar_format = "%B %* [%?N?%N / ?%S]"
 
 # Mailboxes to show in the sidebar.
-# mailboxes =ALL-INBOXES
-# mailboxes =atixnet.fr/Inbox =rhumbs.fr/Inbox =bourcereau.fr/Inbox
-# mailboxes ="==================="
-mailboxes =----Gmail--------
-mailboxes =gmail/Inbox =gmail/archives =gmail/sent =gmail/draft
-mailboxes =----Rhumbs-------
-mailboxes =rhumbs.fr/Inbox =rhumbs.fr/archives =rhumbs.fr/sent =rhumbs.fr/draft
-mailboxes =---Bourcereau----
-mailboxes =bourcereau.fr/Inbox =bourcereau.fr/archives =bourcereau.fr/sent =bourcereau.fr/draft
-mailboxes =---Atixnet-------
-mailboxes =atixnet.fr/Inbox =atixnet.fr/archives =atixnet.fr/sent =atixnet.fr/draft
+named-mailboxes "Gmail" =gmail/Inbox "      Envoyés" =gmail/sent
+named-mailboxes "rhumbs.fr" =rhumbs.fr/Inbox "      Envoyés" =rhumbs.fr/sent
+named-mailboxes "bourcereau.fr" =bourcereau.fr/Inbox "      Envoyés" =bourcereau.fr/sent
+named-mailboxes "Atixnet" =atixnet.fr/Inbox "      Envoyés" =atixnet.fr/sent
+
+# named-mailboxes "   Reçus" =gmail/Inbox
+# named-mailboxes "   Envoyés" ="gmail/sent"
+# named-mailboxes "   Brouillons" =gmail/draft
+# named-mailboxes "   Poubelle" =gmail/trash
 
 # source colors and keybindings
 source ~/.config/neomutt/colors
