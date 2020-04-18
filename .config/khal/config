@@ -1,3 +1,10 @@
+[default]
+
+default_calendar = perso
+highlight_event_days = true
+print_new = event
+timedelta = 7d
+
 [calendars]
 
   [[perso]]
@@ -7,4 +14,10 @@
 
   [[work]]
     path = ~/.calendars/work/
+    color = light blue
     readonly = True
+
+  [[anniversaires]]
+    type = birthdays
+    path = ~/.contacts/e3a71199-0ea1-683a-b37a-6c8636700abc/
+    color = light red

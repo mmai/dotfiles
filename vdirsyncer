@@ -24,6 +24,15 @@ b = "calendar_perso_local"
 collections = ["from a", "from b"]
 metadata = ["color"]
 
+[pair calendar_pro]
+a = "calendar_atixnet"
+b = "calendar_work_local"
+collections = null
+
+[storage calendar_atixnet]
+type = "http"
+url = "https://outlook.office365.com/owa/calendar/b8be9a0c730a413881b435fc6d095b32@atixnet.fr/4c3aed76868a4b4daca36177695ad62b1599031196508465982/calendar.ics"
+
 [storage calendar_perso_remote]
 type = "caldav"
 url = "https://caldav.rhumbs.fr/henri/perso/"
