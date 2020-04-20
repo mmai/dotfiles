@@ -27,6 +27,7 @@ card vim {
   
   .vim
   .thinkvim.d
+	.config/nvim/coc-settings.json
 }
 
 card git {

@@ -6,6 +6,9 @@ set mailcap_path	= ~/.config/neomutt/mailcap
 set header_cache= ~/.neomutt/hcache
 set message_cachedir = ~/.neomutt/bcache
 
+# Notmuch config
+set nm_default_uri = "notmuch:///home/henri/.mail"
+
 ###############
 # Pager settings
 #
@@ -126,8 +129,11 @@ alternative_order text/plain text/enriched text/html
 auto_view text/html
 
 # when composing emails, use this command to get addresses from
-# the addressbook with khard first, and everything else from mu index
-set query_command = "( khard email --parsable '%s' | sed -n '1!p'; mu cfind --format=mutt-ab '%s' )"
+# the addressbook with khard first, and everything else from index
+#     with mu
+# set query_command = "( khard email --parsable '%s' | sed -n '1!p'; mu cfind --format=mutt-ab '%s' )"
+#     with notmuch
+set query_command = "( khard email --parsable '%s' | sed -n '1!p';  notmuch-addrlookup --mutt %s | sed -n '1!p')"
 
 # sidebar patch config
 set sidebar_visible

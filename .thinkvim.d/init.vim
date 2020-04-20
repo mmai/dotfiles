@@ -1,3 +1,13 @@
+" ----------------------
+"  configs only doable on ThinkVim base files :
+" > coc-settings.json:
+"   (remove markdown)
+"   "coc.preferences.formatOnSaveFiletypes": ["css"],
+"
+" > layers/+completion/coc/config.vim
+"   (comment line)
+"   " autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " --------------------------------------------------
 " -----------------  General config ----------------
 " --------------------------------------------------
@@ -43,6 +53,12 @@ autocmd! user_plugin_filetype
 
 " Disable line numbers in markdown
 autocmd FileType markdown setlocal nonumber
+
+" pris en compte ?? -> cf core/general.vim
+set textwidth=0    " Text width maximum chars before wrapping
+set tabstop=2       " The number of spaces a tab is
+set softtabstop=2   " While performing editing operations
+set shiftwidth=2    " Number of spaces to use in auto(indent)
 
 " --------------------------------------------------
 " --------------------- Plugins config--------------

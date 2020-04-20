@@ -1,6 +1,11 @@
 set from = "henri.bourcereau@gmail.com"
 set sendmail = "/run/current-system/sw/bin/msmtp -a gmail"
 
+# Press A to add contact to Khard address book
+macro index,pager A \
+    "<pipe-message>khard add-email<return>" \
+    "add the sender email address to khard"
+
 # Set folders
 set spoolfile = "+gmail/Inbox" # This has the shortcut '!'
 set mbox = "+gmail/archives"
