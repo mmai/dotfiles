@@ -170,7 +170,10 @@ function e() {
 ##################
 # Ctrl-R : historique
 # vim ./src/**<TAB>  completion sur le répertoire...
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# FZFPATH=$(nix-store -r $(which fzf))
+FZFPATH=$(nix eval nixos.fzf.outPath | sed -e 's/"//g')
+[[ $- == *i* ]] && source $FZFPATH"/share/fzf/completion.zsh" 2> /dev/null
+source $FZFPATH"/share/fzf/key-bindings.zsh"
 # Use rg instead of the default find command for listing candidates.
 _fzf_compgen_path() {
   rg -g "" "$1"
