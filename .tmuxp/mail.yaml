@@ -1,0 +1,11 @@
+session_name: mail
+windows:
+- window_name: mutt
+  focus: 'true'
+  panes:
+  - focus: 'true'
+    shell_command: neomutt
+- window_name: mbsync
+  panes:
+  - shell_command: watch -n 600 mbsync -a
+  
