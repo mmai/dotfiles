@@ -13,7 +13,7 @@ windows:
 - window_name: documentation
   start_directory: /home/henri/travaux/programmes/webtarot/doc/
   panes:
-  - nvim architecture.md
+  - vim index.md
 - window_name: coinched
   start_directory: /home/henri/travaux/programmes/forks/_rust-games/coinched/
   panes:

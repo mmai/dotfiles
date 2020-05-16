@@ -1,10 +1,13 @@
 session_name: mail
 windows:
 - window_name: mutt
+  layout: even-horizontal
   focus: 'true'
   panes:
-  - focus: 'true'
-    shell_command: neomutt
+  - shell_command: neomutt
+    focus: 'true'
+  - shell_command: khal calendar
+    shell_command_before: vdirsyncer sync
 - window_name: mbsync
   panes:
   - shell_command: watch -n 600 mbsync -a

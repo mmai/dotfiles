@@ -217,3 +217,21 @@ source /home/henri/.config/broot/launcher/bash/br
 
 # Direnv (enable overrides of env variables in directories with a .envrc file)
 eval "$(direnv hook zsh)"
+
+#########################
+#  lf file browser
+#########################
+# wrapper to cd on the last directory opened on lf
+lf () {
+    tmp="$(mktemp)"
+    command lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}

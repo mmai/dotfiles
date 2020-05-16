@@ -1,7 +1,7 @@
 alias journal='~/travaux/ecrits/journal.sh'
 alias kk='vim "+normal ,kk"'
 alias scaffold='~/Travaux/programmes/scaffold/scaffold'
-alias popcorntime='cd ~/softs_/popcorn-desktop && yarn gulp run'
+alias popcorntime='cd ~/softs_/popcorn-desktop && yarn start'
 
 # Tools
 #    Copy screenshot to file
@@ -11,14 +11,16 @@ alias pasteocr="pngpaste | convert -resize 400% /dev/stdin /dev/stdout | tessera
 alias pasteshow="pngpaste > screenshot.png && eog screenshot.png" 
 
 # better alternatives
+alias vim='nvim'
 alias cat="bat"
 # alias tree="broot" # don't know how to scroll / navigate page down
 alias ls="exa --git"
 alias l="exa -l"
 alias lt="exa -l -snew"
 # alias ping="prettyping --nolegend"
-alias vim="nvim"
+export VIMCONF=all
 alias mutt="neomutt"
+alias mc='tmux split -h lf; lf'
 
 # Dev tools
 alias serve="python -m http.server"
@@ -95,6 +97,3 @@ alias tick=tickle
 #   echo "Any progress on these waiting-fors?"
 #   task +waiting +PENDING ls
 # fi
-
-# export VIMPATH=~/.config/nvim
-

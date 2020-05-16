@@ -1,3 +1,6 @@
 [submodule ".zsh/zplug"]
 	path = .zsh/zplug
 	url = https://github.com/zplug/zplug
+[submodule "vv"]
+	path = vv
+	url = git@github.com:mmai/vv.git

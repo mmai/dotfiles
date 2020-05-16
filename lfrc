@@ -1,1 +1,9 @@
+set color256 on
 set previewer /run/current-system/sw/bin/pistol
+
+map - updir
+map <enter> open
+
+# use Q to exit to the original directory
+push m-
+map Q push '-q

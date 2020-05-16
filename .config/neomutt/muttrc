@@ -70,7 +70,7 @@ set mime_type_query_command = "xdg-mime query filetype"
 set wait_key = no
 # set mbox_type = Maildir
 set timeout = 600 # 10mn
-timeout-hook 'echo `mbsync -a`' # because I can't make the cron task work
+# timeout-hook 'echo `mbsync -a`' # better do it in a cron task or a tmux window to prevent blocking mutt
 set mail_check = 0
 set delete
 set quit
@@ -113,6 +113,12 @@ set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 set send_charset = "utf-8:iso-8859-1:us-ascii"
 set charset = "utf-8"
 
+# Collapse rules
+set uncollapse_new            # open threads when new mail
+set uncollapse_jump           # jump to unread message when uncollapse
+unset collapse_unread         # don't collapse threads with unread mails
+folder-hook . push '<collapse-all>'   # Everything collapsed by default
+
 # Pager View Options
 set pager_index_lines = 10
 set pager_context = 3
@@ -149,8 +155,8 @@ set sidebar_divider_char = ' | '
 
 # Mailboxes to show in the sidebar.
 named-mailboxes "Gmail" =gmail/Inbox "      Envoyés" =gmail/sent
-named-mailboxes "rhumbs.fr" =rhumbs.fr/Inbox "      Envoyés" =rhumbs.fr/sent
-named-mailboxes "bourcereau.fr" =bourcereau.fr/Inbox "      Envoyés" =bourcereau.fr/sent
+named-mailboxes "rhumbs" =rhumbs.fr/Inbox "      Envoyés" =rhumbs.fr/sent
+named-mailboxes "bourcereau" =bourcereau.fr/Inbox "      Envoyés" =bourcereau.fr/sent
 named-mailboxes "Atixnet" =atixnet.fr/Inbox "      Envoyés" =atixnet.fr/sent
 
 # named-mailboxes "   Reçus" =gmail/Inbox
