@@ -1,0 +1,18 @@
+session_name: cartes-scolaires
+windows:
+- window_name: code
+  start_directory: /home/henri/travaux/www/calixx/network/calixx-cartes-scolaires
+  focus: true
+  panes:
+  - shell_command: ls
+- window_name: Drupal
+  start_directory: /home/henri/travaux/www/calixx/network/drupal-base-transville/docroot/sites/all/modules/dev/calixx_drupal_cartes_scolaires
+  panes:
+  - shell_command: ls
+- window_name: services
+  options:
+    automatic-rename: 'off'
+  panes:
+  - shell_command:
+    - cd /home/henri/travaux/www/calixx
+    - nix-shell
