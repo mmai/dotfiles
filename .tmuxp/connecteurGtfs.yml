@@ -1,9 +1,5 @@
 session_name: connecteur-gtfs
 windows:
-- window_name: protobuf
-  start_directory: /home/henri/travaux/www/gtfsProtobuf
-  panes:
-  - ls
 - window_name: code
   focus: true
   options:
@@ -19,3 +15,7 @@ windows:
   - shell_command:
     - cd /home/henri/travaux/www/calixx
     - nix-shell
+- window_name: protobuf
+  start_directory: /home/henri/travaux/www/gtfsProtobuf
+  panes:
+  - ls
