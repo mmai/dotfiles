@@ -3,9 +3,13 @@ start_directory: /home/henri/travaux/www/eboutiqueBilletique/classes
 windows:
 - window_name: code
   layout: even-horizontal
-  focus: 'true'
   panes:
   - nvim testSoapConduent.php
 - window_name: terminal
   panes:
   - ls
+- window_name: docs
+  focus: 'true'
+  start_directory: /home/henri/travaux/www/eboutiqueBilletique/docs/specs/annemasse
+  panes:
+  - vim todo.md
