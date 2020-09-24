@@ -26,6 +26,7 @@ alias mc='tmux split -h lf; lf'
 alias serve="python -m http.server"
 alias prettyjson="python -m json.tool"
 alias myip="curl curlmyip.com" # print my IP
+alias lando="~/softs/lando/bin/lando.js"
 
 # Fun scripts
 alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
