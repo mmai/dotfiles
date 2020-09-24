@@ -130,10 +130,10 @@ if [ -f "/home/henri/.drush/drush.complete.sh" ] ; then
   source /home/henri/.drush/drush.complete.sh
 fi
 
-SCALA_HOME=/opt/scala # scalac & scala 
-PATH=$PATH:$SCALA_HOME/bin:$OPENNLP_HOME/bin 
+# SCALA_HOME=/opt/scala # scalac & scala 
+# PATH=$PATH:$SCALA_HOME/bin:$OPENNLP_HOME/bin 
 #alias sbt="java -Xmx512M -XX:MaxPermSize=256M -jar /home/henri/.IntelliJIdea14/system/sbt/sbt-launch.jar"
-alias sbt="/opt/sbt"
+# alias sbt="/opt/sbt"
 
 OPENNLP_HOME=/opt/apache-opennlp-1.5.3 #openNLP 
 

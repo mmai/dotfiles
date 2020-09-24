@@ -1,0 +1,21 @@
+session_name: thevalley
+start_directory: /home/henri/travaux/programmes/thevalley
+windows:
+- window_name: code
+  focus: 'true'
+  panes:
+  - lt
+- window_name: webgame
+  start_directory: /home/henri/travaux/programmes/webgame
+  panes:
+  - lt
+- window_name: services
+  layout: even-horizontal
+  panes:
+  - make server
+  - make client
+- window_name: leval_scala
+  start_directory: /home/henri/travaux/programmes/forks/leval
+  layout: even-horizontal
+  panes:
+  - lt
