@@ -203,6 +203,15 @@ fzf-pass() {
 zle -N fzf-pass
 bindkey '^P' fzf-pass
 
+# templates
+TPL_DIR=$HOME/dotfiles/templates
+fzf-templates() {
+    TPL=$(ls $TPL_DIR | fzf)
+    cp -r $TPL_DIR/$TPL .
+}
+zle -N fzf-templates
+bindkey '^T' fzf-templates
+
 # Hide the gnome-terminal header bar
 # if [ "$TERM" = "xterm-256color" ]; then
 #   xprop \
