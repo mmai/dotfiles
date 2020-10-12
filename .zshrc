@@ -77,6 +77,9 @@ zplug load
   # must be after 'zplug load'
 bindkey -v
 
+# fix "no matches found" when referencing HEAD^
+unsetopt nomatch
+
 # Aliases (shared with bash)
 . $HOME/.zsh/aliases.sh
 
