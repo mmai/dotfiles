@@ -173,8 +173,8 @@ function e() {
 ##################
 # Ctrl-R : historique
 # vim ./src/**<TAB>  completion sur le répertoire...
-# FZFPATH=$(nix-store -r $(which fzf))
-FZFPATH=$(nix eval nixos.fzf.outPath | sed -e 's/"//g')
+FZFPATH=$(nix-store -r $(which fzf) 2> /dev/null)
+# FZFPATH=$(nix eval nixpkgs#fzf.outPath | sed -e 's/"//g') # makes a remote connection
 [[ $- == *i* ]] && source $FZFPATH"/share/fzf/completion.zsh" 2> /dev/null
 source $FZFPATH"/share/fzf/key-bindings.zsh"
 # Use rg instead of the default find command for listing candidates.
