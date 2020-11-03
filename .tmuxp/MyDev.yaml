@@ -1,0 +1,22 @@
+session_name: MyDev
+start_directory: /home/henri/travaux/www/mydev
+windows:
+- window_name: code
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: lt
+- window_name: service
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: lt
+- window_name: doc
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: lt
+  

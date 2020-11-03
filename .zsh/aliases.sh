@@ -43,7 +43,7 @@ alias android-studio='unset GDK_PIXBUF_MODULE_FILE && android-studio' # cf. http
 
 # Atixnet
 alias tax="task +Atixnet"
-alias vpn="~/softs_/vpn.sh"
+alias vpn="~/vpnAtixnet.sh"
 
 ###############
 # Git
