@@ -1,0 +1,7 @@
+session_name: lenormand
+start_directory: /home/henri/travaux/lenormandBook/
+windows:
+- window_name: markdown
+  focus: 'true'
+  panes:
+  - nvim lenormand.md

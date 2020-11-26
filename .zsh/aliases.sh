@@ -26,7 +26,7 @@ alias mc='tmux split -h lf; lf'
 alias serve="python -m http.server"
 alias prettyjson="python -m json.tool"
 alias myip="curl curlmyip.com" # print my IP
-alias lando="~/softs/lando/bin/lando.js"
+alias lando="~/softs_/lando/bin/lando.js"
 
 # Fun scripts
 alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
@@ -52,7 +52,7 @@ alias vpn="~/vpnAtixnet.sh"
 GIT_PRETTY_FORMAT="--pretty=\"%C(bold green)%h%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
 
-unalias gs
+# unalias gs
 
 
 # pretty Git log
