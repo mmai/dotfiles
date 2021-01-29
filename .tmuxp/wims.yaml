@@ -1,0 +1,15 @@
+session_name: wims
+start_directory: /home/henri/travaux/www/wims
+windows:
+- window_name: code
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: lt
+- window_name: shell
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: make dev
