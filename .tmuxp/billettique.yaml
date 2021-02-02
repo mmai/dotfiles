@@ -10,6 +10,6 @@ windows:
   - ls
 - window_name: docs
   focus: 'true'
-  start_directory: /home/henri/travaux/www/eboutiqueBilletique/docs/specs/annemasse
+  start_directory: /home/henri/travaux/www/eboutiqueBilletique/docs/
   panes:
   - vim todo.md

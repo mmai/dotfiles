@@ -3,7 +3,7 @@
 #  * fzf : fuzzy finder / navigator `fd --extension md | fzf | xargs bat`
 #  * entr : run arbitrary commands when files change (example: ls *.hs | entr make build)
 # some terminal programs : 
-#  * vifm, ranger, mc : file managers
+#  * lf, vifm, ranger, mc : file managers
 #  * taskwarrior
 #  * ncdu : ncurses disk usage
 #  * htop
