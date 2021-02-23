@@ -30,6 +30,7 @@ alias serve="php -S localhost:8000"
 alias prettyjson="python -m json.tool"
 alias myip="curl curlmyip.com" # print my IP
 alias lando="~/softs_/lando/bin/lando.js"
+alias dep="/usr/bin/deployer.phar" # PHP deployer
 
 # Fun scripts
 alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
