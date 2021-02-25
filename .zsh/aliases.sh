@@ -25,7 +25,7 @@ alias mutt="neomutt"
 alias mc='tmux split -h lf; lf'
 
 # Dev tools
-alias serve="python -m http.server"
+alias dep="/usr/bin/deployer.phar"
 alias prettyjson="python -m json.tool"
 alias myip="curl curlmyip.com" # print my IP
 alias lando="~/softs_/lando/bin/lando.js"

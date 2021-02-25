@@ -1,0 +1,12 @@
+session_name: bookwyrm
+start_directory: /home/henri/travaux/programmes/forks/bookwyrm
+windows:
+- window_name: code
+  focus: 'true'
+  panes:
+  - nvim
+- window_name: services
+  layout: even-horizontal
+  panes:
+  - docker-compose up
+  - lt
