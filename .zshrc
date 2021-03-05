@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # terminal utilities
 #  * z : go to recent /frequent directories
 #  * fzf : fuzzy finder / navigator `fd --extension md | fzf | xargs bat`
@@ -28,6 +35,61 @@ fi
 # themes couleurs 'base16' pour xfce4-terminal : https://github.com/afg984/base16-xfce4-terminal (config depuis Edit > Preferences > Colors > Presets)
 # summerfruit dark est pas mal
 
+WITH_ZINIT=1
+
+if [[ $WITH_ZINIT == 1 ]]; then
+########################
+# Zinit zsh plugins manager 
+########################
+ZINIT_HOME=/run/current-system/sw/share/zinit
+source "$ZINIT_HOME/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Prezto plugins
+zinit snippet PZT::modules/environment/init.zsh
+zinit snippet PZT::modules/terminal/init.zsh
+zinit snippet PZT::modules/editor/init.zsh
+zinit snippet PZT::modules/history/init.zsh
+zinit snippet PZT::modules/directory/init.zsh
+zinit snippet PZT::modules/spectrum/init.zsh
+
+#Defines general aliases and functions ; used by modules/completion
+zinit ice svn pick "init.zsh"
+zinit snippet PZT::modules/utility
+# zinit ice svn pick "init.zsh"
+# zinit snippet PZT::modules/completion
+
+zinit ice svn pick "init.zsh"
+zinit snippet PZT::modules/node
+zinit ice svn pick "init.zsh"
+zinit snippet PZT::modules/git
+# zstyle ':prezto:*:*' color 'yes'
+# zstyle ':prezto:module:editor' keymap 'vi'
+
+# autocompletion
+zinit ice blockf
+zinit light zsh-users/zsh-completions
+
+# autosuggestion (fish like command preview)
+zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+
+# powerlevel10k prompt
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# pure prompt
+# forked from sindresorhus/pure (added nix-shell info)
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# zinit light mmai/pure
+
+# z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
+zinit load agkozak/zsh-z
+
+zinit load chisui/zsh-nix-shell
+zinit load zsh-users/zsh-syntax-highlighting
+zinit load spwhitt/nix-zsh-completions
+else
 
 ########################
 # ZPlug plugins manager 
@@ -72,6 +134,7 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+fi
 
 # use vim keys to edit command line
   # must be after 'zplug load'
@@ -279,3 +342,6 @@ _zlf_handler() {
     zle -R
 }
 zle -N _zlf_handler
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
