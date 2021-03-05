@@ -13,6 +13,7 @@ card bash {
   .bashrc
   .zshrc
   .zsh
+  .p10k.zsh
 }
 
 card tmux {
