@@ -1,5 +1,10 @@
+# Common aliases
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Custom aliases
 alias journal='~/travaux/ecrits/journal.sh'
-alias kk='vim "+normal ,kk"'
 alias scaffold='~/Travaux/programmes/scaffold/scaffold'
 alias popcorntime='cd ~/softs_/popcorn-desktop && yarn start'
 

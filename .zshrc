@@ -55,8 +55,8 @@ zinit snippet PZT::modules/directory/init.zsh
 zinit snippet PZT::modules/spectrum/init.zsh
 
 #Defines general aliases and functions ; used by modules/completion
-zinit ice svn pick "init.zsh"
-zinit snippet PZT::modules/utility
+# zinit ice svn pick "init.zsh"
+# zinit snippet PZT::modules/utility
 # zinit ice svn pick "init.zsh"
 # zinit snippet PZT::modules/completion
 
@@ -66,8 +66,11 @@ zinit ice svn pick "init.zsh"
 zinit snippet PZT::modules/git
 # zstyle ':prezto:*:*' color 'yes'
 # zstyle ':prezto:module:editor' keymap 'vi'
-
+#
 # autocompletion
+#   fzf-tab : enable with `enable-fzf-tab`
+zinit light Aloxaf/fzf-tab
+#   list of completions
 zinit ice blockf
 zinit light zsh-users/zsh-completions
 
@@ -124,6 +127,8 @@ zplug "k4rthik/git-cal", as:command # display a github like contribution calenda
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "spwhitt/nix-zsh-completions"
 
+zplug "Aloxaf/fzf-tab"
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -135,6 +140,20 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 fi
+
+# ------ fzf-tab configuration
+enable-fzf-tab
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
 
 # use vim keys to edit command line
   # must be after 'zplug load'
@@ -345,3 +364,5 @@ zle -N _zlf_handler
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+enable-fzf-tab
