@@ -89,6 +89,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
 zinit load agkozak/zsh-z
 
+ # zsh as default nix shell
 zinit load chisui/zsh-nix-shell
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load spwhitt/nix-zsh-completions
@@ -292,7 +293,7 @@ bindkey '^P' fzf-pass
 TPL_DIR=$HOME/dotfiles/templates
 fzf-templates() {
     TPL=$(ls $TPL_DIR | fzf)
-    cp -r $TPL_DIR/$TPL .
+    zle -U "zsh $TPL_DIR/$TPL/install.sh"
 }
 zle -N fzf-templates
 bindkey '^T' fzf-templates
