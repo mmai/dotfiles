@@ -7,6 +7,8 @@ let
     shellInit = builtins.foldl' (a: b: a + b ) "" (map (c: c.shellInit) components);
     shellStartService = builtins.foldl' (a: b: a + b ) "" (map (c: c.shellStartService) components);
     shellStopService = builtins.foldl' (a: b: a + b ) "" (map (c: c.shellStopService) components);
+    shellDump = builtins.foldl' (a: b: a + b ) "" (map (c: c.shellDump) components);
+    shellRestore = builtins.foldl' (a: b: a + b ) "" (map (c: c.shellRestore) components);
   } );
 
   cfg =
@@ -41,6 +43,7 @@ mkShell {
     # set -o allexport; source .env; source .env.local set +o allexport
     ROOT=$(pwd)/nixfiles
     ROOT_VAR=$ROOT/var
+    ROOT_DUMP=$ROOT/dump
 
     ${components.shellInit}
 
@@ -52,5 +55,18 @@ mkShell {
     function stopServices {
       ${components.shellStopService}
     }
+
+    function dumpServices {
+      ${components.shellDump}
+    }
+
+    function restoreServices {
+      ${components.shellRestore}
+    }
+
+    echo "Start services with 'startServices'"
+    echo "Stop services with 'stopServices'"
+    echo "Dump state data with 'dumpServices'"
+    echo "Restore state data with 'restoreServices'"
   '';
 }

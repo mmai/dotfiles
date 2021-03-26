@@ -45,4 +45,13 @@
   shellStopService = ''
      pg_ctl -D $PGDATA -o "-k "$PGHOST stop
   '';
+
+  shellDump = ''
+    mkdir -p $ROOT_DUMP/psql
+    pg_dumpall -h 127.0.0.1 -p ${cfg.port} -c -f $ROOT_DUMP/psql/dumpall.sql 
+  '';
+
+  shellRestore = ''
+    psql -h 127.0.0.1 -p ${cfg.port} -f $ROOT_DUMP/psql/dumpall.sql postgres
+    '';
 }
