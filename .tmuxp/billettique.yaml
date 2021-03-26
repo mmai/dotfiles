@@ -12,4 +12,4 @@ windows:
   focus: 'true'
   start_directory: /home/henri/travaux/www/eboutiqueBilletique/docs/
   panes:
-  - vim todo.md
+  - vim index.md
