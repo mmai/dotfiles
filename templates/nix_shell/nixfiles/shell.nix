@@ -14,10 +14,10 @@ let
     then import ./config.nix
     else {  # default configuration
       postgresql = {
-        port = "5432";
-        user = "user";
-        password = "postgres";
+        port = "5433";
         name = "mydb";
+        user = "myuser";
+        password = "mypassword";
       };
       phpfpm = {};
       nginx = {};
@@ -34,19 +34,18 @@ in
 
 mkShell {
   buildInputs = [
-    # php php74Packages.composer2 postgresql
+    # php php74Packages.composer2
   ] ++ components.buildInputs;
 
   shellHook = ''
     # set -o allexport; source .env; source .env.local set +o allexport
-
     ROOT=$(pwd)/nixfiles
     ROOT_VAR=$ROOT/var
 
     ${components.shellInit}
 
     function startServices {
-      echo "hello from $ROOT"
+      echo "*** STARTING SERVICES ***"
       ${components.shellStartService}
     }
 
