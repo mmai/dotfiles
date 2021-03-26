@@ -18,21 +18,27 @@
     DB_NAME='${cfg.name}'
 
     if [ ! -e $PGDATA ]; then
-      echo "[ postgresql ] Initialisation du service"
+      echo "[ postgresql ] Service Initialization"
       pg_ctl -w -D $PGDATA  init
       sed -i 's/#port = 5432/port = ${cfg.port}/' $PGDATA/postgresql.conf
     fi
 
     if [ -e $PGDATA ]; then
-       echo "[ postgresql ] Demarrage du service"
-       pg_ctl -w -D $PGDATA -l $PSQL_LOG -o "-k $PGHOST" start
 
-       if [[ -z `psql -h $DB_HOST -p ${cfg.port} -Atqc '\list ${cfg.name}' postgres` ]]; then
-         echo "[ postgresql ] Creation de la base de donnnee"
-         createdb -h $DB_HOST -p ${cfg.port} ${cfg.name}
+      if pg_isready -h $DB_HOST -p ${cfg.port} >/dev/null ; then
+         echo "[ postgresql ] Service already started on port ${cfg.port}"
+      else
+         echo "[ postgresql ] Starting service"
+         pg_ctl -w -D $PGDATA -l $PSQL_LOG -o "-k $PGHOST" start
 
-         echo "CREATE USER ${cfg.user} WITH ENCRYPTED PASSWORD '${cfg.password}'; GRANT ALL PRIVILEGES ON DATABASE ${cfg.name} TO ${cfg.user};" | psql -h $DB_HOST -p ${cfg.port} postgres
+         if [[ -z `psql -h $DB_HOST -p ${cfg.port} -Atqc '\list ${cfg.name}' postgres` ]]; then
+           echo "[ postgresql ] Database creation"
+           createdb -h $DB_HOST -p ${cfg.port} ${cfg.name}
+
+           echo "CREATE USER ${cfg.user} WITH ENCRYPTED PASSWORD '${cfg.password}'; GRANT ALL PRIVILEGES ON DATABASE ${cfg.name} TO ${cfg.user};" | psql -h $DB_HOST -p ${cfg.port} postgres
+        fi
       fi
+
     fi
   '';
 
