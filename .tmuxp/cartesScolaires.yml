@@ -9,6 +9,10 @@ windows:
   start_directory: /home/henri/travaux/www/calixx/network/drupal-base-transville/docroot/sites/all/modules/dev/calixx_drupal_cartes_scolaires
   panes:
   - shell_command: ls
+- window_name: Drupal8
+  start_directory: /home/henri/travaux/www/sitesFilales/transvillesD8/web/modules/atixnet/cartes_scolaires/
+  panes:
+  - shell_command: ls
 - window_name: services
   options:
     automatic-rename: 'off'
