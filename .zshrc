@@ -73,6 +73,8 @@ zinit light Aloxaf/fzf-tab
 #   list of completions
 zinit ice blockf
 zinit light zsh-users/zsh-completions
+# don't systematicly show users directory in cd completions
+unsetopt cdablevars
 
 # autosuggestion (fish like command preview)
 zinit ice wait lucid atload'_zsh_autosuggest_start'
