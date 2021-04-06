@@ -10,7 +10,7 @@ windows:
   panes:
   - shell_command: ls
 - window_name: Drupal8
-  start_directory: /home/henri/travaux/www/sitesFilales/transvillesD8/web/modules/atixnet/cartes_scolaires/
+  start_directory: /home/henri/travaux/www/sitesFiliales/transvillesD8/web/modules/atixnet/cartes_scolaires/
   panes:
   - shell_command: ls
 - window_name: services

@@ -21,11 +21,16 @@ let
         user = "myuser";
         password = "mypassword";
       };
+      mysql = {
+        port = "3307";
+        password = "mypassword";
+      };
       phpfpm = {};
       nginx = {};
     };
 
   components = assembleComponents [ 
+    # ((import ./components/mysql.nix) { inherit pkgs; cfg = cfg.mysql; })
     ((import ./components/postgresql.nix) { inherit pkgs; cfg = cfg.postgresql; })
     ((import ./components/phpfpm.nix) { inherit pkgs; cfg = cfg.phpfpm; })
     # ((import ./components/nginx.nix) { inherit pkgs; cfg = cfg.nginx; })
