@@ -24,6 +24,7 @@ let
       mysql = {
         port = "3307";
         password = "mypassword";
+        databases = [ "mydb" ];
       };
       phpfpm = {};
       nginx = {};
@@ -41,6 +42,7 @@ in
 
 mkShell {
   buildInputs = [
+    compass.out
     # php php74Packages.composer2
   ] ++ components.buildInputs;
 
