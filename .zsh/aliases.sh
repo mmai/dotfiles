@@ -6,7 +6,8 @@ alias mv='mv -i'
 # Custom aliases
 alias journal='~/travaux/ecrits/journal.sh'
 alias scaffold='~/Travaux/programmes/scaffold/scaffold'
-alias popcorntime='cd ~/softs_/popcorn-desktop && yarn start'
+# alias popcorntime='cd ~/softs_/popcorn-desktop && yarn start'
+alias popcorntime='echo "use stremio instead"'
 
 # Tools
 #    Copy screenshot to file
