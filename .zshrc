@@ -177,6 +177,8 @@ fi
 
 export EDITOR=nvim
 
+export LEDGER_FILE=~/think/finance/$(date +%Y).journal
+
 # export JAVA_HOME=$HOME/softs_/jdk 
 # export JRE_HOME=$JAVA_HOME/jre
 # export ANDROID_HOME=$HOME/softs_/android-studio-sdk
