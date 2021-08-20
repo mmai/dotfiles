@@ -1,4 +1,6 @@
 set color256 on
+set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m"
+# set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m%f\033[0m"
 set previewer /run/current-system/sw/bin/pistol
 
 map - updir
