@@ -1,10 +1,10 @@
 session_name: billettique
-start_directory: /home/henri/travaux/www/eboutiqueBilletique/conduentClient
+start_directory: /home/henri/travaux/www/ConduentApiClient
 windows:
 - window_name: code
   layout: even-horizontal
   panes:
-  - nvim testConduentSoapClient.php
+  - nvim tests/testConduentSoapClient.php
 - window_name: terminal
   panes:
   - ls
