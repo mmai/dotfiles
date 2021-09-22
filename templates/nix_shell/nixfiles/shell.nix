@@ -34,6 +34,7 @@ let
     # ((import ./components/mysql.nix) { inherit pkgs; cfg = cfg.mysql; })
     ((import ./components/postgresql.nix) { inherit pkgs; cfg = cfg.postgresql; })
     ((import ./components/phpfpm.nix) { inherit pkgs; cfg = cfg.phpfpm; })
+    ((import ./components/phpcli.nix) { inherit pkgs; cfg = cfg.phpcli; })
     # ((import ./components/nginx.nix) { inherit pkgs; cfg = cfg.nginx; })
   ];
 
@@ -43,10 +44,21 @@ in
 mkShell {
   buildInputs = [
     compass.out
-    # php php74Packages.composer2
+    # php php74Packages.composer
+    # nodePackages.gulp
+    # zlib # needed by optipng
+    # aws
   ] ++ components.buildInputs;
 
   shellHook = ''
+    # python3 -m venv .venv
+    # source .venv/bin/activate
+    # pip install awsebcli
+    #
+    # set -a # automatically export all variables
+    # source .env
+    # set +a
+
     # set -o allexport; source .env; source .env.local set +o allexport
     ROOT=$(pwd)/nixfiles
     ROOT_VAR=$ROOT/var

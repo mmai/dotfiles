@@ -1,0 +1,16 @@
+session_name: orchestra
+windows:
+- window_name: code
+  focus: 'true'
+  start_directory: /home/henri/travaux/www/orchestra
+  panes:
+  - focus: 'true'
+    shell_command: ls
+- window_name: services
+  layout: even-horizontal
+  options:
+    automatic-rename: 'off'
+  panes:
+  - shell_command:
+    - cd /home/henri/travaux/www/orchestra
+    - make dev
