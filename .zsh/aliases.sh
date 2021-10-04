@@ -69,6 +69,8 @@ GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Crese
 alias gl="git log --graph $GIT_PRETTY_FORMAT"
 # pretty Git log, all references
 alias gll='gl --all'
+# simple log for Changelogs
+alias gch='git log --oneline --decorate'
 # alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
 
 # pretty Git log, show authors
