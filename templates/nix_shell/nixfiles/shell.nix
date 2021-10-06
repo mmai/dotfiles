@@ -44,7 +44,6 @@ in
 mkShell {
   buildInputs = [
     compass.out
-    # php php74Packages.composer
     # nodePackages.gulp
     # zlib # needed by optipng
     # aws
