@@ -16,7 +16,6 @@ in
 
   shellInit = ''
     export COMPOSER_MEMORY_LIMIT=-1
-    export PHP_INI=${phpIni}
     '';
   # shellInit = ''
   #   export COMPOSER_MEMORY_LIMIT=-1

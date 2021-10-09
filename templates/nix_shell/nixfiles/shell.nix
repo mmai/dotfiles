@@ -71,14 +71,17 @@ mkShell {
     }
 
     function stopServices {
+      echo "*** SHUTDOWN SERVICES ***"
       ${components.shellStopService}
     }
 
     function dumpServices {
+      echo "*** Dump ***"
       ${components.shellDump}
     }
 
     function restoreServices {
+      echo "*** Restore ***"
       ${components.shellRestore}
     }
 
