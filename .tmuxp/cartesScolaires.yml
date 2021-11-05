@@ -5,8 +5,8 @@ windows:
   focus: true
   panes:
   - shell_command: ls
-- window_name: Drupal
-  start_directory: /home/henri/travaux/www/calixx/network/drupal-base-transville/docroot/sites/all/modules/dev/calixx_drupal_cartes_scolaires
+- window_name: ConduentApi
+  start_directory: /home/henri/travaux/www/calixx/network/calixx-cartes-scolaires/vendor/atixnet/conduent-api-client
   panes:
   - shell_command: ls
 - window_name: Drupal8

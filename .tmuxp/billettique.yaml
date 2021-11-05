@@ -8,6 +8,14 @@ windows:
 - window_name: terminal
   panes:
   - ls
+- window_name: Drupal
+  start_directory: /home/henri/travaux/www/sitesFiliales/transvilles/
+  panes:
+  - make dev
+- window_name: module
+  start_directory: /home/henri/travaux/www/sitesFiliales/transvilles/web/modules/atixnet/atix_billettique/
+  panes:
+  - ls
 - window_name: docs
   focus: 'true'
   start_directory: /home/henri/travaux/www/eboutiqueBilletique/docs/
