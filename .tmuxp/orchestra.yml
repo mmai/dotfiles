@@ -19,3 +19,8 @@ windows:
   panes:
   - focus: 'true'
     shell_command: ls
+- window_name: terraform
+  start_directory: /home/henri/travaux/www/terraform-orchestra-bld
+  panes:
+  - focus: 'true'
+    shell_command: ls
