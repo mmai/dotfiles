@@ -35,6 +35,7 @@ let
     ((import ./components/postgresql.nix) { inherit pkgs; cfg = cfg.postgresql; })
     ((import ./components/phpfpm.nix) { inherit pkgs; cfg = cfg.phpfpm; })
     ((import ./components/phpcli.nix) { inherit pkgs; cfg = cfg.phpcli; })
+    # ((import ./components/aws.nix) { inherit pkgs })
     # ((import ./components/nginx.nix) { inherit pkgs; cfg = cfg.nginx; })
   ];
 
@@ -46,14 +47,9 @@ mkShell {
     compass.out
     # nodePackages.gulp
     # zlib # needed by optipng
-    # aws
   ] ++ components.buildInputs;
 
   shellHook = ''
-    # python3 -m venv .venv
-    # source .venv/bin/activate
-    # pip install awsebcli
-    #
     # set -a # automatically export all variables
     # source .env
     # set +a
@@ -85,9 +81,13 @@ mkShell {
       ${components.shellRestore}
     }
 
-    echo "Start services with 'startServices'"
-    echo "Stop services with 'stopServices'"
-    echo "Dump state data with 'dumpServices'"
-    echo "Restore state data with 'restoreServices'"
+    LIGHTBULB='\xF0\x9F\x92\xA1'
+    YELLOW='\033[1;33m'
+    RESET='\033[0m'
+
+    echo -e "$YELLOW$LIGHTBULB$RESET Start services with $YELLOW'startServices' $RESET"
+    echo -e "$YELLOW$LIGHTBULB$RESET Stop services with $YELLOW'stopServices' $RESET"
+    echo -e "$YELLOW$LIGHTBULB$RESET Dump state data with $YELLOW'dumpServices' $RESET"
+    echo -e "$YELLOW$LIGHTBULB$RESET Restore state data with $YELLOW'restoreServices' $RESET"
   '';
 }
