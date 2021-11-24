@@ -35,7 +35,7 @@ let
     ((import ./components/postgresql.nix) { inherit pkgs; cfg = cfg.postgresql; })
     ((import ./components/phpfpm.nix) { inherit pkgs; cfg = cfg.phpfpm; })
     ((import ./components/phpcli.nix) { inherit pkgs; cfg = cfg.phpcli; })
-    # ((import ./components/aws.nix) { inherit pkgs })
+    # ((import ./components/aws.nix) { inherit pkgs; })
     # ((import ./components/nginx.nix) { inherit pkgs; cfg = cfg.nginx; })
   ];
 
