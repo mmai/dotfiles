@@ -47,6 +47,9 @@ mkShell {
     compass.out
     # nodePackages.gulp
     # zlib # needed by optipng
+    yarn
+    # jq # utilisé pour la récupération de l'ip de preprod aws beanstalk
+    symfony-cli # needs allowUnfree..
   ] ++ components.buildInputs;
 
   shellHook = ''

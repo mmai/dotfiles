@@ -14,13 +14,13 @@ windows:
   - shell_command:
     - cd /home/henri/travaux/www/orchestra
     - make dev
-- window_name: orchestraSf3.4
-  start_directory: /home/henri/travaux/www/orchestraSf3.4
+- window_name: GTFS
+  start_directory: /home/henri/travaux/www/calixx/network/calixx-gtfs
   panes:
   - focus: 'true'
     shell_command: ls
-- window_name: terraform
-  start_directory: /home/henri/travaux/www/terraform-orchestra-bld
-  panes:
-  - focus: 'true'
-    shell_command: ls
+# - window_name: terraform
+#   start_directory: /home/henri/travaux/www/terraform-orchestra-bld
+#   panes:
+#   - focus: 'true'
+#     shell_command: ls
