@@ -14,8 +14,8 @@ windows:
   - shell_command:
     - cd /home/henri/travaux/www/orchestra
     - make dev
-- window_name: GTFS
-  start_directory: /home/henri/travaux/www/calixx/network/calixx-gtfs
+- window_name: vendor
+  start_directory: /home/henri/travaux/www/orchestra/vendor
   panes:
   - focus: 'true'
     shell_command: ls
