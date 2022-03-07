@@ -18,8 +18,8 @@ windows:
     shell_command:
     - cd /home/henri/travaux/www/sitesFiliales
     - nix-shell
-- window_name: Drupal
-  start_directory: /home/henri/travaux/www/sitesFiliales/annemasse-tac/web/modules/dev/atix_pth
+- window_name: Drupal APTH
+  start_directory: /home/henri/travaux/www/sitesFiliales/impulsyon/web/modules/atixnet/atix_pth
   options:
     automatic-rename: 'off'
   panes:
