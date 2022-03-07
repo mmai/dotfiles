@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# AUTHOR: gotbletu (@gmail|twitter|youtube|github|lbry)
+#         https://www.youtube.com/user/gotbletu
+# DESC:   locate a file and go to that directory with nnn file manager
+
+tmux new-window -n nnnlocate 'nnn -a $(locate home media | fzf -e -i --prompt="Select to open with nnn: " --info=default --layout=reverse --tiebreak=index)'

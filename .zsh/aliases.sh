@@ -3,6 +3,10 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+# Sysadmin aliases
+alias psg='ps -ef | grep -i $1'
+alias nsg='netstat -natp | grep -i $1'
+
 # Custom aliases
 alias journal='~/travaux/ecrits/journal.sh'
 alias scaffold='~/Travaux/programmes/scaffold/scaffold'

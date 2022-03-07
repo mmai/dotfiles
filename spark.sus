@@ -21,6 +21,7 @@ card tmux {
   
   .tmux.conf
   .tmuxp
+  tmux_fzf -> .local/bin/tmux_fzf
 }
 
 card vim {
@@ -67,4 +68,5 @@ card configs {
 	pistol.conf -> pistol/pistol.conf
   alacritty.yml -> alacritty/alacritty.yml
   broot.toml -> broot/conf.toml
+  surfraw -> surfraw
 }
