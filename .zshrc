@@ -371,3 +371,8 @@ zle -N _zlf_handler
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 enable-fzf-tab
+
+# Automatically launch tmux with a new session attached to default windows group
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux new-session -t main 
+fi
