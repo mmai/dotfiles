@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use({ "christoomey/vim-tmux-navigator"}) -- Allow pane movement to jump out of vim into tmux
   use({ "ton/vim-bufsurf"}) -- enables surfing through buffers based on viewing history per window
   use({ "maxbrunsfeld/vim-yankstack"}) -- Allow to paste previous yanks : <alt>p / <alt><shift>p
+  use({ "gpanders/editorconfig.nvim"}) -- follow formatting options of .editorconfig file
 
   -- Markdown
   use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer
