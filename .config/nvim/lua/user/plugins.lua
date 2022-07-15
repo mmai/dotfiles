@@ -55,8 +55,10 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup 
 	use({ "lukas-reineke/indent-blankline.nvim"})
 	use({ "goolord/alpha-nvim"}) -- greeter UI
-	use("folke/which-key.nvim")
-  use("christoomey/vim-tmux-navigator") -- Allow pane movement to jump out of vim into tmux
+	use({ "folke/which-key.nvim"})
+  use({ "christoomey/vim-tmux-navigator"}) -- Allow pane movement to jump out of vim into tmux
+  use({ "ton/vim-bufsurf"}) -- enables surfing through buffers based on viewing history per window
+  use({ "maxbrunsfeld/vim-yankstack"}) -- Allow to paste previous yanks : <alt>p / <alt><shift>p
 
   -- Markdown
   use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer
@@ -64,7 +66,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim"})
-	use("lunarvim/darkplus.nvim")
+	use({ "lunarvim/darkplus.nvim"})
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp"}) -- The completion plugin
@@ -87,8 +89,7 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim"}) -- fzf like
 
 	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter"})
+	use({ "nvim-treesitter/nvim-treesitter"})
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim"})

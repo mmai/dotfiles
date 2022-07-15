@@ -49,6 +49,12 @@ keymap("i", "JK", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 keymap("i", "KJ", "<ESC>", opts)
 
+-- Allow easy navigation between wrapped lines.
+keymap("v", "j", "gj", opts)
+keymap("v", "k", "gk", opts)
+keymap("n", "j", "gj", opts)
+keymap("n", "k", "gk", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -57,7 +63,7 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeOpen<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)

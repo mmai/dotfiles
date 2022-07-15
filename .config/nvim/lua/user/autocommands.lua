@@ -15,8 +15,8 @@ vim.cmd [[
 
   augroup _markdown
     autocmd!
-    autocmd FileType markdown setlocal wrap
-    autocmd FileType markdown setlocal spell
+    autocmd FileType markdown setlocal nonumber " Disable line numbers
+    " autocmd FileType markdown setlocal spell
   augroup end
 
   augroup _auto_resize
@@ -28,6 +28,16 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+
+  " Return to last edit position when opening files
+  augroup last_edit
+    autocmd!
+    autocmd BufReadPost *
+         \ if line("'\"") > 0 && line("'\"") <= line("$") |
+         \   exe "normal! g`\"" |
+         \ endif
+  augroup END
+
 ]]
 
 -- Autoformat

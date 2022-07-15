@@ -14,8 +14,7 @@ M.setup = function()
 	end
 
 	local config = {
-		-- disable virtual text
-		virtual_text = false,
+		virtual_text = true, -- show/hide diagnostic text next to error  
 		-- show signs
 		signs = {
 			active = signs,
@@ -23,14 +22,14 @@ M.setup = function()
 		update_in_insert = true,
 		underline = true,
 		severity_sort = true,
-		float = {
-			focusable = false,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
+		-- float = {
+		-- 	focusable = false,
+		-- 	style = "minimal",
+		-- 	border = "rounded",
+		-- 	source = "always",
+		-- 	header = "",
+		-- 	prefix = "",
+		-- },
 	}
 
 	vim.diagnostic.config(config)
