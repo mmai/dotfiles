@@ -17,6 +17,11 @@ vim.g.maplocalleader = ","
 --   command_mode = "c",
 
 -- Normal --
+
+-- Easy vimrc editing
+keymap("n", "<localleader>e", ":e $MYVIMRC<CR>", opts)
+keymap("n", "<localleader>s", ":luafile $MYVIMRC<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
