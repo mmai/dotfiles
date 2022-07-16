@@ -41,25 +41,31 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
+	use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup
 	use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim"})
 	use({ "JoosepAlviste/nvim-ts-context-commentstring"}) -- switch comment string according to treesitter detected language (usefull for .vue files)
-	use({ "kyazdani42/nvim-web-devicons"})
-	use({ "kyazdani42/nvim-tree.lua"}) -- file explorer
-	use({ "akinsho/bufferline.nvim"})
 	use({ "moll/vim-bbye"}) -- close buffers without destroying windows
-	use({ "nvim-lualine/lualine.nvim"})
-	use({ "akinsho/toggleterm.nvim"})
-	use({ "ahmedkhalf/project.nvim"})
-	use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup 
-	use({ "lukas-reineke/indent-blankline.nvim"})
-	use({ "goolord/alpha-nvim"}) -- greeter UI
-	use({ "folke/which-key.nvim"})
-  use({ "christoomey/vim-tmux-navigator"}) -- Allow pane movement to jump out of vim into tmux
   use({ "ton/vim-bufsurf"}) -- enables surfing through buffers based on viewing history per window
   use({ "maxbrunsfeld/vim-yankstack"}) -- Allow to paste previous yanks : <alt>p / <alt><shift>p
+
+  -- UI
+	use({ "goolord/alpha-nvim"}) -- greeter UI
+	use({ "kyazdani42/nvim-web-devicons"})
+	use({ "kyazdani42/nvim-tree.lua"}) -- file explorer
+	use({ "akinsho/bufferline.nvim"}) -- tab bar
+	use({ "nvim-lualine/lualine.nvim"}) -- status bar
+	use({ "folke/which-key.nvim"}) -- menu / show keybindings
+	use({ "nvim-telescope/telescope.nvim"}) -- Telescope (fzf like)
+
+	use({ "akinsho/toggleterm.nvim"})
+  use({ "christoomey/vim-tmux-navigator"}) -- Allow pane movement to jump out of vim into tmux
+
+	use({ "lukas-reineke/indent-blankline.nvim"})
+	use({ "ahmedkhalf/project.nvim"})
   use({ "gpanders/editorconfig.nvim"}) -- follow formatting options of .editorconfig file
+	use({ "lewis6991/gitsigns.nvim"}) -- Git
 
   -- Markdown
   use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer
@@ -81,19 +87,19 @@ return packer.startup(function(use)
 	use({ "L3MON4D3/LuaSnip"}) --snippet engine
 	use({ "rafamadriz/friendly-snippets"}) -- a bunch of snippets to use
 
+	use({ "nvim-treesitter/nvim-treesitter"}) -- Treesitter
+
+  use { 'stevearc/aerial.nvim', config = function() require('aerial').setup() end } -- code outline sidebar
+
 	-- LSP
 	use({ "neovim/nvim-lspconfig"}) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer"}) -- simple to use language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
 
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim"}) -- fzf like
-
-	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter"})
-
-	-- Git
-	use({ "lewis6991/gitsigns.nvim"})
+  -- DAP
+  use { "mfussenegger/nvim-dap" }
+  use { "rcarriga/nvim-dap-ui" }
+  use { "ravenxrz/DAPInstall.nvim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

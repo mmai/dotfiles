@@ -32,8 +32,11 @@ local options = {
 
    -- Wrap lines by default
   wrap = true,                             -- autowrap lines
-  linebreak = true,                        
-  showbreak = " ",                        
+  linebreak = true,
+  showbreak = " ",
+
+  -- autocomplete command line until longuest common string, then show the candidates on second tab
+  wildmode = "longest,list",
 
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,

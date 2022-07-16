@@ -16,6 +16,12 @@ vim.g.maplocalleader = ","
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Command --
+vim.cmd [[
+  " Expand %% to path of current buffer in command mode.
+  cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+]]
+
 -- Normal --
 
 -- Easy vimrc editing

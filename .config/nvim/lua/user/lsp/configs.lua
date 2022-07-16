@@ -5,6 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
+-- On NixOS, sumneko must be installed as a nix package (sumneko-lua-language-server), the version installed by lsp-installer is not executable
 local servers = { "intelephense", "jsonls", "sumneko_lua" }
 
 lsp_installer.setup({
