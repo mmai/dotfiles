@@ -65,7 +65,10 @@ return packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim"})
 	use({ "ahmedkhalf/project.nvim"})
   use({ "gpanders/editorconfig.nvim"}) -- follow formatting options of .editorconfig file
-	use({ "lewis6991/gitsigns.nvim"}) -- Git
+
+ -- Git
+	use({ "tpope/vim-fugitive"})
+	use({ "lewis6991/gitsigns.nvim"})
 
   -- Markdown
   use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer

@@ -14,7 +14,7 @@ M.setup = function()
 	end
 
 	local config = {
-		virtual_text = true, -- show/hide diagnostic text next to error  
+		virtual_text = true, -- show/hide diagnostic text next to error
 		-- show signs
 		signs = {
 			active = signs,
