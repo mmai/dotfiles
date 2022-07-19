@@ -14,9 +14,13 @@ if not dap_install_status_ok then
 end
 
 dap_install.setup {}
-
 dap_install.config("python", {})
--- add other configs here
+dap_install.config("php", {
+  type = 'php',
+  request = 'launch',
+  name = 'Listen for Xdebug',
+  port = 9003
+})
 
 dapui.setup {
   layouts = {
