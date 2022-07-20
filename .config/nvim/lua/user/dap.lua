@@ -8,19 +8,22 @@ if not dap_ui_status_ok then
   return
 end
 
-local dap_install_status_ok, dap_install = pcall(require, "dap-install")
-if not dap_install_status_ok then
-  return
-end
+local mason_bin_path = vim.fn.stdpath("data") .. "/mason/bin"
 
-dap_install.setup {}
-dap_install.config("python", {})
-dap_install.config("php", {
-  type = 'php',
-  request = 'launch',
-  name = 'Listen for Xdebug',
-  port = 9003
-})
+dap.adapters.php = {
+  type = 'executable';
+  command = mason_bin_path .. "/php-debug-adapter";
+}
+
+dap.configurations.php = {
+  {
+    type = 'php';
+    request = 'launch';
+    name = "Listen for Xdebug";
+    port = 9003;
+  },
+}
+
 
 dapui.setup {
   layouts = {

@@ -1,4 +1,4 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status_ok then
 	return
 end
@@ -8,7 +8,7 @@ local lspconfig = require("lspconfig")
 -- On NixOS, sumneko must be installed as a nix package (sumneko-lua-language-server), the version installed by lsp-installer is not executable
 local servers = { "phpactor", "intelephense", "jsonls", "sumneko_lua" }
 
-lsp_installer.setup({
+mason_lspconfig.setup({
 	ensure_installed = servers,
 })
 

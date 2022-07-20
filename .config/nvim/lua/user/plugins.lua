@@ -49,7 +49,16 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye"}) -- close buffers without destroying windows
   use({ "ton/vim-bufsurf"}) -- enables surfing through buffers based on viewing history per window
   use({ "maxbrunsfeld/vim-yankstack"}) -- Allow to paste previous yanks : <alt>p / <alt><shift>p
-
+  use { "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
   -- UI
 	use({ "goolord/alpha-nvim"}) -- greeter UI
 	use({ "kyazdani42/nvim-web-devicons"})
@@ -94,15 +103,15 @@ return packer.startup(function(use)
 
   use { 'stevearc/aerial.nvim', config = function() require('aerial').setup() end } -- code outline sidebar
 
-	-- LSP
+	-- IDE
+  use { "williamboman/mason.nvim", branch = "alpha" } -- exernal tools installer (lsp & dap servers among others)
+    -- LSP
+	-- use({ "williamboman/nvim-lsp-installer"}) -- simple to use language server installer
 	use({ "neovim/nvim-lspconfig"}) -- enable LSP
-	use({ "williamboman/nvim-lsp-installer"}) -- simple to use language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
-
-  -- DAP
+    -- DAP debugger
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
-  use { "ravenxrz/DAPInstall.nvim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
