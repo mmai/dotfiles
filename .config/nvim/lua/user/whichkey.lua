@@ -85,10 +85,7 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeOpen<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
@@ -123,6 +120,19 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
+  },
+
+  d = {
+    name = "DAP debugger",
+    b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle breakpoint"},
+    c = {"<cmd>lua require'dap'.continue()<cr>", "Continue"},
+    i = {"<cmd>lua require'dap'.step_into()<cr>", "Step into"},
+    o = {"<cmd>lua require'dap'.step_over()<cr>", "Step over"},
+    O = {"<cmd>lua require'dap'.step_out()<cr>", "Step out"},
+    r = {"<cmd>lua require'dap'.repl.toggle()<cr>", "Repl toggle"},
+    l = {"<cmd>lua require'dap'.run_last()<cr>", "Run last"},
+    u = {"<cmd>lua require'dapui'.toggle()<cr>", "UI toggle"},
+    t = {"<cmd>lua require'dap'.terminate()<cr>", "Terminate"},
   },
 
   l = {
