@@ -41,7 +41,7 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
-	-- use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup
+	use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup
 	use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim"})
@@ -87,14 +87,14 @@ return packer.startup(function(use)
   use("mzlogin/vim-markdown-toc") -- generate table of contents for Markdown files
   -- use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer
   -- use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
-  -- use({'jakewvincent/mkdnflow.nvim', -- XXX conflit avec impatient.nvim
-  --   rocks = 'luautf8',
-  --   config = function()
-  --     require('mkdnflow').setup({
-  --       -- Config goes here; leave blank for defaults
-  --     })
-  --   end
-  -- })
+  use({'jakewvincent/mkdnflow.nvim', -- XXX conflit avec impatient.nvim
+    rocks = 'luautf8',
+    config = function()
+      require('mkdnflow').setup({
+        -- Config goes here; leave blank for defaults
+      })
+    end
+  })
   use("renerocksai/calendar-vim") -- used by telekasten.vim
   use("renerocksai/telekasten.nvim")
 
