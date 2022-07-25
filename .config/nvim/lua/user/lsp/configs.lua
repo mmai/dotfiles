@@ -6,7 +6,7 @@ end
 local lspconfig = require("lspconfig")
 
 -- On NixOS, sumneko must be installed as a nix package (sumneko-lua-language-server), the version installed by lsp-installer is not executable
-local servers = { "phpactor", "intelephense", "jsonls", "sumneko_lua" }
+local servers = { "intelephense", "phpactor", "jsonls", "sumneko_lua" }
 
 mason_lspconfig.setup({
 	ensure_installed = servers,

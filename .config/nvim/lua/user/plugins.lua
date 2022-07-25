@@ -41,7 +41,7 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
-	use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup
+	-- use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup
 	use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim"})
@@ -67,6 +67,9 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim"}) -- status bar
 	use({ "folke/which-key.nvim"}) -- menu / show keybindings
 	use({ "nvim-telescope/telescope.nvim"}) -- Telescope (fzf like)
+  use("nvim-telescope/telescope-symbols.nvim") -- symbols picker with telescope
+  use { "nvim-lua/popup"} -- required by telescope-media-files
+  use { "nvim-telescope/telescope-media-files.nvim"} -- media files viewer, used by telekasten.vim
 
 	use({ "akinsho/toggleterm.nvim"})
   use({ "christoomey/vim-tmux-navigator"}) -- Allow pane movement to jump out of vim into tmux
@@ -80,8 +83,20 @@ return packer.startup(function(use)
 	use({ "lewis6991/gitsigns.nvim"})
 
   -- Markdown
-  use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer
-  use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
+  use("iamcco/markdown-preview.nvim")
+  use("mzlogin/vim-markdown-toc") -- generate table of contents for Markdown files
+  -- use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer
+  -- use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
+  -- use({'jakewvincent/mkdnflow.nvim', -- XXX conflit avec impatient.nvim
+  --   rocks = 'luautf8',
+  --   config = function()
+  --     require('mkdnflow').setup({
+  --       -- Config goes here; leave blank for defaults
+  --     })
+  --   end
+  -- })
+  use("renerocksai/calendar-vim") -- used by telekasten.vim
+  use("renerocksai/telekasten.nvim")
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim"})
@@ -104,8 +119,9 @@ return packer.startup(function(use)
   use { 'stevearc/aerial.nvim', config = function() require('aerial').setup() end } -- code outline sidebar
 
 	-- IDE
-  use { "williamboman/mason.nvim", branch = "alpha" } -- exernal tools installer (lsp & dap servers among others)
+  use { "williamboman/mason.nvim", branch = 'main' } -- exernal tools installer (lsp & dap servers among others)
     -- LSP
+  use { "williamboman/mason-lspconfig.nvim" }
 	-- use({ "williamboman/nvim-lsp-installer"}) -- simple to use language server installer
 	use({ "neovim/nvim-lspconfig"}) -- enable LSP
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters

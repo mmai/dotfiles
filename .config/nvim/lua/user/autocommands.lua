@@ -16,6 +16,7 @@ vim.cmd [[
   augroup _markdown
     autocmd!
     autocmd FileType markdown setlocal nonumber " Disable line numbers
+    autocmd FileType markdown setlocal autowriteall " Ensure that changes to buffers are saved when you navigate away from that buffer, e.g. by following a link to another file
     " autocmd FileType markdown setlocal spell
   augroup end
 
