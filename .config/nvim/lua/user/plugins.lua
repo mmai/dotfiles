@@ -68,7 +68,7 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim"}) -- menu / show keybindings
 	use({ "nvim-telescope/telescope.nvim"}) -- Telescope (fzf like)
   use("nvim-telescope/telescope-symbols.nvim") -- symbols picker with telescope
-  use { "nvim-lua/popup"} -- required by telescope-media-files
+  -- use { "nvim-lua/popup"} -- required by telescope-media-files
   use { "nvim-telescope/telescope-media-files.nvim"} -- media files viewer, used by telekasten.vim
 
 	use({ "akinsho/toggleterm.nvim"})
@@ -107,6 +107,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-buffer"}) -- buffer completions
 	use({ "hrsh7th/cmp-path"}) -- path completions
 	use({ "saadparwaiz1/cmp_luasnip"}) -- snippet completions
+	use({ "hrsh7th/cmp-nvim-lsp-signature-help" }) -- function signature completion
 	use({ "hrsh7th/cmp-nvim-lsp"})
 	use({ "hrsh7th/cmp-nvim-lua"})
 
