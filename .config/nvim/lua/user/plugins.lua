@@ -16,12 +16,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
--- vim.cmd([[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerSync
---   augroup end
--- ]])
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+    " autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -93,6 +94,39 @@ return packer.startup(function(use)
       require('mkdnflow').setup({
         links = {
           conceal = true;
+        },
+        mappings = {
+          -- MkdnEnter = {{'n', 'v'}, '<CR>'},
+          -- MkdnTab = false,
+          -- MkdnSTab = false,
+          -- MkdnNextLink = {'n', '<Tab>'},
+          -- MkdnPrevLink = {'n', '<S-Tab>'},
+          -- MkdnNextHeading = {'n', ']]'},
+          -- MkdnPrevHeading = {'n', '[['},
+          -- MkdnGoBack = {'n', '<BS>'},
+          -- MkdnGoForward = {'n', '<Del>'},
+          -- MkdnFollowLink = false, -- see MkdnEnter
+          -- MkdnDestroyLink = {'n', '<M-CR>'},
+          -- MkdnTagSpan = {'v', '<M-CR>'},
+          -- MkdnMoveSource = {'n', '<F2>'},
+          -- MkdnYankAnchorLink = {'n', 'ya'},
+          -- MkdnYankFileAnchorLink = {'n', 'yfa'},
+          -- MkdnIncreaseHeading = {'n', '+'},
+          -- MkdnDecreaseHeading = {'n', '-'},
+          -- MkdnToggleToDo = {{'n', 'v'}, '<C-Space>'},
+          -- MkdnNewListItem = false,
+          -- MkdnExtendList = false,
+          -- MkdnUpdateNumbering = {'n', '<leader>nn'},
+          -- MkdnTableNextCell = {'i', '<Tab>'},
+          -- MkdnTablePrevCell = {'i', '<S-Tab>'},
+          -- MkdnTableNextRow = false,
+          -- MkdnTablePrevRow = {'i', '<M-CR>'},
+          MkdnTableNewRowBelow = {{'n', 'i'}, ';ir'},
+          MkdnTableNewRowAbove = {{'n', 'i'}, ';iR'},
+          MkdnTableNewColAfter = {{'n', 'i'}, ';ic'},
+          MkdnTableNewColBefore = {{'n', 'i'}, ';iC'},
+          -- MkdnFoldSection = {'n', '<leader>f'},
+          -- MkdnUnfoldSection = {'n', '<leader>F'}
         }
       })
     end

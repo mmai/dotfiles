@@ -188,6 +188,14 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+  z = {
+    name = "Telekasten",
+    p = { "<cmd>lua require('telekasten').panel()<cr>", "Panel" },
+    f = { "<cmd>lua require('telekasten').find_notes()<cr>", "Find notes" },
+    d = { "<cmd>lua require('telekasten').find_daily_notes()<cr>", "Find daily notes" },
+    s = { "<cmd>lua require('telekasten').search_notes()<cr>", "Search in notes" },
+    z = { "<cmd>lua require('telekasten').follow_link()<cr>", "Follow link" },
+  },
 }
 
 which_key.setup(setup)
