@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -123,9 +123,17 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim", branch = 'main' } -- exernal tools installer (lsp & dap servers among others)
     -- LSP
   use { "williamboman/mason-lspconfig.nvim" }
-	-- use({ "williamboman/nvim-lsp-installer"}) -- simple to use language server installer
 	use({ "neovim/nvim-lspconfig"}) -- enable LSP
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
+  use({ "glepnir/lspsaga.nvim", branch = "main", -- enhanced UI for LSP
+    config = function()
+      local saga = require("lspsaga")
+
+      saga.init_lsp_saga({
+        -- your configuration
+      })
+    end,
+  })
     -- DAP debugger
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
