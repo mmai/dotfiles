@@ -87,11 +87,13 @@ return packer.startup(function(use)
   use("mzlogin/vim-markdown-toc") -- generate table of contents for Markdown files
   -- use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer
   -- use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
-  use({'jakewvincent/mkdnflow.nvim', -- XXX conflit avec impatient.nvim
+  use({'jakewvincent/mkdnflow.nvim',
     rocks = 'luautf8',
     config = function()
       require('mkdnflow').setup({
-        -- Config goes here; leave blank for defaults
+        links = {
+          conceal = true;
+        }
       })
     end
   })
