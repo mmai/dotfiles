@@ -1,4 +1,4 @@
-local home = vim.fn.expand("~/zettelkasten")
+local home = vim.fn.expand("~/think")
 require('telekasten').setup({
     home         = home,
 
@@ -10,8 +10,8 @@ require('telekasten').setup({
     auto_set_filetype = true,
 
     -- dir names for special notes (absolute path or subdir name)
-    dailies      = home .. '/' .. 'daily',
-    weeklies     = home .. '/' .. 'weekly',
+    dailies      = home .. '/journal/' .. 'daily',
+    weeklies     = home .. '/journal/' .. 'weekly',
     templates    = home .. '/' .. 'templates',
 
     -- image (sub)dir for pasting
