@@ -27,16 +27,6 @@ fi
 #  * git cal : show github like commits wall
 #  * xdotool : X11 automation (click on key, on mouse buttons, manipulate windows, ...)
 
-# enable the ctrl-shift-t command in termite to open a new terminal window in the current directory (cf. https://github.com/thestinger/termite)
-if [[ $TERM == xterm-termite ]]; then
-  source /usr/local/etc/profile.d/vte.sh
-  __vte_osc7
-fi
-
-# export TERM="xterm-256color"
-# themes couleurs 'base16' pour xfce4-terminal : https://github.com/afg984/base16-xfce4-terminal (config depuis Edit > Preferences > Colors > Presets)
-# summerfruit dark est pas mal
-
 WITH_ZINIT=1
 
 if [[ $WITH_ZINIT == 1 ]]; then
@@ -229,8 +219,6 @@ fi
 
 OPENNLP_HOME=/opt/apache-opennlp-1.5.3 #openNLP 
 
-[ -z "$TMUX" ] && export TERM=xterm-256color
-
 #NIX : uncomment on non NixOS systems
 # if [ -d "/home/henri/.nix-profile/" ];
 # then
@@ -376,5 +364,6 @@ enable-fzf-tab
 
 # Automatically launch tmux with a new session attached to default windows group
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  # export TERM=screen-256color # 'screen' instead of 'xterm' for ratpdev compatibility 
   exec tmux new-session -t main 
 fi
