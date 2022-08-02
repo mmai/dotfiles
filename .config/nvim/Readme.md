@@ -5,12 +5,11 @@
 
 ## Language server protocol
 
-Installer des serveurs : `:LSPInstallInfo`
+Installer des serveurs : `:Mason`
 Statut des serveurs : `:LSPInfo`
 
 détail d'erreurs `gl`
 
 ### Todo
 
-* markdown link conceal
 * zotero with jalvesaq/zotcite
