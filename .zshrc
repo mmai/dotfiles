@@ -363,7 +363,7 @@ zle -N _zlf_handler
 enable-fzf-tab
 
 # Automatically launch tmux with a new session attached to default windows group
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  # export TERM=screen-256color # 'screen' instead of 'xterm' for ratpdev compatibility 
-  exec tmux new-session -t main 
-fi
+# if command -v tmux &> /dev/null && [ -n "$ps1" ] && [[ ! "$term" =~ screen ]] && [[ ! "$term" =~ tmux ]] && [ -z "$tmux" ]; then
+#   # export term=screen-256color # 'screen' instead of 'xterm' for ratpdev compatibility 
+#   exec "tmux new-session -t main"
+# fi

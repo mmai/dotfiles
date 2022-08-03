@@ -92,6 +92,7 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["z"] = { ":ZenMode<cr>", "Zen mode" },
 
   p = {
     name = "Packer",
@@ -177,6 +178,17 @@ local mappings = {
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
     e = { "<cmd>Telescope symbols<cr>", "Emojis" },
+  },
+
+  x = {
+    name = "Trouble",
+    x = { "<cmd>TroubleToggle<cr>", "Toggle"},
+    w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace diagnostics"},
+    e = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
+    q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+    l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
+    d = { "<cmd>TroubleToggle lsp_definitions<cr>", "LSP definitions" },
+    r = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
   },
 
   t = {

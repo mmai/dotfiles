@@ -103,6 +103,9 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
+-- Zen mode
+keymap("n", "<leader>z", ":ZenMode<CR>", opts)
+
 -------------------- Refresh config -----------
 -- keymap("n", ",<leader>R", ":LuaCacheClear<CR>:luafile <CR>:PackerCompile<CR>", opts)
 

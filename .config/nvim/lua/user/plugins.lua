@@ -49,6 +49,11 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring"}) -- switch comment string according to treesitter detected language (usefull for .vue files)
 	use({ "moll/vim-bbye"}) -- close buffers without destroying windows
   use({ "ton/vim-bufsurf"}) -- enables surfing through buffers based on viewing history per window
+  -- use({ "karb94/neoscroll.nvim",  -- smooth scroll
+  --   config = function()
+  --     require("neoscroll").setup {}
+  --   end
+  -- })
   use { "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
@@ -87,7 +92,18 @@ return packer.startup(function(use)
       require("telescope").load_extension("yank_history")
     end
   })
-
+  use { "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        plugins = { tmux = true}
+      }
+    end
+  }
+  use { "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup {}
+    end
+  }
 	use({ "akinsho/toggleterm.nvim"})
   use({ "christoomey/vim-tmux-navigator"}) -- Allow pane movement to jump out of vim into tmux
 
@@ -113,6 +129,7 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim"})
 	use({ "lunarvim/darkplus.nvim", branch = 'neovim-0.7'})
+	use "rebelot/kanagawa.nvim"
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp"}) -- The completion plugin
@@ -150,7 +167,13 @@ return packer.startup(function(use)
     -- DAP debugger
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
-
+  -- Trouble
+  use { "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end
+  }
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
