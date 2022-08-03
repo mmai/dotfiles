@@ -49,17 +49,18 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring"}) -- switch comment string according to treesitter detected language (usefull for .vue files)
 	use({ "moll/vim-bbye"}) -- close buffers without destroying windows
   use({ "ton/vim-bufsurf"}) -- enables surfing through buffers based on viewing history per window
-  use({ "maxbrunsfeld/vim-yankstack"}) -- Allow to paste previous yanks : <alt>p / <alt><shift>p
   use { "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("todo-comments").setup {}
     end
   }
+  use { 'phaazon/hop.nvim', branch = 'v2', -- easy movements
+    config = function()
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
+
   -- UI
 	use({ "goolord/alpha-nvim"}) -- greeter UI
 	use({ "kyazdani42/nvim-web-devicons"})
@@ -71,6 +72,21 @@ return packer.startup(function(use)
   use("nvim-telescope/telescope-symbols.nvim") -- symbols picker with telescope
   -- use { "nvim-lua/popup"} -- required by telescope-media-files
   use { "nvim-telescope/telescope-media-files.nvim"} -- media files viewer, used by telekasten.vim
+  use({ "gbprod/yanky.nvim", -- Allow to paste previous yanks
+    config = function()
+      require("yanky").setup({
+        vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)");
+        vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)");
+        vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)");
+        vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)");
+
+        vim.keymap.set("n", "<a-p>", "<Plug>(YankyCycleForward)");
+        vim.keymap.set("n", "<a-o>", "<Plug>(YankyCycleBackward)");
+        vim.keymap.set("n", "<a-h>", ":Telescope yank_history<cr>");
+      })
+      require("telescope").load_extension("yank_history")
+    end
+  })
 
 	use({ "akinsho/toggleterm.nvim"})
   use({ "christoomey/vim-tmux-navigator"}) -- Allow pane movement to jump out of vim into tmux
@@ -121,7 +137,8 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" }
 	use({ "neovim/nvim-lspconfig"}) -- enable LSP
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
-  use({ "glepnir/lspsaga.nvim", branch = "main", -- enhanced UI for LSP
+  use({ "glepnir/lspsaga.nvim", -- enhanced UI for LSP
+    branch = "main",
     config = function()
       local saga = require("lspsaga")
 
