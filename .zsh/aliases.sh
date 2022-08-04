@@ -3,6 +3,9 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+# Launch tmux with a new session attached to default windows group
+alias tt="tmux new-session -t main"
+
 # Sysadmin aliases
 alias psg='ps -ef | grep -i $1'
 alias nsg='netstat -natp | grep -i $1'
