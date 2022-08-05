@@ -74,7 +74,7 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- Hop
-keymap('n', 'H', "<cmd>HopChar2<cr>", opts)
+keymap('n', 'S', "<cmd>HopChar2<cr>", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeOpen<CR>", opts)
