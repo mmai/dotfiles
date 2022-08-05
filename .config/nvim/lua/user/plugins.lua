@@ -95,7 +95,7 @@ return packer.startup(function(use)
   use { "folke/zen-mode.nvim",
     config = function()
       require("zen-mode").setup {
-        plugins = { tmux = true}
+        plugins = { tmux = true, gitsigns = true }
       }
     end
   }
