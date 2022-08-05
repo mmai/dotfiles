@@ -125,11 +125,14 @@ return packer.startup(function(use)
   use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
   use("renerocksai/calendar-vim") -- used by telekasten.vim
   use("renerocksai/telekasten.nvim")
+  -- Text utils
+  use("salsifis/vim-transpose") -- transpose lines to columns (:Transpose)
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim"})
 	use({ "lunarvim/darkplus.nvim", branch = 'neovim-0.7'})
 	use "rebelot/kanagawa.nvim"
+  use 'folke/lsp-colors.nvim' -- Automatically creates missing LSP diagnostics highlight groups for color schemes that don't yet support the Neovim 0.5 builtin lsp client.
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp"}) -- The completion plugin
