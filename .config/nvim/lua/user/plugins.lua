@@ -125,6 +125,8 @@ return packer.startup(function(use)
   use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
   use("renerocksai/calendar-vim") -- used by telekasten.vim
   use("renerocksai/telekasten.nvim")
+  -- Text utils
+  use("salsifis/vim-transpose") -- transpose lines to columns (:Transpose)
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim"})
