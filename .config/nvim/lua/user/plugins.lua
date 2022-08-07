@@ -116,9 +116,12 @@ return packer.startup(function(use)
 	use({ "lewis6991/gitsigns.nvim"})
 
   -- Markdown
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+  use({ "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   })
   use("mzlogin/vim-markdown-toc") -- generate table of contents for Markdown files
   use("pbrisbin/vim-mkdir") -- Automatically create any non-existent directories before writing the buffer

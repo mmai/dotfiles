@@ -73,8 +73,8 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
--- Hop
-keymap('n', 'S', "<cmd>HopChar2<cr>", opts)
+-- Hop (on my qwerty with dead keys : double ´'´)
+keymap('n', '´', "<cmd>HopChar2<cr>", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeOpen<CR>", opts)
