@@ -160,16 +160,6 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" }
 	use({ "neovim/nvim-lspconfig"}) -- enable LSP
 	use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
-  use({ "glepnir/lspsaga.nvim", -- enhanced UI for LSP
-    branch = "main",
-    config = function()
-      local saga = require("lspsaga")
-
-      saga.init_lsp_saga({
-        -- your configuration
-      })
-    end,
-  })
     -- DAP debugger
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
