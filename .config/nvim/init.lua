@@ -9,12 +9,12 @@ require "user.keymaps"
 require "user.whichkey"
 
 -- UI
-require "user.alpha"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.lualine"
-require "user.toggleterm"
-require "user.telescope"
+require "user.alpha"      -- welcome screen
+require "user.nvim-tree"  -- file browser sidebar
+require "user.bufferline" -- tab line
+require "user.lualine"    -- status line
+require "user.toggleterm" -- open terminal
+require "user.telescope"  -- highly customizable fzf like picker
 
 require "user.gitsigns"
 
@@ -24,12 +24,13 @@ require "user.comment"
 require "user.indentline"
 
 -- IDE
-require "user.project"
-require "user.treesitter"
-require "user.aerial" -- list & navigate in classes & functions
-require "user.cmp"
-require "user.mason"
-require "user.lsp"
-require "user.dap"
+require("mason").setup()          -- lsp & dap languages installer
+require('refactoring').setup({})  -- extract function, extract variable, ...
+require "user.project"            -- detect project root
+require "user.treesitter"         -- syntax tree analyser (used by other coding plugins)
+require "user.aerial"             -- list & navigate in classes & functions
+require "user.cmp"                -- completion
+require "user.lsp"                -- language server
+require "user.dap"                -- debugger (breakpoints & co)
 
-require "user.telekasten"
+require "user.telekasten"         -- wiki / zetelkasten

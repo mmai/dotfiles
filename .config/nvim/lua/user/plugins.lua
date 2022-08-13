@@ -155,6 +155,13 @@ return packer.startup(function(use)
   use { 'stevearc/aerial.nvim', config = function() require('aerial').setup() end } -- code outline sidebar
 
 	-- IDE
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
   use { "williamboman/mason.nvim", branch = 'main' } -- exernal tools installer (lsp & dap servers among others)
     -- LSP
   use { "williamboman/mason-lspconfig.nvim" }
