@@ -78,6 +78,15 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
+local visual_opts = {
+  mode = "v", -- VISUAL mode
+  prefix = "<leader>",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
 local mappings = {
   ["a"] = { "<cmd>AerialToggle!<cr>", "Aerial code outline" },
   ["b"] = {
@@ -225,7 +234,26 @@ local mappings = {
     B = { "<cmd>lua require('telekasten').find_friends()<cr>", "Show all notes linking to the link under cursor" },
     m = { "<cmd>lua require('telekasten').browse_media()<cr>", "Browse medias" },
   },
+  r = {
+    name = "Refactor",
+    b = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block" },
+    bf = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block to file" },
+    i = { "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline variable" },
+  }
+}
+
+local visual_mappings = {
+  r = {
+    name = "Refactor",
+    e = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Extract Function" },
+    f = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract Function To File" },
+    v = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable To File')<CR>", "Extract Variable To File" },
+    i = { "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable" },
+  -- prompt for a refactor to apply when the remap is triggered
+    r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Choose refactor" },
+  },
 }
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+which_key.register(visual_mappings, visual_opts)

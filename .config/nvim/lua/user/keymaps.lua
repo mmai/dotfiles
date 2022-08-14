@@ -92,7 +92,22 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 
--- DAP
+-- Refactoring ( mappings redefined in whichkey.lua )
+local refactOpts = {noremap = true, silent = true, expr = false}
+  -- Remaps for the refactoring operations currently offered by the plugin
+keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], refactOpts)
+keymap("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], refactOpts)
+keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], refactOpts)
+keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], refactOpts)
+  -- Extract block doesn't need visual mode
+keymap("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], refactOpts)
+keymap("n", "<leader>rbf", [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]], refactOpts)
+  -- Inline variable can also pick up the identifier currently under the cursor without visual mode
+keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], refactOpts)
+  -- prompt for a refactor to apply when the remap is triggered
+keymap( "v", "<leader>rr","<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", { noremap = true })
+
+-- DAP ( mappings redefined in whichkey.lua )
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
 keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
