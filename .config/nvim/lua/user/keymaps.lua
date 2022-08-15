@@ -106,6 +106,11 @@ keymap("n", "<leader>rbf", [[ <Cmd>lua require('refactoring').refactor('Extract 
 keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], refactOpts)
   -- prompt for a refactor to apply when the remap is triggered
 keymap( "v", "<leader>rr","<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", { noremap = true })
+  -- print / clean debugs statements
+keymap("v", "<leader>rp", ":lua require('refactoring').debug.print_var({})<CR>", { noremap = true })
+keymap("n", "<leader>rp", ":lua require('refactoring').debug.print_var({ normal = true })<CR>", { noremap = true })
+keymap("n", "<leader>rd", ":lua require('refactoring').debug.printf({below = false})<CR>", { noremap = true })
+keymap("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>", { noremap = true })
 
 -- DAP ( mappings redefined in whichkey.lua )
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

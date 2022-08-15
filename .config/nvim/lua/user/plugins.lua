@@ -110,6 +110,17 @@ return packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim"})
 	use({ "ahmedkhalf/project.nvim"})
   use({ "gpanders/editorconfig.nvim"}) -- follow formatting options of .editorconfig file
+  use({ "code-biscuits/nvim-biscuits", -- add context info at the end of code blocks
+    config = function()
+      require("nvim-biscuits").setup {
+        toggle_keybind = "<leader>E",
+        show_on_start = true, -- defaults to false
+        language_config = {
+          markdown = { disabled = true }
+        }
+      }
+    end
+  })
 
  -- Git
 	use({ "tpope/vim-fugitive"})
@@ -151,12 +162,12 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets"}) -- a bunch of snippets to use
 
 	use({ "nvim-treesitter/nvim-treesitter"}) -- Treesitter
+	use({ "nvim-treesitter/playground"}) -- view treesitter information (provides :TSCaptureUnderCursor to show syntax group, then do `:verbose highlight <syntax group>` to debug coloring issues)
 
   use { 'stevearc/aerial.nvim', config = function() require('aerial').setup() end } -- code outline sidebar
 
 	-- IDE
-  use {
-    "ThePrimeagen/refactoring.nvim",
+  use { "ThePrimeagen/refactoring.nvim",
     requires = {
       {"nvim-lua/plenary.nvim"},
       {"nvim-treesitter/nvim-treesitter"}
@@ -170,6 +181,24 @@ return packer.startup(function(use)
     -- DAP debugger
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
+    -- Tests runner
+  use { "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      'rouge8/neotest-rust',
+      'olimorris/neotest-phpunit',
+    },
+    config = function()
+      require('neotest').setup({
+        adapters = {
+          require('neotest-phpunit'),
+          require("neotest-rust"),
+        }
+      })
+    end
+  }
   -- Trouble
   use { "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -177,6 +206,7 @@ return packer.startup(function(use)
       require("trouble").setup {}
     end
   }
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

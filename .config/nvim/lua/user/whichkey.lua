@@ -201,15 +201,24 @@ local mappings = {
   },
 
   t = {
-    name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    name = "Tests",
+    n = { "<cmd>lua require('neotest').run.run()<cr>", "Run the nearest test" },
+    s = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop the nearest test" },
+    a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach to the nearest test" },
+    r = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run the current file" },
+    d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug the nearest test" },
+    t = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
   },
+  -- t = {
+  --   name = "Terminal",
+  --   n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+  --   u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+  --   t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+  --   p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+  --   f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+  --   h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+  --   v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+  -- },
   w = {
     name = "Wiki (Telekasten)",
     p = { "<cmd>lua require('telekasten').panel()<cr>", "Panel" },
@@ -239,6 +248,9 @@ local mappings = {
     b = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block" },
     bf = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block to file" },
     i = { "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline variable" },
+    p = { "<Esc><Cmd>lua require('refactoring').debug.print_var({ normal = true })<CR>", "Print variable"},
+    d = { "<Esc><Cmd>lua require('refactoring').debug.printf({ below = false })<CR>", "Print debug statement"},
+    c = { "<Esc><Cmd>lua require('refactoring').debug.cleanup({})<CR>", "Cleanup debugs & variables statements"},
   }
 }
 
@@ -249,7 +261,8 @@ local visual_mappings = {
     f = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract Function To File" },
     v = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable To File')<CR>", "Extract Variable To File" },
     i = { "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable" },
-  -- prompt for a refactor to apply when the remap is triggered
+    p = { "<Esc><Cmd>lua require('refactoring').debug.print_var({})<CR>", "Print variable"},
+      -- prompt for a refactor to apply when the remap is triggered
     r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Choose refactor" },
   },
 }
