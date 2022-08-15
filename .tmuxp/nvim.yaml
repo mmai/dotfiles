@@ -1,0 +1,11 @@
+session_name: neovim
+start_directory: /home/henri/dotfiles/.config/nvim
+windows:
+- window_name: config
+  focus: 'true'
+  panes:
+  - vim init.lua
+- window_name: plugins
+  start_directory: /home/henri/.local/share/nvim/site/pack/packer/start/
+  panes:
+  - vim .
