@@ -1,4 +1,4 @@
-# XXX dont forget to make a `zinit update` from time to time to update plugins
+# XXX : don't forget to make a `zinit update` from time to time to update plugins
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -12,12 +12,13 @@ fi
 #  * fzf : fuzzy finder / navigator `fd --extension md | fzf | xargs bat`
 #  * entr : run arbitrary commands when files change (example: ls *.hs | entr make build)
 # some terminal programs : 
-#  * lf, vifm, ranger, mc : file managers
+#  * nnn, lf, vifm, ranger, mc : file managers
 #  * taskwarrior
 #  * ncdu : ncurses disk usage
 #  * htop
 #  * iotop
 #  * lnav : log files navigator
+#  * xsv : query and manipulate csv files (very good complement to awk, allow to make joins and select by field name)
 #  * asciinema, ttystudio: terminal recorders (web, gif)
 #  * tldr : Simplified and community-driven man pages  
 #  * howdoi : Google for tech question from the command line
@@ -25,6 +26,7 @@ fi
 #  * cal : calendrier
 #  * meteo
 #  * git cal : show github like commits wall
+#  * lg (lazygit), tig : handy interfaces to git
 #  * xdotool : X11 automation (click on key, on mouse buttons, manipulate windows, ...)
 
 WITH_ZINIT=1
@@ -83,8 +85,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
 zinit load agkozak/zsh-z
 
- # zsh as default nix shell
-zinit load chisui/zsh-nix-shell
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load spwhitt/nix-zsh-completions
 else
@@ -159,6 +159,7 @@ unsetopt nomatch
 
 # Aliases (shared with bash)
 . $HOME/.zsh/aliases.sh
+. $HOME/.zsh/nnn.zsh # nnn file explorer config
 
 if [[ -a ~/.nvm/nvm.sh ]]
 then
@@ -360,6 +361,7 @@ zle -N _zlf_handler
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+any-nix-shell zsh --info-right | source /dev/stdin
 enable-fzf-tab
 
 # Automatically launch tmux with a new session attached to default windows group
