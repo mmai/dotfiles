@@ -94,6 +94,7 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeOpen<cr>", "Explorer" },
+  -- ["E"] = { "<cmd>lua require 'nvim-biscuits'.toggle_biscuits()<cr>", "End (show context of blocks ends)" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",

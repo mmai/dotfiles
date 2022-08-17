@@ -92,7 +92,7 @@ return packer.startup(function(use)
       require("telescope").load_extension("yank_history")
     end
   })
-  use { "folke/zen-mode.nvim",
+ use { "folke/zen-mode.nvim",
     config = function()
       require("zen-mode").setup {
         plugins = { tmux = true, gitsigns = true }
@@ -114,10 +114,10 @@ return packer.startup(function(use)
     config = function()
       require("nvim-biscuits").setup {
         toggle_keybind = "<leader>E",
-        show_on_start = true, -- defaults to false
+        show_on_start = false, -- defaults to false
         language_config = {
           markdown = { disabled = true }
-        }
+        },
       }
     end
   })
@@ -165,6 +165,9 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/playground"}) -- view treesitter information (provides :TSCaptureUnderCursor to show syntax group, then do `:verbose highlight <syntax group>` to debug coloring issues)
 
   use { 'stevearc/aerial.nvim', config = function() require('aerial').setup() end } -- code outline sidebar
+
+  -- languages support
+  use { 'LnL7/vim-nix' }
 
 	-- IDE
   use { "ThePrimeagen/refactoring.nvim",
