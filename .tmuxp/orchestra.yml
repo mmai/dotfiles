@@ -13,7 +13,7 @@ windows:
   panes:
   - shell_command:
     - cd /home/henri/travaux/www/orchestra
-    - make dev
+    # - make dev
 - window_name: vendor
   start_directory: /home/henri/travaux/www/orchestra/vendor
   panes:
