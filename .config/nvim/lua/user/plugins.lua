@@ -110,17 +110,6 @@ return packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim"})
 	use({ "ahmedkhalf/project.nvim"})
   use({ "gpanders/editorconfig.nvim"}) -- follow formatting options of .editorconfig file
-  use({ "code-biscuits/nvim-biscuits", -- add context info at the end of code blocks
-    config = function()
-      require("nvim-biscuits").setup {
-        toggle_keybind = "<leader>E",
-        show_on_start = false, -- defaults to false
-        language_config = {
-          markdown = { disabled = true }
-        },
-      }
-    end
-  })
 
  -- Git
 	use({ "tpope/vim-fugitive"})

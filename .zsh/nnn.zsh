@@ -4,6 +4,8 @@
 
 nn ()
 {
+    export USE_PISTOL=1 # XXX : doesn't work. use pistol previewer in preview-tui plugin
+
     # Block nesting of nnn in subshells
     if [[ "${NNNLVL:-0}" -ge 1 ]]; then
         echo "nnn is already running"
@@ -16,6 +18,7 @@ nn ()
     # shortcuts for executing plugins ( ie `;f` will launch finder, etc.)
     # ( or simply press `;<enter>` to select a plugin)
     export NNN_PLUG='f:finder;o:fzopen;p:preview-tui;d:diffs;t:nmount;v:imgview'
+
 
     # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
     # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to

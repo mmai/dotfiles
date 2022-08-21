@@ -67,6 +67,7 @@ zinit light Aloxaf/fzf-tab
 #   list of completions
 zinit ice blockf
 zinit light zsh-users/zsh-completions
+zinit light mmai/guix-zsh-completions # fork of zinit light Emiller88/guix-zsh-completions with `guix shell` completion
 # don't systematicly show users directory in cd completions
 unsetopt cdablevars
 
@@ -179,8 +180,6 @@ export LEDGER_FILE=~/think/finance/$(date +%Y).journal
 #Desactive la completion git beaucoup trop lente
 #compdef -d git
 
-PATH=/usr/local/heroku/bin:$PATH
-
 # add Cabal's bin directory to the executable search PATH if it exists
 if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin:$PATH"
@@ -190,8 +189,6 @@ PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$NODE_PATH/bin
 PATH=$PATH:$HOME/.npm-global/bin # set global npm directory with `npm set prefix ~/.npm-global` (needed on nixos system because node install path is not writable)
 PATH=$PATH:$HOME/.yarn/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/opt/elixir/bin # Elixir
 PATH=$PATH:$HOME/.config/composer/vendor/bin/ # Binaries installed from composer (ie Psych : PHP REPL, phpcs...)
 PATH=$PATH:$HOME/.cargo/bin # Rust
 PATH=$PATH:/opt/drush/ # Drupal drush
@@ -212,6 +209,13 @@ fi
 if [ -f "/home/henri/.drush/drush.complete.sh" ] ; then
   source /home/henri/.drush/drush.complete.sh
 fi
+
+# Guix asked to put this after `guix update` :
+GUIX_PROFILE="/home/henri/.config/guix/current"
+source "$GUIX_PROFILE/etc/profile"
+# ... and then to put this after `guix install emacs` :
+GUIX_PROFILE="/home/henri/.guix-profile"
+source "$GUIX_PROFILE/etc/profile"
 
 # SCALA_HOME=/opt/scala # scalac & scala 
 # PATH=$PATH:$SCALA_HOME/bin:$OPENNLP_HOME/bin 
@@ -300,8 +304,6 @@ bindkey '^T' fzf-templates
 #     -f _MOTIF_WM_HINTS 32c \
 #     -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"
 # fi
-
-export PATH=/home/henri/.local/bin/luna-studio:$PATH
 
 source /home/henri/.config/broot/launcher/bash/br
 
