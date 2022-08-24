@@ -1,0 +1,16 @@
+ '( "curl"
+    "neovim" 
+    "git" "git-flow" "git-filter-repo" "tig" "git-annex"
+    "xclip"
+
+    "bat" "tree" "exa" "fd" "ripgrep"
+    "zip" "unzip" 
+    "nfs-utils" 
+    "cifs-utils"
+    "gnupg" 
+    "tmux"
+    "nnn" "sxiv" "fzf"
+    "sshfs"
+    "htop" "lsof" "file" "mtr" "ncdu"
+    "entr" "expect"
+    )
