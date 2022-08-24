@@ -198,6 +198,14 @@ return packer.startup(function(use)
       require("trouble").setup {}
     end
   }
+  -- REPL
+  use 'Olical/conjure' -- essentially for lisp languages (and rust)
+  vim.g["conjure#filetype#scheme"] = "conjure.client.guile.socket" -- use Guile for scheme scripts
+
+  -- Misc tools
+  use 'Olical/nvim-local-fennel' -- execute local project (.git) fennel code in `.lnvim.fnl` file at startup
+  use 'Olical/aniseed' -- useful fennel library
+  use { "HiPhish/awk-ward.nvim" } -- Awk repl by running :AwkWard on a buffer with an Awk expressions
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

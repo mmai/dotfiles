@@ -4,7 +4,7 @@
 
 nn ()
 {
-    export USE_PISTOL=1 # XXX : doesn't work. use pistol previewer in preview-tui plugin
+    export USE_PISTOL=0 # XXX : pistol support doesn't work and breaks directories preview. # use pistol previewer in preview-tui plugin
 
     # Block nesting of nnn in subshells
     if [[ "${NNNLVL:-0}" -ge 1 ]]; then
@@ -17,7 +17,7 @@ nn ()
     #	  install all with `curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh`
     # shortcuts for executing plugins ( ie `;f` will launch finder, etc.)
     # ( or simply press `;<enter>` to select a plugin)
-    export NNN_PLUG='f:finder;o:fzopen;p:preview-tui;d:diffs;t:nmount;v:imgview'
+    export NNN_PLUG='f:fzcd;o:fzopen;p:preview-tui;d:diffs;t:nmount;v:imgview'
 
 
     # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
@@ -35,7 +35,7 @@ nn ()
 
     # The backslash allows one to alias n to nnn if desired without making an
     # infinitely recursive alias
-    \nnn -ea "$@" # <---- add launch options here (e : open textfiles in $EDITOR, a : create a new FIFO (used by previewer))
+    \nnn -eda "$@" # <---- add launch options here (e : open textfiles in $EDITOR, d : details, H : show hidden files,  a : create a new FIFO (used by previewer))
 
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"

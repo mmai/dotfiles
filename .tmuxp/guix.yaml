@@ -1,0 +1,10 @@
+session_name: guix
+start_directory: /home/henri/travaux/programmes/guix
+windows:
+- window_name: code
+  focus: 'true'
+  panes:
+  - nn
+- window_name: shell
+  panes:
+  - lt

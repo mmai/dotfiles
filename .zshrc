@@ -67,7 +67,7 @@ zinit light Aloxaf/fzf-tab
 #   list of completions
 zinit ice blockf
 zinit light zsh-users/zsh-completions
-zinit light mmai/guix-zsh-completions # fork of zinit light Emiller88/guix-zsh-completions with `guix shell` completion
+# zinit light mmai/guix-zsh-completions # fork of zinit light Emiller88/guix-zsh-completions with `guix shell` completion
 # don't systematicly show users directory in cd completions
 unsetopt cdablevars
 
@@ -170,6 +170,8 @@ then
 fi
 
 export EDITOR=nvim
+# export EDITOR=ewrap.sh # (in .local/bin/ewrap.sh) open in split tmux window
+export PAGER="less -Ri"
 
 export LEDGER_FILE=~/think/finance/$(date +%Y).journal
 
@@ -211,11 +213,11 @@ if [ -f "/home/henri/.drush/drush.complete.sh" ] ; then
 fi
 
 # Guix asked to put this after `guix update` :
-GUIX_PROFILE="/home/henri/.config/guix/current"
-source "$GUIX_PROFILE/etc/profile"
+# GUIX_PROFILE="/home/henri/.config/guix/current"
+# source "$GUIX_PROFILE/etc/profile"
 # ... and then to put this after `guix install emacs` :
-GUIX_PROFILE="/home/henri/.guix-profile"
-source "$GUIX_PROFILE/etc/profile"
+# GUIX_PROFILE="/home/henri/.guix-profile"
+# source "$GUIX_PROFILE/etc/profile"
 
 # SCALA_HOME=/opt/scala # scalac & scala 
 # PATH=$PATH:$SCALA_HOME/bin:$OPENNLP_HOME/bin 
