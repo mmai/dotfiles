@@ -1,7 +1,7 @@
-;; (add-to-load-path (dirname (current-filename)))
+;; (add-to-load-path (string-append (dirname (current-filename)) "/guix/guixconf/channel-rhumbs"))
 (include "./guix/guixconf/machines/asusZenbook.scm") ;; provides `swapdevice` & `filesystems`
 
-(use-modules (gnu) (gnu packages shells))
+(use-modules (gnu) (gnu packages shells) (tmuxp))
 (use-service-modules desktop networking ssh xorg)
 
 ;; Import nonfree linux module. ;; ajout nonguix
@@ -58,7 +58,7 @@
   (bootloader
     (bootloader-configuration
       (bootloader grub-efi-bootloader)
-      (target "/boot/efi")
+      (targets '("/boot/efi"))
       (keyboard-layout keyboard-layout)))
 
   (swap-devices swapdevice)
