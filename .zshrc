@@ -32,13 +32,29 @@ fi
 WITH_ZINIT=1
 
 if [[ $WITH_ZINIT == 1 ]]; then
-########################
-# Zinit zsh plugins manager 
-########################
-ZINIT_HOME=/run/current-system/sw/share/zinit
-source "$ZINIT_HOME/zinit.zsh"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
 
 # Prezto plugins
 zinit snippet PZT::modules/environment/init.zsh
@@ -257,10 +273,33 @@ function e() {
 ##################
 # Ctrl-R : historique
 # vim ./src/**<TAB>  completion sur le répertoire...
-FZFPATH=$(nix-store -r $(which fzf) 2> /dev/null)
-# FZFPATH=$(nix eval nixpkgs#fzf.outPath | sed -e 's/"//g') # makes a remote connection
-[[ $- == *i* ]] && source $FZFPATH"/share/fzf/completion.zsh" 2> /dev/null
-source $FZFPATH"/share/fzf/key-bindings.zsh"
+# FZFPATH=$(nix-store -r $(which fzf) 2> /dev/null)
+# [[ $- == *i* ]] && source $FZFPATH"/share/fzf/completion.zsh" 2> /dev/null
+# source $FZFPATH"/share/fzf/key-bindings.zsh"
+# CTRL-R - Paste the selected command from history into the command line
+__fzfcmd() {
+  [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
+    echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
+}
+
+fzf-history-widget() {
+  local selected num
+  setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
+  selected=( $(fc -rl 1 | awk '{ cmd=$0; sub(/^\s*[0-9]+\**\s+/, "", cmd); if (!seen[cmd]++) print $0 }' |
+    FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort,ctrl-z:ignore $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd)) )
+  local ret=$?
+  if [ -n "$selected" ]; then
+    num=$selected[1]
+    if [ -n "$num" ]; then
+      zle vi-fetch-history -n $num
+    fi
+  fi
+  zle reset-prompt
+  return $ret
+}
+zle -N fzf-history-widget
+bindkey '^R' fzf-history-widget
+
 # Use rg instead of the default find command for listing candidates.
 _fzf_compgen_path() {
   rg -g "" "$1"
@@ -306,8 +345,6 @@ bindkey '^T' fzf-templates
 #     -f _MOTIF_WM_HINTS 32c \
 #     -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"
 # fi
-
-source /home/henri/.config/broot/launcher/bash/br
 
 # Direnv (enable overrides of env variables in directories with a .envrc file)
 eval "$(direnv hook zsh)"
@@ -365,7 +402,7 @@ zle -N _zlf_handler
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-any-nix-shell zsh --info-right | source /dev/stdin
+# any-nix-shell zsh --info-right | source /dev/stdin
 enable-fzf-tab
 
 # Automatically launch tmux with a new session attached to default windows group
@@ -373,3 +410,4 @@ enable-fzf-tab
 #   # export term=screen-256color # 'screen' instead of 'xterm' for ratpdev compatibility 
 #   exec "tmux new-session -t main"
 # fi
+
