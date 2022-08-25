@@ -29,20 +29,42 @@ fi
 #  * lg (lazygit), tig : handy interfaces to git
 #  * xdotool : X11 automation (click on key, on mouse buttons, manipulate windows, ...)
 
-WITH_ZINIT=1
-
-if [[ $WITH_ZINIT == 1 ]]; then
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
+if [[ -d /nix/store ]]; then # on NixOS
+  HAS_NIXOS=1
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+########################
+# Zinit zsh plugins manager 
+########################
+if [[ $HAS_NIXOS == 1 ]]; then
+  source "/run/current-system/sw/share/zinit/zinit.zsh"
+else
+
+  ### Added by Zinit's installer
+  if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+      print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-         continuum/zinit%F{220})…%f"
+      command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+      command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+          print -P "%F{33} %F{34}Installation successful.%f%b" || \
+          print -P "%F{160} The clone has failed.%f%b"
+  fi
+
+  source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+  autoload -Uz _zinit
+  (( ${+_comps} )) && _comps[zinit]=_zinit
+
+  # Load a few important annexes, without Turbo
+  # (this is currently required for annexes)
+  zinit light-mode for \
+      zdharma-continuum/zinit-annex-as-monitor \
+      zdharma-continuum/zinit-annex-bin-gem-node \
+      zdharma-continuum/zinit-annex-patch-dl \
+      zdharma-continuum/zinit-annex-rust
+
+  ### End of Zinit's installer chunk
+
+fi
+
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -79,7 +101,7 @@ zinit snippet PZT::modules/git
 #
 # autocompletion
 #   fzf-tab : enable with `enable-fzf-tab`
-zinit light Aloxaf/fzf-tab
+zinit light Aloxaf/fzf-tab # replace zsh completion by fzf interface
 #   list of completions
 zinit ice blockf
 zinit light zsh-users/zsh-completions
@@ -103,55 +125,11 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit load agkozak/zsh-z
 
 zinit load zsh-users/zsh-syntax-highlighting
-zinit load spwhitt/nix-zsh-completions
-else
 
-########################
-# ZPlug plugins manager 
-########################
-export ZPLUG_HOME=$HOME/.zsh/zplug
-source $ZPLUG_HOME/init.zsh
-
-# Prezto plugins
-zplug "modules/environment", from:prezto
-zplug "modules/terminal", from:prezto
-zplug "modules/editor", from:prezto
-zplug "modules/history", from:prezto
-zplug "modules/directory", from:prezto
-zplug "modules/spectrum", from:prezto
-zplug "modules/utility", from:prezto
-zplug "modules/completion", from:prezto
-# zplug "modules/command-not-found", from:prezto # already active on NixOS
-zplug "modules/node", from:prezto
-zplug "modules/git", from:prezto
-zstyle ':prezto:*:*' color 'yes'
-zstyle ':prezto:module:editor' keymap 'vi'
-
-# pure prompt
-zplug "mafredri/zsh-async"
-zplug "mmai/pure" # forked from sindresorhus/pure (added nix-shell info)
-
-# nix-shell compatibility 
-zplug "chisui/zsh-nix-shell" #Pb : alias defined in the default.nix shellHook are not recognized anymore 
-# Other plugins
-zplug "rupa/z", use:z.sh # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
-zplug "k4rthik/git-cal", as:command # display a github like contribution calendar wall
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "spwhitt/nix-zsh-completions"
-
-zplug "Aloxaf/fzf-tab"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+if [[ $HAS_NIXOS == 1 ]]; then
+  zinit load spwhitt/nix-zsh-completions
 fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
-fi
+# ---------- end zinit specific code
 
 # ------ fzf-tab configuration
 enable-fzf-tab
@@ -271,17 +249,11 @@ function e() {
 ##################
 # FZF fuzzy finder
 ##################
-# Ctrl-R : historique
-# vim ./src/**<TAB>  completion sur le répertoire...
-# FZFPATH=$(nix-store -r $(which fzf) 2> /dev/null)
-# [[ $- == *i* ]] && source $FZFPATH"/share/fzf/completion.zsh" 2> /dev/null
-# source $FZFPATH"/share/fzf/key-bindings.zsh"
-# CTRL-R - Paste the selected command from history into the command line
+# Ctrl-R : historique (copié de key-bindings.zsh, non dispo sous guix)
 __fzfcmd() {
   [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
     echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
 }
-
 fzf-history-widget() {
   local selected num
   setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
@@ -297,8 +269,16 @@ fzf-history-widget() {
   zle reset-prompt
   return $ret
 }
-zle -N fzf-history-widget
-bindkey '^R' fzf-history-widget
+
+if [[ $HAS_NIXOS == 1 ]]; then
+  if [ -n "${commands[fzf-share]}" ]; then
+    source "$(fzf-share)/key-bindings.zsh"
+    source "$(fzf-share)/completion.zsh"
+  fi
+else
+  zle -N fzf-history-widget
+  bindkey '^R' fzf-history-widget
+fi
 
 # Use rg instead of the default find command for listing candidates.
 _fzf_compgen_path() {
@@ -348,56 +328,6 @@ bindkey '^T' fzf-templates
 
 # Direnv (enable overrides of env variables in directories with a .envrc file)
 eval "$(direnv hook zsh)"
-
-#########################
-#  lf file browser
-#########################
-# wrapper to cd on the last directory opened on lf
-lf () {
-    tmp="$(mktemp)"
-    command lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-
-# This snippet adds a a zsh key binding Alt-k that opens lf in a tmux split.
-# Pressing a in lf adds the selected file(s) to the zsh command line as relative paths,
-# A adds absolute paths. . changes the zsh directory.
-_zlf() {
-    emulate -L zsh
-    local d=$(mktemp -d) || return 1
-    {
-        mkfifo -m 600 $d/fifo || return 1
-        tmux split -bf zsh -c "exec {ZLE_FIFO}>$d/fifo; export ZLE_FIFO; exec lf" || return 1
-        local fd
-        exec {fd}<$d/fifo
-        zle -Fw $fd _zlf_handler
-    } always {
-        rm -rf $d
-    }
-}
-zle -N _zlf
-bindkey '\ek' _zlf
-
-_zlf_handler() {
-    emulate -L zsh
-    local line
-    if ! read -r line <&$1; then
-        zle -F $1
-        exec {1}<&-
-        return 1
-    fi
-    eval $line
-    zle -R
-}
-zle -N _zlf_handler
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
