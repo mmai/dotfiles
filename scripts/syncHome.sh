@@ -45,19 +45,22 @@ restore() {
 # cd ~
 # git clone git@github.com:mmai/dotfiles.git
 
+msg "${BLUE}Installing zinit & linking zsh config${NOFORMAT}"
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+ln -s ~/dotfiles/.zsh ~/.zsh
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+
 msg "${BLUE}Linking dotfiles${NOFORMAT}"
 mkdir -p ~/.config/alacritty
 ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/dotfiles/.config/kahl ~/.config/khal
 ln -s ~/dotfiles/.config/kard ~/.config/khard
 ln -s ~/dotfiles/.config/neomutt/ ~/.config/neomutt
-ln -s ~/dotfiles/.config/neovim/ ~/.config/neovim
+ln -s ~/dotfiles/.config/nvim/ ~/.config/nvim
 ln -s ~/dotfiles/.config/surfraw/ ~/.config/surfraw
 ln -s ~/dotfiles/.tmuxp ~/.tmuxp
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.zsh ~/.zsh
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
