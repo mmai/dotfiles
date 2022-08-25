@@ -1,4 +1,5 @@
 ;; (add-to-load-path (string-append (dirname (current-filename)) "/guix/guixconf/channel-rhumbs"))
+(add-to-load-path "/home/henri/dotfiles/guix/guixconf/channel-rhumbs/")
 (include "./guix/guixconf/machines/asusZenbook.scm") ;; provides `swapdevice` & `filesystems`
 
 (use-modules (gnu) (gnu packages shells) (tmuxp))

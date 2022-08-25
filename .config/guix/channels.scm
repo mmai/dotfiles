@@ -1,6 +1,6 @@
 (cons* 
   (channel
-    (name 'channel-rhumbs)
+    (name 'channelrhumbs)
     (url "file:///home/henri/dotfiles/")) ;; a channel directory must be a git repo, it contains a .guix-channel file which indicates the subdirectory where actual modules are stored
   (channel
         (name 'nonguix)

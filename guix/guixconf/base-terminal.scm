@@ -8,7 +8,7 @@
   "nfs-utils" 
   "cifs-utils" ;; samba client
   "gnupg" 
-  "tmux"
+  "tmux" "tmuxp"
   "nnn" "sxiv" "fzf"
   "sshfs"
   "htop" "lsof" "file" "mtr" "ncdu"
