@@ -10,6 +10,8 @@
 [mergetool "splice"]
   cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
   trustExitCode = true
+[gitlab]
+	user = mmai1
 [github]
 	user = mmai
 [alias]
