@@ -9,6 +9,7 @@ nnn:
 
 homefiles:
 	ln -s ~/dotfiles/.local/bin/ewrap.sh ~/.local/bin/ewrap.sh
+	ln -s ~/dotfiles/.config/awesome ~/.config/awesome
 
 guix:
 	ln -s ~/dotfiles/.config/guix ~/.config/guix

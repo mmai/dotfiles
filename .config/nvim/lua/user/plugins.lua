@@ -46,7 +46,7 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim"})
-	use({ "JoosepAlviste/nvim-ts-context-commentstring"}) -- switch comment string according to treesitter detected language (usefull for .vue files)
+	-- use({ "JoosepAlviste/nvim-ts-context-commentstring"}) -- switch comment string according to treesitter detected language (usefull for .vue files) XXX : seems to break line comments, they are treated like block comments
 	use({ "moll/vim-bbye"}) -- close buffers without destroying windows
   use({ "ton/vim-bufsurf"}) -- enables surfing through buffers based on viewing history per window
   -- use({ "karb94/neoscroll.nvim",  -- smooth scroll
