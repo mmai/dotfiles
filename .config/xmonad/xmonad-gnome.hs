@@ -38,7 +38,7 @@ myManageHook = composeAll
 
 myStartupHook = setWMName "LG3D"   -- java applications support
 
-app_terminal = "termite"
+app_terminal = "alacritty"
 -- app_terminal = "gnome-terminal"
 app_launcher = "xfce4-appfinder"
 app_files = "nautilus"

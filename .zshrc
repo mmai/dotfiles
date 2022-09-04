@@ -36,9 +36,9 @@ fi
 ########################
 # Zinit zsh plugins manager 
 ########################
-if [[ $HAS_NIXOS == 1 ]]; then
-  source "/run/current-system/sw/share/zinit/zinit.zsh"
-else
+# if [[ $HAS_NIXOS == 1 ]]; then
+#   source "/run/current-system/sw/share/zinit/zinit.zsh"
+# else
 
   ### Added by Zinit's installer
   if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -63,7 +63,7 @@ else
 
   ### End of Zinit's installer chunk
 
-fi
+# fi
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
