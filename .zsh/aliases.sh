@@ -1,3 +1,6 @@
+# Dotfiles (cf. https://github.com/mmai/dotfiles/tree/master/.dotfiles)
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 # Common aliases
 alias rm='rm -i'
 alias cp='cp -i'
@@ -47,9 +50,7 @@ alias dep="/usr/bin/deployer.phar" # PHP deployer
 
 # Fun scripts
 alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
-alias coin="coinmon -c eur -f btc,miota,eth,ltc,xrp,xtz,nlg,plbt"
 alias think="cd ~/think/;tree"
-alias mthink="cd ~/mthink/;tree"
 alias dlmusic="~/softs_/dlmusic.sh"
 
 # haskell (see https://www.reddit.com/r/haskell/comments/3bw95a/using_cabal_and_stack_together/csqdbe2)

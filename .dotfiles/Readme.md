@@ -10,7 +10,7 @@ dotfiles remote add origin git@github.com:mmai/dotfiles.git
 ## Replication
 ```sh
 git clone --separate-git-dir=$HOME/.dotfiles https://github.com/mmai/dotfiles.git dotfiles-tmp
-rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
+rsync --recursive --backup-dir=$HOME/dotfiles_originals_backup  --exclude '.git' dotfiles-tmp/ $HOME/
 rm --recursive dotfiles-tmp
 ```
 
