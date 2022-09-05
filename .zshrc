@@ -310,7 +310,7 @@ zle -N fzf-pass
 bindkey '^P' fzf-pass
 
 # templates
-TPL_DIR=$HOME/dotfiles/templates
+TPL_DIR=$HOME/.dotfiles/templates
 fzf-templates() {
     TPL=$(ls $TPL_DIR | fzf)
     zle -U "zsh $TPL_DIR/$TPL/install.sh"
