@@ -65,14 +65,20 @@ return packer.startup(function(use)
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
-
+	use({ "monaqa/dial.nvim"}) -- Extended increment/decrement ( <ctrl>a , <ctrl>x )
   -- UI
 	use({ "goolord/alpha-nvim"}) -- greeter UI
 	use({ "kyazdani42/nvim-web-devicons"})
 	use({ "kyazdani42/nvim-tree.lua"}) -- file explorer
 	use({ "akinsho/bufferline.nvim"}) -- tab bar
 	use({ "nvim-lualine/lualine.nvim"}) -- status bar
+  use({ "petertriho/nvim-scrollbar", -- scroll bar
+    config = function()
+      require("scrollbar").setup()
+    end
+  })
 	use({ "folke/which-key.nvim"}) -- menu / show keybindings
+	use({ "romainl/vim-cool"}) -- disables search highlighting when you are done searching and re-enables it when you search again
 	use({ "nvim-telescope/telescope.nvim"}) -- Telescope (fzf like)
   use("nvim-telescope/telescope-symbols.nvim") -- symbols picker with telescope
   -- use { "nvim-lua/popup"} -- required by telescope-media-files
@@ -99,7 +105,7 @@ return packer.startup(function(use)
       }
     end
   }
-  use { "folke/twilight.nvim",
+  use { "folke/twilight.nvim", -- to use in pair with zen mode : dim portions of text
     config = function()
       require("twilight").setup {}
     end
@@ -128,6 +134,17 @@ return packer.startup(function(use)
   use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
   use("renerocksai/calendar-vim") -- used by telekasten.vim
   use("renerocksai/telekasten.nvim")
+  use {
+    "nvim-neorg/neorg",
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {}
+        }
+      }
+    end,
+    requires = "nvim-lua/plenary.nvim"
+  }
   -- Text utils
   use("salsifis/vim-transpose") -- transpose lines to columns (:Transpose)
 

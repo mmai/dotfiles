@@ -72,6 +72,13 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Plugins --
+-- dial ( better increment)
+keymap("n", "<C-a>", require("dial.map").inc_normal(), {noremap = true})
+keymap("n", "<C-x>", require("dial.map").dec_normal(), {noremap = true})
+keymap("v", "<C-a>", require("dial.map").inc_visual(), {noremap = true})
+keymap("v", "<C-x>", require("dial.map").dec_visual(), {noremap = true})
+keymap("v", "g<C-a>", require("dial.map").inc_gvisual(), {noremap = true})
+keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), {noremap = true})
 
 -- Hop (on my qwerty with dead keys : double ´'´)
 keymap('n', '´', "<cmd>HopChar2<cr>", opts)
