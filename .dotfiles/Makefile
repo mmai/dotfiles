@@ -1,3 +1,5 @@
+installdeps:
+	bash ./installdeps.sh
 nnn:
 	# install nnn plugins
 	curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
