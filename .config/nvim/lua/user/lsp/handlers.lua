@@ -14,6 +14,7 @@ M.setup = function()
 	end
 
 	local config = {
+    show_diagnostic_autocmds = { 'InsertLeave', 'TextChanged' },
 		virtual_text = true, -- show/hide diagnostic text next to error
 		-- show signs
 		signs = {
