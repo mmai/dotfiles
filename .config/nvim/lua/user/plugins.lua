@@ -136,10 +136,23 @@ return packer.startup(function(use)
   use("renerocksai/telekasten.nvim")
   use {
     "nvim-neorg/neorg",
+    tag = '0.0.12', -- for neovim < 0.8.0
     config = function()
       require('neorg').setup {
         load = {
-          ["core.defaults"] = {}
+          ["core.defaults"]        = {},
+          ["core.norg.concealer"]  = {},
+          ["core.keybinds"]        = { config = { neorg_leader = "<space>o" } }, -- defaults = <LocalLeader>
+          ["core.norg.completion"] = { config = { engine = "nvim-cmp" } },
+          ["core.norg.journal"]    = { config = { workspace = "home" } },
+          ["core.gtd.base"]        = { config = { workspace = "gtd" }},
+          ["core.norg.dirman"]     = { config = {
+            workspaces = {
+              home = "~/think",
+              gtd = "~/think/gtd",
+              atixnet = "~/think/atixnet",
+            }
+          }},
         }
       }
     end,
