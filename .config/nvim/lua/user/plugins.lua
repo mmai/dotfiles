@@ -45,6 +45,8 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim"}) -- speed up lua modules startup
 	use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
+	use({ "tpope/vim-repeat"}) -- allow the use of the repeat key `.` for plugins mappings. Used by vim-surround
+	use({ "tpope/vim-surround"}) -- cs"' ; ds' ; ysiw] ; yss) ; ysiw<em> ; cstAutopairs, integrates with both cmp and treesitter_ 
 	use({ "numToStr/Comment.nvim"})
 	-- use({ "JoosepAlviste/nvim-ts-context-commentstring"}) -- switch comment string according to treesitter detected language (usefull for .vue files) XXX : seems to break line comments, they are treated like block comments
 	use({ "moll/vim-bbye"}) -- close buffers without destroying windows
