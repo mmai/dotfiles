@@ -143,15 +143,25 @@ return packer.startup(function(use)
       require('neorg').setup {
         load = {
           ["core.defaults"]        = {},
-          ["core.norg.concealer"]  = {},
+          ["core.norg.concealer"]  = { config = {
+            icons = {
+              todo = {
+                undone = {
+                  icon = " ", -- instead of "×"
+                }
+              },
+            },
+          }},
           ["core.keybinds"]        = { config = { neorg_leader = "<space>o" } }, -- defaults = <LocalLeader>
           ["core.norg.completion"] = { config = { engine = "nvim-cmp" } },
           ["core.norg.journal"]    = { config = { workspace = "home" } },
-          ["core.gtd.base"]        = { config = { workspace = "gtd" }},
+          -- ["core.gtd.base"]        = { config = { workspace = "gtd" }},
+          ["core.gtd.base"]        = { config = { workspace = "example_gtd" }},
           ["core.norg.dirman"]     = { config = {
             workspaces = {
               home = "~/think",
               gtd = "~/think/gtd",
+              example_gtd = "~/travaux/tmp/example_workspaces/gtd",
               atixnet = "~/think/atixnet",
             }
           }},
@@ -162,6 +172,7 @@ return packer.startup(function(use)
   }
   -- Text utils
   use("salsifis/vim-transpose") -- transpose lines to columns (:Transpose)
+  use("godlygeek/tabular") -- :Tabularize /|
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim"})
