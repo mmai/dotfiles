@@ -5,10 +5,11 @@
 
   "bat" "tree" "exa" "fd" "ripgrep"
   "zip" "unzip" 
+  "rsync"
   "nfs-utils" 
   "cifs-utils" ;; samba client
   "gnupg" 
-  "tmux" "tmuxp"
+  "tmux" "python-tmuxp"
   "nnn" "sxiv" "fzf"
   "sshfs"
   "htop" "lsof" "file" "mtr" "ncdu"

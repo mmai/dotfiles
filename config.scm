@@ -16,7 +16,7 @@
 
   (locale "fr_FR.utf8")
   (timezone "Europe/Paris")
-  (keyboard-layout (keyboard-layout "fr"))
+  (keyboard-layout (keyboard-layout "us" "intl"))
   (host-name "henri-laptop")
   (users (cons* (user-account
                   (name "henri")
