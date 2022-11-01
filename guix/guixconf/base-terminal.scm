@@ -1,4 +1,5 @@
-'("curl"
+'("curl" 
+  "make"
   "neovim" 
   "git" "git-flow" "git-filter-repo" "tig" "git-annex" "subversion"
   "xclip"

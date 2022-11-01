@@ -1,7 +1,8 @@
 (include "./guix/guixconf/machines/asusZenbook.scm") ;; provides `swapdevice` & `filesystems`
 
 (use-modules (gnu) (gnu packages shells) (tmuxp))
-(use-service-modules desktop networking ssh xorg)
+(use-service-modules desktop networking ssh xorg nix)
+(use-package-modules package-management) ;; pour nix (cf. https://guix.gnu.org/manual/en/guix.html#index-Nix)
 
 ;; Import nonfree linux module. ;; ajout nonguix
 (use-modules (nongnu packages linux) ;; ajout nonguix
@@ -31,6 +32,7 @@
     (append
       (include "./guix/guixconf/base-desktop.scm")
       (list (specification->package "nss-certs"))
+      (list nix) ;; pour nix
       %base-packages))
   (services
 
@@ -39,6 +41,7 @@
     (append
       (list (service gnome-desktop-service-type)
             (service openssh-service-type)
+            (service nix-service-type) ;; pour nix
             (set-xorg-configuration
               (xorg-configuration
                 (keyboard-layout keyboard-layout))))
