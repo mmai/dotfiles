@@ -3,6 +3,7 @@
   "neovim" 
   "git" "git-flow" "git-filter-repo" "tig" "git-annex" "subversion"
   "xclip"
+  "password-store"
 
   "bat" "tree" "exa" "fd" "ripgrep"
   "zip" "unzip" 
@@ -17,7 +18,8 @@
   "entr" "expect"
   "direnv"
 
+  "openvpn" "openresolv" ;; pour vpnAtixnet
+
   "qemu"
   "gcc-toolchain"
   )
-;; missing : pass tmuxp
