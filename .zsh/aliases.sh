@@ -6,6 +6,9 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+# sudo avec conservation des variables d'environnement de l'utilisateur
+alias _='sudo -E '
+
 # Launch tmux with a new session attached to default windows group
 alias tt="tmux new-session -t main"
 
