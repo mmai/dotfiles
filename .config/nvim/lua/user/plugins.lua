@@ -138,7 +138,6 @@ return packer.startup(function(use)
   use("renerocksai/telekasten.nvim")
   use {
     "nvim-neorg/neorg",
-    tag = '0.0.12', -- for neovim < 0.8.0
     config = function()
       require('neorg').setup {
         load = {
@@ -176,7 +175,8 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim"})
-	use({ "lunarvim/darkplus.nvim", branch = 'neovim-0.7'})
+	-- use({ "lunarvim/darkplus.nvim", branch = 'neovim-0.7'})
+	use({ "lunarvim/darkplus.nvim"})
 	use "rebelot/kanagawa.nvim"
   use 'folke/lsp-colors.nvim' -- Automatically creates missing LSP diagnostics highlight groups for color schemes that don't yet support the Neovim 0.5 builtin lsp client.
 
