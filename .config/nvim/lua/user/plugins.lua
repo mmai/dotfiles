@@ -155,7 +155,6 @@ return packer.startup(function(use)
           ["core.norg.completion"] = { config = { engine = "nvim-cmp" } },
           ["core.norg.journal"]    = { config = { workspace = "home" } },
           -- ["core.gtd.base"]        = { config = { workspace = "gtd" }},
-          ["core.gtd.base"]        = { config = { workspace = "example_gtd" }},
           ["core.norg.dirman"]     = { config = {
             workspaces = {
               home = "~/think",
