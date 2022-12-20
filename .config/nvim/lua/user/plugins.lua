@@ -160,7 +160,6 @@ return packer.startup(function(use)
             workspaces = {
               home = "~/think",
               gtd = "~/think/gtd",
-              example_gtd = "~/travaux/tmp/example_workspaces/gtd",
               atixnet = "~/think/atixnet",
             }
           }},
