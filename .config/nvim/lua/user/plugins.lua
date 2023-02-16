@@ -103,7 +103,8 @@ return packer.startup(function(use)
  use { "folke/zen-mode.nvim",
     config = function()
       require("zen-mode").setup {
-        plugins = { tmux = true, gitsigns = true }
+        plugins = { tmux = true, gitsigns = true },
+        window = { options = { number = false, relativenumber = false }}
       }
     end
   }
@@ -247,6 +248,9 @@ return packer.startup(function(use)
   use 'Olical/nvim-local-fennel' -- execute local project (.git) fennel code in `.lnvim.fnl` file at startup
   use 'Olical/aniseed' -- useful fennel library
   use { "HiPhish/awk-ward.nvim" } -- Awk repl by running :AwkWard on a buffer with an Awk expressions
+
+  -- Fun
+  use 'eandrju/cellular-automaton.nvim'
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
