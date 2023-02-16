@@ -7,7 +7,7 @@ local lspconfig = require("lspconfig")
 
 -- On NixOS, sumneko must be installed as a nix package (sumneko-lua-language-server), the version installed by lsp-installer is not executable
 -- local servers = { "intelephense", "phpactor", "jsonls", "sumneko_lua" }
-local servers = { "intelephense", "jsonls", "vuels", "sumneko_lua" } -- vuels (vetur-vls) for vue2, volar (vue-language-server) for vue3
+local servers = { "intelephense", "jsonls", "vuels", "lua_ls" } -- vuels (vetur-vls) for vue2, volar (vue-language-server) for vue3
 -- local servers = { "phpactor", "jsonls", "sumneko_lua" }
 -- phpactor + intelephense : conflit sur la gestion du 'gd' (go to definition)
 -- phpactor : pas de détection des erreurs php (seulement autres avertissements)
