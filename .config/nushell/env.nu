@@ -11,16 +11,6 @@ let-env PATH = ($env.PATH | split row (char esep)
 | append '~/.symfony/bin'
 )
 
-# NNN PLUGINS
-#   list of plugins at https://github.com/jarun/nnn/tree/master/plugins#list-of-plugins
-#	  install all with `curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh`
-# shortcuts for executing plugins ( ie `;f` will launch finder, etc.)
-# ( or simply press `;<enter>` to select a plugin)
-let-env NNN_PLUG = 'f:fzcd;o:fzopen;p:preview-tui;d:diffs;t:nmount;v:imgview'
-
-# The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
-let-env NNN_TMPFILE = $"($env.HOME)/.config/nnn/.lastd"
-
 ## end my custom envs
 
 def create_left_prompt [] {

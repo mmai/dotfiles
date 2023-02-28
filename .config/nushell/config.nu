@@ -12,19 +12,6 @@ alias mv = mv -i
 # Launch tmux with a new session attached to default windows group
 alias tt = tmux new-session -t main
 
-def-env nn [] {
-  # Launch nnn (e : open textfiles in $EDITOR, d : details, H : show hidden files,  a : create a new FIFO (used by previewer))
-  nnn -eda
-  let newpath = (
-    if ($env.NNN_TMPFILE | path exists) {
-      (open $env.NNN_TMPFILE | parse 'cd "{nnpath}"').0.nnpath
-    } else {
-        pwd
-    }
-  )
-  cd $newpath
-}
-
 # better alternatives
 alias vim = nvim
 alias cat = bat
@@ -41,6 +28,8 @@ alias vpn = ~/vpnAtixnet.sh
 
 # Fix command launch
 alias android-studio = unset GDK_PIXBUF_MODULE_FILE and android-studio # cf. https://github.com/NixOS/nixpkgs/issues/52302#issuecomment-477818365
+
+source ~/.config/nushell/nnn.nu
 # -------- end my aliases
 
 module completions {
