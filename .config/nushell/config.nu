@@ -30,7 +30,9 @@ alias vpn = ~/vpnAtixnet.sh
 alias android-studio = unset GDK_PIXBUF_MODULE_FILE and android-studio # cf. https://github.com/NixOS/nixpkgs/issues/52302#issuecomment-477818365
 
 source ~/.config/nushell/nnn.nu
+source ~/.config/nushell/oh-my-posh.nu
 # -------- end my aliases
+
 
 module completions {
   # Custom completions for external commands (those outside of Nushell)
