@@ -21,4 +21,4 @@ détail d'erreurs `gl`
 
 ## Troubleshooting
 
-Erreur Treesitter à l'ouverture d'un fichier : essayer de désinstaller et réinstaller la lib pour le langage concerné : `:TSUninstall nix` (un `:TSUpdate` ne suffit pa)
+Erreur Treesitter à l'ouverture d'un fichier : essayer de désinstaller e réinstaller la lib pour le langage concerné : `:TSUninstall nix` (un `:TSUpdate` ne suffit pa)

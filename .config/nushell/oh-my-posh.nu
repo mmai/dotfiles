@@ -2,7 +2,8 @@ let poshThemesDir = (readlink -f (^which oh-my-posh)| str replace "bin/oh-my-pos
 # let poshTheme = $"($poshThemesDir)powerlevel10k_rainbow.omp.json" 
 # let poshTheme = $"($poshThemesDir)slim.omp.json" 
 # let poshTheme = $"($poshThemesDir)tiwahu.omp.json" 
-let poshTheme = $"($poshThemesDir)peru.omp.json" 
+# let poshTheme = $"($poshThemesDir)peru.omp.json" 
+let poshTheme = $"($env.HOME)/.config/rhumbs.omp.json" # my custom config based on peru.omp.json
 
 # ---- oh-my-posh initialization
 let-env PROMPT_INDICATOR = ""
