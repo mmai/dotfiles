@@ -7,13 +7,12 @@ windows:
   - focus: 'true'
     shell_command: ls
 - window_name: services
+  start_directory: /home/henri/travaux/www/orchestra
   layout: even-horizontal
   options:
     automatic-rename: 'off'
   panes:
-  - shell_command:
-    - cd /home/henri/travaux/www/orchestra
-    # - make dev
+  - shell_command: ls
 - window_name: vendor
   start_directory: /home/henri/travaux/www/orchestra/vendor
   panes:

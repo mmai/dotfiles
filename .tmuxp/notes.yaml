@@ -3,8 +3,12 @@ windows:
 - window_name: perso
   start_directory: /home/henri/think/todo/
   panes:
+  - shell_command:
     - vim planner.md
+    sleep_before: 0.5
 - window_name: atixnet
   start_directory: /home/henri/think/atixnet/
   panes:
+  - shell_command:
     - vim -O Backlog.md index.md Historique.md
+    sleep_before: 0.5
