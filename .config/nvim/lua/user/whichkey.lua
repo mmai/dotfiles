@@ -247,6 +247,7 @@ local mappings = {
     name = "Refactor",
     b = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block" },
     bf = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block to file" },
+    h = { "<cmd>call PhpDocSingle()<cr>", "PHPDoc" },
     i = { "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline variable" },
     p = { "<Esc><Cmd>lua require('refactoring').debug.print_var({ normal = true })<CR>", "Print variable"},
     d = { "<Esc><Cmd>lua require('refactoring').debug.printf({ below = false })<CR>", "Print debug statement"},

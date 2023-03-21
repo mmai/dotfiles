@@ -200,6 +200,10 @@ return packer.startup(function(use)
   -- languages support
   use { 'LnL7/vim-nix' }
 
+  -- PHP
+    -- phpdoc generation
+  use { 'Rican7/php-doc-modded' }
+
 	-- IDE
   use { "ThePrimeagen/refactoring.nvim",
     requires = {
