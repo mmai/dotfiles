@@ -5,7 +5,7 @@ windows:
   panes:
   - shell_command:
     - vim planner.md
-    sleep_before: 0.5
+    sleep_before: 1
 - window_name: atixnet
   start_directory: /home/henri/think/atixnet/
   panes:
