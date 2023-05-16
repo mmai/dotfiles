@@ -31,6 +31,7 @@ alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 
 # better alternatives
 alias vim='nvim'
+alias lvim='NVIM_APPNAME=LazyVim nvim'
 alias cat="bat"
 # alias tree="broot" # don't know how to scroll / navigate page down
 alias lg="lazygit"
