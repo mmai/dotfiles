@@ -65,17 +65,6 @@ fi
 
 # fi
 
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
 ### End of Zinit's installer chunk
 
 # Prezto plugins
@@ -285,8 +274,8 @@ _fzf_compgen_path() {
   rg -g "" "$1"
 }
 
-# Tmuxp
-eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
+# Tmuxp completion (broken => )
+# echo "$(_TMUXP_COMPLETE=zsh_source tmuxp)"
 
 fzf-tmuxp-sessions() {
   CMD=$(find ~/.tmuxp/ -type f | fzf)
