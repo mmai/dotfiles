@@ -137,37 +137,37 @@ return packer.startup(function(use)
   use("mmai/vim-markdown-wiki") -- eases the navigation between files in a personnal wiki based on markdown
   use("renerocksai/calendar-vim") -- used by telekasten.vim
   use("renerocksai/telekasten.nvim")
-  use {
-    "nvim-neorg/neorg",
-    config = function()
-      require('neorg').setup {
-        load = {
-          ["core.defaults"]        = {},
-          ["core.norg.concealer"]  = { config = {
-            icons = {
-              todo = {
-                undone = {
-                  icon = " ", -- instead of "×"
-                }
-              },
-            },
-          }},
-          ["core.keybinds"]        = { config = { neorg_leader = "<space>o" } }, -- defaults = <LocalLeader>
-          ["core.norg.completion"] = { config = { engine = "nvim-cmp" } },
-          ["core.norg.journal"]    = { config = { workspace = "home" } },
-          -- ["core.gtd.base"]        = { config = { workspace = "gtd" }},
-          ["core.norg.dirman"]     = { config = {
-            workspaces = {
-              home = "~/think",
-              gtd = "~/think/gtd",
-              atixnet = "~/think/atixnet",
-            }
-          }},
-        }
-      }
-    end,
-    requires = "nvim-lua/plenary.nvim"
-  }
+  -- use {
+  --   "nvim-neorg/neorg",
+  --   config = function()
+  --     require('neorg').setup {
+  --       load = {
+  --         ["core.defaults"]        = {},
+  --         ["core.norg.concealer"]  = { config = {
+  --           icons = {
+  --             todo = {
+  --               undone = {
+  --                 icon = " ", -- instead of "×"
+  --               }
+  --             },
+  --           },
+  --         }},
+  --         ["core.keybinds"]        = { config = { neorg_leader = "<space>o" } }, -- defaults = <LocalLeader>
+  --         ["core.norg.completion"] = { config = { engine = "nvim-cmp" } },
+  --         ["core.norg.journal"]    = { config = { workspace = "home" } },
+  --         -- ["core.gtd.base"]        = { config = { workspace = "gtd" }},
+  --         ["core.norg.dirman"]     = { config = {
+  --           workspaces = {
+  --             home = "~/think",
+  --             gtd = "~/think/gtd",
+  --             atixnet = "~/think/atixnet",
+  --           }
+  --         }},
+  --       }
+  --     }
+  --   end,
+  --   requires = "nvim-lua/plenary.nvim"
+  -- }
   -- Text utils
   use("salsifis/vim-transpose") -- transpose lines to columns (:Transpose)
   use("godlygeek/tabular") -- :Tabularize /|
