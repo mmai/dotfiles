@@ -1,5 +1,6 @@
 # Dotfiles (cf. https://github.com/mmai/dotfiles/tree/master/.dotfiles)
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lgd='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Common aliases
 alias rm='rm -i'
@@ -25,9 +26,9 @@ alias popcorntime='echo "use stremio instead"'
 # Tools
 #    Copy screenshot to file
 #       Take screenshot whith <ctrl><shift><printScreen>, then  `pngpaste > screenshot.png`
-alias pngpaste="xclip -sel clipboard -t image/png -o" 
+alias pngpaste="xclip -sel clipboard -t image/png -o"
 alias pasteocr="pngpaste | convert -resize 400% /dev/stdin /dev/stdout | tesseract stdin stdout"
-alias pasteshow="pngpaste > screenshot.png && eog screenshot.png" 
+alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 
 # better alternatives
 alias vim='nvim'
@@ -76,7 +77,6 @@ GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Crese
 
 # unalias gs
 
-
 # pretty Git log
 alias gl="git log --graph $GIT_PRETTY_FORMAT"
 # pretty Git log, all references
@@ -95,15 +95,15 @@ alias glla='gla --all'
 ##################
 # inbox
 alias in='task add +in'
-tp () {
-  task project:$1
+tp() {
+	task project:$1
 }
 
-# tickle 
-tickle () {
-    deadline=$1
-    shift
-    in +tickle wait:$deadline $@
+# tickle
+tickle() {
+	deadline=$1
+	shift
+	in +tickle wait:$deadline $@
 }
 alias tick=tickle
 #alias think='tickle +1d'
