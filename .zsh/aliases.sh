@@ -31,8 +31,8 @@ alias pasteocr="pngpaste | convert -resize 400% /dev/stdin /dev/stdout | tessera
 alias pasteshow="pngpaste > screenshot.png && eog screenshot.png"
 
 # better alternatives
-alias vim='nvim'
-alias lvim='NVIM_APPNAME=LazyVim nvim'
+alias vim='NVIM_APPNAME=classicNvim nvim'
+alias lvim='nvim'
 alias cat="bat"
 # alias tree="broot" # don't know how to scroll / navigate page down
 alias lg="lazygit"

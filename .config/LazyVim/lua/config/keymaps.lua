@@ -13,5 +13,5 @@ keymap("i", "JK", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 keymap("i", "KJ", "<ESC>", opts)
 
--- Close buffers with pmoll/vim-bbye
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+-- Edit LazyVim config
+keymap("n", "<leader>se", ":e $MYVIMRC<RETURN>", { silent = true, desc = "configuration"} )
