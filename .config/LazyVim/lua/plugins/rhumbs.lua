@@ -16,13 +16,13 @@ return {
       },
     },
   },
+  { "echasnovski/mini.bufremove",
+    keys = {
+      { "<S-q>",  function() require("mini.bufremove").delete(0, false) end }, -- ajout shortcut
+    },
+  },
 
   -- Additionnal plugins
-  { "moll/vim-bbye", -- close buffers without destroying windows
-    keys = {
-      { "<S-q>", "<cmd>Bdelete!<CR>" },
-    }
-  },
   { "numToStr/Navigator.nvim", -- navigate through tmux panes
 		lazy = true,
 		config = function()
@@ -38,6 +38,17 @@ return {
 		},
 	},
 
+  { "mmai/vim-markdown-wiki", -- eases the navigation between files in a personnal wiki based on markdown
+    lazy = false,
+    ft = {"markdown"},
+    keys = {
+      {",<CR>", "<C-w>v:MdwiGotoLink<CR>", opts}
+    }
+  },
   { "gpanders/editorconfig.nvim"}, -- follow formatting options of .editorconfig file
-	{ "tpope/vim-fugitive"}, -- for Git blame
+	{ "tpope/vim-fugitive", -- for Git blame
+    keys = {
+      { "<leader>gb", ":Git blame<CR>", desc = "git blame" },
+    }
+  },
 }
