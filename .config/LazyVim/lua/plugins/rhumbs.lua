@@ -1,5 +1,12 @@
 return {
+  ------------------------------------------
+  -- Disable some plugins
+  ------------------------------------------
+  { "RRethy/vim-illuminate", enabled = false }, -- automatically highlight other uses of the word under the cursor
+ 
+  ------------------------------------------
   -- LazyVim enabled - conf overrides
+  ------------------------------------------
   { "nvim-neo-tree/neo-tree.nvim", -- file explorer
     opts = {
       window = {
@@ -22,7 +29,9 @@ return {
     },
   },
 
+  ------------------------------------------
   -- Additionnal plugins
+  ------------------------------------------
   { "numToStr/Navigator.nvim", -- navigate through tmux panes
 		lazy = true,
 		config = function()
