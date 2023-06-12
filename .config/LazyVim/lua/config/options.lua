@@ -3,4 +3,8 @@
 -- Add any additional options here
 local opt = vim.opt
 
-opt.spelllang = "en,fr"
+opt.wrap = true
+opt.spelllang = { "en", "fr" }
+
+
+

@@ -29,6 +29,27 @@ return {
     },
   },
 
+  { "jay-babu/mason-nvim-dap.nvim",
+    config = function()
+      local dap = require("dap")
+      local mason_bin_path = vim.fn.stdpath("data") .. "/mason/bin"
+
+      dap.adapters.php = {
+        type = 'executable';
+        command = mason_bin_path .. "/php-debug-adapter";
+      }
+
+      dap.configurations.php = {
+        {
+          type = 'php';
+          request = 'launch';
+          name = "Listen for Xdebug";
+          port = 9003;
+        },
+      }
+    end,
+  },
+
   ------------------------------------------
   -- Additionnal plugins
   ------------------------------------------
