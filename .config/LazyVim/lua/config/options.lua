@@ -6,5 +6,6 @@ local opt = vim.opt
 opt.wrap = true
 opt.spelllang = { "en", "fr" }
 
+opt.commentstring = "# %s"
 
 

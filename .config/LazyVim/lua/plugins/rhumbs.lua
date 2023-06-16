@@ -5,6 +5,17 @@ return {
   { "RRethy/vim-illuminate", enabled = false }, -- automatically highlight other uses of the word under the cursor
  
   ------------------------------------------
+  --  colorscheme
+  ------------------------------------------
+	{ "lunarvim/darkplus.nvim"},
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "darkplus",
+    },
+  },
+
+  ------------------------------------------
   -- LazyVim enabled - conf overrides
   ------------------------------------------
   { "nvim-neo-tree/neo-tree.nvim", -- file explorer
@@ -81,4 +92,11 @@ return {
       { "<leader>gb", ":Git blame<CR>", desc = "git blame" },
     }
   },
+
+  { 'Rican7/php-doc-modded', -- phpdoc generation
+    keys = {
+      { "<leader>ch", "<cmd>call PhpDocSingle()<cr>", desc = "PHPDoc" },
+    }
+  },
+
 }
