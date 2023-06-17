@@ -99,4 +99,62 @@ return {
     }
   },
 
+  {
+    "aaronhallaert/advanced-git-search.nvim",
+    keys = {
+      { "<leader>gf", ":Telescope advanced_git_search search_log_content_file<CR>", desc = "search in file log content" },
+      { "<leader>gd", ":Telescope advanced_git_search diff_commit_file<CR>", desc = "diff current file with commit" },
+      -- { "<leader>gl", ":Telescope advanced_git_search diff_commit_line<CR>", desc = "diff current file with selected line history" }, -- TODO : mode visual
+      { "<leader>ga", ":Telescope advanced_git_search diff_branch_file<CR>", desc = "diff current file with branch" },
+      { "<leader>gC", ":Telescope advanced_git_search changed_on_branch<CR>", desc = "list of changed files on the current branch" },
+    },
+    config = function()
+      -- optional: setup telescope before loading the extension
+      require("telescope").setup{
+        -- move this to the place where you call the telescope setup function
+        extensions = {
+          advanced_git_search = {
+            -- fugitive or diffview
+            diff_plugin = "fugitive",
+            -- customize git in previewer
+            -- e.g. flags such as { "--no-pager" }, or { "-c", "delta.side-by-side=false" }
+            git_flags = {},
+            -- customize git diff in previewer
+            -- e.g. flags such as { "--raw" }
+            git_diff_flags = {},
+            -- Show builtin git pickers when executing "show_custom_functions" or :AdvancedGitSearch
+            show_builtin_git_pickers = false,
+          }
+        }
+      }
+
+      require("telescope").load_extension("advanced_git_search")
+    end,
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      -- to show diff splits and open commits in browser
+      "tpope/vim-fugitive",
+      -- to open commits in browser with fugitive
+      "tpope/vim-rhubarb",
+      -- OPTIONAL: to replace the diff from fugitive with diffview.nvim
+      -- (fugitive is still needed to open in browser)
+      -- "sindrets/diffview.nvim",
+    },
+  },
+
+  { "gbprod/yanky.nvim", -- Allow to paste previous yanks
+    config = function()
+      require("yanky").setup({
+        vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)");
+        vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)");
+        vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)");
+        vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)");
+
+        vim.keymap.set("n", "<a-p>", "<Plug>(YankyCycleForward)");
+        vim.keymap.set("n", "<a-o>", "<Plug>(YankyCycleBackward)");
+        vim.keymap.set("n", "<a-h>", ":Telescope yank_history<cr>");
+      })
+      require("telescope").load_extension("yank_history")
+    end
+  },
 }
