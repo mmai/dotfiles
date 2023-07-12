@@ -5,11 +5,11 @@
   ui = true
 [merge]
   tool = meld
-  #tool = splice
+  ; tool = nvimdiff
 
-[mergetool "splice"]
-  cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-  trustExitCode = true
+[mergetool "nvimdiff"]
+  cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c '$wincmd J'
+
 [gitlab]
 	user = mmai1
 [github]
@@ -34,6 +34,7 @@
     ci = commit
     co = checkout
     st = status
+	adog = log --all --decorate --oneline --graph
 [push]
 	default = matching
 [core]
