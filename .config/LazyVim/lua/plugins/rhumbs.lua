@@ -157,4 +157,26 @@ return {
       require("telescope").load_extension("yank_history")
     end
   },
+
+  -- { "https://gitlab.com/schrieveslaach/sonarlint.nvim", -- code quality ; needs jdk installed, still do nothing
+  --   config = function()
+  --     require('sonarlint').setup({
+  --       server = {
+  --           cmd = {
+  --             'sonarlint-language-server',
+  --             -- Ensure that sonarlint-language-server uses stdio channel
+  --             '-stdio',
+  --             '-analyzers',
+  --             -- paths to the analyzers you need
+  --             vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
+  --             vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarphp.jar"),
+  --           }
+  --       },
+  --       filetypes = {
+  --           'python',
+  --           'php',
+  --       }
+  --     })
+  --   end
+  -- },
 }
