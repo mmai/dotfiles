@@ -7,6 +7,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias yy='yazi'
+
 # sudo avec conservation des variables d'environnement de l'utilisateur
 alias _='sudo -E '
 
