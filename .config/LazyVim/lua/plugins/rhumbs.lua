@@ -18,6 +18,13 @@ return {
   ------------------------------------------
   -- LazyVim enabled - conf overrides
   ------------------------------------------
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      -- disable the keymap to grep files
+      {"s", false},
+    },
+  },
   { "nvim-neo-tree/neo-tree.nvim", -- file explorer
     opts = {
       window = {

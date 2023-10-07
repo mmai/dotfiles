@@ -14,9 +14,7 @@ keymap("i", "kj", "<ESC>", opts)
 keymap("i", "KJ", "<ESC>", opts)
 
 -- Reset keymaps
--- flash.nvim
-vim.keymap.del({"n", "v"}, "s")
-vim.keymap.del({"n", "v"}, "S")
+-- vim.keymap.del({'n', 'v'}, 'S')
 
 -- Edit LazyVim config
 keymap("n", "<leader>se", ":e $MYVIMRC<RETURN>", { silent = true, desc = "configuration"} )
