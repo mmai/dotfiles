@@ -1,6 +1,6 @@
 session_name: maprose
 windows:
 - window_name: start
-  start_directory: /home/henri/travaux/maprose/
+  start_directory: ~/travaux/maprose/
   panes:
     - vim Readme.md

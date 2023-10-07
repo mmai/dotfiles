@@ -1,13 +1,13 @@
 session_name: notes
 windows:
 - window_name: perso
-  start_directory: /home/henri/think/todo/
+  start_directory: ~/think/todo/
   panes:
   - shell_command:
     - vim planner.md
     sleep_before: 1
 - window_name: atixnet
-  start_directory: /home/henri/think/atixnet/
+  start_directory: ~/think/atixnet/
   panes:
   - shell_command:
     - vim -O Backlog.md index.md Historique.md

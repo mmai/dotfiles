@@ -1,5 +1,5 @@
 session_name: guix
-start_directory: /home/henri/travaux/programmes/guix
+start_directory: ~/travaux/programmes/guix
 windows:
 - window_name: code
   focus: 'true'

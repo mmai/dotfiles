@@ -1,12 +1,12 @@
 session_name: thevalley
-start_directory: /home/henri/travaux/programmes/thevalley
+start_directory: ~/travaux/programmes/thevalley
 windows:
 - window_name: code
   focus: 'true'
   panes:
   - lt
 - window_name: webgame
-  start_directory: /home/henri/travaux/programmes/webgame
+  start_directory: ~/travaux/programmes/webgame
   panes:
   - lt
 - window_name: services
@@ -15,7 +15,7 @@ windows:
   - make server
   - make client
 - window_name: leval_scala
-  start_directory: /home/henri/travaux/programmes/forks/leval
+  start_directory: ~/travaux/programmes/forks/leval
   layout: even-horizontal
   panes:
   - lt

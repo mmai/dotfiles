@@ -2,7 +2,7 @@ session_name: gtfs
 windows:
 - window_name: GTFS
   focus: 'true'
-  start_directory: /home/henri/travaux/www/calixx/network/calixx-gtfs
+  start_directory: ~/travaux/www/calixx/network/calixx-gtfs
   panes:
   - focus: 'true'
     shell_command: ls
@@ -12,14 +12,14 @@ windows:
     automatic-rename: 'off'
   panes:
   - shell_command:
-    - cd /home/henri/travaux/www/calixx
+    - cd ~/travaux/www/calixx
     - nix-shell
   - focus: 'true'
     shell_command:
-    - cd /home/henri/travaux/www/sitesFiliales
+    - cd ~/travaux/www/sitesFiliales
     - nix-shell
 - window_name: Drupal APTH
-  start_directory: /home/henri/travaux/www/sitesFiliales/impulsyon/web/modules/atixnet/atix_pth
+  start_directory: ~/travaux/www/sitesFiliales/impulsyon/web/modules/atixnet/atix_pth
   options:
     automatic-rename: 'off'
   panes:

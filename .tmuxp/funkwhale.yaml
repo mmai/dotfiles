@@ -1,11 +1,11 @@
 session_name: funkwhale
-start_directory: /home/henri/travaux/serveurs/perso/activitypub.rhumbs.fr/
+start_directory: ~/travaux/serveurs/perso/activitypub.rhumbs.fr/
 windows:
 - window_name: serveur
   focus: 'true'
   panes:
   - lt
 - window_name: flake
-  start_directory: /home/henri/travaux/nix_flakes/funkwhale/
+  start_directory: ~/travaux/nix_flakes/funkwhale/
   panes:
   - lt

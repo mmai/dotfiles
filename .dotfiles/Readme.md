@@ -12,6 +12,7 @@ dotfiles remote add origin git@github.com:mmai/dotfiles.git
 git clone --separate-git-dir=$HOME/.dotfiles https://github.com/mmai/dotfiles.git dotfiles-tmp
 rsync --recursive --backup-dir=$HOME/dotfiles_originals_backup  --exclude '.git' dotfiles-tmp/ $HOME/
 rm -rf dotfiles-tmp
+# edit personal infos in ~/.gitconfig
 ```
 
 ## Configuration

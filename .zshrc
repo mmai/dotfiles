@@ -184,35 +184,19 @@ PATH=$HOME/.symfony/bin:$PATH # Symfony
 # PATH=$PATH:/softs_/android-studio/bin
 # PATH=$PATH:$HOME/softs_/android-studio/gradle/gradle-5.1.1/bin
 
-# Include Drush bash customizations.
-autoload bashcompinit
-bashcompinit
-if [ -f "/home/henri/.drush/drush.bashrc" ] ; then
-  source /home/henri/.drush/drush.bashrc
-fi
-# Include Drush completion.
-if [ -f "/home/henri/.drush/drush.complete.sh" ] ; then
-  source /home/henri/.drush/drush.complete.sh
-fi
-
 # Guix asked to put this after `guix update` :
-# GUIX_PROFILE="/home/henri/.config/guix/current"
+# GUIX_PROFILE="$HOME/.config/guix/current"
 # source "$GUIX_PROFILE/etc/profile"
 # ... and then to put this after `guix install emacs` :
-# GUIX_PROFILE="/home/henri/.guix-profile"
+# GUIX_PROFILE="$HOME/.guix-profile"
 # source "$GUIX_PROFILE/etc/profile"
-
-# SCALA_HOME=/opt/scala # scalac & scala 
-# PATH=$PATH:$SCALA_HOME/bin:$OPENNLP_HOME/bin 
-#alias sbt="java -Xmx512M -XX:MaxPermSize=256M -jar /home/henri/.IntelliJIdea14/system/sbt/sbt-launch.jar"
-# alias sbt="/opt/sbt"
 
 OPENNLP_HOME=/opt/apache-opennlp-1.5.3 #openNLP 
 
 #NIX : uncomment on non NixOS systems
-# if [ -d "/home/henri/.nix-profile/" ];
+# if [ -d "$HOME/.nix-profile/" ];
 # then
-#   . /home/henri/.nix-profile/etc/profile.d/nix.sh
+#   . $HOME/.nix-profile/etc/profile.d/nix.sh
 # # executer: nix-env -iA nixpkgs.glibcLocales
 #   export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
 # fi

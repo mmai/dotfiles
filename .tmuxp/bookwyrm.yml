@@ -1,5 +1,5 @@
 session_name: bookwyrm
-start_directory: /home/henri/travaux/programmes/forks/bookwyrm
+start_directory: ~/travaux/programmes/forks/bookwyrm
 windows:
 - window_name: code
   focus: 'true'

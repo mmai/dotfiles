@@ -2,29 +2,29 @@ session_name: orchestra
 windows:
 - window_name: code
   focus: 'true'
-  start_directory: /home/henri/travaux/www/orchestra
+  start_directory: ~/travaux/www/orchestra
   panes:
   - focus: 'true'
     shell_command: ls
 - window_name: services
-  start_directory: /home/henri/travaux/www/orchestra
+  start_directory: ~/travaux/www/orchestra
   layout: even-horizontal
   options:
     automatic-rename: 'off'
   panes:
   - shell_command: ls
 - window_name: vendor
-  start_directory: /home/henri/travaux/www/orchestra/vendor
+  start_directory: ~/travaux/www/orchestra/vendor
   panes:
   - focus: 'true'
     shell_command: ls
 - window_name: doc
-  start_directory: /home/henri/travaux/www/orchestra/doc
+  start_directory: ~/travaux/www/orchestra/doc
   panes:
   - focus: 'true'
     shell_command: ls
 # - window_name: terraform
-#   start_directory: /home/henri/travaux/www/terraform-orchestra-bld
+#   start_directory: ~/travaux/www/terraform-orchestra-bld
 #   panes:
 #   - focus: 'true'
 #     shell_command: ls

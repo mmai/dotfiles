@@ -1,5 +1,5 @@
 session_name: webtarot
-start_directory: /home/henri/travaux/programmes/webtarot
+start_directory: ~/travaux/programmes/webtarot
 windows:
 - window_name: code
   focus: 'true'
@@ -11,10 +11,10 @@ windows:
   - make server
   - make client
 - window_name: documentation
-  start_directory: /home/henri/travaux/programmes/webtarot/doc/
+  start_directory: ~/travaux/programmes/webtarot/doc/
   panes:
   - vim index.md
 - window_name: webgame
-  start_directory: /home/henri/travaux/programmes/webgame
+  start_directory: ~/travaux/programmes/webgame
   panes:
   - lt

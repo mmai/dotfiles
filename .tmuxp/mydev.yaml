@@ -1,5 +1,5 @@
 session_name: mydev
-start_directory: /home/henri/travaux/www/mydev-v2
+start_directory: ~/travaux/www/mydev-v2
 windows:
 - window_name: code
   options:

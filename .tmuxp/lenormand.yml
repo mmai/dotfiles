@@ -1,5 +1,5 @@
 session_name: lenormand
-start_directory: /home/henri/travaux/lenormandBook/
+start_directory: ~/travaux/lenormandBook/
 windows:
 - window_name: markdown
   focus: 'true'
