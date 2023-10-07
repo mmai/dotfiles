@@ -19,9 +19,8 @@ return {
   -- LazyVim enabled - conf overrides
   ------------------------------------------
   {
-    "nvim-telescope/telescope.nvim",
+    "folke/flash.nvim",
     keys = {
-      -- disable the keymap to grep files
       {"s", false},
     },
   },
@@ -71,6 +70,31 @@ return {
   ------------------------------------------
   -- Additionnal plugins
   ------------------------------------------
+  -- {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'}, -- for handling what mason cannot ( rust-analyzer on NixOS )
+  { "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        rust_analyzer = {
+          mason = false,
+          cmd = { vim.fn.expand("/run/current-system/sw/bin/rust-analyzer") },
+          settings = {
+            ["rust-analyzer"] = {
+              imports = {
+                granularity = {
+                  group = "module",
+                },
+                prefix = "self",
+              },
+              cargo = {
+                buildScripts = { enable = true, },
+              },
+              procMacro = { enable = true, },
+            },
+          },
+        },
+      },
+    },
+  },
   { "numToStr/Navigator.nvim", -- navigate through tmux panes
 		lazy = true,
 		config = function()
