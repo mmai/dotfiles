@@ -3,11 +3,10 @@ return {
   -- Disable some plugins
   ------------------------------------------
   { "RRethy/vim-illuminate", enabled = false }, -- automatically highlight other uses of the word under the cursor
- 
   ------------------------------------------
   --  colorscheme
   ------------------------------------------
-	{ "lunarvim/darkplus.nvim"},
+  { "lunarvim/darkplus.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
@@ -18,13 +17,16 @@ return {
   ------------------------------------------
   -- LazyVim enabled - conf overrides
   ------------------------------------------
+
   {
     "folke/flash.nvim",
     keys = {
-      {"s", false},
+      -- disable the default flash keymap
+      { "s", mode = { "n", "x", "o" }, false },
     },
   },
-  { "nvim-neo-tree/neo-tree.nvim", -- file explorer
+  {
+    "nvim-neo-tree/neo-tree.nvim", -- file explorer
     opts = {
       window = {
         mappings = {
@@ -33,35 +35,38 @@ return {
       }
     },
   },
-  { "folke/noice.nvim",
+  {
+    "folke/noice.nvim",
     opts = {
       cmdline = {
         view = "cmdline",
       },
     },
   },
-  { "echasnovski/mini.bufremove",
+  {
+    "echasnovski/mini.bufremove",
     keys = {
-      { "<S-q>",  function() require("mini.bufremove").delete(0, false) end }, -- ajout shortcut
+      { "<S-q>", function() require("mini.bufremove").delete(0, false) end }, -- ajout shortcut
     },
   },
 
-  { "jay-babu/mason-nvim-dap.nvim",
+  {
+    "jay-babu/mason-nvim-dap.nvim",
     config = function()
       local dap = require("dap")
       local mason_bin_path = vim.fn.stdpath("data") .. "/mason/bin"
 
       dap.adapters.php = {
-        type = 'executable';
-        command = mason_bin_path .. "/php-debug-adapter";
+        type = 'executable',
+        command = mason_bin_path .. "/php-debug-adapter",
       }
 
       dap.configurations.php = {
         {
-          type = 'php';
-          request = 'launch';
-          name = "Listen for Xdebug";
-          port = 9003;
+          type = 'php',
+          request = 'launch',
+          name = "Listen for Xdebug",
+          port = 9003,
         },
       }
     end,
@@ -71,9 +76,20 @@ return {
   -- Additionnal plugins
   ------------------------------------------
   -- {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'}, -- for handling what mason cannot ( rust-analyzer on NixOS )
-  { "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        stylua = {
+          mason = false,
+          cmd = { vim.fn.expand("/run/current-system/sw/bin/stylua") },
+        },
+
+        lua_ls = {
+          mason = false,
+          cmd = { vim.fn.expand("/run/current-system/sw/bin/lua-language-server") },
+        },
+
         rust_analyzer = {
           mason = false,
           cmd = { vim.fn.expand("/run/current-system/sw/bin/rust-analyzer") },
@@ -92,39 +108,44 @@ return {
             },
           },
         },
+
       },
     },
   },
-  { "numToStr/Navigator.nvim", -- navigate through tmux panes
-		lazy = true,
-		config = function()
-			require("Navigator").setup({
-				auto_save = "current",
-			})
-		end,
-		keys = {
-			{ "<C-h>", "<CMD>NavigatorLeft<CR>" },
-			{ "<C-l>", "<CMD>NavigatorRight<CR>" },
-			{ "<C-k>", "<CMD>NavigatorUp<CR>" },
-			{ "<C-j>", "<CMD>NavigatorDown<CR>" },
-		},
-	},
-
-  { "mmai/vim-markdown-wiki", -- eases the navigation between files in a personnal wiki based on markdown
-    lazy = false,
-    ft = {"markdown"},
+  {
+    "numToStr/Navigator.nvim", -- navigate through tmux panes
+    lazy = true,
+    config = function()
+      require("Navigator").setup({
+        auto_save = "current",
+      })
+    end,
     keys = {
-      {",<CR>", "<C-w>v:MdwiGotoLink<CR>", opts}
+      { "<C-h>", "<CMD>NavigatorLeft<CR>" },
+      { "<C-l>", "<CMD>NavigatorRight<CR>" },
+      { "<C-k>", "<CMD>NavigatorUp<CR>" },
+      { "<C-j>", "<CMD>NavigatorDown<CR>" },
+    },
+  },
+
+  {
+    "mmai/vim-markdown-wiki", -- eases the navigation between files in a personnal wiki based on markdown
+    lazy = false,
+    ft = { "markdown" },
+    keys = {
+      { ",<CR>", "<C-w>v:MdwiGotoLink<CR>", opts }
     }
   },
-  { "gpanders/editorconfig.nvim"}, -- follow formatting options of .editorconfig file
-	{ "tpope/vim-fugitive", -- for Git blame
+  { "gpanders/editorconfig.nvim" }, -- follow formatting options of .editorconfig file
+  {
+    "tpope/vim-fugitive",           -- for Git blame
     keys = {
       { "<leader>gb", ":Git blame<CR>", desc = "git blame" },
     }
   },
 
-  { 'Rican7/php-doc-modded', -- phpdoc generation
+  {
+    'Rican7/php-doc-modded', -- phpdoc generation
     keys = {
       { "<leader>ch", "<cmd>call PhpDocSingle()<cr>", desc = "PHPDoc" },
     }
@@ -134,14 +155,29 @@ return {
     "aaronhallaert/advanced-git-search.nvim",
     keys = {
       { "<leader>gf", ":Telescope advanced_git_search search_log_content_file<CR>", desc = "search in file log content" },
-      { "<leader>gd", ":Telescope advanced_git_search diff_commit_file<CR>", desc = "diff current file with commit" },
+      {
+        "<leader>gd",
+        ":Telescope advanced_git_search diff_commit_file<CR>",
+        desc =
+        "diff current file with commit"
+      },
       -- { "<leader>gl", ":Telescope advanced_git_search diff_commit_line<CR>", desc = "diff current file with selected line history" }, -- TODO : mode visual
-      { "<leader>ga", ":Telescope advanced_git_search diff_branch_file<CR>", desc = "diff current file with branch" },
-      { "<leader>gC", ":Telescope advanced_git_search changed_on_branch<CR>", desc = "list of changed files on the current branch" },
+      {
+        "<leader>ga",
+        ":Telescope advanced_git_search diff_branch_file<CR>",
+        desc =
+        "diff current file with branch"
+      },
+      {
+        "<leader>gC",
+        ":Telescope advanced_git_search changed_on_branch<CR>",
+        desc =
+        "list of changed files on the current branch"
+      },
     },
     config = function()
       -- optional: setup telescope before loading the extension
-      require("telescope").setup{
+      require("telescope").setup {
         -- move this to the place where you call the telescope setup function
         extensions = {
           advanced_git_search = {
@@ -173,17 +209,17 @@ return {
     },
   },
 
-  { "gbprod/yanky.nvim", -- Allow to paste previous yanks
+  {
+    "gbprod/yanky.nvim", -- Allow to paste previous yanks
     config = function()
       require("yanky").setup({
-        vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)");
-        vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)");
-        vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)");
-        vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)");
-
-        vim.keymap.set("n", "<a-p>", "<Plug>(YankyCycleForward)");
-        vim.keymap.set("n", "<a-o>", "<Plug>(YankyCycleBackward)");
-        vim.keymap.set("n", "<a-h>", ":Telescope yank_history<cr>");
+        vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)"),
+        vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)"),
+        vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)"),
+        vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)"),
+        vim.keymap.set("n", "<a-p>", "<Plug>(YankyCycleForward)"),
+        vim.keymap.set("n", "<a-o>", "<Plug>(YankyCycleBackward)"),
+        vim.keymap.set("n", "<a-h>", ":Telescope yank_history<cr>"),
       })
       require("telescope").load_extension("yank_history")
     end
