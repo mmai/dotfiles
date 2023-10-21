@@ -75,6 +75,16 @@ return {
   ------------------------------------------
   -- Additionnal plugins
   ------------------------------------------
+  -- flutter-tools : uses lsp for flutter and dart applications
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
+  },
   -- {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'}, -- for handling what mason cannot ( rust-analyzer on NixOS )
   {
     "neovim/nvim-lspconfig",

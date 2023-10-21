@@ -193,6 +193,8 @@ PATH=$HOME/.symfony/bin:$PATH # Symfony
 
 OPENNLP_HOME=/opt/apache-opennlp-1.5.3 #openNLP 
 
+export CHROME_EXECUTABLE=/run/current-system/sw/bin/chromium
+
 #NIX : uncomment on non NixOS systems
 # if [ -d "$HOME/.nix-profile/" ];
 # then
