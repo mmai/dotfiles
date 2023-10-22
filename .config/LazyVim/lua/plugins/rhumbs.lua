@@ -31,8 +31,8 @@ return {
       window = {
         mappings = {
           ["l"] = "open",
-        }
-      }
+        },
+      },
     },
   },
   {
@@ -46,7 +46,12 @@ return {
   {
     "echasnovski/mini.bufremove",
     keys = {
-      { "<S-q>", function() require("mini.bufremove").delete(0, false) end }, -- ajout shortcut
+      {
+        "<S-q>",
+        function()
+          require("mini.bufremove").delete(0, false)
+        end,
+      }, -- ajout shortcut
     },
   },
 
@@ -57,14 +62,14 @@ return {
       local mason_bin_path = vim.fn.stdpath("data") .. "/mason/bin"
 
       dap.adapters.php = {
-        type = 'executable',
+        type = "executable",
         command = mason_bin_path .. "/php-debug-adapter",
       }
 
       dap.configurations.php = {
         {
-          type = 'php',
-          request = 'launch',
+          type = "php",
+          request = "launch",
           name = "Listen for Xdebug",
           port = 9003,
         },
@@ -72,20 +77,15 @@ return {
     end,
   },
 
-  ------------------------------------------
-  -- Additionnal plugins
-  ------------------------------------------
-  -- flutter-tools : uses lsp for flutter and dart applications
+  -- remove stylua from mason autoinstall
   {
-    'akinsho/flutter-tools.nvim',
-    lazy = false,
-    dependencies = {
-        'nvim-lua/plenary.nvim',
-        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "shfmt", -- remove stylua
+      },
     },
-    config = true,
   },
-  -- {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'}, -- for handling what mason cannot ( rust-analyzer on NixOS )
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -112,16 +112,29 @@ return {
                 prefix = "self",
               },
               cargo = {
-                buildScripts = { enable = true, },
+                buildScripts = { enable = true },
               },
-              procMacro = { enable = true, },
+              procMacro = { enable = true },
             },
           },
         },
-
       },
     },
   },
+  ------------------------------------------
+  -- Additionnal plugins
+  ------------------------------------------
+  -- flutter-tools : uses lsp for flutter and dart applications
+  -- {
+  --   "akinsho/flutter-tools.nvim",
+  --   lazy = false,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "stevearc/dressing.nvim", -- optional for vim.ui.select
+  --   },
+  --   config = true,
+  -- },
+  -- { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" }, -- for handling what mason cannot ( rust-analyzer on NixOS )
   {
     "numToStr/Navigator.nvim", -- navigate through tmux panes
     lazy = true,
@@ -143,51 +156,52 @@ return {
     lazy = false,
     ft = { "markdown" },
     keys = {
-      { ",<CR>", "<C-w>v:MdwiGotoLink<CR>", opts }
-    }
+      { ",<CR>", "<C-w>v:MdwiGotoLink<CR>", opts },
+    },
   },
   { "gpanders/editorconfig.nvim" }, -- follow formatting options of .editorconfig file
   {
-    "tpope/vim-fugitive",           -- for Git blame
+    "tpope/vim-fugitive", -- for Git blame
     keys = {
       { "<leader>gb", ":Git blame<CR>", desc = "git blame" },
-    }
+    },
   },
 
   {
-    'Rican7/php-doc-modded', -- phpdoc generation
+    "Rican7/php-doc-modded", -- phpdoc generation
     keys = {
       { "<leader>ch", "<cmd>call PhpDocSingle()<cr>", desc = "PHPDoc" },
-    }
+    },
   },
 
   {
     "aaronhallaert/advanced-git-search.nvim",
     keys = {
-      { "<leader>gf", ":Telescope advanced_git_search search_log_content_file<CR>", desc = "search in file log content" },
+      {
+        "<leader>gf",
+        ":Telescope advanced_git_search search_log_content_file<CR>",
+        desc = "search in file log content",
+      },
       {
         "<leader>gd",
         ":Telescope advanced_git_search diff_commit_file<CR>",
-        desc =
-        "diff current file with commit"
+        desc = "diff current file with commit",
       },
       -- { "<leader>gl", ":Telescope advanced_git_search diff_commit_line<CR>", desc = "diff current file with selected line history" }, -- TODO : mode visual
       {
         "<leader>ga",
         ":Telescope advanced_git_search diff_branch_file<CR>",
-        desc =
-        "diff current file with branch"
+        desc = "diff current file with branch",
       },
       {
         "<leader>gC",
         ":Telescope advanced_git_search changed_on_branch<CR>",
-        desc =
-        "list of changed files on the current branch"
+        desc = "list of changed files on the current branch",
       },
     },
     config = function()
       -- optional: setup telescope before loading the extension
-      require("telescope").setup {
+      require("telescope").setup({
         -- move this to the place where you call the telescope setup function
         extensions = {
           advanced_git_search = {
@@ -201,9 +215,9 @@ return {
             git_diff_flags = {},
             -- Show builtin git pickers when executing "show_custom_functions" or :AdvancedGitSearch
             show_builtin_git_pickers = false,
-          }
-        }
-      }
+          },
+        },
+      })
 
       require("telescope").load_extension("advanced_git_search")
     end,
@@ -232,7 +246,7 @@ return {
         vim.keymap.set("n", "<a-h>", ":Telescope yank_history<cr>"),
       })
       require("telescope").load_extension("yank_history")
-    end
+    end,
   },
 
   -- { "https://gitlab.com/schrieveslaach/sonarlint.nvim", -- code quality ; needs jdk installed, still do nothing
