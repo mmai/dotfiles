@@ -78,6 +78,7 @@ return {
   },
 
   -- remove stylua from mason autoinstall
+  -- On NixOS stylua is in "/run/current-system/sw/bin/stylua"
   {
     "williamboman/mason.nvim",
     opts = {
@@ -90,11 +91,6 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        stylua = {
-          mason = false,
-          cmd = { vim.fn.expand("/run/current-system/sw/bin/stylua") },
-        },
-
         lua_ls = {
           mason = false,
           cmd = { vim.fn.expand("/run/current-system/sw/bin/lua-language-server") },
