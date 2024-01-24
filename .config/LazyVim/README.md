@@ -12,3 +12,9 @@ Installés par NixOS car les versions téléchargées par Mason ne s'éxécutent
 ## Howto
 
 - afficher les messages d'alerte qui disparaissent : `<space>snh` (_noice_ history)
+
+## Troubleshooting
+
+error executing vim.schedule lua callback ... Treesitter/lua... no parser for php language
+
+=> `:TSInstall php`
