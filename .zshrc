@@ -1,11 +1,18 @@
 # XXX : don't forget to make a `zinit update` from time to time to update plugins
 
+
+# to make direnv work with instant prompt 1/2
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# to make direnv work with instant prompt 2/2
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 # terminal utilities
 #  * z : go to recent /frequent directories
