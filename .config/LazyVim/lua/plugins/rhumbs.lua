@@ -17,7 +17,14 @@ return {
   ------------------------------------------
   -- LazyVim enabled - conf overrides
   ------------------------------------------
-
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      -- Add an underline below treesitter context header
+      vim.cmd([[hi TreesitterContextBottom gui=underline guisp=Grey]])
+      vim.cmd([[hi TreesitterContextLineNumberBottom gui=underline guisp=Grey]])
+    end,
+  },
   {
     "folke/flash.nvim",
     keys = {
