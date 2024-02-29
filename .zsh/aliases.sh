@@ -1,6 +1,7 @@
 # Dotfiles (cf. https://github.com/mmai/dotfiles/tree/master/.dotfiles)
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lgd='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias nixedit='~/softs/nixedit.sh'
 
 # Common aliases
 alias rm='rm -i'
