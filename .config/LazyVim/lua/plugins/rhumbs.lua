@@ -63,22 +63,66 @@ return {
   },
 
   {
+    "mrcjkb/rustaceanvim",
+    opts = {
+      server = {
+        cmd = { vim.fn.expand("/run/current-system/sw/bin/rust-analyzer") },
+      },
+    },
+  },
+
+  {
     "jay-babu/mason-nvim-dap.nvim",
     config = function()
       local dap = require("dap")
       local mason_bin_path = vim.fn.stdpath("data") .. "/mason/bin"
 
-      dap.adapters.php = {
-        type = "executable",
-        command = mason_bin_path .. "/php-debug-adapter",
+      dap.adapters = {
+        php = {
+          type = "executable",
+          command = mason_bin_path .. "/php-debug-adapter",
+        },
+
+        lldb = {
+          type = "executable",
+          command = "/run/current-system/sw/bin/lldb-vscode",
+          name = "lldb",
+        },
       }
 
-      dap.configurations.php = {
-        {
-          type = "php",
-          request = "launch",
-          name = "Listen for Xdebug",
-          port = 9003,
+      dap.configurations = {
+        php = {
+          {
+            type = "php",
+            request = "launch",
+            name = "Listen for Xdebug",
+            port = 9003,
+          },
+        },
+
+        rust = {
+          {
+            name = "Launch",
+            type = "lldb",
+            request = "launch",
+            program = function()
+              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+            end,
+            cwd = "${workspaceFolder}",
+            stopOnEntry = false,
+            args = {},
+          },
+          {
+            name = "trictrac client CLI",
+            type = "lldb",
+            request = "launch",
+            program = function()
+              return vim.fn.getcwd() .. "/target/debug/client_cli"
+            end,
+            cwd = "${workspaceFolder}",
+            stopOnEntry = false,
+            runInTerminal = true,
+          },
         },
       }
     end,
@@ -94,6 +138,7 @@ return {
       },
     },
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = {

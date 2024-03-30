@@ -17,7 +17,7 @@ keymap("i", "KJ", "<ESC>", opts)
 -- vim.keymap.del({'n', 'v'}, 'S')
 
 -- Edit LazyVim config
-keymap("n", "<leader>se", ":e $MYVIMRC<RETURN>", { silent = true, desc = "configuration"} )
+keymap("n", "<leader>se", ":e $MYVIMRC<RETURN>", { silent = true, desc = "configuration" })
 
 -- references
-keymap("n", "<leader>j", "<Cmd>TroubleToggle lsp_references<CR>", { silent = true, desc = "References"} )
+keymap("n", "<leader>j", "<Cmd>TroubleToggle lsp_references<CR>", { silent = true, desc = "References" })
