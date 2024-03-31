@@ -83,10 +83,10 @@ return {
           command = mason_bin_path .. "/php-debug-adapter",
         },
 
-        lldb = {
+        codelldb = {
           type = "executable",
           command = "/run/current-system/sw/bin/lldb-vscode",
-          name = "lldb",
+          name = "codelldb",
         },
       }
 
@@ -103,7 +103,7 @@ return {
         rust = {
           {
             name = "Launch",
-            type = "lldb",
+            type = "codelldb",
             request = "launch",
             program = function()
               return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
@@ -114,7 +114,7 @@ return {
           },
           {
             name = "trictrac client CLI",
-            type = "lldb",
+            type = "codelldb",
             request = "launch",
             program = function()
               return vim.fn.getcwd() .. "/target/debug/client_cli"

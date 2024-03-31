@@ -13,9 +13,12 @@ require("lazy").setup({
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.test.core" }, -- disable for rust, enable for php
+    { import = "lazyvim.plugins.extras.test.core" },
+    -- rust : utilise rustaceanvim sauf pour la partie test qui est incompatible
+    -- avec extras.test.core (on utilise neotest-rust à la place, cf. plugins/test.lua)
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.dap.core" },
+    { import = "lazyvim.plugins.extras.coding.codeium" },
     -- import/override with your plugins
     { import = "plugins" },
   },

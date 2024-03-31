@@ -9,17 +9,10 @@ Installés par NixOS car les versions téléchargées par Mason ne s'éxécutent
 - stylua, lua-language-server
 - rust-analyser
 
-## Tests avec Neotest
-
-Les configurations rust (version rustaceansvim) et php sont incompatibles.
-
-Pour la version rust commenter les lignes suivantes, les décommenter pour la version PHP
-  - `opts = { adapters = { "neotest-phpunit" } },` du fichier lua/plugins/test.lua
-  - { import = "lazyvim.plugins.extras.test.core" } du fichier lua/config/lazy.lua
-
 ## Howto
 
 - afficher les messages d'alerte qui disparaissent : `<space>snh` (_noice_ history) ou `<space>snl` (_noice_ last message)
+- modifier le code d'un plugin : aller dans ~/.local/share/nvim/lazy/
 
 ## Troubleshooting
 
