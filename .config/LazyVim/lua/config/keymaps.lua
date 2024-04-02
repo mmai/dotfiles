@@ -19,5 +19,8 @@ keymap("i", "KJ", "<ESC>", opts)
 -- Edit LazyVim config
 keymap("n", "<leader>se", ":e $MYVIMRC<RETURN>", { silent = true, desc = "configuration" })
 
+-- Show messages & errors history
+keymap("n", "<leader>sm", ":Telescope notify", { silent = true, desc = "Messages history" })
+
 -- references
 keymap("n", "<leader>j", "<Cmd>TroubleToggle lsp_references<CR>", { silent = true, desc = "References" })
