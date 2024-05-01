@@ -52,11 +52,11 @@
         "items": [
           {
             "name": "Lock",
-            "cmd": "swaylock -f -c 000000"
+            "cmd": "hyprlock"
           },
           {
             "name": "Logout",
-            "cmd": "swaymsg exit"
+            "cmd": "wlogout"
           },
           {
             "name": "Reboot",
