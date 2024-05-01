@@ -252,15 +252,15 @@ fzf-history-widget() {
   return $ret
 }
 
-if [[ $HAS_NIXOS == 1 ]]; then
-  if [ -n "${commands[fzf-share]}" ]; then
-    source "$(fzf-share)/key-bindings.zsh"
-    source "$(fzf-share)/completion.zsh"
-  fi
-else
+# if [[ $HAS_NIXOS == 1 ]]; then
+#   if [ -n "${commands[fzf-share]}" ]; then
+#     source "$(fzf-share)/key-bindings.zsh"
+#     source "$(fzf-share)/completion.zsh"
+#   fi
+# else
   zle -N fzf-history-widget
   bindkey '^R' fzf-history-widget
-fi
+# fi
 
 # Use rg instead of the default find command for listing candidates.
 _fzf_compgen_path() {
