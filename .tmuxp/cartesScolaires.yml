@@ -5,10 +5,6 @@ windows:
   focus: true
   panes:
   - shell_command: ls
-- window_name: ConduentApi
-  start_directory: ~/travaux/www/calixx/network/calixx-cartes-scolaires/vendor/atixnet/conduent-api-client
-  panes:
-  - shell_command: ls
 - window_name: Drupal8
   start_directory: ~/travaux/www/sitesFiliales/transvilles/web/modules/atixnet/cartes_scolaires/
   panes:
