@@ -1,0 +1,11 @@
+session_name: trictrac
+start_directory: ~/travaux/programmes/trictrac/
+windows:
+- window_name: code
+  focus: 'true'
+  panes:
+  - lt
+- window_name: services
+  layout: even-horizontal
+  panes:
+  - lt
