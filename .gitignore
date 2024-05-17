@@ -4,5 +4,6 @@
 .vim/spell/en.utf-8.spl
 .vim/spell/en.utf-8.sug
 .vim/gutentags
+.config/hypr/hyprland.conf
 LanguageTool
 tags
