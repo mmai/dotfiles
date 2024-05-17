@@ -18,7 +18,6 @@ require("lazy").setup({
     -- avec extras.test.core (on utilise neotest-rust à la place, cf. plugins/test.lua)
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.dap.core" },
-    -- { import = "lazyvim.plugins.extras.coding.codeium" },
     -- import/override with your plugins
     { import = "plugins" },
   },
