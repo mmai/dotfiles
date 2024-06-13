@@ -148,24 +148,27 @@ return {
           cmd = { vim.fn.expand("/run/current-system/sw/bin/lua-language-server") },
         },
 
-        rust_analyzer = {
-          mason = false,
-          cmd = { vim.fn.expand("/run/current-system/sw/bin/rust-analyzer") },
-          settings = {
-            ["rust-analyzer"] = {
-              imports = {
-                granularity = {
-                  group = "module",
-                },
-                prefix = "self",
-              },
-              cargo = {
-                buildScripts = { enable = true },
-              },
-              procMacro = { enable = true },
-            },
-          },
-        },
+        -- XXX : désactivé car doublonne avec le rust-analyzer déjà lançé par "mrcjkb/rustaceanvim"
+        -- (provoquant un bug inlay type hints duplicated https://www.reddit.com/r/neovim/comments/1axlen1/inlay_hints_invalid_col_out_of_range/)
+        --
+        -- rust_analyzer = {
+        --   mason = false,
+        --   cmd = { vim.fn.expand("/run/current-system/sw/bin/rust-analyzer") },
+        --   settings = {
+        --     ["rust-analyzer"] = {
+        --       imports = {
+        --         granularity = {
+        --           group = "module",
+        --         },
+        --         prefix = "self",
+        --       },
+        --       cargo = {
+        --         buildScripts = { enable = true },
+        --       },
+        --       procMacro = { enable = true },
+        --     },
+        --   },
+        -- },
       },
     },
   },
@@ -183,6 +186,7 @@ return {
   --   config = true,
   -- },
   -- { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" }, -- for handling what mason cannot ( rust-analyzer on NixOS )
+  { "wakatime/vim-wakatime", lazy = false },
   {
     "numToStr/Navigator.nvim", -- navigate through tmux panes
     lazy = true,
