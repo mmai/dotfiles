@@ -142,6 +142,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      document_highlight = { enabled = false }, -- disable 'illuminate' other occurence of word on cursor
       servers = {
         lua_ls = {
           mason = false,
