@@ -106,7 +106,7 @@ zinit light zsh-users/zsh-completions
 unsetopt cdablevars
 
 # autosuggestion (fish like command preview)
-zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit ice wait lucid atload'_zsh_autosuggest_start; unalias zi'
 zinit light zsh-users/zsh-autosuggestions
 
 # powerlevel10k prompt
@@ -118,7 +118,8 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # zinit light mmai/pure
 
 # z www myweb => go to the most frequent/recent dir matching 'www' then 'myweb' (ex :/var/www/myweb/)
-zinit load agkozak/zsh-z
+#  --> remplacé par zoxide
+# zinit load agkozak/zsh-z
 
 zinit load zsh-users/zsh-syntax-highlighting
 
@@ -322,4 +323,9 @@ enable-fzf-tab
 #   # export term=screen-256color # 'screen' instead of 'xterm' for ratpdev compatibility 
 #   exec "tmux new-session -t main"
 # fi
+
+# ------ zoxide integration -----------
+#   enable `z` & `zi` aliases,
+#   execute `zoxide init zsh` to show other available functions
+eval "$(zoxide init zsh)"
 
