@@ -8,7 +8,15 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias yy='yazi'
+# alias yy='yazi'
+function yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
 
 # sudo avec conservation des variables d'environnement de l'utilisateur
 alias _='sudo -E '
@@ -100,14 +108,14 @@ alias glla='gla --all'
 # inbox
 alias in='task add +in'
 tp() {
-	task project:$1
+  task project:$1
 }
 
 # tickle
 tickle() {
-	deadline=$1
-	shift
-	in +tickle wait:$deadline $@
+  deadline=$1
+  shift
+  in +tickle wait:$deadline $@
 }
 alias tick=tickle
 #alias think='tickle +1d'
