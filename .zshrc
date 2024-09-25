@@ -329,3 +329,6 @@ enable-fzf-tab
 #   execute `zoxide init zsh` to show other available functions
 eval "$(zoxide init zsh)"
 
+
+# Lando
+export PATH="/home/henri/softs:/home/henri/.lando/bin${PATH+:$PATH}"; #landopath
