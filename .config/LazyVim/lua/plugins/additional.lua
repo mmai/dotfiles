@@ -1,6 +1,6 @@
 return {
   ------------------------------------------
-  -- Additionnal plugins
+  -- Additional plugins
   ------------------------------------------
   -- flutter-tools : uses lsp for flutter and dart applications
   -- {
