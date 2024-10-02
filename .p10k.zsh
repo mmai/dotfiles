@@ -35,6 +35,7 @@
     # os_icon               # os identifier
     dir                     # current directory
     vcs                     # git status
+    yazi                    # yazi subshell indicator
     # =========================[ Line #2 ]=========================
     newline                 # \n
     prompt_char             # prompt symbol
@@ -344,6 +345,17 @@
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+
+  # formatter for yazi prompt 
+  # (copied from https://github.com/Sonico98/yazi-prompt.sh/blob/master/zsh/p10k/yazi_p10k.zsh)
+  # (cf. https://github.com/Sonico98/yazi-prompt.sh/tree/master?tab=readme-ov-file#zsh)
+  # 005 is the segment color. If you want to change it, you can run this in a terminal to see all available colors: 
+  # for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+  function prompt_yazi() {
+    if [ -n "$YAZI_LEVEL" ]; then
+      p10k segment -f 005 -i '' -t 'Yazi terminal'
+    fi
+  }
 
   # Formatter for Git status.
   #
