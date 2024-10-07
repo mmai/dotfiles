@@ -6,7 +6,7 @@ windows:
   panes:
   - shell_command: ls
 - window_name: Drupal8
-  start_directory: ~/travaux/www/Drupal_Explore_cartes_scolaires/
+  start_directory: ~/travaux/www/site-factory-v2/web/modules/ratpdev/cartes_scolaires
   panes:
   - shell_command: ls
 - window_name: services
@@ -17,6 +17,6 @@ windows:
   - shell_command:
     - cd ~/travaux/www/calixx
     - make shell
-  # - shell_command:
-  #   - cd ~/travaux/www/sitesFiliales/transvilles
-  #   - nix develop
+  - shell_command:
+    - cd ~/travaux/www/site-factory-v2/
+    - lando start
