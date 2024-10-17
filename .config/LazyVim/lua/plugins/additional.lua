@@ -13,6 +13,17 @@ return {
   --   config = true,
   -- },
   -- { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" }, -- for handling what mason cannot ( rust-analyzer on NixOS )
+  -- { "danymat/neogen", config = true }, -- Code documentation generator (moins complet que vim-doge : pas d'indication des types en PHP)
+  {
+    "kkoomen/vim-doge", -- Code documentation generator ; nécessite l'exécution  de `:call doge#install()` pour finaliser l'installation
+  },
+  -- {
+  --   "Rican7/php-doc-modded", -- phpdoc generation
+  --   keys = {
+  --     { "<leader>ch", "<cmd>call PhpDocSingle()<cr>", desc = "PHPDoc" },
+  --   },
+  -- },
+
   { "wakatime/vim-wakatime", lazy = false },
   {
     "numToStr/Navigator.nvim", -- navigate through tmux panes
@@ -109,13 +120,6 @@ return {
     "tpope/vim-fugitive", -- for Git blame
     keys = {
       { "<leader>gb", ":Git blame<CR>", desc = "git blame" },
-    },
-  },
-
-  {
-    "Rican7/php-doc-modded", -- phpdoc generation
-    keys = {
-      { "<leader>ch", "<cmd>call PhpDocSingle()<cr>", desc = "PHPDoc" },
     },
   },
 

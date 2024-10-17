@@ -8,6 +8,9 @@ opt.spelllang = { "en", "fr" }
 
 opt.commentstring = "# %s"
 
+-- disable default mappings for doge
+vim.g.doge_enable_mappings = 0
+
 -- LSP Server to use for PHP.
 -- Set to "intelephense" to use intelephense instead of phpactor.
 -- vim.g.lazyvim_php_lsp = "intelephense"

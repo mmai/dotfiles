@@ -24,3 +24,13 @@ keymap("n", "<leader>sm", ":Telescope notify", { silent = true, desc = "Messages
 
 -- references
 keymap("n", "<leader>j", "<Cmd>Trouble lsp toggle<CR>", { silent = true, desc = "LSP definitions, references, ..." })
+
+-- doge
+keymap("n", "<Leader>ch", "<Plug>(doge-generate)")
+-- Interactive mode comment todo-jumping.
+keymap("n", "<TAB>", "<Plug>(doge-comment-jump-forward)")
+keymap("n", "<S-TAB>", "<Plug>(doge-comment-jump-backward)")
+keymap("i", "<TAB>", "<Plug>(doge-comment-jump-forward)")
+keymap("i", "<S-TAB>", "<Plug>(doge-comment-jump-backward)")
+keymap("s", "<TAB>", "<Plug>(doge-comment-jump-forward)")
+keymap("s", "<S-TAB>", "<Plug>(doge-comment-jump-backward)")
