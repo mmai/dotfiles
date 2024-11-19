@@ -1,9 +1,11 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.editor.harpoon2",
+    "lazyvim.plugins.extras.lang.php",
     "lazyvim.plugins.extras.lang.rust"
   ],
   "news": {
-    "NEWS.md": "6077"
+    "NEWS.md": "7429"
   },
-  "version": 6
+  "version": 7
 }

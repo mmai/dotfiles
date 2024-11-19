@@ -20,6 +20,8 @@ Installés par NixOS car les versions téléchargées par Mason ne s'éxécutent
 
 ## Troubleshooting
 
+
+
 error executing vim.schedule lua callback ... Treesitter/lua... no parser for php language
 
 => `:TSInstall php`
