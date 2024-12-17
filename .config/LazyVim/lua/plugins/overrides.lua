@@ -2,7 +2,9 @@ return {
   ------------------------------------------
   -- Disable some plugins
   ------------------------------------------
+  -- remove disturbing current words highlighting
   { "RRethy/vim-illuminate", enabled = false }, -- automatically highlight other uses of the word under the cursor
+  { "snacks.nvim", opts = { words = { enabled = false } } }, -- Auto-show LSP references and quickly navigate between them
   ------------------------------------------
   --  colorscheme
   ------------------------------------------

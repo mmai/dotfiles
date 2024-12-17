@@ -11,7 +11,7 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here /!\ See also lazyvim.json for extras managed by :LazyExtras
-    { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    -- { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     -- rust : utilise rustaceanvim sauf pour la partie test qui est incompatible
