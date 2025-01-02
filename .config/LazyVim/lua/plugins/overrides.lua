@@ -151,6 +151,10 @@ return {
           mason = false,
           cmd = { vim.fn.expand("/run/current-system/sw/bin/lua-language-server") },
         },
+        marksman = {
+          mason = false,
+          cmd = { vim.fn.expand("/run/current-system/sw/bin/marksman") },
+        },
 
         -- XXX : désactivé car doublonne avec le rust-analyzer déjà lançé par "mrcjkb/rustaceanvim"
         -- (provoquant un bug inlay type hints duplicated https://www.reddit.com/r/neovim/comments/1axlen1/inlay_hints_invalid_col_out_of_range/)
