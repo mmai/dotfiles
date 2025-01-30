@@ -73,6 +73,7 @@ return {
     },
   },
 
+  -- rules configuration files for linters
   {
     "mfussenegger/nvim-lint",
     optional = true,
@@ -134,6 +135,18 @@ return {
             program = function()
               return vim.fn.getcwd() .. "/target/debug/client_cli"
             end,
+            cwd = "${workspaceFolder}",
+            stopOnEntry = false,
+            runInTerminal = true,
+          },
+          {
+            name = "trictrac runbots",
+            type = "codelldb",
+            request = "launch",
+            program = function()
+              return vim.fn.getcwd() .. "/target/debug/client_cli"
+            end,
+            args = { "--bot", "dummy,dummy" },
             cwd = "${workspaceFolder}",
             stopOnEntry = false,
             runInTerminal = true,
