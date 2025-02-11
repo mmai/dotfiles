@@ -16,7 +16,7 @@ windows:
   panes:
   - shell_command:
     - cd ~/travaux/www/calixx
-    - make shell
+    - devenv up
   - shell_command:
     - cd ~/travaux/www/site-factory-v2/
     - lando start
