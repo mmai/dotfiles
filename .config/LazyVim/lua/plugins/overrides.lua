@@ -156,6 +156,16 @@ return {
     end,
   },
 
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        -- php = { "php-cs-fixer" },
+        php = { "phpcbf" },
+      },
+    },
+  },
+
   -- remove stylua from mason autoinstall
   -- On NixOS stylua is in "/run/current-system/sw/bin/stylua"
   {

@@ -74,7 +74,6 @@ return {
       },
     },
   },
-  { "gpanders/editorconfig.nvim" }, -- follow formatting options of .editorconfig file
   {
     "tpope/vim-fugitive", -- for Git blame
     keys = {
