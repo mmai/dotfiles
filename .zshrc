@@ -149,6 +149,9 @@ bindkey -v
 # fix "no matches found" when referencing HEAD^
 unsetopt nomatch
 
+# Secrets (api keys, etc.)
+. $HOME/.zsh/secrets.sh
+
 # Aliases (shared with bash)
 . $HOME/.zsh/aliases.sh
 . $HOME/.zsh/nnn.zsh # nnn file explorer config
