@@ -6,6 +6,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ## LSP & NixOS
 
 Installés par NixOS car les versions téléchargées par Mason ne s'éxécutent pas :
+
 - stylua, lua-language-server
 - rust-analyser
 
@@ -20,11 +21,8 @@ Installés par NixOS car les versions téléchargées par Mason ne s'éxécutent
 
 ## Troubleshooting
 
-
-
-error executing vim.schedule lua callback ... Treesitter/lua... no parser for php language
-
-=> `:TSInstall php`
+- error executing vim.schedule lua callback ... Treesitter/lua... no parser for php language : `:TSInstall php`
+- Fonctions php standards non reconnues : `~/.local/share/nvim/mason/bin/phpactor index:build --reset`
 
 Startup time
 

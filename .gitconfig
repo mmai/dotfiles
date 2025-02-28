@@ -37,6 +37,8 @@
 	adog = log --all --decorate --oneline --graph
 [push]
 	default = matching
+	autoSetupRemote = true
+	followTags = true
 [core]
 	excludesfile = /home/henri/.gitignore_global
 	editor = nvim
@@ -44,6 +46,10 @@
   pager = delta
 [diff]
 	tool = meld
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 
 [interactive]
     diffFilter = delta --color-only
@@ -67,3 +73,15 @@
 	line-numbers-plus-style = 28
 [pull]
 	rebase = false
+[tag]
+	sort = version:refname
+[branch]
+	sort = -committerdate
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
