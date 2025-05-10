@@ -24,6 +24,7 @@ return {
   --   },
   -- },
 
+  { "chrisbra/Recover.vim" }, -- add 'Compare' option when vim find a swap file
   { "wakatime/vim-wakatime", lazy = false },
   {
     "numToStr/Navigator.nvim", -- navigate through tmux panes
