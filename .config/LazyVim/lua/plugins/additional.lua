@@ -25,6 +25,14 @@ return {
   -- },
 
   { "chrisbra/Recover.vim" }, -- add 'Compare' option when vim find a swap file
+  {
+    "jiaoshijie/undotree",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = true,
+    keys = { -- load the plugin only when using it's keybinding:
+      { "<leader>U", "<cmd>lua require('undotree').toggle()<cr>" },
+    },
+  },
   { "wakatime/vim-wakatime", lazy = false },
   {
     "numToStr/Navigator.nvim", -- navigate through tmux panes
