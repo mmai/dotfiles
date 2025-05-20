@@ -8,6 +8,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias open-codex=$HOME/softs/node_modules/open-codex/dist/cli.js
+
 # alias yy='yazi'
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
