@@ -8,6 +8,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias rustc="$HOME/.cargo/bin/rustc"
+
 alias open-codex=$HOME/softs/node_modules/open-codex/dist/cli.js
 
 # alias yy='yazi'
@@ -70,6 +72,7 @@ alias dep="/usr/bin/deployer.phar" # PHP deployer
 alias meteo="curl -4 http://wttr.in/Bordeaux?lang=fr"
 alias think="cd ~/think/;tree"
 alias dlmusic="~/softs_/dlmusic.sh"
+alias sendmusic="~/softs_/sendmusic.sh"
 
 # haskell (see https://www.reddit.com/r/haskell/comments/3bw95a/using_cabal_and_stack_together/csqdbe2)
 alias cblconf='cabal configure --package-db=clear --package-db=global --package-db=$(stack path --snapshot-pkg-db) --package-db=$(stack path --local-pkg-db)'
