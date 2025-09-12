@@ -1,0 +1,15 @@
+session_name: pass
+windows:
+- window_name: code
+  focus: 'true'
+  start_directory: ~/travaux/www/pass
+  panes:
+  - focus: 'true'
+    shell_command: ls
+- window_name: services
+  start_directory: ~/travaux/www/pass
+  layout: even-horizontal
+  options:
+    automatic-rename: 'off'
+  panes:
+  - shell_command: ls
