@@ -53,7 +53,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.bufremove",
+    "nvim-mini/mini.bufremove",
     keys = {
       {
         "<S-q>",
@@ -129,6 +129,17 @@ return {
             args = {},
           },
           {
+            name = "trictrac train big",
+            type = "codelldb",
+            request = "launch",
+            program = function()
+              return vim.fn.getcwd() .. "/target/debug/train_dqn_burn_big"
+            end,
+            cwd = "${workspaceFolder}",
+            stopOnEntry = false,
+            runInTerminal = true,
+          },
+          {
             name = "trictrac client CLI",
             type = "codelldb",
             request = "launch",
@@ -169,7 +180,7 @@ return {
   -- remove stylua from mason autoinstall
   -- On NixOS stylua is in "/run/current-system/sw/bin/stylua"
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "shfmt", -- remove stylua
