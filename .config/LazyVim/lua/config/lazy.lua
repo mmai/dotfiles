@@ -17,6 +17,7 @@ require("lazy").setup({
     -- rust : utilise rustaceanvim sauf pour la partie test qui est incompatible
     -- avec extras.test.core (on utilise neotest-rust à la place, cf. plugins/test.lua)
     { import = "lazyvim.plugins.extras.lang.php" },
+    { import = "lazyvim.plugins.extras.lang.twig" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.test.core" },
     { import = "lazyvim.plugins.extras.dap.core" },

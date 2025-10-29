@@ -206,6 +206,8 @@ OPENNLP_HOME=/opt/apache-opennlp-1.5.3 #openNLP
 
 export CHROME_EXECUTABLE=/run/current-system/sw/bin/chromium
 
+export ATAC_KEY_BINDINGS=$HOME/.config/atac/vim_key_bindings.toml
+
 #NIX : uncomment on non NixOS systems
 # if [ -d "$HOME/.nix-profile/" ];
 # then
