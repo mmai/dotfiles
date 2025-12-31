@@ -7,6 +7,12 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
+-- Redo
+keymap("n", "U", "<C-r>", opts)
+
+-- Delete word
+keymap("i", "<C-q>", "<C-w>", opts)
+
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "JK", "<ESC>", opts)

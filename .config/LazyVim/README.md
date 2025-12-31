@@ -23,6 +23,7 @@ Installés par NixOS car les versions téléchargées par Mason ne s'éxécutent
 
 - error executing vim.schedule lua callback ... Treesitter/lua... no parser for php language : `:TSInstall php`
 - Fonctions php standards non reconnues : `~/.local/share/nvim/mason/bin/phpactor index:build --reset`
+- rust-analyser command not found : `rustup update`
 
 Startup time
 
