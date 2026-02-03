@@ -3,6 +3,11 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+workspace "terminal"
+workspace "browser"
+workspace "mail"
+workspace "media"
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
@@ -518,26 +523,26 @@ binds {
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
     Mod+1 { focus-workspace 1; }
-    Mod+a { focus-workspace 1; }
+    Mod+a { focus-workspace "terminal"; }
     Mod+2 { focus-workspace 2; }
-    Mod+s { focus-workspace 2; }
+    Mod+s { focus-workspace "browser"; }
     Mod+3 { focus-workspace 3; }
-    Mod+d { focus-workspace 3; }
+    Mod+d { focus-workspace "mail"; }
     Mod+4 { focus-workspace 4; }
-    Mod+f { focus-workspace 4; }
+    Mod+f { focus-workspace "media"; }
     Mod+5 { focus-workspace 5; }
     Mod+6 { focus-workspace 6; }
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
     Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+q { move-column-to-workspace 1; }
+    Mod+q { move-column-to-workspace "terminal"; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+w { move-column-to-workspace 2; }
+    Mod+w { move-column-to-workspace "browser"; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+e { move-column-to-workspace 3; }
+    Mod+e { move-column-to-workspace "mail"; }
     Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+r { move-column-to-workspace 4; }
+    Mod+r { move-column-to-workspace "media"; }
     Mod+Ctrl+5 { move-column-to-workspace 5; }
     Mod+Ctrl+6 { move-column-to-workspace 6; }
     Mod+Ctrl+7 { move-column-to-workspace 7; }
@@ -634,3 +639,5 @@ binds {
 }
 
 include "dms/cursor.kdl"
+
+include "dms/outputs.kdl"
