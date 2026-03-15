@@ -8,8 +8,8 @@ windows:
 - window_name: services
   layout: even-horizontal
   panes:
-  - make server
-  - make client
+  - just server
+  - just client
 - window_name: documentation
   start_directory: ~/travaux/programmes/webtarot/doc/
   panes:

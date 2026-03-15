@@ -8,8 +8,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias rustc="$HOME/.cargo/bin/rustc"
-
 alias open-codex=$HOME/softs/node_modules/open-codex/dist/cli.js
 
 # alias yy='yazi'
