@@ -23,7 +23,10 @@ return {
   --     { "<leader>ch", "<cmd>call PhpDocSingle()<cr>", desc = "PHPDoc" },
   --   },
   -- },
-
+  {
+    "likec4/likec4.nvim",
+    build = "npm install @likec4/lsp",
+  },
   { "chrisbra/Recover.vim" }, -- add 'Compare' option when vim find a swap file
   {
     "jiaoshijie/undotree",
