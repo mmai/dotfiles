@@ -13,6 +13,9 @@ keymap("n", "U", "<C-r>", opts)
 -- Delete word
 keymap("i", "<C-q>", "<C-w>", opts)
 
+-- Autofix last word
+keymap("i", "<C-l>", "<C-g>u<Esc>[s1z=`]a<C-g>u", opts)
+
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "JK", "<ESC>", opts)
