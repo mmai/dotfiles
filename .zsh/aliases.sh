@@ -1,6 +1,10 @@
 # Dotfiles (cf. https://github.com/mmai/dotfiles/tree/master/.dotfiles)
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lgd='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lgc='lazygit --git-dir="$(git rev-parse --show-toplevel)/.mgit/claude/.git"'
+alias gitc='mgit claude'
+alias gitcl='mgit claude -C "$(git rev-parse --show-toplevel)" ls-files --others docs .scratch'
+
 alias nixedit='~/softs/nixedit.sh'
 
 # Common aliases

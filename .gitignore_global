@@ -56,3 +56,6 @@ notes_henri
 CLAUDE.md
 .claude
 docgen
+docs/agents
+docs/adr
+.scratch
