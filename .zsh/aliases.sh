@@ -4,6 +4,7 @@ alias lgd='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lgc='lazygit --git-dir="$(git rev-parse --show-toplevel)/.mgit/claude/.git"'
 alias gitc='mgit claude'
 alias gitcl='mgit claude -C "$(git rev-parse --show-toplevel)" ls-files --others docs .scratch'
+alias claudepro='CLAUDE_CONFIG_DIR=~/.claude-pro command claude'
 
 alias nixedit='~/softs/nixedit.sh'
 
