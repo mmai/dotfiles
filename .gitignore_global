@@ -55,6 +55,8 @@ notes_henri
 .mgit
 CLAUDE.md
 .claude
+CONTEXT.md
+CONTEXT_MAP.md
 docgen
 docs/agents
 docs/adr
